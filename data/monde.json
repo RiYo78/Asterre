@@ -1,0 +1,14 @@
+{
+  "monde": "Asterre",
+  "version": "1.0",
+  "vueMonde": { "viewBox": [0, 0, 2000, 1500] },
+  "mj": { "phrase": "lumiere7" },
+  "pays": [
+    { "id": "iles-saintes", "fichier": "data/iles-saintes.json", "actif": true },
+    { "id": "continent", "fichier": null, "actif": false, "nom": "Le Continent", "note": "Avelorn · Ferelden · Cintra · Aloy · Harad — à venir", "direction": "est", "distanceDepuis": { "lieu": "roche-sainte", "km": 360 } },
+    { "id": "dremora", "fichier": null, "actif": false, "nom": "Drémora" },
+    { "id": "desert-magistral", "fichier": null, "actif": false, "nom": "Le Désert Magistral" },
+    { "id": "babel", "fichier": null, "actif": false, "nom": "Babel" },
+    { "id": "iles-glace-lave", "fichier": null, "actif": false, "nom": "Les Îles de Glace et de Lave" }
+  ]
+}
