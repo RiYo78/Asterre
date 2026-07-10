@@ -1,0 +1,3 @@
+Déposez ici vos illustrations de lieux.
+Un dossier par lieu : roche-sainte/, blanchefleure/, noir-marais/, roncedroite/, academie/, val-des-pierres/, havre-gris/, sombre-oree/, vanhille/, plaines-cotieres/, fer-blanc/, trois-soeurs/, prefet/, iles-de-glace/
+Image principale : principale.jpg — lieux notables : <id>.jpg (voir data/iles-saintes.json)
