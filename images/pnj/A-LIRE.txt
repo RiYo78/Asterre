@@ -1,0 +1,1 @@
+Déposez ici les portraits de PNJ : <id>.jpg (ex. arthur-sauvage.jpg, yon.jpg, araignee.jpg — ids dans data/iles-saintes.json)
