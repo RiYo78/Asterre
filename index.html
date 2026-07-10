@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asterre — Carte du Monde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="chargement">Les cartographes déroulent le parchemin…</div>
+
+<header>
+  <div class="titre">
+    <b id="titre-monde">ASTERRE</b>
+    <span id="sous-titre">Carte du monde connu</span>
+  </div>
+  <nav class="onglets" role="tablist">
+    <button class="onglet actif" id="ong-carte" role="tab">🗺 Carte</button>
+    <button class="onglet" id="ong-codex" role="tab">📜 Codex</button>
+  </nav>
+  <div class="droite">
+    <input id="recherche" list="lieux-datalist" placeholder="Chercher un lieu…" autocomplete="off">
+    <datalist id="lieux-datalist"></datalist>
+    <button class="btn" id="btn-voyage">🧭 Voyage</button>
+    <button class="btn sceau" id="btn-mj" title="Mode Maître du Jeu" aria-label="Mode Maître du Jeu">✠</button>
+  </div>
+</header>
+
+<div id="scene">
+  <svg id="carte" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte des Îles Saintes"></svg>
+</div>
+
+<div id="ctl-zoom">
+  <button class="btn" id="z-plus" aria-label="Zoomer">+</button>
+  <button class="btn" id="z-moins" aria-label="Dézoomer">−</button>
+  <button class="btn" id="z-reset" aria-label="Vue archipel" title="Vue archipel">⌂</button>
+</div>
+
+<div id="legende"></div>
+
+<aside id="voyage-box" aria-label="Calcul de voyage"></aside>
+
+<aside id="panneau" aria-label="Fiche de lieu"></aside>
+
+<main id="codex">
+  <nav id="codex-nav"></nav>
+  <div class="contenu" id="codex-contenu"></div>
+</main>
+
+<div id="toast" role="status"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
