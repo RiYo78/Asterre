@@ -11,11 +11,14 @@ const SVGNS = "http://www.w3.org/2000/svg";
 
 const S = {
   monde: null, pays: null, lieux: {}, sousLieux: {}, graphe: {},
-  mj: false, vue: "carte",
+  mj: false, vue: "carte", reveals: new Set(),
   voyage: { actif: false, etapes: [], modifs: new Set(), choix: {} },
   vb: { x: 0, y: 0, w: 2000, h: 1500 }, vb0: null,
   kmParUnite: 0.22
 };
+function estRevele(id) { return S.reveals.has(id); }
+function sauveReveals() { try { localStorage.setItem("asterre-reveals", JSON.stringify([...S.reveals])); } catch (e) {} }
+function chargeReveals() { try { S.reveals = new Set(JSON.parse(localStorage.getItem("asterre-reveals") || "[]")); } catch (e) { S.reveals = new Set(); } }
 
 /* ─────────────── Utilitaires ─────────────── */
 const $ = s => document.querySelector(s);
@@ -96,6 +99,7 @@ async function boot() {
   }
   S.graphe = construireGraphe(S.pays.routes);
   S.mj = sessionStorage.getItem("asterre-mj") === "1";
+  chargeReveals();
   majBoutonMJ();
   const vb = S.monde.vueMonde.viewBox;
   S.vb = { x: vb[0], y: vb[1], w: vb[2], h: vb[3] };
@@ -583,13 +587,21 @@ function imgHTML(src, label) {
 }
 function secretsHTML(liste) {
   if (!liste || !liste.length) return "";
-  const visibles = liste.filter(s => s.revele || S.mj);
+  const visibles = liste.filter(s => s.revele || estRevele(s.id) || S.mj);
   if (!visibles.length) return "";
-  return `<h3>Secrets</h3>` + visibles.map(s => `
-    <div class="secret ${s.revele ? "revele" : ""}">
-      <span class="sceau-secret">${s.revele ? "🔓 Révélé" : "🔒 Secret MJ"}</span>
-      <b class="t">${esc(s.titre)}</b><p>${esc(s.texte)}</p>
-    </div>`).join("");
+  return `<h3>Secrets</h3>` + visibles.map(s => {
+    const ouvert = s.revele || estRevele(s.id);
+    const coche = S.mj && !s.revele ? `<label class="coche-mj"><input type="checkbox" data-rev="${esc(s.id)}" ${ouvert ? "checked" : ""}> Visible pour les joueurs <small>(cet appareil — publiez via le bouton 🔓)</small></label>` : "";
+    return `
+    <div class="secret ${ouvert ? "revele" : ""}">
+      <span class="sceau-secret">${ouvert ? "🔓 Révélé" : "🔒 Secret MJ"}</span>
+      <b class="t">${esc(s.titre)}</b><p>${esc(s.texte)}</p>${coche}
+    </div>`;
+  }).join("");
+}
+function detailsHTML(liste) {
+  if (!liste || !liste.length) return "";
+  return `<ul class="tensions">` + liste.map(d => `<li>${esc(d)}</li>`).join("") + `</ul>`;
 }
 const NOMS_TYPES = { capitale: "Capitale", ville: "Ville", "ville-detruite": "Ville détruite", village: "Village", academie: "Académie", "lieu-dit": "Lieu-dit", danger: "Zone mortelle", "lieu-saint": "Lieu saint", prison: "Prison", palais: "Palais", port: "Port", caserne: "Caserne", auberge: "Auberge", taverne: "Taverne", commerce: "Commerce", illegal: "Activité illégale", mystere: "Mystère" };
 
@@ -648,14 +660,26 @@ function ouvrirSousLieu(sid) {
 }
 function ouvrirPnj(id, retourVers) {
   const pn = pnj(id); if (!pn) return;
+  const cache = pn.mjOnly && !(estRevele("pnj-" + pn.id));
+  if (cache && !S.mj) return;
   const p = $("#panneau");
   let html = `<button class="fermer" aria-label="Fermer">✕</button>` +
     (retourVers ? `<button class="retour" aria-label="Retour">←</button>` : "") +
-    `<span class="badge-type">Personnage</span>
+    `<span class="badge-type ${pn.mjOnly ? "danger" : ""}">${pn.mjOnly ? "Personnage · fiche MJ" : "Personnage"}</span>
     <h2>${esc(pn.nom)}</h2>
     <div class="accroche">${esc(pn.titre || "")}</div>
-    ${imgHTML(pn.portrait || `images/pnj/${pn.id}.jpg`, pn.nom)}
-    <p>${esc(pn.description)}</p>`;
+    ${imgHTML(pn.portrait || `images/pnj/${pn.id}.jpg`, pn.nom)}`;
+  const meta = [["Origine", pn.origine], ["Race", pn.race], ["Statut", pn.statut], ["Naissance", pn.naissance], ["Religion", pn.religion]]
+    .filter(x => x[1]);
+  if (meta.length) html += `<table class="meta">` + meta.map(m => `<tr><td>${m[0]}</td><td>${esc(m[1])}</td></tr>`).join("") + `</table>`;
+  if (S.mj && pn.mjOnly) html += `<div class="secret"><span class="sceau-secret">🔒 Fiche cachée aux joueurs</span>
+    <label class="coche-mj"><input type="checkbox" data-rev="pnj-${esc(pn.id)}" ${estRevele("pnj-" + pn.id) ? "checked" : ""}> Fiche visible pour les joueurs <small>(cet appareil — publiez via 🔓)</small></label></div>`;
+  html += `<p>${esc(pn.description)}</p>`;
+  if (pn.details && pn.details.length) { html += `<h3>À savoir</h3>` + detailsHTML(pn.details); }
+  if (pn.galerie && pn.galerie.length) {
+    html += `<h3>Galerie</h3>` + pn.galerie.map(src => imgHTML(src, pn.nom)).join("");
+  }
+  html += secretsHTML(pn.secrets);
   if (pn.lieux && pn.lieux.length) html += `<h3>Lié aux lieux</h3><div class="chips">` +
     pn.lieux.map(lid => S.lieux[lid] ? `<span class="chip" data-lieu="${lid}">📍 ${esc(S.lieux[lid].nom)}</span>` : "").join("") + `</div>`;
   p.innerHTML = html; p.classList.add("ouvert"); p.scrollTop = 0;
@@ -735,12 +759,22 @@ function renderChapitre(ch) {
         <li><span class="date">${esc(e.date)}</span><br>${esc(e.evenement)}
         ${e.lieux.length ? `<div class="liens-lieux">📍 ${e.lieux.filter(id => S.lieux[id]).map(id => esc(S.lieux[id].nom)).join(" · ")}</div>` : ""}</li>`).join("") + `</ul>`;
   } else if (ch === "personnages") {
-    html = `<h2>Personnages</h2><div class="filet"></div><div class="grille-pnj">` +
-      cx.personnages.map(p => `
-        <div class="carte-pnj" data-pnj="${p.id}" tabindex="0" role="button" aria-label="${esc(p.nom)}">
+    const visiblesPnj = cx.personnages.filter(p => !p.mjOnly || S.mj || estRevele("pnj-" + p.id));
+    const ordre = ["Îles Saintes", "Drémora", "Babel", "Désert Magistral", "Eden"];
+    const groupes = {};
+    for (const p of visiblesPnj) (groupes[p.origine || "Origine inconnue"] = groupes[p.origine || "Origine inconnue"] || []).push(p);
+    const regions = Object.keys(groupes).sort((a, b) => {
+      const ia = ordre.indexOf(a), ib = ordre.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b, "fr");
+    });
+    html = `<h2>Personnages</h2><div class="filet"></div>` + regions.map(r => `
+      <h3 class="titre-region">${esc(r)} <small>· ${groupes[r].length}</small></h3>
+      <div class="grille-pnj">` +
+      groupes[r].map(p => `
+        <div class="carte-pnj ${p.mjOnly ? "mj-only" : ""}" data-pnj="${p.id}" tabindex="0" role="button" aria-label="${esc(p.nom)}">
           <div class="portrait"><img src="${esc(p.portrait)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Portrait à venir'}))"></div>
-          <div class="infos"><b>${esc(p.nom)}</b><small>${esc(p.titre || "")}</small></div>
-        </div>`).join("") + `</div>`;
+          <div class="infos"><b>${p.mjOnly ? "🔒 " : ""}${esc(p.nom)}</b><small>${esc(p.titre || "")}</small></div>
+        </div>`).join("") + `</div>`).join("");
   }
   c.innerHTML = html; c.scrollTop = 0;
   const f = c.querySelector("#filtre-chrono");
@@ -773,7 +807,35 @@ function montrerVue(v) {
 function majBoutonMJ() {
   $("#btn-mj").classList.toggle("actif", S.mj);
   $("#btn-mj").title = S.mj ? "Mode MJ actif — cliquer pour quitter" : "Mode Maître du Jeu";
+  let b = $("#btn-reveals");
+  if (S.mj) {
+    if (!b) {
+      b = document.createElement("button");
+      b.id = "btn-reveals"; b.className = "btn";
+      b.title = "Copier la liste des révélations pour publication";
+      $("#btn-mj").before(b);
+      b.addEventListener("click", copierReveals);
+    }
+    b.textContent = `🔓 ${S.reveals.size}`;
+  } else if (b) b.remove();
 }
+function copierReveals() {
+  const liste = [...S.reveals];
+  const texte = liste.length
+    ? `Révélations Asterre à publier (passer "revele" à true / rendre visibles) :\n${liste.join("\n")}`
+    : "Aucune révélation cochée sur cet appareil.";
+  (navigator.clipboard ? navigator.clipboard.writeText(texte) : Promise.reject()).then(
+    () => toast(liste.length ? "Liste copiée — collez-la à Claude pour publier aux joueurs." : "Aucune révélation cochée."),
+    () => { prompt("Copiez cette liste :", texte); }
+  );
+}
+document.addEventListener("change", e => {
+  const id = e.target && e.target.dataset && e.target.dataset.rev;
+  if (!id) return;
+  e.target.checked ? S.reveals.add(id) : S.reveals.delete(id);
+  sauveReveals(); majBoutonMJ();
+  toast(e.target.checked ? "🔓 Visible sur cet appareil — pensez à publier (bouton 🔓)." : "🔒 De nouveau caché sur cet appareil.");
+});
 function toggleMJ() {
   if (S.mj) { S.mj = false; sessionStorage.removeItem("asterre-mj"); toast("Mode MJ désactivé."); }
   else {
