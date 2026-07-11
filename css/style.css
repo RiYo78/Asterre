@@ -302,3 +302,13 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
   #voyage-box { top: auto; bottom: 0; left: 0; width: 100%; max-height: 55vh; border-radius: 10px 10px 0 0; }
   #legende { display: none; }
 }
+
+/* ── Révélations & fiches MJ ── */
+.coche-mj { display: flex; align-items: baseline; gap: 8px; margin-top: 8px; font-size: 14px;
+  font-family: "EB Garamond", serif; cursor: pointer; color: var(--encre); }
+.coche-mj small { color: var(--encre-3); }
+.titre-region { font-size: 17px; letter-spacing: .08em; color: var(--encre); margin: 26px 0 12px;
+  padding-bottom: 5px; border-bottom: 2px solid var(--or); max-width: 1100px; }
+.titre-region small { color: var(--encre-3); font-family: "EB Garamond", serif; letter-spacing: 0; }
+.carte-pnj.mj-only { outline: 2px dashed var(--sang); outline-offset: -2px; }
+#btn-reveals { font-size: 13px; }
