@@ -1,617 +1,3529 @@
 {
-  "id": "iles-saintes",
-  "nom": "Le Royaume des Îles Saintes",
-  "sousTitre": "Le Berceau de l'Église de la Vie",
-  "anciensNoms": "Anciennement : Îles Colmores · Aussi appelé : Îles de la Vie, Terres Sacrées, Maison de la Vie",
-  "fondation": "7 Septius 200, par Valène",
-  "population": "≈ 240 000 habitants",
-  "regime": "Théocratie en binôme (Couronne + Église)",
-  "capitale": "roche-sainte",
-
-  "iles": [
-    {
-      "id": "limehahu", "nom": "Limehahu", "type": "ile",
-      "description": "L'île principale. Trois régions du sud au nord : le Sud ensoleillé de Roche-Sainte, les Prairies du centre, et les Montagnes du Nord — puis, par-delà, l'Académie.",
-      "population": "≈ 180 000",
-      "forme": [[1470,75],[1600,95],[1665,190],[1690,300],[1645,420],[1700,520],[1680,650],[1735,760],[1700,880],[1770,980],[1755,1120],[1680,1250],[1540,1345],[1400,1330],[1310,1240],[1275,1110],[1230,1000],[1290,900],[1255,780],[1300,690],[1250,590],[1320,480],[1285,360],[1330,230],[1390,130]],
-      "labelPos": [1500,980], "seed": 11,
-      "zones": [
-        { "type": "montagne-neige", "poly": [[1360,150],[1620,120],[1660,300],[1600,400],[1420,410],[1330,300]], "densite": 26 },
-        { "type": "foret-neige", "poly": [[1380,300],[1600,290],[1620,400],[1560,470],[1400,460],[1350,380]], "densite": 22 },
-        { "type": "foret", "poly": [[1470,470],[1650,480],[1660,600],[1540,640],[1450,580]], "densite": 20 },
-        { "type": "prairie", "poly": [[1300,640],[1650,660],[1700,830],[1600,940],[1330,910],[1280,760]], "densite": 14 },
-        { "type": "marais", "poly": [[1290,760],[1400,780],[1410,860],[1310,870]], "densite": 12 },
-        { "type": "colline", "poly": [[1330,980],[1680,1000],[1700,1180],[1560,1290],[1380,1260],[1300,1120]], "densite": 10 }
-      ],
-      "fleuves": [
-        { "nom": "", "points": [[1470,430],[1420,520],[1370,600],[1310,660],[1292,690]] }
-      ]
-    },
-    {
-      "id": "vanhill", "nom": "Vanhill", "type": "ile",
-      "description": "L'Île du Luxe. 80 % de sa surface est la ville de Vanhille ; le reste, des plaines côtières. Souvent grise et pluvieuse, jamais glaciale.",
-      "population": "≈ 35 000",
-      "forme": [[700,395],[790,370],[880,395],[920,460],[895,530],[810,565],[720,545],[672,475]],
-      "labelPos": [795,340], "seed": 23,
-      "zones": [
-        { "type": "ville", "poly": [[705,410],[870,405],[900,470],[850,540],[730,530],[690,470]], "densite": 26 },
-        { "type": "prairie", "poly": [[850,470],[905,470],[890,525],[830,552]], "densite": 5 }
-      ],
-      "fleuves": []
-    },
-    {
-      "id": "anhil", "nom": "Anhil", "type": "ile",
-      "description": "L'Île du Savoir, au climat le plus clément de l'archipel. Fer-Blanc forge à l'ouest, Préfet se reconstruit à l'est.",
-      "population": "≈ 25 000",
-      "forme": [[215,1035],[330,985],[470,970],[600,990],[695,1050],[715,1140],[655,1230],[520,1280],[370,1275],[250,1225],[195,1130]],
-      "labelPos": [450,1320], "seed": 37,
-      "zones": [
-        { "type": "foret", "poly": [[220,1050],[320,1010],[350,1120],[280,1190],[220,1130]], "densite": 16 },
-        { "type": "prairie", "poly": [[360,1020],[640,1020],[680,1140],[560,1240],[380,1230],[350,1110]], "densite": 12 }
-      ],
-      "fleuves": []
-    },
-    {
-      "id": "iles-de-glace", "nom": "Les Îles de Glace", "type": "ile",
-      "description": "Le Nord Mortel. Personne n'y va. Personne n'en revient.",
-      "population": "Inhabitées",
-      "forme": [[150,190],[250,150],[350,175],[395,250],[360,330],[255,365],[160,330],[120,255]],
-      "labelPos": [258,110], "seed": 53,
-      "zones": [
-        { "type": "montagne-neige", "poly": [[160,200],[340,190],[370,290],[260,345],[150,300]], "densite": 18 }
-      ],
-      "fleuves": []
-    },
-    { "id": "ilot-1", "nom": "", "type": "ilot", "forme": [[985,585],[1035,570],[1060,610],[1030,645],[980,630]], "labelPos": null, "seed": 61, "zones": [], "fleuves": [] },
-    { "id": "ilot-2", "nom": "", "type": "ilot", "forme": [[905,905],[955,890],[985,925],[955,960],[905,945]], "labelPos": null, "seed": 67, "zones": [], "fleuves": [] },
-    { "id": "ilot-3", "nom": "", "type": "ilot", "forme": [[540,730],[590,715],[615,755],[585,790],[535,772]], "labelPos": null, "seed": 71, "zones": [], "fleuves": [] },
-    { "id": "ilot-4", "nom": "", "type": "ilot", "forme": [[95,790],[140,778],[162,812],[135,842],[92,828]], "labelPos": null, "seed": 79, "zones": [], "fleuves": [] }
-  ],
-
-  "lieux": [
-    {
-      "id": "roche-sainte", "nom": "Roche-Sainte", "type": "capitale", "ile": "limehahu", "pos": [1490,1290],
-      "population": "≈ 60 000 habitants", "climat": "Beau, ensoleillé, doux (jamais chaud)",
-      "dirigeant": "Famille royale van Emris · Église de la Vie",
-      "accroche": "La plus grande ville des Îles Saintes. On la voit avant de l'atteindre — la Cathédrale se dresse au-dessus de tout, blanche comme un os.",
-      "description": "Roche-Sainte s'étage du nord au sud, de la terre vers la mer. On y entre par la Porte du Nord, sous l'œil de la Garde Royale. Vient la Basse-Ville — populaire mais jamais misérable, car l'Église y veille : dispensaires, ateliers, prix du pain régulés. Puis la Haute-Ville des nobles et des familles fondatrices. Enfin, à l'extrême sud, le Promontoire Sacré : la Cathédrale de la Vie, blanche et elfique, le Palais van Emris qui semble petit à son ombre, et le Grand Port où tout navire accoste sous le regard de la pierre blanche. Tout est propre, ordonné, lumineux — et surveillé.",
-      "histoire": "Fondée avec le royaume en l'an 200 par Valène, sur les ruines des Îles Colmores. Siège de l'Église depuis que Yon a pris le pouvoir en 300. Ironie que peu osent relever : la Cathédrale, d'architecture elfique, fut bâtie après une guerre qui décima les Elfes.",
-      "familles": ["caldrin", "velarys", "wines", "van-emris"],
-      "lieuxNotables": [
-        { "id": "cathedrale", "nom": "La Cathédrale de la Vie", "type": "lieu-saint",
-          "description": "Le bâtiment le plus visible de toutes les Îles Saintes. Pierre blanche, élancée, organique — on la voit depuis la mer bien avant d'accoster. Cœur spirituel du monde connu.",
-          "utilite": "Grand Sanctuaire (culte) · Tribunal de la Lumière (justice) · quartiers de la Garde Sainte · appartements de Yon et Yumi",
-          "pnj": ["yon", "yumi", "cullen"] },
-        { "id": "salle-phylacteres", "nom": "La Salle des Phylactères", "type": "lieu-saint",
-          "description": "Dans la Cathédrale. Point de passage obligatoire de tout mage arrivant aux Îles Saintes : contrôle au port, escorte par les Templiers, extraction d'une essence magique, création du phylactère.",
-          "utilite": "L'Église peut localiser un mage enregistré à tout moment et surveiller ses activités magiques à distance.", "pnj": [] },
-        { "id": "archives", "nom": "Les Archives de la Cathédrale", "type": "lieu-saint",
-          "description": "300 ans de savoir accumulé. Niveau public : histoire officielle, doctrine, généalogies. Niveau restreint : rapports des Cercles (expurgés), dossiers de mages — clergé uniquement. Niveau interdit : Yon seul y entre. Yumi elle-même ignore ce qu'il contient.",
-          "utilite": "Recherches historiques · généalogies · doctrine",
-          "pnj": [],
-          "secrets": [
-            { "id": "sec-archives-cercles", "titre": "Les Vrais Rapports des Cercles", "revele": false,
-              "texte": "Le niveau interdit contient ce qui s'est réellement passé pendant 220 ans : le nombre exact de morts, les expérimentations du Docteur, les oblitérations magiques par la torture (Galwyn Nei), les enfants nés et morts en captivité (Alice, morte de vieillesse au Cercle). Yon savait. Il n'a rien fait." },
-            { "id": "sec-archives-300", "titre": "La Vérité sur l'An 300", "revele": false,
-              "texte": "Valène voulait ouvrir la Porte des DIEUX — pas des Démons. Elle a manipulé Morigane, qui avait éloigné ses proches pour ne faire aucune victime, et qui a pris publiquement toute la responsabilité pour protéger l'image de Valène. Yon a laissé faire — 225 ans de mensonge. Tragédie absolue : en 525, Morigane veut ouvrir la Porte des Dieux sans savoir que c'est exactement ce que Valène voulait faire." }
-          ] },
-        { "id": "geoles-blanches", "nom": "Les Geôles Blanches", "type": "prison",
-          "description": "La prison de l'Église, sous les sous-sols du Promontoire Sacré. Alchimistes du Soufre, mages suspectés, hérétiques. Personne n'en parle. Personne n'en sort.",
-          "utilite": "C'est ici qu'on finit si l'on touche au Soufre alchimique.", "pnj": [] },
-        { "id": "palais-van-emris", "nom": "Le Palais van Emris", "type": "palais",
-          "description": "Juste à côté de la Cathédrale — et bien moins impressionnant qu'elle. Le rapport de taille entre les deux bâtiments dit tout du rapport de pouvoir.",
-          "utilite": "Résidence du roi Stanislas, de la reine Estrid et du prince Eivor · audiences royales",
-          "pnj": ["stanislas", "estrid", "eivor"] },
-        { "id": "grand-port", "nom": "Le Grand Port", "type": "port",
-          "description": "Le plus grand port des Îles Saintes, derrière la Cathédrale. Textile de luxe, marchandises, pèlerins, flotte royale.",
-          "utilite": "Liaisons maritimes vers Vanhill, Anhil — et le Continent · embarquement des voyageurs", "pnj": [] },
-        { "id": "maison-paladins", "nom": "La Maison des Paladins", "type": "caserne",
-          "description": "Haute-Ville. Résidence secondaire de la Garde Sainte, plus discrète que la Cathédrale. Point de rassemblement et d'entraînement.",
-          "utilite": "Rencontrer un Paladin hors du cadre écrasant de la Cathédrale", "pnj": ["arthur-sauvage", "reyna-sauvage"] },
-        { "id": "coupe-argent", "nom": "La Coupe d'Argent", "type": "auberge",
-          "description": "Auberge haut de gamme de la Haute-Ville. 5 pièces d'argent la nuit.",
-          "utilite": "Rumeurs de cour · contacts nobles", "pnj": [] },
-        { "id": "echoppe-aurelion", "nom": "L'Échoppe d'Aurélion", "type": "commerce",
-          "description": "Joaillerie et comptoir bancaire de la famille Aurélion.",
-          "utilite": "Change · prêts · estimation d'objets", "pnj": [] },
-        { "id": "dispensaire-lumiere", "nom": "Le Dispensaire de la Lumière", "type": "commerce",
-          "description": "Basse-Ville. Soins gratuits financés par l'Église.", "utilite": "Se faire soigner sans bourse délier", "pnj": [] },
-        { "id": "filet-perce", "nom": "Au Filet Percé", "type": "taverne",
-          "description": "Taverne portuaire. 1 pièce d'argent la nuit.", "utilite": "Marins · informations · contrebande discrète", "pnj": [] },
-        { "id": "la-rouee", "nom": "La Rouée", "type": "taverne",
-          "description": "Taverne discrète de la Basse-Ville.", "utilite": "Contacts douteux — sans aller jusqu'à Noir Marais", "pnj": [] },
-        { "id": "chez-haim", "nom": "Chez Haïm", "type": "commerce",
-          "description": "Herboristerie de la Basse-Ville.", "utilite": "Composants · remèdes · conseils", "pnj": [] },
-        { "id": "qg-garde-royale", "nom": "QG de la Garde Royale", "type": "caserne",
-          "description": "À la Porte du Nord, l'entrée de la ville.", "utilite": "Défense des frontières · sécurité du palais · maintien de la paix", "pnj": [] }
-      ],
-      "personnages": ["yon", "yumi", "stanislas", "arthur-sauvage", "reyna-sauvage", "cullen", "clyctus-elden"],
-      "secrets": [],
-      "tensions": [
-        "Couronne vs Église : Stanislas « Le Soumis » n'a pas le dernier mot.",
-        "Chaque mage de la ville porte un phylactère.",
-        "Un Elfe Pur chez les Paladins — comment Clyctus Elden a-t-il survécu ?",
-        "Arthur Sauvage fut officiellement déclaré mort, puis nommé Chef Paladin. Pourquoi ?"
-      ],
-      "images": ["images/lieux/roche-sainte/principale.jpg"]
-    },
-    {
-      "id": "blanchefleure", "nom": "BlancheFleure", "type": "village", "ile": "limehahu", "pos": [1292,690],
-      "population": "≈ 500 habitants (400 humains, 100 elfes)", "climat": "Doux en été, froid en hiver",
-      "dirigeant": "Conseil local",
-      "accroche": "Le village des Prairies, ouvert sur la mer de l'ouest.",
-      "description": "Un village agricole et portuaire au cœur des Prairies, sur la côte ouest de Limehahu. Les champs descendent jusqu'au port, où transitent marchandises et voyageurs. La vie y est simple — en apparence : derrière une grange, une arène de paris de combat parfaitement illégale attire des bourses venues de très loin.",
-      "histoire": "Point d'étape historique de la route royale entre Roche-Sainte et Roncedroite.",
-      "familles": [],
-      "lieuxNotables": [
-        { "id": "arene-paris", "nom": "Arène de Paris de Combat", "type": "illegal",
-          "description": "Illégale. Son propriétaire, Charlie, est un parieur ultra-riche venu du Désert Magistral.",
-          "utilite": "Parier · combattre · se faire remarquer par les mauvaises personnes", "pnj": ["charlie"] },
-        { "id": "taverne-travail", "nom": "Taverne de Travail", "type": "taverne",
-          "description": "Tenue par Geralt, un ancien soldat.", "utilite": "Boire · manger · dormir · rumeurs des Prairies", "pnj": ["geralt"] },
-        { "id": "port-blanchefleure", "nom": "Port de BlancheFleure", "type": "port",
-          "description": "Commerce et transport sur la côte ouest.", "utilite": "Bateau côtier vers Roche-Sainte · pêche", "pnj": [] },
-        { "id": "aiguilles-or", "nom": "Les Aiguilles d'Or", "type": "commerce",
-          "description": "Couturier tenu par Elara, couturière elfe.", "utilite": "Vêtements · retouches · tissus", "pnj": ["elara"] },
-        { "id": "flore-prairies", "nom": "La Flore des Prairies", "type": "commerce",
-          "description": "Herboristerie, autrefois tenue par Lazaro, maître herboriste.", "utilite": "Herbes · remèdes", "pnj": ["lazaro"] },
-        { "id": "maison-garde-bf", "nom": "Maison de la Garde Royale", "type": "caserne",
-          "description": "Poste local commandé par le capitaine Bogdan.", "utilite": "Signaler un crime — ou l'éviter", "pnj": ["bogdan"] }
-      ],
-      "personnages": ["charlie", "geralt", "elara", "bogdan"],
-      "secrets": [], "tensions": [],
-      "images": ["images/lieux/blanchefleure/principale.jpg"]
-    },
-    {
-      "id": "noir-marais", "nom": "Noir Marais", "type": "village", "ile": "limehahu", "pos": [1345,805],
-      "population": "≈ 2 000 habitants", "climat": "Humide, brumeux",
-      "dirigeant": "Officiellement personne. Officieusement : l'Araignée",
-      "accroche": "Le seul endroit des Îles Saintes où la Lumière ne va pas. L'Église préfère ne pas savoir ce qui s'y passe.",
-      "description": "Un village bâti sur une terre qui ne veut pas de lui, au sud de BlancheFleure, en retrait de la côte ouest. Les maisons s'enfoncent lentement. L'air sent la vase et la fumée. Officiellement, l'Église aide — un dispensaire, quelques Mains Blanches. En réalité, Noir Marais est le trou où l'on jette ce qui dérange : un royaume parfait a besoin d'un endroit pour cacher ce qui ne l'est pas. Les Templiers y passent rarement. Les Paladins, jamais.",
-      "histoire": "Le village le plus pauvre des Îles Saintes, et le centre de sa pègre. Deux factions s'y détestent en travaillant pour le même maître : les Fossoyeurs (contrebande — ils enterrent les preuves, parfois les gens) et la Corde (prêts, dettes, chantage — on ne la rembourse pas en pièces, on la rembourse en services).",
-      "familles": [],
-      "lieuxNotables": [
-        { "id": "le-recel", "nom": "Le Recel", "type": "illegal",
-          "description": "Boutique sans enseigne. On y achète et on y vend tout : objets magiques illégaux, composants rares, documents falsifiés — contre des objets volés, des informations, du silence.",
-          "utilite": "Prix : le double du marché. Questions posées : aucune.", "pnj": [] },
-        { "id": "forge-noire", "nom": "La Forge Noire", "type": "illegal",
-          "description": "Armes que la loi interdit : lames empoisonnées, armes de jet dissimulables, outils de crochetage. Le forgeron est muet. Personne ne sait s'il l'est de naissance.",
-          "utilite": "S'équiper hors-la-loi", "pnj": [] },
-        { "id": "le-bourbier", "nom": "Le Bourbier", "type": "taverne",
-          "description": "Taverne. Le sol est en terre battue. La bière est mauvaise.",
-          "utilite": "Recruter des hommes de main · trouver un tueur · entendre des rumeurs introuvables ailleurs · être vu par les mauvaises personnes", "pnj": [] },
-        { "id": "dispensaire-nm", "nom": "Le Dispensaire", "type": "commerce",
-          "description": "Tenu par deux Mains Blanches qui n'ont pas demandé à être là. L'Église peut dire qu'elle aide Noir Marais. Techniquement, c'est vrai.",
-          "utilite": "Soins de fortune", "pnj": [] }
-      ],
-      "personnages": ["araignee"],
-      "secrets": [
-        { "id": "sec-nm-geoles", "titre": "L'Araignée et les Geôles Blanches", "revele": false, "texte": "L'Araignée connaît l'existence des Geôles Blanches — et sait qui y est enfermé." },
-        { "id": "sec-nm-clerge", "titre": "Dettes du clergé", "revele": false, "texte": "Certains membres du clergé ont des dettes envers la Corde." },
-        { "id": "sec-nm-soufre", "titre": "Le Soufre est déjà entré", "revele": false, "texte": "Les Fossoyeurs ont déjà fait entrer du Soufre alchimique aux Îles Saintes." },
-        { "id": "sec-nm-araignee", "titre": "Qui est l'Araignée", "revele": false, "texte": "L'Araignée est un orphelin de Noir Marais — comme tous ceux qui n'ont pas de nom ici. Les orphelins du village naissent sans nom ; l'Araignée a choisi le sien." }
-      ],
-      "tensions": [
-        "Les Templiers surveillent discrètement les entrées et sorties.",
-        "Un mage repéré ici verra son phylactère signalé.",
-        "L'Araignée n'oublie jamais une dette. La Corde non plus."
-      ],
-      "images": ["images/lieux/noir-marais/principale.jpg"]
-    },
-    {
-      "id": "roncedroite", "nom": "Roncedroite", "type": "ville", "ile": "limehahu", "pos": [1520,432],
-      "population": "≈ 15 000 habitants", "climat": "Frais et tempéré · hivers rigoureux",
-      "dirigeant": "Baron Berthold",
-      "accroche": "Le Bastion du Nord. QG des Paladins, cœur battant de la forge.",
-      "description": "Dans les Montagnes du Nord, la ville s'étage en Haute-ville et Basse-ville sous le château du Baron Berthold, dressé sur sa colline. L'économie vit du bois, des minerais, de l'artisanat — et de la Grande Forge des Îles Saintes, tenue par Allen Sauvage. Le QG des Paladins du Nord, ancien commandement d'Arthur Sauvage, peut accueillir cent paladins.",
-      "histoire": "En 521, la ville fut attaquée lors de l'offensive du Magistère Kanius contre Arathak.",
-      "familles": ["sauvage"],
-      "lieuxNotables": [
-        { "id": "chateau-roncedroite", "nom": "Le Château de Roncedroite", "type": "palais",
-          "description": "Forteresse du Baron Berthold, sur une colline dominant la ville.", "utilite": "Audiences du Baron", "pnj": ["berthold"] },
-        { "id": "grande-forge", "nom": "La Grande Forge des Îles Saintes", "type": "commerce",
-          "description": "Tenue par Allen Sauvage, maître forgeron de la famille Sauvage.", "utilite": "Armes et armures d'exception", "pnj": ["allen-sauvage"] },
-        { "id": "qg-paladins", "nom": "QG des Paladins du Nord", "type": "caserne",
-          "description": "Ancien commandement d'Arthur Sauvage. Capacité : 100 paladins.", "utilite": "Contact avec la Garde Sainte dans le Nord", "pnj": [] },
-        { "id": "haute-ville-rd", "nom": "Commerces de la Haute-ville", "type": "commerce",
-          "description": "Maréchal-ferrant (Filim, nain) · dispensaire (Darinna) · échoppe d'alchimie (Dwalore, nain) · temple de Limihahu (Tusert Fibion) · boulangerie (Firer Anast, elfe) · étable (Budoc Bolcolline) · auberges : Au bol du voyageur, Au jeu de dames, Au chêne de la harpie, Au repaire du serpent chanceux.",
-          "utilite": "Tout l'équipement du voyageur avant la montagne", "pnj": [] },
-        { "id": "basse-ville-rd", "nom": "Commerces de la Basse-ville", "type": "commerce",
-          "description": "Étable (Prënëi Losïa « Prelos », demi-elfe) · auberge Au relais du phénix niais · dispensaire (Meal Lortan) · épicerie (Erus) · boulangerie (Hivella).",
-          "utilite": "Vivres et repos à moindre prix", "pnj": [] }
-      ],
-      "personnages": ["berthold", "allen-sauvage"],
-      "secrets": [], "tensions": [],
-      "images": ["images/lieux/roncedroite/principale.jpg"]
-    },
-    {
-      "id": "academie", "nom": "L'Académie des Îles Saintes", "type": "academie", "ile": "limehahu", "pos": [1520,140],
-      "population": "Mages libérés des Cercles et élèves nés libres", "climat": "Rude",
-      "dirigeant": "Arathak",
-      "accroche": "Sept jours de cheval depuis Roche-Sainte. Une montagne à franchir. C'est exactement le but.",
-      "description": "Par-delà les Montagnes du Nord, un lieu neuf, encore en construction, bâti par des gens qui ont passé 220 ans en cage. Il y a de l'espoir ici — et beaucoup de cicatrices. L'isolement est volontaire : loin des tensions post-Cercles, loin de l'Église (les Templiers ne peuvent débarquer sans être vus des jours à l'avance), loin de la Couronne. On ne vient pas ici par confort. On vient parce qu'on le veut.",
-      "histoire": "Fondée en 520 par Arathak après la chute du Cercle des Îles Saintes (1 Usos 520), avec l'accord de Yon, sur conseil de Yumi. La construction fut ralentie par l'attaque du Magistère Kanius (521) : Gojo, mage de feu, frappa l'Académie. En 525, la Guerre des Magistères s'achève et le camp d'Arathak fête la victoire.",
-      "familles": [],
-      "lieuxNotables": [
-        { "id": "dome-entrainement", "nom": "Le Dôme d'Entraînement — Cycle du Temps", "type": "lieu-saint",
-          "description": "Créé par Narcise, qui n'enseigne pas mais a offert ce dôme. Un jour à l'extérieur = trois jours à l'intérieur ; l'état physique est restitué à chaque cycle. C'est ici que Cullen et Adelia se sont rencontrés — un mois en temps réel.",
-          "utilite": "Entraînement intensif sans fatigue accumulée", "pnj": ["narcise"] },
-        { "id": "batiments-academie", "nom": "Bâtiments de l'Académie", "type": "commerce",
-          "description": "La Grande Salle · les dortoirs · la bibliothèque · les terrains d'exercice · le bureau d'Arathak. (En construction — à développer.)",
-          "utilite": "Vie quotidienne des élèves", "pnj": [] }
-      ],
-      "personnages": ["arathak", "galwyn-nei", "zed", "narcise"],
-      "secrets": [
-        { "id": "sec-aca-defaite", "titre": "Arathak a perdu", "revele": false, "texte": "Arathak a perdu la Guerre des Magistères contre Kanius — de justesse. Morigane a réécrit l'histoire pour le présenter en vainqueur. Arathak le sait et l'accepte." },
-        { "id": "sec-aca-divina", "titre": "Divina", "revele": false, "texte": "Arathak ignore que sa mère Divina est le Péché de la Luxure." },
-        { "id": "sec-aca-galwyn", "titre": "Le silence de Galwyn", "revele": false, "texte": "Galwyn garde le silence sur ce qu'il a fait en l'an 300." }
-      ],
-      "tensions": [
-        "Galwyn et Miwa : le père et la fille. 220 ans de rancœur. Il refuse de la regarder.",
-        "Certains élèves sont des survivants des Cercles. D'autres sont nés libres.",
-        "L'accord avec l'Église tient. Pour l'instant.",
-        "7 jours de route : si quelque chose arrive à Roche-Sainte…",
-        "Postes vacants : Eau, Vent, Alchimie, Herboristerie."
-      ],
-      "images": ["images/lieux/academie/principale.jpg"]
-    },
-    {
-      "id": "val-des-pierres", "nom": "Val-des-Pierres", "type": "village", "ile": "limehahu", "pos": [1408,362],
-      "population": "≈ 800 habitants", "climat": "Très froid",
-      "dirigeant": "—",
-      "accroche": "Toute la pierre blanche des Îles Saintes vient d'ici.",
-      "description": "Carrière de pierre blanche dans les Montagnes du Nord. La Cathédrale de la Vie, le Palais van Emris, les Geôles Blanches — tout est sorti de ces parois. Les carriers meurent jeunes : poussière dans les poumons, effondrements. L'Église envoie des Mains Blanches. Elles ne suffisent pas.",
-      "histoire": "",
-      "familles": [], "lieuxNotables": [], "personnages": [],
-      "secrets": [],
-      "tensions": ["Pourquoi le taux de mortalité a-t-il triplé depuis deux ans ?"],
-      "images": ["images/lieux/val-des-pierres/principale.jpg"]
-    },
-    {
-      "id": "havre-gris", "nom": "Havre-Gris", "type": "village", "ile": "limehahu", "pos": [1712,758],
-      "population": "≈ 400 habitants", "climat": "Venteux, brumeux",
-      "dirigeant": "—",
-      "accroche": "Un village de pêcheurs comme les autres. Sauf pour une chose.",
-      "description": "Sur la côte est de Limehahu, face au large — et, bien au-delà, au Continent. Des barques, des filets, du brouillard. Au bout de la jetée se dresse le phare abandonné : il ne fonctionne plus depuis trente ans, et les pêcheurs refusent d'en parler. Quand on insiste, ils changent de sujet. Quand on insiste encore, on n'est plus le bienvenu.",
-      "histoire": "",
-      "familles": [],
-      "lieuxNotables": [
-        { "id": "phare-abandonne", "nom": "Le Phare Abandonné", "type": "mystere",
-          "description": "Éteint depuis trente ans, au bout de la jetée.", "utilite": "Que s'est-il passé dans ce phare ?", "pnj": [] }
-      ],
-      "personnages": [], "secrets": [],
-      "tensions": ["Que s'est-il passé dans ce phare ?"],
-      "images": ["images/lieux/havre-gris/principale.jpg"]
-    },
-    {
-      "id": "sombre-oree", "nom": "Sombre-Orée", "type": "village", "ile": "limehahu", "pos": [1608,332],
-      "population": "≈ 600 habitants", "climat": "Froid, humide",
-      "dirigeant": "—",
-      "accroche": "La forêt est vieille. Plus vieille que les Îles Saintes. Plus vieille que la Conjonction, disent certains.",
-      "description": "Village de bûcherons en lisière de la forêt du Nord. Des enfants disparaissent — un tous les deux ou trois ans, jamais retrouvés. Les bûcherons ne s'aventurent plus au-delà de la Ligne Grise. L'Église a envoyé des Templiers deux fois. Ils n'ont rien trouvé.",
-      "histoire": "",
-      "familles": [],
-      "lieuxNotables": [
-        { "id": "ligne-grise", "nom": "La Ligne Grise", "type": "mystere",
-          "description": "La limite que les bûcherons ne franchissent plus.", "utilite": "Qu'y a-t-il au-delà ?", "pnj": [] }
-      ],
-      "personnages": [], "secrets": [],
-      "tensions": ["Qu'y a-t-il au-delà de la Ligne Grise ?"],
-      "images": ["images/lieux/sombre-oree/principale.jpg"]
-    },
-    {
-      "id": "vanhille", "nom": "Vanhille", "type": "ville", "ile": "vanhill", "pos": [790,468],
-      "population": "≈ 28 000 habitants", "climat": "Variable, souvent gris et pluvieux",
-      "dirigeant": "Famille Merlyn",
-      "accroche": "La Cité du Luxe. Ce que le monde désire finit par passer ici.",
-      "description": "La ville couvre 80 % de l'île. Environ 1 107 maisons et bâtiments, 44 commerces, une caserne de Paladins, et le Marché Géant où règne la Guilde Marchande — la plus grande du monde connu, capable de trouver n'importe quoi, y compris ce qui est illégal aux Îles Saintes. Société ouverte : les races s'y concentrent en communautés distinctes. Richesse estimée : 5 000 pièces d'or.",
-      "histoire": "En 281, la Sorcière Rouge Amaranthe attaqua Vanhill et brûla ports et habitants — la Folie qui précéda la Chute des Dragons.",
-      "familles": ["merlyn", "aurelion"],
-      "lieuxNotables": [
-        { "id": "marche-geant", "nom": "Le Marché Géant", "type": "commerce",
-          "description": "Dirigé par la Guilde Marchande de Vahill (fondée en 217). Intermédiaire entre fournisseurs, fabricants et marchands, avec des repaires à travers le monde.",
-          "utilite": "Peut trouver n'importe quoi — y compris ce qui est illégal aux Îles Saintes", "pnj": [] },
-        { "id": "au-tresor", "nom": "Auberge Au Trésor", "type": "auberge",
-          "description": "Tenue par Senia et Roland. Clientèle de riches marchands. Magicien-illusionniste, barde, petit commerce.",
-          "utilite": "Contacts marchands fortunés", "pnj": [] },
-        { "id": "ecrevisse-azur", "nom": "Auberge À l'écrevisse d'azur", "type": "auberge",
-          "description": "Tenue par Sololla Touphin. Clientèle d'aventuriers. 6 chambres, barde, écuyer, soigneur.",
-          "utilite": "Rencontrer des aventuriers · se faire soigner", "pnj": [] },
-        { "id": "la-dame", "nom": "Auberge La Dame", "type": "auberge",
-          "description": "Tenue par Milik Argen. Prestigieuse : coffre-fort magique, palefrenier, barbier.",
-          "utilite": "Dormir en sécurité absolue", "pnj": [] },
-        { "id": "commerces-vanhille", "nom": "Commerces notables", "type": "commerce",
-          "description": "Maréchal-ferrant (Thetine Bepas) · Temple de Limihahu · menuiserie (Vrugor) · librairie non magique (Grourk) · boulangerie (Daucissa Ortan) · étable (Daluran) · épicerie (Niel).",
-          "utilite": "44 commerces au total", "pnj": [] },
-        { "id": "caserne-paladins-v", "nom": "Caserne de Paladins", "type": "caserne",
-          "description": "La défense de l'île.", "utilite": "Présence de la Garde Sainte", "pnj": [] }
-      ],
-      "personnages": [],
-      "secrets": [
-        { "id": "sec-vanhill-lune", "titre": "Vanhill et la Lune de Sang", "revele": false,
-          "texte": "L'île de Vanhill est la seule partie des Îles Saintes qui ne sera pas touchée par la Lune de Sang que prépare Morigane. Pourquoi ? Est-ce lié à Achabel ?" }
-      ],
-      "tensions": [],
-      "images": ["images/lieux/vanhille/principale.jpg"]
-    },
-    {
-      "id": "plaines-cotieres", "nom": "Les Plaines Côtières", "type": "lieu-dit", "ile": "vanhill", "pos": [868,512],
-      "population": "≈ 7 000 habitants", "climat": "Variable, souvent gris et pluvieux",
-      "dirigeant": "—",
-      "accroche": "La seule partie de Vanhill qui ne soit pas la ville. Des fermes, des hameaux, du calme.",
-      "description": "20 % de l'île. Achabel, Manem et leur fille Sam y vivent, loin de tout.",
-      "histoire": "",
-      "familles": [], "lieuxNotables": [],
-      "personnages": ["achabel", "manem", "sam"],
-      "secrets": [
-        { "id": "sec-achabel", "titre": "Le Prophète des Ténèbres", "revele": false,
-          "texte": "Achabel est le Prophète des Ténèbres. Il l'ignore. Il vit paisiblement, loin de tout." }
-      ],
-      "tensions": [],
-      "images": ["images/lieux/plaines-cotieres/principale.jpg"]
-    },
-    {
-      "id": "fer-blanc", "nom": "Fer-Blanc", "type": "ville", "ile": "anhil", "pos": [305,1118],
-      "population": "À développer", "climat": "Beau et ensoleillé",
-      "dirigeant": "Famille Sauvage",
-      "accroche": "L'acier des Îles Saintes sort d'ici. Les paladins aussi.",
-      "description": "À l'ouest d'Anhil, la ville est bâtie autour de ses forges. Le son du marteau ne s'arrête jamais complètement — même la nuit, une enclume résonne quelque part. Son nom vient de la pierre blanche locale et de l'acier qu'on y travaille : les habitants disent que l'acier de Fer-Blanc « garde la lumière ».",
-      "histoire": "La famille Sauvage donne ses fils à l'épée et ses filles à la forge. Ou l'inverse. Peu importe — ils servent. La reconstruction de Préfet passe en partie par l'acier de Fer-Blanc.",
-      "familles": ["sauvage"],
-      "lieuxNotables": [
-        { "id": "manoir-sauvage", "nom": "Le Manoir Sauvage", "type": "palais",
-          "description": "Demeure principale de la famille.", "utilite": "Rencontrer la famille Sauvage", "pnj": [] },
-        { "id": "forges-fer-blanc", "nom": "Les Forges de Fer-Blanc", "type": "commerce",
-          "description": "Le cœur économique de la ville.", "utilite": "Faire forger ou réparer une arme de qualité", "pnj": [] },
-        { "id": "terrains-armes", "nom": "Les Terrains d'Armes", "type": "caserne",
-          "description": "Formation des futurs paladins.", "utilite": "Recruter des combattants", "pnj": [] }
-      ],
-      "personnages": ["arthur-sauvage", "reyna-sauvage", "allen-sauvage"],
-      "secrets": [], "tensions": [],
-      "images": ["images/lieux/fer-blanc/principale.jpg"]
-    },
-    {
-      "id": "trois-soeurs", "nom": "Les Trois Sœurs", "type": "village", "ile": "anhil", "pos": [455,1098],
-      "population": "≈ 1 200 au total", "climat": "Beau et ensoleillé",
-      "dirigeant": "—",
-      "accroche": "Trois hameaux, si proches qu'on les compte comme un.",
-      "description": "Trois hameaux agricoles à mi-chemin entre Fer-Blanc et Préfet, qu'ils nourrissent tous deux. Depuis la destruction de Préfet (524), les Trois Sœurs croulent sous la demande : les réfugiés affluent, les récoltes ne suivent pas.",
-      "histoire": "",
-      "familles": [], "lieuxNotables": [], "personnages": [],
-      "secrets": [],
-      "tensions": ["La tension monte entre les habitants et les réfugiés de Préfet."],
-      "images": ["images/lieux/trois-soeurs/principale.jpg"]
-    },
-    {
-      "id": "prefet", "nom": "Préfet", "type": "ville-detruite", "ile": "anhil", "pos": [612,1080],
-      "population": "≈ 8 000 habitants (20 000 avant 524)", "climat": "Beau et ensoleillé",
-      "dirigeant": "Famille Goldland",
-      "accroche": "La Cité du Savoir — détruite en 524, en reconstruction depuis 525.",
-      "description": "À l'est d'Anhil. Avant sa destruction, Préfet abritait la Grande Académie — la plus prestigieuse du monde connu —, l'Hôpital à l'architecture céleste (dômes blancs, clôture de pierre blanche, porte en or massif), le Manoir Goldland protégé par un dôme de lumière créé par Aerith Goldland, l'Orphelinat, l'auberge À la louche étincelante (maison de plaisir tenue par Shaminonne Grecin et Bardund) et la boutique textile elfe de Valindra. Aujourd'hui, les chantiers remplacent les ruines.",
-      "histoire": "En 524, lors de l'affrontement entre Mei, Sky, Ark et la paladine Reyna Sauvage contre Pride, démon de l'Orgueil — qui tentait de prendre le contrôle de Gojo, mage de feu allié du Magistère Kanius —, Pride, repoussé, fit exploser la ville entière. Tout fut détruit, y compris l'Académie de Préfet. La reconstruction a commencé en 525.",
-      "familles": ["goldland"],
-      "lieuxNotables": [
-        { "id": "academie-prefet", "nom": "La Grande Académie de Préfet", "type": "lieu-saint",
-          "description": "Fondée par la famille Goldland. Détruite en 524 — sera reconstruite.", "utilite": "Le savoir du monde connu (bientôt de nouveau)", "pnj": [] },
-        { "id": "hopital-prefet", "nom": "L'Hôpital de Préfet", "type": "commerce",
-          "description": "Architecture céleste : dômes blancs, clôture de pierre blanche, porte en or massif.", "utilite": "Soins", "pnj": [] },
-        { "id": "manoir-goldland", "nom": "Le Manoir Goldland", "type": "palais",
-          "description": "Protégé par un dôme de lumière créé par Aerith Goldland. Chambres 214/215 (Adelia), 415 (préférée de Mei), 417 (Ark) · cuisine face à la mer au 4e étage.",
-          "utilite": "Résidence de la famille Goldland", "pnj": ["aerith-goldland"] },
-        { "id": "orphelinat-prefet", "nom": "L'Orphelinat de Préfet", "type": "commerce",
-          "description": "", "utilite": "", "pnj": [] },
-        { "id": "louche-etincelante", "nom": "À la louche étincelante", "type": "auberge",
-          "description": "Maison de plaisir tenue par Shaminonne Grecin et Bardund.", "utilite": "Plaisirs et rumeurs", "pnj": [] }
-      ],
-      "personnages": ["aerith-goldland"],
-      "secrets": [], "tensions": ["Les réfugiés affluent vers les Trois Sœurs et Fer-Blanc."],
-      "images": ["images/lieux/prefet/principale.jpg"]
-    },
-    {
-      "id": "iles-glace-lieu", "nom": "Les Îles de Glace", "type": "danger", "ile": "iles-de-glace", "pos": [258,255],
-      "population": "Inhabitées", "climat": "Létal",
-      "dirigeant": "—",
-      "accroche": "Personne n'y va. Personne n'en revient.",
-      "description": "À 300 km au nord de Limehahu. Un environnement hostile, mortel même pour des mages très puissants. On dit qu'au-delà se cachent des terres cachées de Glace. À ne pas confondre avec les Îles de Glace et de Lave, très loin d'ici, où vivent les derniers Elfes Purs.",
-      "histoire": "",
-      "familles": [], "lieuxNotables": [], "personnages": [],
-      "secrets": [],
-      "tensions": ["Qu'est-ce qui tue les mages là-bas ?"],
-      "images": ["images/lieux/iles-de-glace/principale.jpg"]
-    }
-  ],
-
-  "routes": [
-    { "de": "roche-sainte", "a": "noir-marais", "km": 70, "type": "route", "points": [[1490,1290],[1420,1150],[1380,1000],[1350,880],[1345,805]] },
-    { "de": "roche-sainte", "a": "blanchefleure", "km": 90, "type": "route", "points": [[1490,1290],[1430,1140],[1370,990],[1320,850],[1295,760],[1292,690]] },
-    { "de": "noir-marais", "a": "blanchefleure", "km": 40, "type": "piste", "terrain": "difficile", "points": [[1345,805],[1315,755],[1292,690]] },
-    { "de": "blanchefleure", "a": "roncedroite", "km": 130, "type": "route", "points": [[1292,690],[1340,610],[1400,540],[1470,480],[1520,432]] },
-    { "de": "roncedroite", "a": "academie", "km": 40, "type": "montagne", "points": [[1520,432],[1500,340],[1490,240],[1520,140]] },
-    { "de": "roncedroite", "a": "val-des-pierres", "km": 25, "type": "montagne", "points": [[1520,432],[1460,395],[1408,362]] },
-    { "de": "roncedroite", "a": "sombre-oree", "km": 30, "type": "piste", "points": [[1520,432],[1565,385],[1608,332]] },
-    { "de": "blanchefleure", "a": "havre-gris", "km": 60, "type": "route", "points": [[1292,690],[1420,700],[1560,720],[1712,758]] },
-    { "de": "roche-sainte", "a": "blanchefleure", "km": 110, "type": "cotier", "points": [[1490,1290],[1330,1300],[1230,1180],[1200,1000],[1210,830],[1250,720],[1292,690]] },
-    { "de": "roche-sainte", "a": "havre-gris", "km": 120, "type": "cotier", "points": [[1490,1290],[1650,1300],[1800,1150],[1810,950],[1770,830],[1712,758]] },
-    { "de": "roche-sainte", "a": "vanhille", "km": 200, "type": "maritime", "points": [[1490,1290],[1250,1150],[1050,950],[930,720],[860,580],[790,468]] },
-    { "de": "roche-sainte", "a": "prefet", "km": 280, "type": "maritime", "points": [[1490,1290],[1280,1330],[1050,1300],[850,1210],[700,1130],[612,1080]] },
-    { "de": "vanhille", "a": "fer-blanc", "km": 150, "type": "maritime", "points": [[790,468],[640,600],[480,780],[360,950],[305,1118]] },
-    { "de": "roche-sainte", "a": "iles-glace-lieu", "km": 300, "type": "maritime", "danger": "mortel", "points": [[1490,1290],[1180,1050],[900,780],[640,540],[420,380],[258,255]] },
-    { "de": "vanhille", "a": "plaines-cotieres", "km": 15, "type": "route", "points": [[790,468],[830,492],[868,512]] },
-    { "de": "fer-blanc", "a": "trois-soeurs", "km": 30, "type": "route", "points": [[305,1118],[380,1105],[455,1098]] },
-    { "de": "trois-soeurs", "a": "prefet", "km": 30, "type": "route", "points": [[455,1098],[535,1088],[612,1080]] }
-  ],
-
-  "transports": [
-    { "id": "pied", "nom": "À pied", "icone": "🚶", "kmJour": 25, "autorise": ["route", "piste", "montagne"], "note": "Terrain difficile −30 %" },
-    { "id": "cheval", "nom": "Cheval", "icone": "🐎", "kmJour": 50, "autorise": ["route", "piste", "montagne"], "note": "Montagne −40 % · repos nécessaire" },
-    { "id": "caleche", "nom": "Calèche", "icone": "🛞", "kmJour": 40, "autorise": ["route"], "note": "Routes uniquement · impossible en montagne" },
-    { "id": "cotier", "nom": "Bateau côtier", "icone": "⛵", "kmJour": 80, "autorise": ["cotier"], "note": "Longe les côtes" },
-    { "id": "navire", "nom": "Navire", "icone": "🚢", "kmJour": 120, "autorise": ["maritime", "cotier"], "note": "Traversée entre îles" },
-    { "id": "vol", "nom": "Vol d'oiseau", "icone": "🦅", "kmJour": 200, "autorise": ["route", "piste", "montagne", "cotier", "maritime"], "note": "Messagers · familiers · Animagus" }
-  ],
-
-  "modificateurs": [
-    { "id": "meteo", "nom": "Mauvaise météo", "effet": -0.25 },
-    { "id": "tempete", "nom": "Tempête", "effet": 0, "bloqueMer": true, "note": "Navigation impossible" },
-    { "id": "hiver", "nom": "Hiver rigoureux (nord)", "effet": -0.20 },
-    { "id": "groupe-lent", "nom": "Groupe lent (blessés, chariots)", "effet": -0.30 },
-    { "id": "groupe-leger", "nom": "Groupe léger (monté, sans bagage)", "effet": 0.10 },
-    { "id": "marche-forcee", "nom": "Marche forcée (nuit)", "effet": 0.25, "note": "Mais fatigue" }
-  ],
-
-  "familles": [
-    { "id": "van-emris", "nom": "van Emris", "pilier": "La Couronne", "devise": "Nommés, non pris", "couleurs": "Bleu roi · Or",
-      "symbole": "Une couronne d'or posée sur une épée brisée", "demeure": "Roche-Sainte", "blason": "images/blasons/van-emris.png",
-      "description": "Une royauté qui n'a pas conquis son trône — elle l'a reçu. Le premier roi Alistair fut nommé par l'Église. L'épée brisée est un aveu, pas une honte. Alistair symbolisait l'alliance humains-elfes et portait le sang de la famille Asta, anciens rois des Îles Colmores. Le roi actuel, Stanislas « Le Soumis », est si influencé par Yon que certains considèrent l'Archange comme le vrai souverain.",
-      "membres": "Alistair (100-450, 1er roi) → Stanislas (430-…, roi actuel) & Estrid · leur fils Eivor · Milthae (432-…), sœur du roi, veuve de Klaus (456-479, tué par le roi Stanislas) · Angelina, Aleric, Theirin, Eyma Klaus" },
-    { "id": "goldland", "nom": "Goldland", "pilier": "Le Savoir", "devise": "Le savoir éclaire, la foi guide", "couleurs": "Or · Blanc",
-      "symbole": "Un livre ouvert d'où jaillit un rayon de lumière", "demeure": "Préfet (Anhil)", "blason": "images/blasons/goldland.png",
-      "description": "Fondateurs de la Grande Académie de Préfet, la plus prestigieuse du monde connu — détruite en 524, en reconstruction.", "membres": "Aerith Goldland (créatrice du dôme de lumière du Manoir)" },
-    { "id": "merlyn", "nom": "Merlyn", "pilier": "Les Marchands", "devise": "Ce que le monde désire", "couleurs": "Pourpre · Or",
-      "symbole": "Une navette de tisserand croisée avec une plume d'écriture", "demeure": "Vanhille (Vanhill)", "blason": "images/blasons/merlyn.png",
-      "description": "Contrôlent le textile de luxe — renommée mondiale — et la Guilde Marchande de Vanhille.", "membres": "" },
-    { "id": "sauvage", "nom": "Sauvage", "pilier": "L'Armée et la Forge", "devise": "L'acier garde la lumière", "couleurs": "Acier · Rouge",
-      "symbole": "Une enclume massive surmontée d'une épée dressée", "demeure": "Fer-Blanc (Anhil)", "blason": "images/blasons/sauvage.png",
-      "description": "Ils fournissent paladins et forgerons. Lignée de paladins.", "membres": "Arthur (Chef Paladin) · Reyna (Paladine) · Allen (maître forgeron, Grande Forge de Roncedroite)" },
-    { "id": "aurelion", "nom": "Aurélion", "pilier": "La Banque", "devise": "Tout a son poids", "couleurs": "Or · Noir",
-      "symbole": "Une balance dont les deux plateaux sont des gemmes taillées", "demeure": "Vanhille (Vanhill)", "blason": "images/blasons/aurelion.png",
-      "description": "Banque et joaillerie. Collectent les taxes de l'Union Blanche.", "membres": "" },
-    { "id": "caldrin", "nom": "Caldrin", "pilier": "Le Peuple", "devise": "Nous portons le royaume", "couleurs": "Vert · Brun",
-      "symbole": "Une gerbe de blé liée par une main ouverte", "demeure": "Roche-Sainte", "blason": "images/blasons/caldrin.png",
-      "description": "Représentation populaire. La famille la moins fastueuse des sept.", "membres": "" },
-    { "id": "velarys", "nom": "Velarys", "pilier": "L'Artisanat", "devise": "De rien, tout", "couleurs": "Bleu clair · Argent",
-      "symbole": "Un fil traversant une aiguille, formant un nœud infini", "demeure": "Roche-Sainte", "blason": "images/blasons/velarys.png",
-      "description": "Ils produisent les tissus que Merlyn vend.", "membres": "" },
-    { "id": "wines", "nom": "Wines", "pilier": "La Foi", "devise": "Nous servons en silence", "couleurs": "Blanc · Rouge sang",
-      "symbole": "Un calice sous sept étoiles", "demeure": "Roche-Sainte", "blason": "images/blasons/wines.png",
-      "description": "Par tradition, les Wines occupent des postes au sein de l'Église. Érudits et servants — le rouge évoque le sacrifice, pas la tragédie. Samus Wines occupait le poste de Chef Paladin avant sa mort ; Arthur Sauvage l'a remplacé.", "membres": "Samus Wines († ancien Chef Paladin)" }
-  ],
-
-  "blasonsInstitutions": [
-    { "id": "royaume", "nom": "Le Royaume des Îles Saintes", "devise": "Le Berceau de la Vie", "couleurs": "Blanc · Or · Bleu profond",
-      "symbole": "Trois îles stylisées émergeant de flots, surmontées d'une couronne d'or — Limehahu (grande), Vanhill (petite), Anhil (moyenne), les flots en cercle", "blason": "images/blasons/royaume.png" },
-    { "id": "eglise", "nom": "L'Église de la Vie", "devise": "La Lumière guide la Vie", "couleurs": "Blanc · Or",
-      "symbole": "Un soleil à sept rayons au-dessus d'une flamme stylisée — inspire autant le respect que la crainte", "blason": "images/blasons/eglise.png" }
-  ],
-
-  "codex": {
-    "lois": {
-      "titre": "Lois & Interdits",
-      "sections": [
-        { "titre": "Magies autorisées — dites « naturelles »", "contenu": "✅ Élémentaire · Génétique · Druidique" },
-        { "titre": "Magies interdites", "contenu": "Magie du Sang → peine capitale · Soufre alchimique → emprisonnement (Geôles Blanches) · Magie Noire → bannissement ou mort · Magie Démonique → bannissement ou mort · Objets magiques et invocations → interdits" },
-        { "titre": "Le Système de Phylactères", "contenu": "Tout mage arrivant aux Îles Saintes subit un rituel d'enregistrement : contrôle au port, escorte par les Templiers vers la Cathédrale, extraction d'une essence magique, création du phylactère conservé dans la Salle des Phylactères. L'Église peut localiser le mage à tout moment et surveiller ses activités magiques à distance. Objectif déclaré : prévenir la corruption magique, protéger la population." },
-        { "titre": "Sanctité de la Vie", "contenu": "Protection des nouveaux-nés · interdiction de l'avortement et de l'euthanasie." },
-        { "titre": "Encadrement des mœurs", "contenu": "Interdiction de l'homosexualité et de l'adultère." },
-        { "titre": "Lois économiques", "contenu": "Protectionnisme (protection des artisans locaux) · régulation des biens vitaux : interdiction de profiter excessivement du pain et de l'eau · l'Église contrôle le marché du travail et garantit des conditions équitables · emplois rémunérés d'utilité publique offerts par l'Église · interdiction de la paresse et de la mendicité sans cause." }
-      ]
-    },
-    "religions": {
-      "titre": "Religions",
-      "sections": [
-        { "titre": "L'Église de la Vie / de la Lumière", "contenu": "L'Église dominante d'Asterre — les deux appellations désignent la même institution. Divinité : Limehahu, Déesse de la Vie. Siège : la Cathédrale de la Vie, Roche-Sainte. Religion d'État, co-dirige le royaume. Chiffre sacré : 7 — sept jours, sept familles, sept Paladins, sept bougies." },
-        { "titre": "Hiérarchie (525)", "contenu": "Archange Yon (autorité suprême, dirige la Garde Sainte) → Grande Prêtresse Yumi (tête opérationnelle) → d'un côté le Clergé (les 4 Prêtres, puis les Mains Blanches), de l'autre la Garde Sainte (Chef Paladin Arthur Sauvage → 6 Paladins → Inquisiteurs → Chef Templier Cullen → Templiers). En 525, Yon devient Archange et cède le rôle de Grand Prêtre à sa fille Yumi ; il vient de retrouver son immortalité (rendue par Mei via une Pierre de Rosette) et traverse une période de fragilité — c'est Yumi qui porte pleinement l'Église." },
-        { "titre": "Les 4 Prêtres — Fonctions Saintes", "contenu": "Quatre par grande ville (les villages partagent souvent un prêtre polyvalent). Le Prêtre du Souffle — naissances, baptêmes (la Vie qui commence). Le Prêtre du Lien — mariages, serments, contrats sacrés (la Vie qui unit). Le Prêtre du Baume — soins, dispensaires (la Vie qui soigne). Le Prêtre du Passage — funérailles, derniers instants (la Vie qui s'achève)." },
-        { "titre": "Les Mains Blanches", "contenu": "Les bénévoles. Ils assistent les prêtres, tiennent les dispensaires, distribuent l'aide. Volontaires du peuple, aucune ordination, reconnaissables à leurs gants blancs. Ils sont partout. Ils voient tout. Ils ne disent jamais rien." },
-        { "titre": "Rituels", "contenu": "Le Premier Souffle (baptême — l'enfant est présenté à la Lumière dans les 7 jours) · Le Serment de Lien (mariage — les époux échangent une flamme) · L'Imposition du Baume (onction des malades) · La Dernière Lumière (funérailles — une bougie brûle 7 jours) · L'Ordination (par la Grande Prêtresse) · L'Enregistrement (rituel des phylactères, par les Templiers)." },
-        { "titre": "Calendrier — les 12 mois", "contenu": "Primus, Frigus (hiver) · Verna, Florus, Maius (printemps) · Solis, Aestus, Messis (été) · Septius, Autumnus, Usos (automne) · Nivis (hiver)." },
-        { "titre": "Les 5 fêtes", "contenu": "La Nuit du Souffle (1 Primus — nouvel an, 7 bougies) · La Fête des Sept (7 Solis — les 7 familles fondatrices) · La Fondation (7 Septius — fondation des Îles Saintes, 200) · Le Deuil Blanc (7 Septius — mort de Valène, 300 : le même jour. Une fête et un deuil, célébrés ensemble ; personne n'ose dire à quel point c'est cruel) · La Chute (1 Usos — chute des Cercles, 520, fête récente et controversée)." },
-        { "titre": "Les Cercles de Mages (300–520)", "contenu": "Créés par Yon après la mort de Valène, dans tous les pays de l'Union Blanche. Raison invoquée : l'ouverture de la Porte avait lié les vivants à la magie démoniaque, rendant dangereux même les mages inexpérimentés. Réalité : 220 ans d'enfermement, de torture et d'oblitération magique. Le Cercle des Îles Saintes est tombé le 1 Usos 520.", 
-          "secrets": [ { "id": "sec-rel-yon", "titre": "Le poids de Yon", "revele": false, "texte": "Yon, Mary et Wyatt sont les enfants de Samaël et Estel — le monde l'ignore largement. Mary, Grande Prêtresse de la Mort, est la sœur de Yon, Archange de la Lumière. Yon a « sauvé 5 milliards de vies » en 300 sans que personne ne le sache — il en porte le poids seul. L'Église ferma les yeux sur les dérives magiques du temps des Magistères." } ] },
-        { "titre": "Les 4 autres Églises élémentaires", "contenu": "Église du Feu — divinité Sylvanus (humain Olympien devenu Dieu), associée à Luxuria (Passion, sa fille) et Duoror (Souffrance) ; rituel connu : le Rituel du Phœnix, utilisé par Selina pour pouvoir ramener son frère Livai. Église de l'Eau — divinité Ziriel, associée à Pavor (Peur) ; Ziriel est la mère d'Adelia, Héritière de l'Eau. Église de la Terre — territoire : Avelorn ; associée à Mélia, Déesse de la Nature, Princesse d'Avelorn, épouse de Sylas, mère de Salys (seule Médine d'Asterre). Église de la Mort — divinité Zork ; Grande Prêtresse : Mary, fille de Samaël et Estel, mère de Morigane. Discrète." }
-      ]
-    },
-    "politique": {
-      "titre": "Politique",
-      "sections": [
-        { "titre": "Théocratie en binôme", "contenu": "Le pouvoir est partagé — et Yon semble avoir le dernier mot. La Couronne (van Emris, roi Stanislas Ier) : relations internationales, diplomatie, annonces générales, défense nationale. L'Église (Archange Yon, Grande Prêtresse Yumi) : autorité spirituelle, lois, justice, doctrine, surveillance des mages. Tensions potentielles quand les décisions de la Couronne heurtent les dogmes — ou l'inverse." },
-        { "titre": "La dynastie van Emris (300 – présent)", "contenu": "Alistair van Emris (100-450), 1er roi nommé par Yon, époux de Léliana († ). Leur fils Stanislas (430-…) « Le Soumis », roi actuel, époux d'Estrid, père d'Eivor. Leur fille Milthae (432-…), veuve de Klaus (456-479, tué par le roi Stanislas), mère d'Angelina et Aleric Klaus (479-…), belle-mère de Theirin (482-…), grand-mère d'Eyma (504-…)." },
-        { "titre": "L'Union Blanche", "contenu": "Traité unissant six royaumes sous l'égide de l'Église de la Vie : Îles Saintes (siège, puissance dominante), Avelorn, Ferelden, Cintra, Aloy, Harad. Obligations : Cercles de Mages (300–520), présence de Templiers et Paladins, taxes collectées par la famille Aurélion. Non-membres notables : Drémora (échappa aux Cercles — Mary y créa la Table Ronde), le Désert Magistral (indépendant, refuge de Sylas), Babel (monde des démons, gouverné par Sandor)." },
-        { "titre": "Conflit actuel (525)", "contenu": "Mages pacifiques (Arathak, allié de Yon — cohésion mage/non-mage) contre mages renégats (ex-Magistère Kanius, revenu du monde des Démons, vengeance contre les Cercles). Menace nouvelle : Morigane prépare le rituel de la Lune de Sang — elle veut ouvrir la Porte des Dieux." }
-      ]
-    },
-    "economie": {
-      "titre": "Économie",
-      "sections": [
-        { "titre": "Monnaie", "contenu": "1 pièce de bronze ≈ 0,10 € · 1 pièce d'argent ≈ 10 € · 1 pièce d'or ≈ 1 000 €." },
-        { "titre": "Modèle", "contenu": "Ressources autosuffisantes : agriculture, bois, minerais, pêche. Exportation principale : le textile de luxe (famille Merlyn), de renommée mondiale. Revenus complémentaires : taxes de l'Union Blanche collectées par les Aurélion. Secteurs : textile, forgerie, exploitation forestière, agriculture, commerce maritime." },
-        { "titre": "La Guilde Marchande de Vahill (217 – présent)", "contenu": "La plus grande guilde marchande du monde connu. Dirige le Marché Géant de Vanhille, sert d'intermédiaire entre fournisseurs, fabricants et marchands, possède des repaires à travers le monde. Peut trouver n'importe quoi — y compris ce qui est illégal aux Îles Saintes." },
-        { "titre": "Prix courants", "contenu": "Nuit à La Coupe d'Argent (Haute-Ville, Roche-Sainte) : 5 pièces d'argent · nuit Au Filet Percé (port) : 1 pièce d'argent · au Recel de Noir Marais : le double du marché, aucune question posée." }
-      ]
-    },
-    "armees": {
-      "titre": "Armées",
-      "sections": [
-        { "titre": "L'armée la plus grande d'Asterre", "contenu": "Hiérarchie : Garde Sainte > Garde Royale. En cas de crise majeure, les deux forces collaborent sous le Conseil de Défense des Îles Saintes, présidé par le roi." },
-        { "titre": "La Garde Sainte — l'élite spirituelle", "contenu": "Dirigée par l'Archange Yon. Composée des Paladins (combat des menaces magiques majeures, protection des lieux saints), des Inquisiteurs (reçoivent les rapports des Templiers, arbitrent, enquêtent, jugent — un Templier vous arrête, un Inquisiteur décide de votre sort) et des Templiers (traque et capture des mages corrompus, surveillance des phylactères, présents dans les 6 royaumes de l'Union Blanche ; ils furent les geôliers des Cercles). Chef Templier : Cullen. Missions : neutralisation de la magie impure, traque des mages corrompus, purification des zones corrompues, protection des lieux saints." },
-        { "titre": "Les 7 Paladins", "contenu": "Chef Paladin : Arthur Sauvage (humain, officiellement déclaré mort). Paladins : Clyctus Elden (Elfe Pur de Glace — sa race fut décimée sur ordre de Yon, mais tous ne périrent pas ; les survivants se cachent, lui a choisi de servir et œuvre pour la paix), Darian Angerac (humain), Ewart Langley (humain), Firos Polidras (humain), Harol Zylfir (elfe), Reyna Sauvage (humaine, fille d'Arthur — elle a combattu Pride lors de la destruction de Préfet en 524)." },
-        { "titre": "La Garde Royale — les défenseurs du royaume", "contenu": "Missions : défense des frontières, sécurité du palais, protection de la famille royale, maintien de la paix. Commandement : Grand Commandeur → Maréchal → Général → Colonel → Major → Capitaine → Lieutenant → Sous-lieutenant → Sergent-Major → Sergent → Caporal → Soldat 1re classe → Soldat." }
-      ]
-    },
-    "chronologie": [
-      { "date": "An 50", "evenement": "Guerre des Colmores (11 mois) — Mirithal, Elfe Pur de Glace et Cendre, tue le roi Gilbert Asta. Fin des Îles Colmores. Le Collectionneur avait manipulé Mirithal.", "lieux": ["roche-sainte"] },
-      { "date": "60 – 200", "evenement": "Guerre des Races (140 ans) — massacre des Elfes Purs, puis des Elfes. Valène y met fin.", "lieux": [] },
-      { "date": "7 Septius 200", "evenement": "Fondation des Îles Saintes par Valène, sur les ruines des Îles Colmores. Instauration du régime des Magistères.", "lieux": ["roche-sainte"] },
-      { "date": "217", "evenement": "Création de la Guilde Marchande de Vahill.", "lieux": ["vanhille"] },
-      { "date": "281", "evenement": "La Folie de la Sorcière Rouge — Amaranthe attaque Vanhill, brûle ports et habitants. Puis la Chute des Dragons : Valène et Morigane tuent Amaranthe ; Alduin s'échappe, Morigane lui arrache le cœur.", "lieux": ["vanhille"] },
-      { "date": "7 Septius 300", "evenement": "Mort de Valène — après la tentative d'ouverture de la Porte. Yon crée les Cercles de Mages. Alistair van Emris devient roi.", "lieux": ["roche-sainte"] },
-      { "date": "1 Usos 520", "evenement": "Chute du Cercle des Îles Saintes — Arathak attaque de l'extérieur, Achabel et Sam de l'intérieur. Achabel tue le Docteur. Sam meurt.", "lieux": ["academie"] },
-      { "date": "520", "evenement": "Création de l'Académie des Îles Saintes par Arathak, avec l'accord de Yon (1 Usos 520, sur conseil de Yumi).", "lieux": ["academie"] },
-      { "date": "521", "evenement": "Création des Scoïatels par Eredin à A'haluma.", "lieux": [] },
-      { "date": "521", "evenement": "Attaque du Magistère Kanius — Roncedroite (Arathak) · Gojo attaque l'Académie.", "lieux": ["roncedroite", "academie"] },
-      { "date": "524", "evenement": "Destruction de Préfet par Pride, démon de l'Orgueil, lors de l'affrontement contre Mei, Sky, Ark et Reyna Sauvage.", "lieux": ["prefet"] },
-      { "date": "525", "evenement": "Reconstruction de Préfet · Yon devient Archange, Yumi devient Grande Prêtresse · fin de la Guerre des Magistères.", "lieux": ["prefet", "roche-sainte", "academie"] }
+ "id": "iles-saintes",
+ "nom": "Le Royaume des Îles Saintes",
+ "sousTitre": "Le Berceau de l'Église de la Vie",
+ "anciensNoms": "Anciennement : Îles Colmores · Aussi appelé : Îles de la Vie, Terres Sacrées, Maison de la Vie",
+ "fondation": "7 Septius 200, par Valène",
+ "population": "≈ 240 000 habitants",
+ "regime": "Théocratie en binôme (Couronne + Église)",
+ "capitale": "roche-sainte",
+ "iles": [
+  {
+   "id": "limehahu",
+   "nom": "Limehahu",
+   "type": "ile",
+   "description": "L'île principale. Trois régions du sud au nord : le Sud ensoleillé de Roche-Sainte, les Prairies du centre, et les Montagnes du Nord — puis, par-delà, l'Académie.",
+   "population": "≈ 180 000",
+   "forme": [
+    [
+     1470,
+     75
     ],
-    "personnages": [
-      { "id": "yon", "nom": "Yon", "titre": "Archange de la Lumière", "lieux": ["roche-sainte"], "portrait": "images/pnj/yon.jpg",
-        "description": "Autorité suprême de l'Église, dirige la Garde Sainte. Devenu Archange en 525 après avoir cédé le rôle de Grand Prêtre à sa fille Yumi. Il vient de retrouver son immortalité (rendue par Mei via une Pierre de Rosette) et traverse une période de fragilité. Certains considèrent qu'il est le vrai souverain des Îles Saintes." },
-      { "id": "yumi", "nom": "Yumi", "titre": "Grande Prêtresse", "lieux": ["roche-sainte"], "portrait": "images/pnj/yumi.jpg",
-        "description": "Fille de Yon. Tête opérationnelle de l'Église depuis 525 — c'est elle qui la porte pleinement pendant la transition. C'est sur son conseil que Yon a conclu l'accord avec Arathak en 520. Elle ignore ce que contient le niveau interdit des Archives." },
-      { "id": "stanislas", "nom": "Stanislas van Emris", "titre": "Roi des Îles Saintes — « Le Soumis »", "lieux": ["roche-sainte"], "portrait": "images/pnj/stanislas.jpg",
-        "description": "Roi actuel (né en 430). Si influencé par Yon que certains considèrent l'Archange comme le vrai souverain. Il a tué Klaus, l'époux de sa sœur Milthae, en 479." },
-      { "id": "estrid", "nom": "Estrid van Emris", "titre": "Reine", "lieux": ["roche-sainte"], "portrait": "images/pnj/estrid.jpg", "description": "Épouse du roi Stanislas." },
-      { "id": "eivor", "nom": "Eivor van Emris", "titre": "Prince", "lieux": ["roche-sainte"], "portrait": "images/pnj/eivor.jpg", "description": "Fils du roi Stanislas et de la reine Estrid." },
-      { "id": "arthur-sauvage", "nom": "Arthur Sauvage", "titre": "Chef Paladin", "lieux": ["roche-sainte", "fer-blanc"], "portrait": "images/pnj/arthur-sauvage.jpg",
-        "description": "Chef de la Garde Sainte — officiellement déclaré mort, puis nommé Chef Paladin en remplacement de Samus Wines. Pourquoi fut-il déclaré mort ? Ancien commandement au QG des Paladins de Roncedroite." },
-      { "id": "reyna-sauvage", "nom": "Reyna Sauvage", "titre": "Paladine", "lieux": ["roche-sainte", "fer-blanc"], "portrait": "images/pnj/reyna-sauvage.jpg",
-        "description": "Fille d'Arthur. A combattu Pride, démon de l'Orgueil, aux côtés de Mei, Sky et Ark lors de la destruction de Préfet (524)." },
-      { "id": "allen-sauvage", "nom": "Allen Sauvage", "titre": "Maître forgeron", "lieux": ["roncedroite"], "portrait": "images/pnj/allen-sauvage.jpg",
-        "description": "Tient la Grande Forge des Îles Saintes à Roncedroite." },
-      { "id": "cullen", "nom": "Cullen", "titre": "Chef Templier", "lieux": ["roche-sainte"], "portrait": "images/pnj/cullen.jpg",
-        "description": "Dirige la traque des mages corrompus. Il a rencontré Adelia dans le Dôme d'Entraînement de l'Académie — un mois en temps réel." },
-      { "id": "clyctus-elden", "nom": "Clyctus Elden", "titre": "Paladin — Elfe Pur de Glace", "lieux": ["roche-sainte"], "portrait": "images/pnj/clyctus-elden.jpg",
-        "description": "Sa race fut décimée sur ordre de Yon après la Guerre des Colmores — mais tous ne périrent pas. Les survivants se cachent. Lui a choisi de servir : il sait que les Elfes Purs ont cherché la guerre, et il œuvre pour la paix." },
-      { "id": "berthold", "nom": "Baron Berthold", "titre": "Baron de Roncedroite", "lieux": ["roncedroite"], "portrait": "images/pnj/berthold.jpg",
-        "description": "Dirige le Bastion du Nord depuis sa forteresse sur la colline." },
-      { "id": "arathak", "nom": "Arathak", "titre": "Directeur de l'Académie", "lieux": ["academie"], "portrait": "images/pnj/arathak.jpg",
-        "description": "Demi-elfe, mage druidique. Il libéra les ressortissants du Cercle des Îles Saintes (1 Usos 520) et fonda l'Académie la même année. Sa vision : unir mages et non-mages. Chef du camp des mages pacifiques, allié de Yon." },
-      { "id": "galwyn-nei", "nom": "Galwyn Nei", "titre": "Enseignant du Feu", "lieux": ["academie"], "portrait": "images/pnj/galwyn-nei.jpg",
-        "description": "Elfe. Sa magie est oblitérée : un maître du Feu qui ne peut plus faire jaillir une étincelle. Il enseigne la théorie, la maîtrise, le contrôle — tout ce qu'il n'a plus. 220 ans de rancœur le séparent de sa fille Miwa ; il refuse de la regarder." },
-      { "id": "zed", "nom": "Zed", "titre": "Enseignante de la Terre", "lieux": ["academie"], "portrait": "images/pnj/zed.jpg", "description": "Elfe, mage de Terre." },
-      { "id": "narcise", "nom": "Narcise", "titre": "Créatrice du Cycle du Temps", "lieux": ["academie"], "portrait": "images/pnj/narcise.jpg",
-        "description": "Elle n'enseigne pas, mais a offert à l'Académie le Dôme d'Entraînement : un jour dehors = trois jours dedans." },
-      { "id": "araignee", "nom": "L'Araignée", "titre": "Chef de la pègre", "lieux": ["noir-marais"], "portrait": "images/pnj/araignee.jpg",
-        "description": "Personne ne connaît son visage. Ne paraît jamais, parle par intermédiaires. Sait tout ce qui se passe aux Îles Saintes — y compris à Roche-Sainte : qui a besoin de disparaître, qui cherche l'interdit, ce qui entre et sort du Grand Port. On ne trouve pas l'Araignée. L'Araignée vous trouve." },
-      { "id": "charlie", "nom": "Charlie", "titre": "Propriétaire de l'Arène", "lieux": ["blanchefleure"], "portrait": "images/pnj/charlie.jpg",
-        "description": "Parieur ultra-riche venu du Désert Magistral. Possède l'arène de paris de combat illégale de BlancheFleure." },
-      { "id": "geralt", "nom": "Geralt", "titre": "Tavernier", "lieux": ["blanchefleure"], "portrait": "images/pnj/geralt.jpg", "description": "Ancien soldat. Tient la Taverne de Travail." },
-      { "id": "elara", "nom": "Elara", "titre": "Couturière", "lieux": ["blanchefleure"], "portrait": "images/pnj/elara.jpg", "description": "Elfe. Tient Les Aiguilles d'Or." },
-      { "id": "bogdan", "nom": "Bogdan", "titre": "Capitaine de la Garde Royale", "lieux": ["blanchefleure"], "portrait": "images/pnj/bogdan.jpg", "description": "Commande la Maison de la Garde Royale de BlancheFleure." },
-      { "id": "lazaro", "nom": "Lazaro", "titre": "Maître herboriste", "lieux": ["blanchefleure"], "portrait": "images/pnj/lazaro.jpg", "description": "Tenait autrefois La Flore des Prairies." },
-      { "id": "achabel", "nom": "Achabel", "titre": "—", "lieux": ["plaines-cotieres"], "portrait": "images/pnj/achabel.jpg",
-        "description": "Vit paisiblement dans les plaines côtières de Vanhill avec Manem. Avec Sam, il a fait tomber le Cercle des Îles Saintes de l'intérieur en 520 et tué le Docteur." },
-      { "id": "manem", "nom": "Manem", "titre": "—", "lieux": ["plaines-cotieres"], "portrait": "images/pnj/manem.jpg", "description": "Vit dans les plaines côtières de Vanhill avec Achabel." },
-      { "id": "sam", "nom": "Sam", "titre": "†", "lieux": ["plaines-cotieres"], "portrait": "images/pnj/sam.jpg",
-        "description": "Fille d'Achabel et Manem. Elle participa à la chute du Cercle des Îles Saintes de l'intérieur — et y mourut (1 Usos 520)." },
-      { "id": "aerith-goldland", "nom": "Aerith Goldland", "titre": "Famille Goldland", "lieux": ["prefet"], "portrait": "images/pnj/aerith-goldland.jpg",
-        "description": "Créatrice du dôme de lumière qui protège le Manoir Goldland." },
-      { "id": "kanius", "nom": "Kanius", "titre": "Ex-Magistère renégat", "lieux": [], "portrait": "images/pnj/kanius.jpg",
-        "description": "Revenu du monde des Démons, il mène le camp des mages renégats et cherche vengeance contre les Cercles. Il attaqua Roncedroite et l'Académie en 521. La Guerre des Magistères s'est achevée en 525." },
-      { "id": "morigane", "nom": "Morigane", "titre": "—", "lieux": [], "portrait": "images/pnj/morigane.jpg",
-        "description": "Elle prépare le rituel de la Lune de Sang : elle veut ouvrir la Porte des Dieux. En 281, elle tua Amaranthe aux côtés de Valène et arracha le cœur d'Alduin. En 300, elle prit publiquement la responsabilité de la tentative d'ouverture de la Porte." }
+    [
+     1600,
+     95
+    ],
+    [
+     1665,
+     190
+    ],
+    [
+     1690,
+     300
+    ],
+    [
+     1645,
+     420
+    ],
+    [
+     1700,
+     520
+    ],
+    [
+     1680,
+     650
+    ],
+    [
+     1735,
+     760
+    ],
+    [
+     1700,
+     880
+    ],
+    [
+     1770,
+     980
+    ],
+    [
+     1755,
+     1120
+    ],
+    [
+     1680,
+     1250
+    ],
+    [
+     1540,
+     1345
+    ],
+    [
+     1400,
+     1330
+    ],
+    [
+     1310,
+     1240
+    ],
+    [
+     1275,
+     1110
+    ],
+    [
+     1230,
+     1000
+    ],
+    [
+     1290,
+     900
+    ],
+    [
+     1255,
+     780
+    ],
+    [
+     1300,
+     690
+    ],
+    [
+     1250,
+     590
+    ],
+    [
+     1320,
+     480
+    ],
+    [
+     1285,
+     360
+    ],
+    [
+     1330,
+     230
+    ],
+    [
+     1390,
+     130
     ]
+   ],
+   "labelPos": [
+    1500,
+    980
+   ],
+   "seed": 11,
+   "zones": [
+    {
+     "type": "montagne-neige",
+     "poly": [
+      [
+       1360,
+       150
+      ],
+      [
+       1620,
+       120
+      ],
+      [
+       1660,
+       300
+      ],
+      [
+       1600,
+       400
+      ],
+      [
+       1420,
+       410
+      ],
+      [
+       1330,
+       300
+      ]
+     ],
+     "densite": 26
+    },
+    {
+     "type": "foret-neige",
+     "poly": [
+      [
+       1380,
+       300
+      ],
+      [
+       1600,
+       290
+      ],
+      [
+       1620,
+       400
+      ],
+      [
+       1560,
+       470
+      ],
+      [
+       1400,
+       460
+      ],
+      [
+       1350,
+       380
+      ]
+     ],
+     "densite": 22
+    },
+    {
+     "type": "foret",
+     "poly": [
+      [
+       1470,
+       470
+      ],
+      [
+       1650,
+       480
+      ],
+      [
+       1660,
+       600
+      ],
+      [
+       1540,
+       640
+      ],
+      [
+       1450,
+       580
+      ]
+     ],
+     "densite": 20
+    },
+    {
+     "type": "prairie",
+     "poly": [
+      [
+       1300,
+       640
+      ],
+      [
+       1650,
+       660
+      ],
+      [
+       1700,
+       830
+      ],
+      [
+       1600,
+       940
+      ],
+      [
+       1330,
+       910
+      ],
+      [
+       1280,
+       760
+      ]
+     ],
+     "densite": 14
+    },
+    {
+     "type": "marais",
+     "poly": [
+      [
+       1290,
+       760
+      ],
+      [
+       1400,
+       780
+      ],
+      [
+       1410,
+       860
+      ],
+      [
+       1310,
+       870
+      ]
+     ],
+     "densite": 12
+    },
+    {
+     "type": "colline",
+     "poly": [
+      [
+       1330,
+       980
+      ],
+      [
+       1680,
+       1000
+      ],
+      [
+       1700,
+       1180
+      ],
+      [
+       1560,
+       1290
+      ],
+      [
+       1380,
+       1260
+      ],
+      [
+       1300,
+       1120
+      ]
+     ],
+     "densite": 10
+    }
+   ],
+   "fleuves": [
+    {
+     "nom": "",
+     "points": [
+      [
+       1470,
+       430
+      ],
+      [
+       1420,
+       520
+      ],
+      [
+       1370,
+       600
+      ],
+      [
+       1310,
+       660
+      ],
+      [
+       1292,
+       690
+      ]
+     ]
+    }
+   ]
   },
-
-  "suggestions": [],
-  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels."
+  {
+   "id": "vanhill",
+   "nom": "Vanhill",
+   "type": "ile",
+   "description": "L'Île du Luxe. 80 % de sa surface est la ville de Vanhille ; le reste, des plaines côtières. Souvent grise et pluvieuse, jamais glaciale.",
+   "population": "≈ 35 000",
+   "forme": [
+    [
+     700,
+     395
+    ],
+    [
+     790,
+     370
+    ],
+    [
+     880,
+     395
+    ],
+    [
+     920,
+     460
+    ],
+    [
+     895,
+     530
+    ],
+    [
+     810,
+     565
+    ],
+    [
+     720,
+     545
+    ],
+    [
+     672,
+     475
+    ]
+   ],
+   "labelPos": [
+    795,
+    340
+   ],
+   "seed": 23,
+   "zones": [
+    {
+     "type": "ville",
+     "poly": [
+      [
+       705,
+       410
+      ],
+      [
+       870,
+       405
+      ],
+      [
+       900,
+       470
+      ],
+      [
+       850,
+       540
+      ],
+      [
+       730,
+       530
+      ],
+      [
+       690,
+       470
+      ]
+     ],
+     "densite": 26
+    },
+    {
+     "type": "prairie",
+     "poly": [
+      [
+       850,
+       470
+      ],
+      [
+       905,
+       470
+      ],
+      [
+       890,
+       525
+      ],
+      [
+       830,
+       552
+      ]
+     ],
+     "densite": 5
+    }
+   ],
+   "fleuves": []
+  },
+  {
+   "id": "anhil",
+   "nom": "Anhil",
+   "type": "ile",
+   "description": "L'Île du Savoir, au climat le plus clément de l'archipel. Fer-Blanc forge à l'ouest, Préfet se reconstruit à l'est.",
+   "population": "≈ 25 000",
+   "forme": [
+    [
+     215,
+     1035
+    ],
+    [
+     330,
+     985
+    ],
+    [
+     470,
+     970
+    ],
+    [
+     600,
+     990
+    ],
+    [
+     695,
+     1050
+    ],
+    [
+     715,
+     1140
+    ],
+    [
+     655,
+     1230
+    ],
+    [
+     520,
+     1280
+    ],
+    [
+     370,
+     1275
+    ],
+    [
+     250,
+     1225
+    ],
+    [
+     195,
+     1130
+    ]
+   ],
+   "labelPos": [
+    450,
+    1320
+   ],
+   "seed": 37,
+   "zones": [
+    {
+     "type": "foret",
+     "poly": [
+      [
+       220,
+       1050
+      ],
+      [
+       320,
+       1010
+      ],
+      [
+       350,
+       1120
+      ],
+      [
+       280,
+       1190
+      ],
+      [
+       220,
+       1130
+      ]
+     ],
+     "densite": 16
+    },
+    {
+     "type": "prairie",
+     "poly": [
+      [
+       360,
+       1020
+      ],
+      [
+       640,
+       1020
+      ],
+      [
+       680,
+       1140
+      ],
+      [
+       560,
+       1240
+      ],
+      [
+       380,
+       1230
+      ],
+      [
+       350,
+       1110
+      ]
+     ],
+     "densite": 12
+    }
+   ],
+   "fleuves": []
+  },
+  {
+   "id": "iles-de-glace",
+   "nom": "Les Îles de Glace",
+   "type": "ile",
+   "description": "Le Nord Mortel. Personne n'y va. Personne n'en revient.",
+   "population": "Inhabitées",
+   "forme": [
+    [
+     150,
+     190
+    ],
+    [
+     250,
+     150
+    ],
+    [
+     350,
+     175
+    ],
+    [
+     395,
+     250
+    ],
+    [
+     360,
+     330
+    ],
+    [
+     255,
+     365
+    ],
+    [
+     160,
+     330
+    ],
+    [
+     120,
+     255
+    ]
+   ],
+   "labelPos": [
+    258,
+    110
+   ],
+   "seed": 53,
+   "zones": [
+    {
+     "type": "montagne-neige",
+     "poly": [
+      [
+       160,
+       200
+      ],
+      [
+       340,
+       190
+      ],
+      [
+       370,
+       290
+      ],
+      [
+       260,
+       345
+      ],
+      [
+       150,
+       300
+      ]
+     ],
+     "densite": 18
+    }
+   ],
+   "fleuves": []
+  },
+  {
+   "id": "ilot-1",
+   "nom": "",
+   "type": "ilot",
+   "forme": [
+    [
+     985,
+     585
+    ],
+    [
+     1035,
+     570
+    ],
+    [
+     1060,
+     610
+    ],
+    [
+     1030,
+     645
+    ],
+    [
+     980,
+     630
+    ]
+   ],
+   "labelPos": null,
+   "seed": 61,
+   "zones": [],
+   "fleuves": []
+  },
+  {
+   "id": "ilot-2",
+   "nom": "",
+   "type": "ilot",
+   "forme": [
+    [
+     905,
+     905
+    ],
+    [
+     955,
+     890
+    ],
+    [
+     985,
+     925
+    ],
+    [
+     955,
+     960
+    ],
+    [
+     905,
+     945
+    ]
+   ],
+   "labelPos": null,
+   "seed": 67,
+   "zones": [],
+   "fleuves": []
+  },
+  {
+   "id": "ilot-3",
+   "nom": "",
+   "type": "ilot",
+   "forme": [
+    [
+     540,
+     730
+    ],
+    [
+     590,
+     715
+    ],
+    [
+     615,
+     755
+    ],
+    [
+     585,
+     790
+    ],
+    [
+     535,
+     772
+    ]
+   ],
+   "labelPos": null,
+   "seed": 71,
+   "zones": [],
+   "fleuves": []
+  },
+  {
+   "id": "ilot-4",
+   "nom": "",
+   "type": "ilot",
+   "forme": [
+    [
+     95,
+     790
+    ],
+    [
+     140,
+     778
+    ],
+    [
+     162,
+     812
+    ],
+    [
+     135,
+     842
+    ],
+    [
+     92,
+     828
+    ]
+   ],
+   "labelPos": null,
+   "seed": 79,
+   "zones": [],
+   "fleuves": []
+  }
+ ],
+ "lieux": [
+  {
+   "id": "roche-sainte",
+   "nom": "Roche-Sainte",
+   "type": "capitale",
+   "ile": "limehahu",
+   "pos": [
+    1490,
+    1290
+   ],
+   "population": "≈ 60 000 habitants",
+   "climat": "Beau, ensoleillé, doux (jamais chaud)",
+   "dirigeant": "Famille royale van Emris · Église de la Vie",
+   "accroche": "La plus grande ville des Îles Saintes. On la voit avant de l'atteindre — la Cathédrale se dresse au-dessus de tout, blanche comme un os.",
+   "description": "Roche-Sainte s'étage du nord au sud, de la terre vers la mer. On y entre par la Porte du Nord, sous l'œil de la Garde Royale. Vient la Basse-Ville — populaire mais jamais misérable, car l'Église y veille : dispensaires, ateliers, prix du pain régulés. Puis la Haute-Ville des nobles et des familles fondatrices. Enfin, à l'extrême sud, le Promontoire Sacré : la Cathédrale de la Vie, blanche et elfique, le Palais van Emris qui semble petit à son ombre, et le Grand Port où tout navire accoste sous le regard de la pierre blanche. Tout est propre, ordonné, lumineux — et surveillé.",
+   "histoire": "Fondée avec le royaume en l'an 200 par Valène, sur les ruines des Îles Colmores. Siège de l'Église depuis que Yon a pris le pouvoir en 300. Ironie que peu osent relever : la Cathédrale, d'architecture elfique, fut bâtie après une guerre qui décima les Elfes.",
+   "familles": [
+    "caldrin",
+    "velarys",
+    "wines",
+    "van-emris"
+   ],
+   "lieuxNotables": [
+    {
+     "id": "cathedrale",
+     "nom": "La Cathédrale de la Vie",
+     "type": "lieu-saint",
+     "description": "Le bâtiment le plus visible de toutes les Îles Saintes. Pierre blanche, élancée, organique — on la voit depuis la mer bien avant d'accoster. Cœur spirituel du monde connu.",
+     "utilite": "Grand Sanctuaire (culte) · Tribunal de la Lumière (justice) · quartiers de la Garde Sainte · appartements de Yon et Yumi",
+     "pnj": [
+      "yon",
+      "yumi",
+      "cullen"
+     ]
+    },
+    {
+     "id": "salle-phylacteres",
+     "nom": "La Salle des Phylactères",
+     "type": "lieu-saint",
+     "description": "Dans la Cathédrale. Point de passage obligatoire de tout mage arrivant aux Îles Saintes : contrôle au port, escorte par les Templiers, extraction d'une essence magique, création du phylactère.",
+     "utilite": "L'Église peut localiser un mage enregistré à tout moment et surveiller ses activités magiques à distance.",
+     "pnj": []
+    },
+    {
+     "id": "archives",
+     "nom": "Les Archives de la Cathédrale",
+     "type": "lieu-saint",
+     "description": "300 ans de savoir accumulé. Niveau public : histoire officielle, doctrine, généalogies. Niveau restreint : rapports des Cercles (expurgés), dossiers de mages — clergé uniquement. Niveau interdit : Yon seul y entre. Yumi elle-même ignore ce qu'il contient.",
+     "utilite": "Recherches historiques · généalogies · doctrine",
+     "pnj": [],
+     "secrets": [
+      {
+       "id": "sec-archives-cercles",
+       "titre": "Les Vrais Rapports des Cercles",
+       "revele": false,
+       "texte": "Le niveau interdit contient ce qui s'est réellement passé pendant 220 ans : le nombre exact de morts, les expérimentations du Docteur, les oblitérations magiques par la torture (Galwyn Nei), les enfants nés et morts en captivité (Alice, morte de vieillesse au Cercle). Yon savait. Il n'a rien fait."
+      },
+      {
+       "id": "sec-archives-300",
+       "titre": "La Vérité sur l'An 300",
+       "revele": false,
+       "texte": "Valène voulait ouvrir la Porte des DIEUX — pas des Démons. Elle a manipulé Morigane, qui avait éloigné ses proches pour ne faire aucune victime, et qui a pris publiquement toute la responsabilité pour protéger l'image de Valène. Yon a laissé faire — 225 ans de mensonge. Tragédie absolue : en 525, Morigane veut ouvrir la Porte des Dieux sans savoir que c'est exactement ce que Valène voulait faire."
+      }
+     ]
+    },
+    {
+     "id": "geoles-blanches",
+     "nom": "Les Geôles Blanches",
+     "type": "prison",
+     "description": "La prison de l'Église, sous les sous-sols du Promontoire Sacré. Alchimistes du Soufre, mages suspectés, hérétiques. Personne n'en parle. Personne n'en sort.",
+     "utilite": "C'est ici qu'on finit si l'on touche au Soufre alchimique.",
+     "pnj": []
+    },
+    {
+     "id": "palais-van-emris",
+     "nom": "Le Palais van Emris",
+     "type": "palais",
+     "description": "Juste à côté de la Cathédrale — et bien moins impressionnant qu'elle. Le rapport de taille entre les deux bâtiments dit tout du rapport de pouvoir.",
+     "utilite": "Résidence du roi Stanislas, de la reine Estrid et du prince Eivor · audiences royales",
+     "pnj": [
+      "stanislas",
+      "estrid",
+      "eivor"
+     ]
+    },
+    {
+     "id": "grand-port",
+     "nom": "Le Grand Port",
+     "type": "port",
+     "description": "Le plus grand port des Îles Saintes, derrière la Cathédrale. Textile de luxe, marchandises, pèlerins, flotte royale.",
+     "utilite": "Liaisons maritimes vers Vanhill, Anhil — et le Continent · embarquement des voyageurs",
+     "pnj": []
+    },
+    {
+     "id": "maison-paladins",
+     "nom": "La Maison des Paladins",
+     "type": "caserne",
+     "description": "Haute-Ville. Résidence secondaire de la Garde Sainte, plus discrète que la Cathédrale. Point de rassemblement et d'entraînement.",
+     "utilite": "Rencontrer un Paladin hors du cadre écrasant de la Cathédrale",
+     "pnj": [
+      "arthur-sauvage",
+      "reyna-sauvage"
+     ]
+    },
+    {
+     "id": "coupe-argent",
+     "nom": "La Coupe d'Argent",
+     "type": "auberge",
+     "description": "Auberge haut de gamme de la Haute-Ville. 5 pièces d'argent la nuit.",
+     "utilite": "Rumeurs de cour · contacts nobles",
+     "pnj": []
+    },
+    {
+     "id": "echoppe-aurelion",
+     "nom": "L'Échoppe d'Aurélion",
+     "type": "commerce",
+     "description": "Joaillerie et comptoir bancaire de la famille Aurélion.",
+     "utilite": "Change · prêts · estimation d'objets",
+     "pnj": []
+    },
+    {
+     "id": "dispensaire-lumiere",
+     "nom": "Le Dispensaire de la Lumière",
+     "type": "commerce",
+     "description": "Basse-Ville. Soins gratuits financés par l'Église.",
+     "utilite": "Se faire soigner sans bourse délier",
+     "pnj": []
+    },
+    {
+     "id": "filet-perce",
+     "nom": "Au Filet Percé",
+     "type": "taverne",
+     "description": "Taverne portuaire. 1 pièce d'argent la nuit.",
+     "utilite": "Marins · informations · contrebande discrète",
+     "pnj": []
+    },
+    {
+     "id": "la-rouee",
+     "nom": "La Rouée",
+     "type": "taverne",
+     "description": "Taverne discrète de la Basse-Ville.",
+     "utilite": "Contacts douteux — sans aller jusqu'à Noir Marais",
+     "pnj": []
+    },
+    {
+     "id": "chez-haim",
+     "nom": "Chez Haïm",
+     "type": "commerce",
+     "description": "Herboristerie de la Basse-Ville.",
+     "utilite": "Composants · remèdes · conseils",
+     "pnj": []
+    },
+    {
+     "id": "qg-garde-royale",
+     "nom": "QG de la Garde Royale",
+     "type": "caserne",
+     "description": "À la Porte du Nord, l'entrée de la ville.",
+     "utilite": "Défense des frontières · sécurité du palais · maintien de la paix",
+     "pnj": []
+    }
+   ],
+   "personnages": [
+    "yon",
+    "yumi",
+    "stanislas",
+    "arthur-sauvage",
+    "reyna-sauvage",
+    "cullen",
+    "clyctus-elden"
+   ],
+   "secrets": [],
+   "tensions": [
+    "Couronne vs Église : Stanislas « Le Soumis » n'a pas le dernier mot.",
+    "Chaque mage de la ville porte un phylactère.",
+    "Un Elfe Pur chez les Paladins — comment Clyctus Elden a-t-il survécu ?",
+    "Arthur Sauvage fut officiellement déclaré mort, puis nommé Chef Paladin. Pourquoi ?"
+   ],
+   "images": [
+    "images/lieux/roche-sainte/principale.jpg"
+   ]
+  },
+  {
+   "id": "blanchefleure",
+   "nom": "BlancheFleure",
+   "type": "village",
+   "ile": "limehahu",
+   "pos": [
+    1292,
+    690
+   ],
+   "population": "≈ 500 habitants (400 humains, 100 elfes)",
+   "climat": "Doux en été, froid en hiver",
+   "dirigeant": "Conseil local",
+   "accroche": "Le village des Prairies, ouvert sur la mer de l'ouest.",
+   "description": "Un village agricole et portuaire au cœur des Prairies, sur la côte ouest de Limehahu. Les champs descendent jusqu'au port, où transitent marchandises et voyageurs. La vie y est simple — en apparence : derrière une grange, une arène de paris de combat parfaitement illégale attire des bourses venues de très loin.",
+   "histoire": "Point d'étape historique de la route royale entre Roche-Sainte et Roncedroite.",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "arene-paris",
+     "nom": "Arène de Paris de Combat",
+     "type": "illegal",
+     "description": "Illégale. Son propriétaire, Charlie, est un parieur ultra-riche venu du Désert Magistral.",
+     "utilite": "Parier · combattre · se faire remarquer par les mauvaises personnes",
+     "pnj": [
+      "charlie"
+     ]
+    },
+    {
+     "id": "taverne-travail",
+     "nom": "Taverne de Travail",
+     "type": "taverne",
+     "description": "Tenue par Geralt, un ancien soldat.",
+     "utilite": "Boire · manger · dormir · rumeurs des Prairies",
+     "pnj": [
+      "geralt"
+     ]
+    },
+    {
+     "id": "port-blanchefleure",
+     "nom": "Port de BlancheFleure",
+     "type": "port",
+     "description": "Commerce et transport sur la côte ouest.",
+     "utilite": "Bateau côtier vers Roche-Sainte · pêche",
+     "pnj": []
+    },
+    {
+     "id": "aiguilles-or",
+     "nom": "Les Aiguilles d'Or",
+     "type": "commerce",
+     "description": "Couturier tenu par Elara, couturière elfe.",
+     "utilite": "Vêtements · retouches · tissus",
+     "pnj": [
+      "elara"
+     ]
+    },
+    {
+     "id": "flore-prairies",
+     "nom": "La Flore des Prairies",
+     "type": "commerce",
+     "description": "Herboristerie, autrefois tenue par Lazaro, maître herboriste.",
+     "utilite": "Herbes · remèdes",
+     "pnj": [
+      "lazaro"
+     ]
+    },
+    {
+     "id": "maison-garde-bf",
+     "nom": "Maison de la Garde Royale",
+     "type": "caserne",
+     "description": "Poste local commandé par le capitaine Bogdan.",
+     "utilite": "Signaler un crime — ou l'éviter",
+     "pnj": [
+      "bogdan"
+     ]
+    }
+   ],
+   "personnages": [
+    "charlie",
+    "geralt",
+    "elara",
+    "bogdan"
+   ],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/blanchefleure/principale.jpg"
+   ]
+  },
+  {
+   "id": "noir-marais",
+   "nom": "Noir Marais",
+   "type": "village",
+   "ile": "limehahu",
+   "pos": [
+    1345,
+    805
+   ],
+   "population": "≈ 2 000 habitants",
+   "climat": "Humide, brumeux",
+   "dirigeant": "Officiellement personne. Officieusement : l'Araignée",
+   "accroche": "Le seul endroit des Îles Saintes où la Lumière ne va pas. L'Église préfère ne pas savoir ce qui s'y passe.",
+   "description": "Un village bâti sur une terre qui ne veut pas de lui, au sud de BlancheFleure, en retrait de la côte ouest. Les maisons s'enfoncent lentement. L'air sent la vase et la fumée. Officiellement, l'Église aide — un dispensaire, quelques Mains Blanches. En réalité, Noir Marais est le trou où l'on jette ce qui dérange : un royaume parfait a besoin d'un endroit pour cacher ce qui ne l'est pas. Les Templiers y passent rarement. Les Paladins, jamais.",
+   "histoire": "Le village le plus pauvre des Îles Saintes, et le centre de sa pègre. Deux factions s'y détestent en travaillant pour le même maître : les Fossoyeurs (contrebande — ils enterrent les preuves, parfois les gens) et la Corde (prêts, dettes, chantage — on ne la rembourse pas en pièces, on la rembourse en services).",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "le-recel",
+     "nom": "Le Recel",
+     "type": "illegal",
+     "description": "Boutique sans enseigne. On y achète et on y vend tout : objets magiques illégaux, composants rares, documents falsifiés — contre des objets volés, des informations, du silence.",
+     "utilite": "Prix : le double du marché. Questions posées : aucune.",
+     "pnj": []
+    },
+    {
+     "id": "forge-noire",
+     "nom": "La Forge Noire",
+     "type": "illegal",
+     "description": "Armes que la loi interdit : lames empoisonnées, armes de jet dissimulables, outils de crochetage. Le forgeron est muet. Personne ne sait s'il l'est de naissance.",
+     "utilite": "S'équiper hors-la-loi",
+     "pnj": []
+    },
+    {
+     "id": "le-bourbier",
+     "nom": "Le Bourbier",
+     "type": "taverne",
+     "description": "Taverne. Le sol est en terre battue. La bière est mauvaise.",
+     "utilite": "Recruter des hommes de main · trouver un tueur · entendre des rumeurs introuvables ailleurs · être vu par les mauvaises personnes",
+     "pnj": []
+    },
+    {
+     "id": "dispensaire-nm",
+     "nom": "Le Dispensaire",
+     "type": "commerce",
+     "description": "Tenu par deux Mains Blanches qui n'ont pas demandé à être là. L'Église peut dire qu'elle aide Noir Marais. Techniquement, c'est vrai.",
+     "utilite": "Soins de fortune",
+     "pnj": []
+    }
+   ],
+   "personnages": [
+    "araignee"
+   ],
+   "secrets": [
+    {
+     "id": "sec-nm-geoles",
+     "titre": "L'Araignée et les Geôles Blanches",
+     "revele": false,
+     "texte": "L'Araignée connaît l'existence des Geôles Blanches — et sait qui y est enfermé."
+    },
+    {
+     "id": "sec-nm-clerge",
+     "titre": "Dettes du clergé",
+     "revele": false,
+     "texte": "Certains membres du clergé ont des dettes envers la Corde."
+    },
+    {
+     "id": "sec-nm-soufre",
+     "titre": "Le Soufre est déjà entré",
+     "revele": false,
+     "texte": "Les Fossoyeurs ont déjà fait entrer du Soufre alchimique aux Îles Saintes."
+    },
+    {
+     "id": "sec-nm-araignee",
+     "titre": "Qui est l'Araignée",
+     "revele": false,
+     "texte": "L'Araignée est un orphelin de Noir Marais — comme tous ceux qui n'ont pas de nom ici. Les orphelins du village naissent sans nom ; l'Araignée a choisi le sien."
+    }
+   ],
+   "tensions": [
+    "Les Templiers surveillent discrètement les entrées et sorties.",
+    "Un mage repéré ici verra son phylactère signalé.",
+    "L'Araignée n'oublie jamais une dette. La Corde non plus."
+   ],
+   "images": [
+    "images/lieux/noir-marais/principale.jpg"
+   ]
+  },
+  {
+   "id": "roncedroite",
+   "nom": "Roncedroite",
+   "type": "ville",
+   "ile": "limehahu",
+   "pos": [
+    1520,
+    432
+   ],
+   "population": "≈ 15 000 habitants",
+   "climat": "Frais et tempéré · hivers rigoureux",
+   "dirigeant": "Baron Berthold",
+   "accroche": "Le Bastion du Nord. QG des Paladins, cœur battant de la forge.",
+   "description": "Dans les Montagnes du Nord, la ville s'étage en Haute-ville et Basse-ville sous le château du Baron Berthold, dressé sur sa colline. L'économie vit du bois, des minerais, de l'artisanat — et de la Grande Forge des Îles Saintes, tenue par Allen Sauvage. Le QG des Paladins du Nord, ancien commandement d'Arthur Sauvage, peut accueillir cent paladins.",
+   "histoire": "En 521, la ville fut attaquée lors de l'offensive du Magistère Kanius contre Arathak.",
+   "familles": [
+    "sauvage"
+   ],
+   "lieuxNotables": [
+    {
+     "id": "chateau-roncedroite",
+     "nom": "Le Château de Roncedroite",
+     "type": "palais",
+     "description": "Forteresse du Baron Berthold, sur une colline dominant la ville.",
+     "utilite": "Audiences du Baron",
+     "pnj": [
+      "berthold"
+     ]
+    },
+    {
+     "id": "grande-forge",
+     "nom": "La Grande Forge des Îles Saintes",
+     "type": "commerce",
+     "description": "Tenue par Allen Sauvage, maître forgeron de la famille Sauvage.",
+     "utilite": "Armes et armures d'exception",
+     "pnj": [
+      "allen-sauvage"
+     ]
+    },
+    {
+     "id": "qg-paladins",
+     "nom": "QG des Paladins du Nord",
+     "type": "caserne",
+     "description": "Ancien commandement d'Arthur Sauvage. Capacité : 100 paladins.",
+     "utilite": "Contact avec la Garde Sainte dans le Nord",
+     "pnj": []
+    },
+    {
+     "id": "haute-ville-rd",
+     "nom": "Commerces de la Haute-ville",
+     "type": "commerce",
+     "description": "Maréchal-ferrant (Filim, nain) · dispensaire (Darinna) · échoppe d'alchimie (Dwalore, nain) · temple de Limihahu (Tusert Fibion) · boulangerie (Firer Anast, elfe) · étable (Budoc Bolcolline) · auberges : Au bol du voyageur, Au jeu de dames, Au chêne de la harpie, Au repaire du serpent chanceux.",
+     "utilite": "Tout l'équipement du voyageur avant la montagne",
+     "pnj": []
+    },
+    {
+     "id": "basse-ville-rd",
+     "nom": "Commerces de la Basse-ville",
+     "type": "commerce",
+     "description": "Étable (Prënëi Losïa « Prelos », demi-elfe) · auberge Au relais du phénix niais · dispensaire (Meal Lortan) · épicerie (Erus) · boulangerie (Hivella).",
+     "utilite": "Vivres et repos à moindre prix",
+     "pnj": []
+    }
+   ],
+   "personnages": [
+    "berthold",
+    "allen-sauvage"
+   ],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/roncedroite/principale.jpg"
+   ]
+  },
+  {
+   "id": "academie",
+   "nom": "L'Académie des Îles Saintes",
+   "type": "academie",
+   "ile": "limehahu",
+   "pos": [
+    1520,
+    140
+   ],
+   "population": "Mages libérés des Cercles et élèves nés libres",
+   "climat": "Rude",
+   "dirigeant": "Arathak",
+   "accroche": "Sept jours de cheval depuis Roche-Sainte. Une montagne à franchir. C'est exactement le but.",
+   "description": "Par-delà les Montagnes du Nord, un lieu neuf, encore en construction, bâti par des gens qui ont passé 220 ans en cage. Il y a de l'espoir ici — et beaucoup de cicatrices. L'isolement est volontaire : loin des tensions post-Cercles, loin de l'Église (les Templiers ne peuvent débarquer sans être vus des jours à l'avance), loin de la Couronne. On ne vient pas ici par confort. On vient parce qu'on le veut.",
+   "histoire": "Fondée en 520 par Arathak après la chute du Cercle des Îles Saintes (1 Usos 520), avec l'accord de Yon, sur conseil de Yumi. La construction fut ralentie par l'attaque du Magistère Kanius (521) : Gojo, mage de feu, frappa l'Académie. En 525, la Guerre des Magistères s'achève et le camp d'Arathak fête la victoire.",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "dome-entrainement",
+     "nom": "Le Dôme d'Entraînement — Cycle du Temps",
+     "type": "lieu-saint",
+     "description": "Créé par Narcise, qui n'enseigne pas mais a offert ce dôme. Un jour à l'extérieur = trois jours à l'intérieur ; l'état physique est restitué à chaque cycle. C'est ici que Cullen et Adelia se sont rencontrés — un mois en temps réel.",
+     "utilite": "Entraînement intensif sans fatigue accumulée",
+     "pnj": [
+      "narcise"
+     ]
+    },
+    {
+     "id": "batiments-academie",
+     "nom": "Bâtiments de l'Académie",
+     "type": "commerce",
+     "description": "La Grande Salle · les dortoirs · la bibliothèque · les terrains d'exercice · le bureau d'Arathak. (En construction — à développer.)",
+     "utilite": "Vie quotidienne des élèves",
+     "pnj": []
+    }
+   ],
+   "personnages": [
+    "arathak",
+    "galwyn-nei",
+    "zed",
+    "narcise"
+   ],
+   "secrets": [
+    {
+     "id": "sec-aca-defaite",
+     "titre": "Arathak a perdu",
+     "revele": false,
+     "texte": "Arathak a perdu la Guerre des Magistères contre Kanius — de justesse. Morigane a réécrit l'histoire pour le présenter en vainqueur. Arathak le sait et l'accepte."
+    },
+    {
+     "id": "sec-aca-divina",
+     "titre": "Divina",
+     "revele": false,
+     "texte": "Arathak ignore que sa mère Divina est le Péché de la Luxure."
+    },
+    {
+     "id": "sec-aca-galwyn",
+     "titre": "Le silence de Galwyn",
+     "revele": false,
+     "texte": "Galwyn garde le silence sur ce qu'il a fait en l'an 300."
+    }
+   ],
+   "tensions": [
+    "Galwyn et Miwa : le père et la fille. 220 ans de rancœur. Il refuse de la regarder.",
+    "Certains élèves sont des survivants des Cercles. D'autres sont nés libres.",
+    "L'accord avec l'Église tient. Pour l'instant.",
+    "7 jours de route : si quelque chose arrive à Roche-Sainte…",
+    "Postes vacants : Eau, Vent, Alchimie, Herboristerie."
+   ],
+   "images": [
+    "images/lieux/academie/principale.jpg"
+   ]
+  },
+  {
+   "id": "val-des-pierres",
+   "nom": "Val-des-Pierres",
+   "type": "village",
+   "ile": "limehahu",
+   "pos": [
+    1408,
+    362
+   ],
+   "population": "≈ 800 habitants",
+   "climat": "Très froid",
+   "dirigeant": "—",
+   "accroche": "Toute la pierre blanche des Îles Saintes vient d'ici.",
+   "description": "Carrière de pierre blanche dans les Montagnes du Nord. La Cathédrale de la Vie, le Palais van Emris, les Geôles Blanches — tout est sorti de ces parois. Les carriers meurent jeunes : poussière dans les poumons, effondrements. L'Église envoie des Mains Blanches. Elles ne suffisent pas.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [
+    "Pourquoi le taux de mortalité a-t-il triplé depuis deux ans ?"
+   ],
+   "images": [
+    "images/lieux/val-des-pierres/principale.jpg"
+   ]
+  },
+  {
+   "id": "havre-gris",
+   "nom": "Havre-Gris",
+   "type": "village",
+   "ile": "limehahu",
+   "pos": [
+    1712,
+    758
+   ],
+   "population": "≈ 400 habitants",
+   "climat": "Venteux, brumeux",
+   "dirigeant": "—",
+   "accroche": "Un village de pêcheurs comme les autres. Sauf pour une chose.",
+   "description": "Sur la côte est de Limehahu, face au large — et, bien au-delà, au Continent. Des barques, des filets, du brouillard. Au bout de la jetée se dresse le phare abandonné : il ne fonctionne plus depuis trente ans, et les pêcheurs refusent d'en parler. Quand on insiste, ils changent de sujet. Quand on insiste encore, on n'est plus le bienvenu.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "phare-abandonne",
+     "nom": "Le Phare Abandonné",
+     "type": "mystere",
+     "description": "Éteint depuis trente ans, au bout de la jetée.",
+     "utilite": "Que s'est-il passé dans ce phare ?",
+     "pnj": []
+    }
+   ],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [
+    "Que s'est-il passé dans ce phare ?"
+   ],
+   "images": [
+    "images/lieux/havre-gris/principale.jpg"
+   ]
+  },
+  {
+   "id": "sombre-oree",
+   "nom": "Sombre-Orée",
+   "type": "village",
+   "ile": "limehahu",
+   "pos": [
+    1608,
+    332
+   ],
+   "population": "≈ 600 habitants",
+   "climat": "Froid, humide",
+   "dirigeant": "—",
+   "accroche": "La forêt est vieille. Plus vieille que les Îles Saintes. Plus vieille que la Conjonction, disent certains.",
+   "description": "Village de bûcherons en lisière de la forêt du Nord. Des enfants disparaissent — un tous les deux ou trois ans, jamais retrouvés. Les bûcherons ne s'aventurent plus au-delà de la Ligne Grise. L'Église a envoyé des Templiers deux fois. Ils n'ont rien trouvé.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "ligne-grise",
+     "nom": "La Ligne Grise",
+     "type": "mystere",
+     "description": "La limite que les bûcherons ne franchissent plus.",
+     "utilite": "Qu'y a-t-il au-delà ?",
+     "pnj": []
+    }
+   ],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [
+    "Qu'y a-t-il au-delà de la Ligne Grise ?"
+   ],
+   "images": [
+    "images/lieux/sombre-oree/principale.jpg"
+   ]
+  },
+  {
+   "id": "vanhille",
+   "nom": "Vanhille",
+   "type": "ville",
+   "ile": "vanhill",
+   "pos": [
+    790,
+    468
+   ],
+   "population": "≈ 28 000 habitants",
+   "climat": "Variable, souvent gris et pluvieux",
+   "dirigeant": "Famille Merlyn",
+   "accroche": "La Cité du Luxe. Ce que le monde désire finit par passer ici.",
+   "description": "La ville couvre 80 % de l'île. Environ 1 107 maisons et bâtiments, 44 commerces, une caserne de Paladins, et le Marché Géant où règne la Guilde Marchande — la plus grande du monde connu, capable de trouver n'importe quoi, y compris ce qui est illégal aux Îles Saintes. Société ouverte : les races s'y concentrent en communautés distinctes. Richesse estimée : 5 000 pièces d'or.",
+   "histoire": "En 281, la Sorcière Rouge Amaranthe attaqua Vanhill et brûla ports et habitants — la Folie qui précéda la Chute des Dragons.",
+   "familles": [
+    "merlyn",
+    "aurelion"
+   ],
+   "lieuxNotables": [
+    {
+     "id": "marche-geant",
+     "nom": "Le Marché Géant",
+     "type": "commerce",
+     "description": "Dirigé par la Guilde Marchande de Vahill (fondée en 217). Intermédiaire entre fournisseurs, fabricants et marchands, avec des repaires à travers le monde.",
+     "utilite": "Peut trouver n'importe quoi — y compris ce qui est illégal aux Îles Saintes",
+     "pnj": []
+    },
+    {
+     "id": "au-tresor",
+     "nom": "Auberge Au Trésor",
+     "type": "auberge",
+     "description": "Tenue par Senia et Roland. Clientèle de riches marchands. Magicien-illusionniste, barde, petit commerce.",
+     "utilite": "Contacts marchands fortunés",
+     "pnj": []
+    },
+    {
+     "id": "ecrevisse-azur",
+     "nom": "Auberge À l'écrevisse d'azur",
+     "type": "auberge",
+     "description": "Tenue par Sololla Touphin. Clientèle d'aventuriers. 6 chambres, barde, écuyer, soigneur.",
+     "utilite": "Rencontrer des aventuriers · se faire soigner",
+     "pnj": []
+    },
+    {
+     "id": "la-dame",
+     "nom": "Auberge La Dame",
+     "type": "auberge",
+     "description": "Tenue par Milik Argen. Prestigieuse : coffre-fort magique, palefrenier, barbier.",
+     "utilite": "Dormir en sécurité absolue",
+     "pnj": []
+    },
+    {
+     "id": "commerces-vanhille",
+     "nom": "Commerces notables",
+     "type": "commerce",
+     "description": "Maréchal-ferrant (Thetine Bepas) · Temple de Limihahu · menuiserie (Vrugor) · librairie non magique (Grourk) · boulangerie (Daucissa Ortan) · étable (Daluran) · épicerie (Niel).",
+     "utilite": "44 commerces au total",
+     "pnj": []
+    },
+    {
+     "id": "caserne-paladins-v",
+     "nom": "Caserne de Paladins",
+     "type": "caserne",
+     "description": "La défense de l'île.",
+     "utilite": "Présence de la Garde Sainte",
+     "pnj": []
+    }
+   ],
+   "personnages": [],
+   "secrets": [
+    {
+     "id": "sec-vanhill-lune",
+     "titre": "Vanhill et la Lune de Sang",
+     "revele": false,
+     "texte": "L'île de Vanhill est la seule partie des Îles Saintes qui ne sera pas touchée par la Lune de Sang que prépare Morigane. Pourquoi ? Est-ce lié à Achabel ?"
+    }
+   ],
+   "tensions": [],
+   "images": [
+    "images/lieux/vanhille/principale.jpg"
+   ]
+  },
+  {
+   "id": "plaines-cotieres",
+   "nom": "Les Plaines Côtières",
+   "type": "lieu-dit",
+   "ile": "vanhill",
+   "pos": [
+    868,
+    512
+   ],
+   "population": "≈ 7 000 habitants",
+   "climat": "Variable, souvent gris et pluvieux",
+   "dirigeant": "—",
+   "accroche": "La seule partie de Vanhill qui ne soit pas la ville. Des fermes, des hameaux, du calme.",
+   "description": "20 % de l'île. Achabel, Manem et leur fille Sam y vivent, loin de tout.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [
+    "achabel",
+    "manem",
+    "sam"
+   ],
+   "secrets": [
+    {
+     "id": "sec-achabel",
+     "titre": "Le Prophète des Ténèbres",
+     "revele": false,
+     "texte": "Achabel est le Prophète des Ténèbres. Il l'ignore. Il vit paisiblement, loin de tout."
+    }
+   ],
+   "tensions": [],
+   "images": [
+    "images/lieux/plaines-cotieres/principale.jpg"
+   ]
+  },
+  {
+   "id": "fer-blanc",
+   "nom": "Fer-Blanc",
+   "type": "ville",
+   "ile": "anhil",
+   "pos": [
+    305,
+    1118
+   ],
+   "population": "À développer",
+   "climat": "Beau et ensoleillé",
+   "dirigeant": "Famille Sauvage",
+   "accroche": "L'acier des Îles Saintes sort d'ici. Les paladins aussi.",
+   "description": "À l'ouest d'Anhil, la ville est bâtie autour de ses forges. Le son du marteau ne s'arrête jamais complètement — même la nuit, une enclume résonne quelque part. Son nom vient de la pierre blanche locale et de l'acier qu'on y travaille : les habitants disent que l'acier de Fer-Blanc « garde la lumière ».",
+   "histoire": "La famille Sauvage donne ses fils à l'épée et ses filles à la forge. Ou l'inverse. Peu importe — ils servent. La reconstruction de Préfet passe en partie par l'acier de Fer-Blanc.",
+   "familles": [
+    "sauvage"
+   ],
+   "lieuxNotables": [
+    {
+     "id": "manoir-sauvage",
+     "nom": "Le Manoir Sauvage",
+     "type": "palais",
+     "description": "Demeure principale de la famille.",
+     "utilite": "Rencontrer la famille Sauvage",
+     "pnj": []
+    },
+    {
+     "id": "forges-fer-blanc",
+     "nom": "Les Forges de Fer-Blanc",
+     "type": "commerce",
+     "description": "Le cœur économique de la ville.",
+     "utilite": "Faire forger ou réparer une arme de qualité",
+     "pnj": []
+    },
+    {
+     "id": "terrains-armes",
+     "nom": "Les Terrains d'Armes",
+     "type": "caserne",
+     "description": "Formation des futurs paladins.",
+     "utilite": "Recruter des combattants",
+     "pnj": []
+    }
+   ],
+   "personnages": [
+    "arthur-sauvage",
+    "reyna-sauvage",
+    "allen-sauvage"
+   ],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/fer-blanc/principale.jpg"
+   ]
+  },
+  {
+   "id": "trois-soeurs",
+   "nom": "Les Trois Sœurs",
+   "type": "village",
+   "ile": "anhil",
+   "pos": [
+    455,
+    1098
+   ],
+   "population": "≈ 1 200 au total",
+   "climat": "Beau et ensoleillé",
+   "dirigeant": "—",
+   "accroche": "Trois hameaux, si proches qu'on les compte comme un.",
+   "description": "Trois hameaux agricoles à mi-chemin entre Fer-Blanc et Préfet, qu'ils nourrissent tous deux. Depuis la destruction de Préfet (524), les Trois Sœurs croulent sous la demande : les réfugiés affluent, les récoltes ne suivent pas.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [
+    "La tension monte entre les habitants et les réfugiés de Préfet."
+   ],
+   "images": [
+    "images/lieux/trois-soeurs/principale.jpg"
+   ]
+  },
+  {
+   "id": "prefet",
+   "nom": "Préfet",
+   "type": "ville-detruite",
+   "ile": "anhil",
+   "pos": [
+    612,
+    1080
+   ],
+   "population": "≈ 8 000 habitants (20 000 avant 524)",
+   "climat": "Beau et ensoleillé",
+   "dirigeant": "Famille Goldland",
+   "accroche": "La Cité du Savoir — détruite en 524, en reconstruction depuis 525.",
+   "description": "À l'est d'Anhil. Avant sa destruction, Préfet abritait la Grande Académie — la plus prestigieuse du monde connu —, l'Hôpital à l'architecture céleste (dômes blancs, clôture de pierre blanche, porte en or massif), le Manoir Goldland protégé par un dôme de lumière créé par Aerith Goldland, l'Orphelinat, l'auberge À la louche étincelante (maison de plaisir tenue par Shaminonne Grecin et Bardund) et la boutique textile elfe de Valindra. Aujourd'hui, les chantiers remplacent les ruines.",
+   "histoire": "En 524, lors de l'affrontement entre Mei, Sky, Ark et la paladine Reyna Sauvage contre Pride, démon de l'Orgueil — qui tentait de prendre le contrôle de Gojo, mage de feu allié du Magistère Kanius —, Pride, repoussé, fit exploser la ville entière. Tout fut détruit, y compris l'Académie de Préfet. La reconstruction a commencé en 525.",
+   "familles": [
+    "goldland"
+   ],
+   "lieuxNotables": [
+    {
+     "id": "academie-prefet",
+     "nom": "La Grande Académie de Préfet",
+     "type": "lieu-saint",
+     "description": "Fondée par la famille Goldland. Détruite en 524 — sera reconstruite.",
+     "utilite": "Le savoir du monde connu (bientôt de nouveau)",
+     "pnj": []
+    },
+    {
+     "id": "hopital-prefet",
+     "nom": "L'Hôpital de Préfet",
+     "type": "commerce",
+     "description": "Architecture céleste : dômes blancs, clôture de pierre blanche, porte en or massif.",
+     "utilite": "Soins",
+     "pnj": []
+    },
+    {
+     "id": "manoir-goldland",
+     "nom": "Le Manoir Goldland",
+     "type": "palais",
+     "description": "Protégé par un dôme de lumière créé par Aerith Goldland. Chambres 214/215 (Adelia), 415 (préférée de Mei), 417 (Ark) · cuisine face à la mer au 4e étage.",
+     "utilite": "Résidence de la famille Goldland",
+     "pnj": [
+      "aerith-goldland"
+     ]
+    },
+    {
+     "id": "orphelinat-prefet",
+     "nom": "L'Orphelinat de Préfet",
+     "type": "commerce",
+     "description": "",
+     "utilite": "",
+     "pnj": []
+    },
+    {
+     "id": "louche-etincelante",
+     "nom": "À la louche étincelante",
+     "type": "auberge",
+     "description": "Maison de plaisir tenue par Shaminonne Grecin et Bardund.",
+     "utilite": "Plaisirs et rumeurs",
+     "pnj": []
+    }
+   ],
+   "personnages": [
+    "aerith-goldland"
+   ],
+   "secrets": [],
+   "tensions": [
+    "Les réfugiés affluent vers les Trois Sœurs et Fer-Blanc."
+   ],
+   "images": [
+    "images/lieux/prefet/principale.jpg"
+   ]
+  },
+  {
+   "id": "iles-glace-lieu",
+   "nom": "Les Îles de Glace",
+   "type": "danger",
+   "ile": "iles-de-glace",
+   "pos": [
+    258,
+    255
+   ],
+   "population": "Inhabitées",
+   "climat": "Létal",
+   "dirigeant": "—",
+   "accroche": "Personne n'y va. Personne n'en revient.",
+   "description": "À 300 km au nord de Limehahu. Un environnement hostile, mortel même pour des mages très puissants. On dit qu'au-delà se cachent des terres cachées de Glace. À ne pas confondre avec les Îles de Glace et de Lave, très loin d'ici, où vivent les derniers Elfes Purs.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [
+    "Qu'est-ce qui tue les mages là-bas ?"
+   ],
+   "images": [
+    "images/lieux/iles-de-glace/principale.jpg"
+   ]
+  }
+ ],
+ "routes": [
+  {
+   "de": "roche-sainte",
+   "a": "noir-marais",
+   "km": 70,
+   "type": "route",
+   "points": [
+    [
+     1490,
+     1290
+    ],
+    [
+     1420,
+     1150
+    ],
+    [
+     1380,
+     1000
+    ],
+    [
+     1350,
+     880
+    ],
+    [
+     1345,
+     805
+    ]
+   ]
+  },
+  {
+   "de": "roche-sainte",
+   "a": "blanchefleure",
+   "km": 90,
+   "type": "route",
+   "points": [
+    [
+     1490,
+     1290
+    ],
+    [
+     1430,
+     1140
+    ],
+    [
+     1370,
+     990
+    ],
+    [
+     1320,
+     850
+    ],
+    [
+     1295,
+     760
+    ],
+    [
+     1292,
+     690
+    ]
+   ]
+  },
+  {
+   "de": "noir-marais",
+   "a": "blanchefleure",
+   "km": 40,
+   "type": "piste",
+   "terrain": "difficile",
+   "points": [
+    [
+     1345,
+     805
+    ],
+    [
+     1315,
+     755
+    ],
+    [
+     1292,
+     690
+    ]
+   ]
+  },
+  {
+   "de": "blanchefleure",
+   "a": "roncedroite",
+   "km": 130,
+   "type": "route",
+   "points": [
+    [
+     1292,
+     690
+    ],
+    [
+     1340,
+     610
+    ],
+    [
+     1400,
+     540
+    ],
+    [
+     1470,
+     480
+    ],
+    [
+     1520,
+     432
+    ]
+   ]
+  },
+  {
+   "de": "roncedroite",
+   "a": "academie",
+   "km": 40,
+   "type": "montagne",
+   "points": [
+    [
+     1520,
+     432
+    ],
+    [
+     1500,
+     340
+    ],
+    [
+     1490,
+     240
+    ],
+    [
+     1520,
+     140
+    ]
+   ]
+  },
+  {
+   "de": "roncedroite",
+   "a": "val-des-pierres",
+   "km": 25,
+   "type": "montagne",
+   "points": [
+    [
+     1520,
+     432
+    ],
+    [
+     1460,
+     395
+    ],
+    [
+     1408,
+     362
+    ]
+   ]
+  },
+  {
+   "de": "roncedroite",
+   "a": "sombre-oree",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     1520,
+     432
+    ],
+    [
+     1565,
+     385
+    ],
+    [
+     1608,
+     332
+    ]
+   ]
+  },
+  {
+   "de": "blanchefleure",
+   "a": "havre-gris",
+   "km": 60,
+   "type": "route",
+   "points": [
+    [
+     1292,
+     690
+    ],
+    [
+     1420,
+     700
+    ],
+    [
+     1560,
+     720
+    ],
+    [
+     1712,
+     758
+    ]
+   ]
+  },
+  {
+   "de": "roche-sainte",
+   "a": "blanchefleure",
+   "km": 110,
+   "type": "cotier",
+   "points": [
+    [
+     1490,
+     1290
+    ],
+    [
+     1330,
+     1300
+    ],
+    [
+     1230,
+     1180
+    ],
+    [
+     1200,
+     1000
+    ],
+    [
+     1210,
+     830
+    ],
+    [
+     1250,
+     720
+    ],
+    [
+     1292,
+     690
+    ]
+   ]
+  },
+  {
+   "de": "roche-sainte",
+   "a": "havre-gris",
+   "km": 120,
+   "type": "cotier",
+   "points": [
+    [
+     1490,
+     1290
+    ],
+    [
+     1650,
+     1300
+    ],
+    [
+     1800,
+     1150
+    ],
+    [
+     1810,
+     950
+    ],
+    [
+     1770,
+     830
+    ],
+    [
+     1712,
+     758
+    ]
+   ]
+  },
+  {
+   "de": "roche-sainte",
+   "a": "vanhille",
+   "km": 200,
+   "type": "maritime",
+   "points": [
+    [
+     1490,
+     1290
+    ],
+    [
+     1250,
+     1150
+    ],
+    [
+     1050,
+     950
+    ],
+    [
+     930,
+     720
+    ],
+    [
+     860,
+     580
+    ],
+    [
+     790,
+     468
+    ]
+   ]
+  },
+  {
+   "de": "roche-sainte",
+   "a": "prefet",
+   "km": 280,
+   "type": "maritime",
+   "points": [
+    [
+     1490,
+     1290
+    ],
+    [
+     1280,
+     1330
+    ],
+    [
+     1050,
+     1300
+    ],
+    [
+     850,
+     1210
+    ],
+    [
+     700,
+     1130
+    ],
+    [
+     612,
+     1080
+    ]
+   ]
+  },
+  {
+   "de": "vanhille",
+   "a": "fer-blanc",
+   "km": 150,
+   "type": "maritime",
+   "points": [
+    [
+     790,
+     468
+    ],
+    [
+     640,
+     600
+    ],
+    [
+     480,
+     780
+    ],
+    [
+     360,
+     950
+    ],
+    [
+     305,
+     1118
+    ]
+   ]
+  },
+  {
+   "de": "roche-sainte",
+   "a": "iles-glace-lieu",
+   "km": 300,
+   "type": "maritime",
+   "danger": "mortel",
+   "points": [
+    [
+     1490,
+     1290
+    ],
+    [
+     1180,
+     1050
+    ],
+    [
+     900,
+     780
+    ],
+    [
+     640,
+     540
+    ],
+    [
+     420,
+     380
+    ],
+    [
+     258,
+     255
+    ]
+   ]
+  },
+  {
+   "de": "vanhille",
+   "a": "plaines-cotieres",
+   "km": 15,
+   "type": "route",
+   "points": [
+    [
+     790,
+     468
+    ],
+    [
+     830,
+     492
+    ],
+    [
+     868,
+     512
+    ]
+   ]
+  },
+  {
+   "de": "fer-blanc",
+   "a": "trois-soeurs",
+   "km": 30,
+   "type": "route",
+   "points": [
+    [
+     305,
+     1118
+    ],
+    [
+     380,
+     1105
+    ],
+    [
+     455,
+     1098
+    ]
+   ]
+  },
+  {
+   "de": "trois-soeurs",
+   "a": "prefet",
+   "km": 30,
+   "type": "route",
+   "points": [
+    [
+     455,
+     1098
+    ],
+    [
+     535,
+     1088
+    ],
+    [
+     612,
+     1080
+    ]
+   ]
+  }
+ ],
+ "transports": [
+  {
+   "id": "pied",
+   "nom": "À pied",
+   "icone": "🚶",
+   "kmJour": 25,
+   "autorise": [
+    "route",
+    "piste",
+    "montagne"
+   ],
+   "note": "Terrain difficile −30 %"
+  },
+  {
+   "id": "cheval",
+   "nom": "Cheval",
+   "icone": "🐎",
+   "kmJour": 50,
+   "autorise": [
+    "route",
+    "piste",
+    "montagne"
+   ],
+   "note": "Montagne −40 % · repos nécessaire"
+  },
+  {
+   "id": "caleche",
+   "nom": "Calèche",
+   "icone": "🛞",
+   "kmJour": 40,
+   "autorise": [
+    "route"
+   ],
+   "note": "Routes uniquement · impossible en montagne"
+  },
+  {
+   "id": "cotier",
+   "nom": "Bateau côtier",
+   "icone": "⛵",
+   "kmJour": 80,
+   "autorise": [
+    "cotier"
+   ],
+   "note": "Longe les côtes"
+  },
+  {
+   "id": "navire",
+   "nom": "Navire",
+   "icone": "🚢",
+   "kmJour": 120,
+   "autorise": [
+    "maritime",
+    "cotier"
+   ],
+   "note": "Traversée entre îles"
+  },
+  {
+   "id": "vol",
+   "nom": "Vol d'oiseau",
+   "icone": "🦅",
+   "kmJour": 200,
+   "autorise": [
+    "route",
+    "piste",
+    "montagne",
+    "cotier",
+    "maritime"
+   ],
+   "note": "Messagers · familiers · Animagus"
+  }
+ ],
+ "modificateurs": [
+  {
+   "id": "meteo",
+   "nom": "Mauvaise météo",
+   "effet": -0.25
+  },
+  {
+   "id": "tempete",
+   "nom": "Tempête",
+   "effet": 0,
+   "bloqueMer": true,
+   "note": "Navigation impossible"
+  },
+  {
+   "id": "hiver",
+   "nom": "Hiver rigoureux (nord)",
+   "effet": -0.2
+  },
+  {
+   "id": "groupe-lent",
+   "nom": "Groupe lent (blessés, chariots)",
+   "effet": -0.3
+  },
+  {
+   "id": "groupe-leger",
+   "nom": "Groupe léger (monté, sans bagage)",
+   "effet": 0.1
+  },
+  {
+   "id": "marche-forcee",
+   "nom": "Marche forcée (nuit)",
+   "effet": 0.25,
+   "note": "Mais fatigue"
+  }
+ ],
+ "familles": [
+  {
+   "id": "van-emris",
+   "nom": "van Emris",
+   "pilier": "La Couronne",
+   "devise": "Nommés, non pris",
+   "couleurs": "Bleu roi · Or",
+   "symbole": "Une couronne d'or posée sur une épée brisée",
+   "demeure": "Roche-Sainte",
+   "blason": "images/blasons/van-emris.png",
+   "description": "Une royauté qui n'a pas conquis son trône — elle l'a reçu. Le premier roi Alistair fut nommé par l'Église. L'épée brisée est un aveu, pas une honte. Alistair symbolisait l'alliance humains-elfes et portait le sang de la famille Asta, anciens rois des Îles Colmores. Le roi actuel, Stanislas « Le Soumis », est si influencé par Yon que certains considèrent l'Archange comme le vrai souverain.",
+   "membres": "Alistair (100-450, 1er roi) → Stanislas (430-…, roi actuel) & Estrid · leur fils Eivor · Milthae (432-…), sœur du roi, veuve de Klaus (456-479, tué par le roi Stanislas) · Angelina, Aleric, Theirin, Eyma Klaus"
+  },
+  {
+   "id": "goldland",
+   "nom": "Goldland",
+   "pilier": "Le Savoir",
+   "devise": "Le savoir éclaire, la foi guide",
+   "couleurs": "Or · Blanc",
+   "symbole": "Un livre ouvert d'où jaillit un rayon de lumière",
+   "demeure": "Préfet (Anhil)",
+   "blason": "images/blasons/goldland.png",
+   "description": "Fondateurs de la Grande Académie de Préfet, la plus prestigieuse du monde connu — détruite en 524, en reconstruction.",
+   "membres": "Aerith Goldland (créatrice du dôme de lumière du Manoir)"
+  },
+  {
+   "id": "merlyn",
+   "nom": "Merlyn",
+   "pilier": "Les Marchands",
+   "devise": "Ce que le monde désire",
+   "couleurs": "Pourpre · Or",
+   "symbole": "Une navette de tisserand croisée avec une plume d'écriture",
+   "demeure": "Vanhille (Vanhill)",
+   "blason": "images/blasons/merlyn.png",
+   "description": "Contrôlent le textile de luxe — renommée mondiale — et la Guilde Marchande de Vanhille.",
+   "membres": ""
+  },
+  {
+   "id": "sauvage",
+   "nom": "Sauvage",
+   "pilier": "L'Armée et la Forge",
+   "devise": "L'acier garde la lumière",
+   "couleurs": "Acier · Rouge",
+   "symbole": "Une enclume massive surmontée d'une épée dressée",
+   "demeure": "Fer-Blanc (Anhil)",
+   "blason": "images/blasons/sauvage.png",
+   "description": "Ils fournissent paladins et forgerons. Lignée de paladins.",
+   "membres": "Arthur (Chef Paladin) · Reyna (Paladine) · Allen (maître forgeron, Grande Forge de Roncedroite)"
+  },
+  {
+   "id": "aurelion",
+   "nom": "Aurélion",
+   "pilier": "La Banque",
+   "devise": "Tout a son poids",
+   "couleurs": "Or · Noir",
+   "symbole": "Une balance dont les deux plateaux sont des gemmes taillées",
+   "demeure": "Vanhille (Vanhill)",
+   "blason": "images/blasons/aurelion.png",
+   "description": "Banque et joaillerie. Collectent les taxes de l'Union Blanche.",
+   "membres": ""
+  },
+  {
+   "id": "caldrin",
+   "nom": "Caldrin",
+   "pilier": "Le Peuple",
+   "devise": "Nous portons le royaume",
+   "couleurs": "Vert · Brun",
+   "symbole": "Une gerbe de blé liée par une main ouverte",
+   "demeure": "Roche-Sainte",
+   "blason": "images/blasons/caldrin.png",
+   "description": "Représentation populaire. La famille la moins fastueuse des sept.",
+   "membres": ""
+  },
+  {
+   "id": "velarys",
+   "nom": "Velarys",
+   "pilier": "L'Artisanat",
+   "devise": "De rien, tout",
+   "couleurs": "Bleu clair · Argent",
+   "symbole": "Un fil traversant une aiguille, formant un nœud infini",
+   "demeure": "Roche-Sainte",
+   "blason": "images/blasons/velarys.png",
+   "description": "Ils produisent les tissus que Merlyn vend.",
+   "membres": ""
+  },
+  {
+   "id": "wines",
+   "nom": "Wines",
+   "pilier": "La Foi",
+   "devise": "Nous servons en silence",
+   "couleurs": "Blanc · Rouge sang",
+   "symbole": "Un calice sous sept étoiles",
+   "demeure": "Roche-Sainte",
+   "blason": "images/blasons/wines.png",
+   "description": "Par tradition, les Wines occupent des postes au sein de l'Église. Érudits et servants — le rouge évoque le sacrifice, pas la tragédie. Samus Wines occupait le poste de Chef Paladin avant sa mort ; Arthur Sauvage l'a remplacé.",
+   "membres": "Samus Wines († ancien Chef Paladin)"
+  }
+ ],
+ "blasonsInstitutions": [
+  {
+   "id": "royaume",
+   "nom": "Le Royaume des Îles Saintes",
+   "devise": "Le Berceau de la Vie",
+   "couleurs": "Blanc · Or · Bleu profond",
+   "symbole": "Trois îles stylisées émergeant de flots, surmontées d'une couronne d'or — Limehahu (grande), Vanhill (petite), Anhil (moyenne), les flots en cercle",
+   "blason": "images/blasons/royaume.png"
+  },
+  {
+   "id": "eglise",
+   "nom": "L'Église de la Vie",
+   "devise": "La Lumière guide la Vie",
+   "couleurs": "Blanc · Or",
+   "symbole": "Un soleil à sept rayons au-dessus d'une flamme stylisée — inspire autant le respect que la crainte",
+   "blason": "images/blasons/eglise.png"
+  }
+ ],
+ "codex": {
+  "lois": {
+   "titre": "Lois & Interdits",
+   "sections": [
+    {
+     "titre": "Magies autorisées — dites « naturelles »",
+     "contenu": "✅ Élémentaire · Génétique · Druidique"
+    },
+    {
+     "titre": "Magies interdites",
+     "contenu": "Magie du Sang → peine capitale · Soufre alchimique → emprisonnement (Geôles Blanches) · Magie Noire → bannissement ou mort · Magie Démonique → bannissement ou mort · Objets magiques et invocations → interdits"
+    },
+    {
+     "titre": "Le Système de Phylactères",
+     "contenu": "Tout mage arrivant aux Îles Saintes subit un rituel d'enregistrement : contrôle au port, escorte par les Templiers vers la Cathédrale, extraction d'une essence magique, création du phylactère conservé dans la Salle des Phylactères. L'Église peut localiser le mage à tout moment et surveiller ses activités magiques à distance. Objectif déclaré : prévenir la corruption magique, protéger la population."
+    },
+    {
+     "titre": "Sanctité de la Vie",
+     "contenu": "Protection des nouveaux-nés · interdiction de l'avortement et de l'euthanasie."
+    },
+    {
+     "titre": "Encadrement des mœurs",
+     "contenu": "Interdiction de l'homosexualité et de l'adultère."
+    },
+    {
+     "titre": "Lois économiques",
+     "contenu": "Protectionnisme (protection des artisans locaux) · régulation des biens vitaux : interdiction de profiter excessivement du pain et de l'eau · l'Église contrôle le marché du travail et garantit des conditions équitables · emplois rémunérés d'utilité publique offerts par l'Église · interdiction de la paresse et de la mendicité sans cause."
+    }
+   ]
+  },
+  "religions": {
+   "titre": "Religions",
+   "sections": [
+    {
+     "titre": "L'Église de la Vie / de la Lumière",
+     "contenu": "L'Église dominante d'Asterre — les deux appellations désignent la même institution. Divinité : Limehahu, Déesse de la Vie. Siège : la Cathédrale de la Vie, Roche-Sainte. Religion d'État, co-dirige le royaume. Chiffre sacré : 7 — sept jours, sept familles, sept Paladins, sept bougies."
+    },
+    {
+     "titre": "Hiérarchie (525)",
+     "contenu": "Archange Yon (autorité suprême, dirige la Garde Sainte) → Grande Prêtresse Yumi (tête opérationnelle) → d'un côté le Clergé (les 4 Prêtres, puis les Mains Blanches), de l'autre la Garde Sainte (Chef Paladin Arthur Sauvage → 6 Paladins → Inquisiteurs → Chef Templier Cullen → Templiers). En 525, Yon devient Archange et cède le rôle de Grand Prêtre à sa fille Yumi ; il vient de retrouver son immortalité (rendue par Mei via une Pierre de Rosette) et traverse une période de fragilité — c'est Yumi qui porte pleinement l'Église."
+    },
+    {
+     "titre": "Les 4 Prêtres — Fonctions Saintes",
+     "contenu": "Quatre par grande ville (les villages partagent souvent un prêtre polyvalent). Le Prêtre du Souffle — naissances, baptêmes (la Vie qui commence). Le Prêtre du Lien — mariages, serments, contrats sacrés (la Vie qui unit). Le Prêtre du Baume — soins, dispensaires (la Vie qui soigne). Le Prêtre du Passage — funérailles, derniers instants (la Vie qui s'achève)."
+    },
+    {
+     "titre": "Les Mains Blanches",
+     "contenu": "Les bénévoles. Ils assistent les prêtres, tiennent les dispensaires, distribuent l'aide. Volontaires du peuple, aucune ordination, reconnaissables à leurs gants blancs. Ils sont partout. Ils voient tout. Ils ne disent jamais rien."
+    },
+    {
+     "titre": "Rituels",
+     "contenu": "Le Premier Souffle (baptême — l'enfant est présenté à la Lumière dans les 7 jours) · Le Serment de Lien (mariage — les époux échangent une flamme) · L'Imposition du Baume (onction des malades) · La Dernière Lumière (funérailles — une bougie brûle 7 jours) · L'Ordination (par la Grande Prêtresse) · L'Enregistrement (rituel des phylactères, par les Templiers)."
+    },
+    {
+     "titre": "Calendrier — les 12 mois",
+     "contenu": "Primus, Frigus (hiver) · Verna, Florus, Maius (printemps) · Solis, Aestus, Messis (été) · Septius, Autumnus, Usos (automne) · Nivis (hiver)."
+    },
+    {
+     "titre": "Les 5 fêtes",
+     "contenu": "La Nuit du Souffle (1 Primus — nouvel an, 7 bougies) · La Fête des Sept (7 Solis — les 7 familles fondatrices) · La Fondation (7 Septius — fondation des Îles Saintes, 200) · Le Deuil Blanc (7 Septius — mort de Valène, 300 : le même jour. Une fête et un deuil, célébrés ensemble ; personne n'ose dire à quel point c'est cruel) · La Chute (1 Usos — chute des Cercles, 520, fête récente et controversée)."
+    },
+    {
+     "titre": "Les Cercles de Mages (300–520)",
+     "contenu": "Créés par Yon après la mort de Valène, dans tous les pays de l'Union Blanche. Raison invoquée : l'ouverture de la Porte avait lié les vivants à la magie démoniaque, rendant dangereux même les mages inexpérimentés. Réalité : 220 ans d'enfermement, de torture et d'oblitération magique. Le Cercle des Îles Saintes est tombé le 1 Usos 520.",
+     "secrets": [
+      {
+       "id": "sec-rel-yon",
+       "titre": "Le poids de Yon",
+       "revele": false,
+       "texte": "Yon, Mary et Wyatt sont les enfants de Samaël et Estel — le monde l'ignore largement. Mary, Grande Prêtresse de la Mort, est la sœur de Yon, Archange de la Lumière. Yon a « sauvé 5 milliards de vies » en 300 sans que personne ne le sache — il en porte le poids seul. L'Église ferma les yeux sur les dérives magiques du temps des Magistères."
+      }
+     ]
+    },
+    {
+     "titre": "Les 4 autres Églises élémentaires",
+     "contenu": "Église du Feu — divinité Sylvanus (humain Olympien devenu Dieu), associée à Luxuria (Passion, sa fille) et Duoror (Souffrance) ; rituel connu : le Rituel du Phœnix, utilisé par Selina pour pouvoir ramener son frère Livai. Église de l'Eau — divinité Ziriel, associée à Pavor (Peur) ; Ziriel est la mère d'Adelia, Héritière de l'Eau. Église de la Terre — territoire : Avelorn ; associée à Mélia, Déesse de la Nature, Princesse d'Avelorn, épouse de Sylas, mère de Salys (seule Médine d'Asterre). Église de la Mort — divinité Zork ; Grande Prêtresse : Mary, fille de Samaël et Estel, mère de Morigane. Discrète."
+    }
+   ]
+  },
+  "politique": {
+   "titre": "Politique",
+   "sections": [
+    {
+     "titre": "Théocratie en binôme",
+     "contenu": "Le pouvoir est partagé — et Yon semble avoir le dernier mot. La Couronne (van Emris, roi Stanislas Ier) : relations internationales, diplomatie, annonces générales, défense nationale. L'Église (Archange Yon, Grande Prêtresse Yumi) : autorité spirituelle, lois, justice, doctrine, surveillance des mages. Tensions potentielles quand les décisions de la Couronne heurtent les dogmes — ou l'inverse."
+    },
+    {
+     "titre": "La dynastie van Emris (300 – présent)",
+     "contenu": "Alistair van Emris (100-450), 1er roi nommé par Yon, époux de Léliana († ). Leur fils Stanislas (430-…) « Le Soumis », roi actuel, époux d'Estrid, père d'Eivor. Leur fille Milthae (432-…), veuve de Klaus (456-479, tué par le roi Stanislas), mère d'Angelina et Aleric Klaus (479-…), belle-mère de Theirin (482-…), grand-mère d'Eyma (504-…)."
+    },
+    {
+     "titre": "L'Union Blanche",
+     "contenu": "Traité unissant six royaumes sous l'égide de l'Église de la Vie : Îles Saintes (siège, puissance dominante), Avelorn, Ferelden, Cintra, Aloy, Harad. Obligations : Cercles de Mages (300–520), présence de Templiers et Paladins, taxes collectées par la famille Aurélion. Non-membres notables : Drémora (échappa aux Cercles — Mary y créa la Table Ronde), le Désert Magistral (indépendant, refuge de Sylas), Babel (monde des démons, gouverné par Sandor)."
+    },
+    {
+     "titre": "Conflit actuel (525)",
+     "contenu": "Mages pacifiques (Arathak, allié de Yon — cohésion mage/non-mage) contre mages renégats (ex-Magistère Kanius, revenu du monde des Démons, vengeance contre les Cercles). Menace nouvelle : Morigane prépare le rituel de la Lune de Sang — elle veut ouvrir la Porte des Dieux."
+    }
+   ]
+  },
+  "economie": {
+   "titre": "Économie",
+   "sections": [
+    {
+     "titre": "Monnaie",
+     "contenu": "1 pièce de bronze ≈ 0,10 € · 1 pièce d'argent ≈ 10 € · 1 pièce d'or ≈ 1 000 €."
+    },
+    {
+     "titre": "Modèle",
+     "contenu": "Ressources autosuffisantes : agriculture, bois, minerais, pêche. Exportation principale : le textile de luxe (famille Merlyn), de renommée mondiale. Revenus complémentaires : taxes de l'Union Blanche collectées par les Aurélion. Secteurs : textile, forgerie, exploitation forestière, agriculture, commerce maritime."
+    },
+    {
+     "titre": "La Guilde Marchande de Vahill (217 – présent)",
+     "contenu": "La plus grande guilde marchande du monde connu. Dirige le Marché Géant de Vanhille, sert d'intermédiaire entre fournisseurs, fabricants et marchands, possède des repaires à travers le monde. Peut trouver n'importe quoi — y compris ce qui est illégal aux Îles Saintes."
+    },
+    {
+     "titre": "Prix courants",
+     "contenu": "Nuit à La Coupe d'Argent (Haute-Ville, Roche-Sainte) : 5 pièces d'argent · nuit Au Filet Percé (port) : 1 pièce d'argent · au Recel de Noir Marais : le double du marché, aucune question posée."
+    }
+   ]
+  },
+  "armees": {
+   "titre": "Armées",
+   "sections": [
+    {
+     "titre": "L'armée la plus grande d'Asterre",
+     "contenu": "Hiérarchie : Garde Sainte > Garde Royale. En cas de crise majeure, les deux forces collaborent sous le Conseil de Défense des Îles Saintes, présidé par le roi."
+    },
+    {
+     "titre": "La Garde Sainte — l'élite spirituelle",
+     "contenu": "Dirigée par l'Archange Yon. Composée des Paladins (combat des menaces magiques majeures, protection des lieux saints), des Inquisiteurs (reçoivent les rapports des Templiers, arbitrent, enquêtent, jugent — un Templier vous arrête, un Inquisiteur décide de votre sort) et des Templiers (traque et capture des mages corrompus, surveillance des phylactères, présents dans les 6 royaumes de l'Union Blanche ; ils furent les geôliers des Cercles). Chef Templier : Cullen. Missions : neutralisation de la magie impure, traque des mages corrompus, purification des zones corrompues, protection des lieux saints."
+    },
+    {
+     "titre": "Les 7 Paladins",
+     "contenu": "Chef Paladin : Arthur Sauvage (humain, officiellement déclaré mort). Paladins : Clyctus Elden (Elfe Pur de Glace — sa race fut décimée sur ordre de Yon, mais tous ne périrent pas ; les survivants se cachent, lui a choisi de servir et œuvre pour la paix), Darian Angerac (humain), Ewart Langley (humain), Firos Polidras (humain), Harol Zylfir (elfe), Reyna Sauvage (humaine, fille d'Arthur — elle a combattu Pride lors de la destruction de Préfet en 524)."
+    },
+    {
+     "titre": "La Garde Royale — les défenseurs du royaume",
+     "contenu": "Missions : défense des frontières, sécurité du palais, protection de la famille royale, maintien de la paix. Commandement : Grand Commandeur → Maréchal → Général → Colonel → Major → Capitaine → Lieutenant → Sous-lieutenant → Sergent-Major → Sergent → Caporal → Soldat 1re classe → Soldat."
+    }
+   ]
+  },
+  "chronologie": [
+   {
+    "date": "An 50",
+    "evenement": "Guerre des Colmores (11 mois) — Mirithal, Elfe Pur de Glace et Cendre, tue le roi Gilbert Asta. Fin des Îles Colmores. Le Collectionneur avait manipulé Mirithal.",
+    "lieux": [
+     "roche-sainte"
+    ]
+   },
+   {
+    "date": "60 – 200",
+    "evenement": "Guerre des Races (140 ans) — massacre des Elfes Purs, puis des Elfes. Valène y met fin.",
+    "lieux": []
+   },
+   {
+    "date": "7 Septius 200",
+    "evenement": "Fondation des Îles Saintes par Valène, sur les ruines des Îles Colmores. Instauration du régime des Magistères.",
+    "lieux": [
+     "roche-sainte"
+    ]
+   },
+   {
+    "date": "217",
+    "evenement": "Création de la Guilde Marchande de Vahill.",
+    "lieux": [
+     "vanhille"
+    ]
+   },
+   {
+    "date": "281",
+    "evenement": "La Folie de la Sorcière Rouge — Amaranthe attaque Vanhill, brûle ports et habitants. Puis la Chute des Dragons : Valène et Morigane tuent Amaranthe ; Alduin s'échappe, Morigane lui arrache le cœur.",
+    "lieux": [
+     "vanhille"
+    ]
+   },
+   {
+    "date": "7 Septius 300",
+    "evenement": "Mort de Valène — après la tentative d'ouverture de la Porte. Yon crée les Cercles de Mages. Alistair van Emris devient roi.",
+    "lieux": [
+     "roche-sainte"
+    ]
+   },
+   {
+    "date": "1 Usos 520",
+    "evenement": "Chute du Cercle des Îles Saintes — Arathak attaque de l'extérieur, Achabel et Sam de l'intérieur. Achabel tue le Docteur. Sam meurt.",
+    "lieux": [
+     "academie"
+    ]
+   },
+   {
+    "date": "520",
+    "evenement": "Création de l'Académie des Îles Saintes par Arathak, avec l'accord de Yon (1 Usos 520, sur conseil de Yumi).",
+    "lieux": [
+     "academie"
+    ]
+   },
+   {
+    "date": "521",
+    "evenement": "Création des Scoïatels par Eredin à A'haluma.",
+    "lieux": []
+   },
+   {
+    "date": "521",
+    "evenement": "Attaque du Magistère Kanius — Roncedroite (Arathak) · Gojo attaque l'Académie.",
+    "lieux": [
+     "roncedroite",
+     "academie"
+    ]
+   },
+   {
+    "date": "524",
+    "evenement": "Destruction de Préfet par Pride, démon de l'Orgueil, lors de l'affrontement contre Mei, Sky, Ark et Reyna Sauvage.",
+    "lieux": [
+     "prefet"
+    ]
+   },
+   {
+    "date": "525",
+    "evenement": "Reconstruction de Préfet · Yon devient Archange, Yumi devient Grande Prêtresse · fin de la Guerre des Magistères.",
+    "lieux": [
+     "prefet",
+     "roche-sainte",
+     "academie"
+    ]
+   }
+  ],
+  "personnages": [
+   {
+    "id": "yon",
+    "nom": "Yon",
+    "titre": "Archange de la Lumière",
+    "lieux": [
+     "roche-sainte"
+    ],
+    "portrait": "images/pnj/yon.jpg",
+    "description": "Autorité suprême de l'Église, dirige la Garde Sainte. Devenu Archange en 525 après avoir cédé le rôle de Grand Prêtre à sa fille Yumi. Il vient de retrouver son immortalité (rendue par Mei via une Pierre de Rosette) et traverse une période de fragilité. Certains considèrent qu'il est le vrai souverain des Îles Saintes.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "yumi",
+    "nom": "Yumi",
+    "titre": "Grande Prêtresse",
+    "lieux": [
+     "roche-sainte"
+    ],
+    "portrait": "images/pnj/yumi.jpg",
+    "description": "Fille de Yon. Tête opérationnelle de l'Église depuis 525 — c'est elle qui la porte pleinement pendant la transition. C'est sur son conseil que Yon a conclu l'accord avec Arathak en 520. Elle ignore ce que contient le niveau interdit des Archives.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "stanislas",
+    "nom": "Stanislas van Emris",
+    "titre": "Roi des Îles Saintes — « Le Soumis »",
+    "lieux": [
+     "roche-sainte"
+    ],
+    "portrait": "images/pnj/stanislas.jpg",
+    "description": "Roi actuel (né en 430). Si influencé par Yon que certains considèrent l'Archange comme le vrai souverain. Il a tué Klaus, l'époux de sa sœur Milthae, en 479.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "estrid",
+    "nom": "Estrid van Emris",
+    "titre": "Reine",
+    "lieux": [
+     "roche-sainte"
+    ],
+    "portrait": "images/pnj/estrid.jpg",
+    "description": "Épouse du roi Stanislas.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "eivor",
+    "nom": "Eivor van Emris",
+    "titre": "Prince",
+    "lieux": [
+     "roche-sainte"
+    ],
+    "portrait": "images/pnj/eivor.jpg",
+    "description": "Fils du roi Stanislas et de la reine Estrid.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "arthur-sauvage",
+    "nom": "Arthur Sauvage",
+    "titre": "Chef Paladin",
+    "lieux": [
+     "roche-sainte",
+     "fer-blanc"
+    ],
+    "portrait": "images/pnj/arthur-sauvage.jpg",
+    "description": "Chef de la Garde Sainte — officiellement déclaré mort, puis nommé Chef Paladin en remplacement de Samus Wines. Pourquoi fut-il déclaré mort ? Ancien commandement au QG des Paladins de Roncedroite.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "reyna-sauvage",
+    "nom": "Reyna Sauvage",
+    "titre": "Paladine",
+    "lieux": [
+     "roche-sainte",
+     "fer-blanc"
+    ],
+    "portrait": "images/pnj/reyna-sauvage.jpg",
+    "description": "Fille d'Arthur. A combattu Pride, démon de l'Orgueil, aux côtés de Mei, Sky et Ark lors de la destruction de Préfet (524).",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "allen-sauvage",
+    "nom": "Allen Sauvage",
+    "titre": "Maître forgeron",
+    "lieux": [
+     "roncedroite"
+    ],
+    "portrait": "images/pnj/allen-sauvage.jpg",
+    "description": "Tient la Grande Forge des Îles Saintes à Roncedroite.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "cullen",
+    "nom": "Cullen",
+    "titre": "Chef Templier",
+    "lieux": [
+     "roche-sainte"
+    ],
+    "portrait": "images/pnj/cullen.jpg",
+    "description": "Dirige la traque des mages corrompus. Il a rencontré Adelia dans le Dôme d'Entraînement de l'Académie — un mois en temps réel.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "clyctus-elden",
+    "nom": "Clyctus Elden",
+    "titre": "Paladin — Elfe Pur de Glace",
+    "lieux": [
+     "roche-sainte"
+    ],
+    "portrait": "images/pnj/clyctus-elden.jpg",
+    "description": "Sa race fut décimée sur ordre de Yon après la Guerre des Colmores — mais tous ne périrent pas. Les survivants se cachent. Lui a choisi de servir : il sait que les Elfes Purs ont cherché la guerre, et il œuvre pour la paix.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "berthold",
+    "nom": "Baron Berthold",
+    "titre": "Baron de Roncedroite",
+    "lieux": [
+     "roncedroite"
+    ],
+    "portrait": "images/pnj/berthold.jpg",
+    "description": "Dirige le Bastion du Nord depuis sa forteresse sur la colline.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "arathak",
+    "nom": "Arathak",
+    "titre": "Directeur de l'Académie",
+    "lieux": [
+     "academie"
+    ],
+    "portrait": "images/pnj/arathak.jpg",
+    "description": "Demi-elfe, mage druidique. Il libéra les ressortissants du Cercle des Îles Saintes (1 Usos 520) et fonda l'Académie la même année. Sa vision : unir mages et non-mages. Chef du camp des mages pacifiques, allié de Yon.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "galwyn-nei",
+    "nom": "Galwyn Nei",
+    "titre": "Enseignant du Feu",
+    "lieux": [
+     "academie"
+    ],
+    "portrait": "images/pnj/galwyn-nei.jpg",
+    "description": "Elfe né sur Aëline seize ans avant la Conjonction, orphelin des conflits contre nains et fées, médecin avant tout. Valène le prit sous son aile et fit de lui un mage de Feu. Avec Alice, il eut deux filles : Miwa et Katlyn. En l'an 300, traquée et marquée, Katlyn lui demanda de la tuer plutôt que perdre sa magie au Cercle — il lui prépara une potion de sommeil et la tua doucement, en la surchauffant dans son sommeil. Un acte demandé, consenti, fait par amour. Il ne s'en remettra jamais. Au Cercle, il ne dit plus un mot et n'utilisa plus jamais sa magie ; après les tortures — sa magie le brûlant lui-même au visage — elle cessa de se montrer. Pouvoir actuel : oblitéré. Rien. Libéré, il accompagne Adelia et enseigne la théorie à l'Académie — tout ce qu'il n'a plus.",
+    "origine": "Îles Saintes",
+    "details": [
+     "En 522, il revit Miwa : il refusa de la regarder dans les yeux.",
+     "Belle-famille dragonienne : Daenerys (belle-mère, tuée par son propre frère Alduin)."
+    ],
+    "secrets": [
+     {
+      "id": "sec-galwyn-katlyn",
+      "titre": "Katlyn est revenue",
+      "revele": false,
+      "texte": "Sa fille Katlyn, qu'il a tuée de ses mains en 300, a été véritablement ramenée à la vie par Morigane en 525 — et combat à ses côtés. Il l'ignore. La collision sera terrible."
+     }
+    ],
+    "galerie": [
+     "images/pnj/galwyn-avant.jpg"
+    ]
+   },
+   {
+    "id": "zed",
+    "nom": "Zed",
+    "titre": "Enseignante de la Terre",
+    "lieux": [
+     "academie"
+    ],
+    "portrait": "images/pnj/zed.jpg",
+    "description": "Elfe, mage de Terre.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "narcise",
+    "nom": "Narcise",
+    "titre": "Créatrice du Cycle du Temps",
+    "lieux": [
+     "academie"
+    ],
+    "portrait": "images/pnj/narcise.jpg",
+    "description": "Elle n'enseigne pas, mais a offert à l'Académie le Dôme d'Entraînement : un jour dehors = trois jours dedans.",
+    "origine": "Drémora"
+   },
+   {
+    "id": "araignee",
+    "nom": "L'Araignée",
+    "titre": "Chef de la pègre",
+    "lieux": [
+     "noir-marais"
+    ],
+    "portrait": "images/pnj/araignee.jpg",
+    "description": "Personne ne connaît son visage. Ne paraît jamais, parle par intermédiaires. Sait tout ce qui se passe aux Îles Saintes — y compris à Roche-Sainte : qui a besoin de disparaître, qui cherche l'interdit, ce qui entre et sort du Grand Port. On ne trouve pas l'Araignée. L'Araignée vous trouve.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "charlie",
+    "nom": "Charlie",
+    "titre": "Propriétaire de l'Arène",
+    "lieux": [
+     "blanchefleure"
+    ],
+    "portrait": "images/pnj/charlie.jpg",
+    "description": "Parieur ultra-riche venu du Désert Magistral. Possède l'arène de paris de combat illégale de BlancheFleure.",
+    "origine": "Désert Magistral"
+   },
+   {
+    "id": "geralt",
+    "nom": "Geralt",
+    "titre": "Tavernier",
+    "lieux": [
+     "blanchefleure"
+    ],
+    "portrait": "images/pnj/geralt.jpg",
+    "description": "Ancien soldat. Tient la Taverne de Travail.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "elara",
+    "nom": "Elara",
+    "titre": "Couturière",
+    "lieux": [
+     "blanchefleure"
+    ],
+    "portrait": "images/pnj/elara.jpg",
+    "description": "Elfe. Tient Les Aiguilles d'Or.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "bogdan",
+    "nom": "Bogdan",
+    "titre": "Capitaine de la Garde Royale",
+    "lieux": [
+     "blanchefleure"
+    ],
+    "portrait": "images/pnj/bogdan.jpg",
+    "description": "Commande la Maison de la Garde Royale de BlancheFleure.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "lazaro",
+    "nom": "Lazaro",
+    "titre": "Maître herboriste",
+    "lieux": [
+     "blanchefleure"
+    ],
+    "portrait": "images/pnj/lazaro.jpg",
+    "description": "Tenait autrefois La Flore des Prairies.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "achabel",
+    "nom": "Achabel",
+    "titre": "—",
+    "lieux": [
+     "plaines-cotieres"
+    ],
+    "portrait": "images/pnj/achabel.jpg",
+    "description": "Vit paisiblement dans les plaines côtières de Vanhill avec Manem. Avec Sam, il a fait tomber le Cercle des Îles Saintes de l'intérieur en 520 et tué le Docteur.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "manem",
+    "nom": "Manem",
+    "titre": "—",
+    "lieux": [
+     "plaines-cotieres"
+    ],
+    "portrait": "images/pnj/manem.jpg",
+    "description": "Vit dans les plaines côtières de Vanhill avec Achabel.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "sam",
+    "nom": "Sam",
+    "titre": "†",
+    "lieux": [
+     "plaines-cotieres"
+    ],
+    "portrait": "images/pnj/sam.jpg",
+    "description": "Fille d'Achabel et Manem. Elle participa à la chute du Cercle des Îles Saintes de l'intérieur — et y mourut (1 Usos 520).",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "aerith-goldland",
+    "nom": "Aerith Goldland",
+    "titre": "Famille Goldland",
+    "lieux": [
+     "prefet"
+    ],
+    "portrait": "images/pnj/aerith-goldland.jpg",
+    "description": "Créatrice du dôme de lumière qui protège le Manoir Goldland.",
+    "origine": "Îles Saintes"
+   },
+   {
+    "id": "kanius",
+    "nom": "Kanius",
+    "titre": "Ex-Magistère renégat",
+    "lieux": [],
+    "portrait": "images/pnj/kanius.jpg",
+    "description": "Revenu du monde des Démons, il mène le camp des mages renégats et cherche vengeance contre les Cercles. Il attaqua Roncedroite et l'Académie en 521. La Guerre des Magistères s'est achevée en 525.",
+    "origine": "Avelorn (Continent)"
+   },
+   {
+    "id": "morigane",
+    "nom": "Morigane",
+    "titre": "La Pupille de la Mort — Ancienne Magistère de Drémora",
+    "origine": "Drémora",
+    "race": "Grande Lignée (Demi-Déesse)",
+    "statut": "Vivante",
+    "naissance": "33",
+    "religion": "Pupille de la Mort — aversion totale envers ses ancêtres divins",
+    "lieux": [],
+    "portrait": "images/pnj/morigane.jpg",
+    "description": "Née en 33 sur Drémora, première fille de Mary, la Grande Prêtresse de la Mort, et d'un père humain que Mary laissa mourir de vieillesse au nom des fils du Destin — une plaie qui ne se referma jamais. L'une des 7 Magistères d'Asterre, elle gouverna Drémora et fut le bras droit de Valène. Aux yeux du monde, elle est celle qui orchestra la catastrophe de l'an 300 — l'investigatrice de la liaison entre mages et démons. Maîtresse de l'Occulte et des Âmes : toutes les âmes des morts passent par elle. En 525, elle prépare le rituel de la Lune de Sang — elle veut ouvrir la Porte des Dieux.",
+    "details": [
+     "Les 7 Magistères : Valène (Îles Saintes, Mère), Morigane (Drémora), Kanius (Avelorn), Zazel (Nouvelle Contrée), Aldric Vorn (Ferelden), Raziel Al-Sahn (Désert Magistral), Aelindra (Forêt Infinie).",
+     "Sa fille Minvan, première Vélane, née en 260, fut enlevée en 285 par un homme masqué — aucune magie ne permit de la retrouver.",
+     "En 281, elle tua Amaranthe aux côtés de Valène et arracha le cœur d'Alduin.",
+     "Objets : le Qiladat al-Ruh (Collier de l'Âme) · le Kitab al-Zalam (Livre des Ténèbres)."
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-morigane-300",
+      "titre": "Le mensonge de l'an 300",
+      "revele": false,
+      "texte": "C'est Valène qui tenta d'ouvrir la Porte des Dieux — pas Morigane, qui croyait ouvrir la Porte des Démons et avait éloigné ses proches pour ne faire aucune victime. Elle prit publiquement toute la responsabilité pour protéger l'image de Valène. Elle n'apprit qu'en 525 que Yon avait perdu son immortalité en sauvant 5 milliards de vies."
+     },
+     {
+      "id": "sec-morigane-minvan",
+      "titre": "Minvan est vivante",
+      "revele": false,
+      "texte": "Toutes les âmes des morts passent par Morigane : si Minvan était morte, elle le saurait. Minvan est détenue à Harad par Ildris — petit-fils de Valène via Althar et Seryne — qui règne sous le nom de Veralion et utilise son pouvoir de Vélane pour engendrer des soldats de la Grande Lignée. Morigane ignore qui est l'homme masqué."
+     },
+     {
+      "id": "sec-morigane-achabel",
+      "titre": "Le Premier et Dernier Regard",
+      "revele": false,
+      "texte": "En 500, elle donna naissance à Achabel. Mary prophétisa : « Tes yeux se poseront sur lui une seule fois avant son éclosion. » En 520, elle le confia à Divina pour son destin de Prophète de la Mort — et le regarda dans les yeux depuis Drémora, à plus de 10 000 km, en larmes."
+     },
+     {
+      "id": "sec-morigane-guerre",
+      "titre": "L'accord de 525",
+      "revele": false,
+      "texte": "C'est elle qui réécrivit l'histoire de la Guerre des Magistères : Arathak présenté en vainqueur, contre la révélation à Kanius de la cachette de Zazel, la Magistère traîtresse."
+     },
+     {
+      "id": "sec-morigane-but",
+      "titre": "Le vrai but",
+      "revele": false,
+      "texte": "Elle veut accéder au monde d'Eden pour tuer les faux dieux et briser le cycle du Destin — promesse faite à sa grand-mère Estel. Pouvoirs divins : Destruction de l'Âme (mort absolue), Absorption Divine (acquiert les traits et pouvoirs raciaux de l'âme absorbée), Réincarnation des Âmes. À la mort de Sam, elle prendra l'Ectelon et créera Udona."
+     }
+    ]
+   },
+   {
+    "id": "acharne",
+    "nom": "Acharne",
+    "titre": "Le Vagabond aux 1000 Démons",
+    "origine": "Vagabond",
+    "race": "Demi-Démon",
+    "statut": "Vivant",
+    "naissance": "505",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/acharne.jpg",
+    "description": "Fils de Sandor et Valène, né en 505 — après la mort de sa mère, tuée par Lord précisément pour empêcher sa naissance. Il ne connut ni l'un ni l'autre : élevé d'orphelinat en orphelinat, il ignore qui il est. Il est bon, juste, solitaire — et tout ceux qui l'accompagnent finissent par mourir : c'est sa véritable malédiction. À l'inverse des autres demi-démons, il n'a pas un démon en lui mais mille, tous acharnés à le tuer de l'intérieur, qui lui parlent et le torturent en permanence.",
+    "details": [
+     "Il croit que Sandor a tué sa mère — c'est Lord le vrai meurtrier. Il recherche activement son père pour lui demander des comptes.",
+     "Pouvoir divin « Croissance par la Douleur » : plus il est blessé, plus il devient puissant — potentiellement illimité.",
+     "L'un des 4 Valets de la Mort (Acharne · Wyatt · Rebecca · Milena), destinés à s'allier au Prophète de la Mort (Achabel) pour qu'il remplace Zork. Acharne l'ignore totalement.",
+     "Sandor ne peut pas venir le chercher à cause de sa propre Loi."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "adelia",
+    "nom": "Adelia",
+    "titre": "Héritière de l'Eau",
+    "origine": "Les Cercles",
+    "race": "Héritière (fille de Ziriel)",
+    "statut": "Vivante — enlevée pour la Lune de Sang",
+    "naissance": "~505 (une vingtaine d'années)",
+    "religion": "",
+    "lieux": [
+     "academie"
+    ],
+    "portrait": "images/pnj/adelia.jpg",
+    "description": "Fille unique de Ziriel, Déesse de l'Eau. Élevée toute sa vie dans les Cercles en tant qu'Héritière de l'Eau — maître d'office dans son élément — elle porte le Primordial Ctululu (contrôle mental) sans jamais avoir pu vraiment le toucher. À la chute des Cercles, libre pour la première fois, elle ne cherchait ni vengeance ni pouvoir : juste apprendre à se connaître. C'est à ce moment qu'elle fut enlevée — Morigane a besoin de Ctululu pour invoquer la Lune de Sang. Compagne de Cullen, rencontré dans le Dôme d'Entraînement de l'Académie.",
+    "details": [
+     "Apparence : cheveux blancs, peau mate, yeux bleu profond, marques bleues d'Héritière (aucune marque de Ctululu — son aura est pure).",
+     "Liens : Ziriel (mère), Cullen (compagnon), Mei (amie), Galwyn."
+    ],
+    "galerie": [
+     "images/pnj/adelia-eveil.jpg"
+    ],
+    "secrets": [
+     {
+      "id": "sec-adelia-sky",
+      "titre": "Le ravisseur",
+      "revele": false,
+      "texte": "C'est Sky qui l'a enlevée, sous l'influence des sceaux de Morigane — les joueurs ignorent ce contrôle."
+     },
+     {
+      "id": "sec-adelia-ctululu",
+      "titre": "Ctululu forcé",
+      "revele": false,
+      "texte": "Ce qui arrivera à Adelia si Morigane force Ctululu reste à déterminer — résistance ou résignation ?"
+     }
+    ]
+   },
+   {
+    "id": "alice",
+    "nom": "Alice",
+    "titre": "Médecin — Mère des Nei",
+    "origine": "Îles Saintes",
+    "race": "Demi-Dragonienne (fille de Daenerys)",
+    "statut": "Morte de vieillesse au Cercle (~350)",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/alice.jpg",
+    "description": "Fille de Daenerys, Dragonienne pure tuée par son propre frère Alduin. Demi-Dragonienne sans aucun trait draconique — humaine en apparence totale, médecin de formation, sans magie. Épouse de Galwyn, mère de Miwa et Katlyn, elle vécut en fuite avec sa famille, Miwa étant Héritière du Feu. La nuit de l'an 300 où Galwyn tua Katlyn à la demande de celle-ci, Alice ne put l'accepter : elle se rendit aux autorités le matin même, sans un mot. Elle vécut au Cercle jusqu'à sa mort de vieillesse, vers 350, sans jamais pardonner. Sur son lit de mort, Galwyn refusa de venir.",
+    "details": [
+     "Miwa ne le lui pardonna pas non plus.",
+     "L'héritage draconique se perd sans reproduction entre Dragoniens purs — Miwa et Katlyn sont quart-dragoniennes."
+    ],
+    "galerie": [],
+    "secrets": []
+   },
+   {
+    "id": "dahlia-verkant",
+    "nom": "Dahlia Verkant",
+    "titre": "La Guérisseuse — l'une des Cinq Invoqués",
+    "origine": "Désert Magistral",
+    "race": "Humaine",
+    "statut": "Morte — invoquée par Morigane",
+    "naissance": "~410 · apparue en 525",
+    "religion": "Aucune — la science du corps et du sang",
+    "lieux": [],
+    "portrait": "images/pnj/dahlia-verkant.jpg",
+    "description": "Fille d'une lignée de guérisseuses respectées du Désert Magistral, où la Magie du Sang s'utilise avec parcimonie, à des fins médicales. Brillante et obsessionnelle, elle repoussa ces limites — expérimentant sur des patients en fin de vie, puis sur des patients tout court, convaincue de pouvoir vaincre la mort par la science du sang. Démasquée, elle fut jugée et exécutée par les siens — non par haine, mais par nécessité, ce qui la hanta plus que la mort elle-même. « Je n'ai jamais tué personne. J'ai seulement repoussé la définition de la mort. »",
+    "details": [
+     "Pourquoi Morigane l'a invoquée : elle comprend le sang comme une matière vivante à manipuler — sa précision technique en fait une combattante qui ne gaspille jamais une goutte.",
+     "En scène : méthodique, presque clinique — elle observe ses adversaires comme des patients avant de frapper. Si un PJ est blessé, elle commentera la blessure avec un détachement dérangeant."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "estel",
+    "nom": "Estel",
+    "titre": "Fille de Zork et Limehahu — l'Ectelon",
+    "origine": "Eden",
+    "race": "Divine",
+    "statut": "Morte (an 0) — réincarnée en Ectelon",
+    "naissance": "Avant l'an 0",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/estel.jpg",
+    "description": "Vraie fille de Zork (Dieu de la Mort) et Limehahu (Déesse de la Vie), sœur de Malékit, née sur Eden. Idéaliste, volontaire, coriace : elle croyait que Samaël pouvait être plus qu'une entité de destruction — leur amour donna Yon, Mary, Wyatt et Mierka. Elle croyait aussi en Eldar, enfermé sur Eden. En tentant de libérer Lord, la partie d'Eldar emprisonnée, elle affronta son père Zork : ce combat créa la Conjonction des Sphères (an 0) — et Asterre. Mourante, elle lança le Cycle du Recommencement et devint Ectelon, la boule de lumière qui se réincarne. Samaël lui accorda 5 réincarnations avant de détruire Asterre.",
+    "details": [
+     "Réincarnations d'Ectelon : 1. Valène (†505, avait compris) · 2. Dae (†520, ne l'a jamais su) · 3. Sam (vivante en 525, ne le sait pas) · 4. à venir · 5. la dernière — sa mort déclenche la destruction d'Asterre.",
+     "Deux cicatrices en forme d'ailes dans le dos — arrachées par les Elfes du temps d'Aeline.",
+     "L'essence d'Eldar est en elle depuis toujours : sa mana est instable, leurs magies se mélangent.",
+     "⚠️ Morigane prend l'Ectelon à la mort de Sam et crée Udona avec.",
+     "Toutes les réincarnations se ressemblent physiquement — le portrait d'Estel sert de référence pour Valène, Dae et Sam."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "igna",
+    "nom": "Igna",
+    "titre": "La Source des Malédictions",
+    "origine": "Désert Magistral",
+    "race": "Grande Lignée",
+    "statut": "Vivante — immortelle tant que des malédictions existent",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/igna.jpg",
+    "description": "Fille de Malékit et d'une mortelle du Monde Olympe — petite-fille de Zork et Limehahu. Tombée amoureuse de Sylas, elle crut sincèrement en lui et en ceux qui allaient devenir la Main de Sang. Sylas la manipula, puis elle fut enchaînée au centre du rituel comme catalyseur : son essence permit de créer les Originaux. Cette trahison est la source de toute sa mélancolie et de toute sa vengeance. Elle est aujourd'hui la source de toutes les malédictions d'Asterre — les Maudits sont ses outils, les sorciers de magie noire l'alimentent. Son objectif : la domination.",
+    "details": [
+     "⚠️ NOM TABOU : prononcer son nom trois fois provoque son apparition immédiate. Les joueurs ne doivent pas le savoir — jusqu'à ce qu'il soit trop tard.",
+     "Sans elle, tous les Maudits redeviendraient normaux. Elle peut modifier les malédictions existantes.",
+     "Elle surveille les 5 voies de libération des Malédictus et cherche à les bloquer — Sam est l'une de ces voies.",
+     "Elle voit Malékit comme un père absent qu'elle méprise autant qu'elle regrette. Pas d'avis sur l'Éclipse."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "iseult-morne",
+    "nom": "Iseult Morne",
+    "titre": "La Noble Déchue — l'une des Cinq Invoqués",
+    "origine": "Îles Saintes",
+    "race": "Humaine",
+    "statut": "Morte — invoquée par Morigane",
+    "naissance": "~460 · apparue en 525",
+    "religion": "Église de la Lumière (reniée intérieurement)",
+    "lieux": [],
+    "portrait": "images/pnj/iseult-morne.jpg",
+    "description": "D'une maison noble mineure des Îles Saintes, vouée à l'effacement derrière sa sœur aînée, héritière légitime. Rongée par l'injustice de sa condition, elle apprit en secret la Magie du Sang pour usurper l'apparence et l'identité de sa sœur — un rituel de substitution profondément interdit. Elle fut démasquée le jour même de son mariage arrangé, alors qu'elle portait le visage de sa sœur depuis des mois. Exécutée pour trahison et hérésie. « Je voulais juste exister un peu plus que ce qu'on m'avait laissé. »",
+    "details": [
+     "Pourquoi Morigane l'a invoquée : elle maîtrise les usages les plus subtils de la Magie du Sang — déguisement, substitution, illusion.",
+     "La plus humaine et la plus tragique des cinq : elle hésite parfois, regarde les PJ avec presque de l'empathie — avant de se reprendre.",
+     "Point d'entrée possible si les joueurs cherchent à raisonner l'un des Cinq plutôt que combattre."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "katlyn",
+    "nom": "Katlyn Nei",
+    "titre": "Mage de Sang — Ramenée par Morigane",
+    "origine": "Îles Saintes",
+    "race": "Demi-Elfe (quart-dragonienne)",
+    "statut": "Vivante — ressuscitée en 525",
+    "naissance": "272 · morte 300 · ressuscitée 525",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/katlyn-1.jpg",
+    "description": "Fille cadette de Galwyn et Alice, sœur de Miwa. Cheveux rouge sang, yeux jaunes. Très protectrice de sa famille, elle apprit de son père la Magie du Sang et le Feu. En l'an 300, alors que les Nei étaient traqués, son sort de protection par le sang s'inversa et les fit repérer. Marquée et sans issue, elle demanda elle-même à Galwyn de la tuer plutôt que finir au Cercle et perdre sa magie. Elle avait 28 ans. En 525, Morigane l'a véritablement ramenée à la vie — une vraie résurrection. Elle combat à ses côtés.",
+    "details": [
+     "Famille : Galwyn (père), Alice (mère, morte au Cercle), Miwa (sœur aînée — elles ne se sont pas revues), Daenerys (grand-mère dragonienne), Alduin (grand-oncle).",
+     "Ce fut son choix, pas une exécution.",
+     "Elle ne fait PAS partie des Cinq Mages de Sang — cas totalement distinct."
+    ],
+    "galerie": [
+     "images/pnj/katlyn-2.jpg",
+     "images/pnj/katlyn-3.jpg"
+    ],
+    "secrets": [
+     {
+      "id": "sec-katlyn-choix",
+      "titre": "Pourquoi elle ?",
+      "revele": false,
+      "texte": "Pourquoi Morigane l'a choisie spécifiquement reste à définir. Sait-elle que Galwyn et Miwa sont vivants ? Tension énorme si elle les croise en session."
+     }
+    ]
+   },
+   {
+    "id": "kharzeth",
+    "nom": "Kharzeth",
+    "titre": "Chef de guerre — l'un des Cinq Invoqués",
+    "origine": "Drémora",
+    "race": "Humain (chef d'un clan Garou)",
+    "statut": "Mort — invoqué par Morigane",
+    "naissance": "~350 · apparu en 525",
+    "religion": "Croyances tribales disparues avec son peuple",
+    "lieux": [],
+    "portrait": "images/pnj/kharzeth.jpg",
+    "description": "Chef d'un clan Garou nomade de Drémora — un peuple maudit par la lycanthropie depuis des générations. Là où d'autres chefs acceptaient la malédiction comme une force, Kharzeth la vivait comme une prison. Après des années de recherche, il mit au point un rituel de Magie du Sang censé briser le lien lycanthropique de tout le clan simultanément, via leur sang partagé. Le rituel échoua catastrophiquement : la malédiction s'amplifia, les Garous perdirent tout contrôle et s'entre-déchirèrent dans une nuit de chaos. Kharzeth, ritualiste au centre, survécut assez longtemps pour voir son peuple entier s'autodétruire — puis fut dévoré par les derniers survivants. « Je voulais leur rendre leur humanité. Je leur ai pris jusqu'à ça. »",
+    "details": [
+     "Pourquoi Morigane l'a invoqué : il connaît les mécaniques profondes du sang des Maudits — comment la Magie du Sang interagit avec une malédiction héréditaire.",
+     "En scène : le plus brut des cinq, une rage silencieuse. Ce n'est pas de la fierté qu'il porte, c'est de la honte.",
+     "Ironie : lui-même n'était pas Garou — chef humain d'un clan maudit. Si les PJ mentionnent les Garous ou les Maudits, il réagira."
+    ],
+    "galerie": [
+     "images/pnj/kharzeth-garou.jpg"
+    ],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "livai",
+    "nom": "Livai",
+    "titre": "Apprenti de Morigane",
+    "origine": "Lituania",
+    "race": "Humain",
+    "statut": "Vivant",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/livai.jpg",
+    "description": "Humain de Lituania, frère de Selina. Il s'est sacrifié pour sauver sa sœur et fut enfermé dans son Collier de Sang ; Selina effectua le Rituel du Phœnix à l'Église du Feu pour pouvoir le ramener un jour, et c'est Sky qui permit sa libération. Lors de leur quête, il chercha l'Akuma no Kami — le masque d'Akuma, frère de Sandor — dont il possède une partie, dont il a aspiré l'énergie. Sorti de stase en 524, il est aujourd'hui l'apprenti de Morigane. Désinvolte, charmeur, il prend tout à la légère — même la mort, surtout celle des autres. Il considère Sky comme un frère.",
+    "details": [
+     "Maîtrise la Magie du Sang et la Magie Noire.",
+     "Contrôle une énergie violette issue du masque d'Akuma ; peut perturber les flux de mana d'autrui et les corrompre en flux démoniaques.",
+     "Sky est son familier de sang."
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-livai-sociopathe",
+      "titre": "Le charme et la lame",
+      "revele": false,
+      "texte": "Sa nature sociopathe et son plaisir à tuer ne se voient pas au premier abord — il reste charmant. Rôle cette saison : bras droit de Morigane, actif dans le rituel de la Lune de Sang."
+     }
+    ]
+   },
+   {
+    "id": "malekit",
+    "nom": "Malékit",
+    "titre": "La Frontière",
+    "origine": "Désert Magistral",
+    "race": "Divin (fils de Zork et Limehahu)",
+    "statut": "Vivant — caché",
+    "naissance": "Avant l'an 0",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/malekit.jpg",
+    "description": "Vrai fils de Zork et Limehahu, frère d'Estel — donc oncle de Yon, Mary, Wyatt et Mierka, et père d'Igna. Après la Conjonction qui tua sa sœur, il libéra Samaël de son scellement, par amour pour elle. Il partage sa vision : il croit en l'Éclipse et au renouveau du monde. En 525, il se cache au Désert Magistral avec Samaël.",
+    "details": [
+     "Il incarne la Frontière elle-même : ouvre et ferme des passages entre les plans, sépare l'âme du corps, peut déchirer la frontière interne d'un être — son essence se fragmente, son corps ne sait plus à quel plan il appartient.",
+     "Magie mixte de Lumière et de Ténèbres, issue de sa double nature.",
+     "Il cherche à libérer la 5ème partie scellée de Samaël dans l'Outre-Monde — et à libérer les Péchés qui y sont coincés."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "mary",
+    "nom": "Mary",
+    "titre": "Grande Prêtresse de la Mort",
+    "origine": "Drémora",
+    "race": "Grande Lignée",
+    "statut": "Vivante",
+    "naissance": "Avant l'an 0",
+    "religion": "Église de la Mort",
+    "lieux": [],
+    "portrait": "images/pnj/mary.jpg",
+    "description": "Grande Prêtresse de la Mort, à la tête de l'Église de la Mort dans la capitale de Drémora — la représentante de Zork sur Asterre, et la voix neutre de la Table Ronde de Drémora, le pays le plus cosmopolite du monde, où même les races maudites sont représentées. Elle voit tout. Elle ne dit rien. Elle attend. Sage, distante, inébranlable : ses prophéties sont prises très au sérieux. Elle croit que les fils du Destin sont immuables et dangereux à contrarier — c'est pour cela qu'elle n'a pas cherché à rendre son époux Aldric immortel.",
+    "details": [
+     "Ses enfants sont les préceptes de la Mort : Morigane (la Pupille), Narcise (le Cycle), Arkos (le Faucheur), Rael (la Mémoire), Raena (l'Oubli).",
+     "Le Pacte : elle peut maintenir un être dans un entre-deux, ni vivant ni mort — en échange, il se bat pour elle.",
+     "Morigane lui reproche la mort de son père."
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-mary-jumeau",
+      "titre": "La jumelle de la Lumière",
+      "revele": false,
+      "texte": "Mary est la fille de Samaël et Estel, et la jumelle de Yon. Ils ne se parlent presque plus — Destin contre Vie. Elle l'a pourtant suivi pour le soutenir."
+     },
+     {
+      "id": "sec-mary-vision",
+      "titre": "La Vision Secrète",
+      "revele": false,
+      "texte": "Mary partage la vision de Samaël : détruire ce qui reste pour repartir sur des bases saines. Elle n'en parle à personne — pas même à ses enfants. Elle serait prête à aider sa famille même sans y croire."
+     },
+     {
+      "id": "sec-mary-prescience",
+      "titre": "Prescience Éternelle",
+      "revele": false,
+      "texte": "Elle voit le destin complet de chaque membre de la Grande Lignée dès sa naissance. Elle sait ce qui attend chacun de ses enfants — et ne dit pas tout."
+     }
+    ]
+   },
+   {
+    "id": "mei",
+    "nom": "Mei",
+    "titre": "PJ — Mage de Feu",
+    "origine": "Îles Saintes",
+    "race": "Demi-Elfe",
+    "statut": "Vivante",
+    "naissance": "502",
+    "religion": "Église du Feu",
+    "lieux": [
+     "academie"
+    ],
+    "portrait": "images/pnj/mei.jpg",
+    "description": "Demi-elfe rousse née en 502 aux Îles Saintes. Emprisonnée enfant au Cercle avec sa mère, qui y mourut ; libérée en 520 par Arathak, son sauveur et sa figure paternelle. Tiraillée cinq ans entre les visions d'Arathak (la paix) et de Kanius (la justice par la force), c'est elle qui organisa leur rencontre finale. Porte le Qiladat al-Ruh, le Collier de l'Âme de Morigane, trouvé dans les affaires de Yon. En 525, elle rendit à Yon son immortalité via une Pierre de Rosette, après avoir vu dans la sphère alchimique le poids qu'il portait.",
+    "details": [
+     "A sacrifié une partie de son âme pour créer un Homonculus pour la démone Tekina — son âme est fragmentée (0,75).",
+     "Signes particuliers : rousse, 1m70, cicatrice araignée/flamme au poignet gauche.",
+     "Liens : Arathak (sauveur), Kanius (figure ambiguë), Yon (de la haine à l'admiration), Morigane (l'a mandatée), Miwa (lui a confié une lettre à ouvrir à la fin)."
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-mei-ame",
+      "titre": "L'Âme Fragmentée",
+      "revele": false,
+      "texte": "Son âme à 0,75 la rend vulnérable aux démons et à la lumière — et l'âme se défend seule."
+     },
+     {
+      "id": "sec-mei-collier",
+      "titre": "Le Qiladat al-Ruh",
+      "revele": false,
+      "texte": "Le collier met les pouvoirs de Morigane à sa disposition — mais avec le contrôle de Morigane."
+     },
+     {
+      "id": "sec-mei-lettre",
+      "titre": "La lettre de Miwa",
+      "revele": false,
+      "texte": "Contenu à dévoiler à la fin. Ach'olo (Achnologia) est scellé dans le collier de Miwa par Yon."
+     }
+    ]
+   },
+   {
+    "id": "mierka",
+    "nom": "Mierka",
+    "titre": "L'Équilibre",
+    "origine": "Désert Magistral",
+    "race": "Grande Lignée",
+    "statut": "Vivante — recluse",
+    "naissance": "179",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/mierka.jpg",
+    "description": "Dernière enfant de Samaël et Estel, née en 179 d'une mère mourante — maintenue en vie par le pouvoir de Zork après la Conjonction — et morte un an plus tard. Mierka n'a jamais connu sa mère, ni ses frères et sœurs Yon, Mary et Wyatt, qu'elle ne connaît que par les récits. Elle a grandi seule avec Samaël et Malékit au Désert Magistral : ni prisonnière par choix ni par force, mais parce que c'est le seul monde qu'elle connaît. Elle ressemble beaucoup à Estel, dans son apparence comme son caractère.",
+    "details": [
+     "Fille de la Destruction et de la Création : son pouvoir est l'Équilibre — stabiliser ou déstabiliser un être, un lieu, une situation ; percevoir instinctivement les déséquilibres.",
+     "L'essence d'Eldar héritée d'Estel rend son propre équilibre instable — elle peut perdre le contrôle.",
+     "Sa vision d'Asterre est celle que Samaël lui a donnée.",
+     "Note narrative : peu importante en 525 — son rôle sera bien plus grand dans les années à venir."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "miwa",
+    "nom": "Miwa Nei",
+    "titre": "Héritière du Feu",
+    "origine": "Îles Saintes",
+    "race": "Demi-Elfe (quart-dragonienne)",
+    "statut": "Vivante",
+    "naissance": "270",
+    "religion": "Les Élémentaires",
+    "lieux": [
+     "academie"
+    ],
+    "portrait": "images/pnj/miwa.jpg",
+    "description": "Fille aînée de Galwyn et Alice, sœur de Katlyn. Héritière du Feu, porteuse du Primordial Achnologia. En l'an 300, la nuit où Katlyn mourut de la main de leur père, sa mère se rendit aux Cercles — Miwa la suivit le lendemain. 220 ans de prison, 220 ans de rancœur : elle vit Alice vieillir et mourir au Cercle vers 350, et Galwyn refusa de venir. Libérée en 520, elle rejoignit les Scoïatels d'Eredin et fut un temps la sensei de Mei. En 522, elle tenta de pardonner à son père — il refusa de la regarder dans les yeux.",
+    "details": [
+     "Quart-dragonienne sans trait draconique visible.",
+     "Achnologia fut scellé dans un collier par Yon quand Kanius tenta de l'extraire de force — c'est ce qui l'a sauvée.",
+     "Elle a confié une lettre à Mei, à ouvrir à la fin."
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-miwa-collier",
+      "titre": "Le collier d'Achnologia",
+      "revele": false,
+      "texte": "Le collier peut-il être descellé ? Et le pardon à Galwyn — possible, ou rupture définitive ?"
+     }
+    ]
+   },
+   {
+    "id": "samael",
+    "nom": "Samaël",
+    "titre": "L'Entité de Destruction",
+    "origine": "Désert Magistral",
+    "race": "Entité (création de l'Oracle)",
+    "statut": "Vivant — caché",
+    "naissance": "Avant l'an 0",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/samael.jpg",
+    "description": "Créé par l'Oracle sur demande de Zork et Limehahu pour réguler les mondes trop évolués — il n'est pas un dieu, il est ce que les dieux ont créé pour nettoyer leurs erreurs. Sa création engendra simultanément Eldar, son équilibre cosmique. Au contact d'Estel, fille de Zork et Limehahu, il dévia de son rôle : il crut pouvoir bâtir un monde meilleur avec ses enfants — Yon, Mary, Wyatt, Mierka. Zork le scella alors en 5 parties. Libéré peu après la Conjonction par Malékit, le frère d'Estel, il se cache avec lui au Désert Magistral. Il attend. Il observe.",
+    "details": [
+     "Forme monstrueuse : un monstre de fumée gigantesque capable de tout engloutir.",
+     "4/5 de ses pouvoirs sont scellés dans l'Outre-Monde — il attend la mort de la 5ème réincarnation d'Estel (Ectelon) pour les récupérer.",
+     "Il a accordé à Yon 5 réincarnations avant de détruire Asterre — un respect immense pour le seul qu'il croit capable d'atteindre son but.",
+     "Sa vision : détruire ce qui reste pour repartir sur des bases saines. Mary la partage en secret — ils ne se le sont jamais dit.",
+     "An 530 : Massacre d'Omega (événement futur)."
+    ],
+    "galerie": [
+     "images/pnj/samael-forme-complete.jpg"
+    ],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "sandor",
+    "nom": "Sandor",
+    "titre": "Dieu Démon — Makai VIII, Gouverneur de Babel",
+    "origine": "Babel",
+    "race": "Démon (Dieu Démon)",
+    "statut": "Vivant",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/sandor.jpg",
+    "description": "Le Dieu Démon qui gouverne Babel — huit royaumes, huit Makais, une Loi : « Aucun Démon ne peut franchir le Seuil des Vivants. » Il punit d'une main de fer ceux qui y contreviennent, mais n'intervient que là. Il est juste. Pas bon. Juste. Quand Valène atterrit dans le monde des démons après l'an 300, elle le manipula pour créer les Divins — il le savait, et ça lui convenait : il voulait qu'elle finisse par l'aimer vraiment. Elle l'a fait. Depuis sa mort en 505, il porte ce deuil seul à Babel, avec Raziel pour seule compagnie.",
+    "details": [
+     "Hakai : fait disparaître définitivement ce qu'il touche.",
+     "Les 8 Makais de Babel : Gorath (Souffrance), Belialoth (Luxure/Dévoration), Zythor (Tromperie), Khazar (Guerre Éternelle), Nythrel (Rêves Brisés), Vorash (Putréfaction), Zagon (Thaumaturgie), Sandor (Babel entière).",
+     "En 507, il combattit et emprisonna les Péchés Capitaux dans un monde parallèle détruit — Althar (l'Orgueil) faillit le tuer. Raziel (la Colère) combattit à ses côtés.",
+     "Frère : Akuma."
+    ],
+    "galerie": [
+     "images/pnj/sandor-hakai.jpg"
+    ],
+    "secrets": [
+     {
+      "id": "sec-sandor-acharne",
+      "titre": "Le père",
+      "revele": false,
+      "texte": "Son fils Acharne — seul enfant né d'un vrai amour avec Valène — vit dans le monde des vivants. Sandor pense à lui en permanence mais ne peut pas aller le chercher : il ne peut pas aller contre la Loi qu'il a lui-même édictée."
+     },
+     {
+      "id": "sec-sandor-camp",
+      "titre": "Un allié possible",
+      "revele": false,
+      "texte": "Neutre en apparence — mais potentiellement dans le camp des joueurs si les circonstances l'y poussent. Le Hakai peut être projeté à distance, pas seulement au contact."
+     }
+    ]
+   },
+   {
+    "id": "sky",
+    "nom": "Sky",
+    "titre": "PJ — Animagus Hibou, Roi des Totems",
+    "origine": "Îles Saintes",
+    "race": "Animagus",
+    "statut": "Vivant",
+    "naissance": "~520",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/sky.jpg",
+    "description": "Né bébé renard, trouvé mourant dans une forêt brûlée du nord des Îles Saintes et ramené à la vie par la magie druidique d'Arathak, dont il devint le familier. Corrompu par la magie du Collier de Sang en libérant Livai, il devint son familier de sang. Après avoir sauvé les Îles Saintes en utilisant le pouvoir divin de Narcise inconsciente — ce qui détruisit son corps de renard — Morigane recueillit son âme et la plaça dans le corps d'un hibou humain trouvé dans une cuve : il devint l'Animagus Hibou, Roi des Totems.",
+    "details": [
+     "Utilise des sceaux occultes apposés par Morigane, alimentés par des âmes qu'elle a collectées.",
+     "Totem de l'Arrivée : se lier à quelqu'un, savoir où il est, se téléporter à ses côtés, échanger de place.",
+     "Liens : Arathak (père de cœur), Livai (frère de cœur), Selina (relation amoureuse), Talia (amie), Morigane (tutrice).",
+     "A combattu un fragment du péché de l'Orgueil (Althar) aux côtés de Yon et Mei."
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-sky-sceaux",
+      "titre": "Les sceaux de Morigane",
+      "revele": false,
+      "texte": "Les sceaux lui donnent de la puissance — mais aussi un certain contrôle de Morigane sur lui. Les joueurs l'ignorent."
+     },
+     {
+      "id": "sec-sky-hibou",
+      "titre": "Le corps de la cuve",
+      "revele": false,
+      "texte": "Le hibou humain trouvé dans la cuve avait une histoire avant lui. Il est le seul hors Grande Lignée à qui Morigane fait vraiment confiance."
+     }
+    ]
+   },
+   {
+    "id": "sylas",
+    "nom": "Sylas",
+    "titre": "Le 1er Originel — Hybride Vampire-Garou",
+    "origine": "Désert Magistral",
+    "race": "Hybride Vampire-Garou (humain du Monde Olympe)",
+    "statut": "Vivant — constitue une armée",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/sylas.jpg",
+    "description": "Humain du Monde Olympe, intellectuel et calculateur — il ne cherchait pas le pouvoir pour dominer mais pour savoir et ne jamais mourir. Avec 4 adeptes, il réalisa la Main de Sang, le rituel qui les transforma en vampires : il séduisit et manipula Igna, enchaînée au centre comme catalyseur. Comprenant trop tard la trahison, Igna lui injecta la lycanthropie pour l'anéantir de l'intérieur — mais au lieu de mourir du conflit des deux malédictions, il les absorba toutes deux : le premier et unique Hybride Vampire-Garou de l'histoire. En 525, il se cache au Désert Magistral et constitue une armée.",
+    "details": [
+     "Les 5 Originaux — souches de toutes les lignées vampiriques : Sylas (le Loup, hybride), Samuel (la Flamme, feu violet), Elsuve (les Lèvres, séduction), Alec (l'Ombre), Tortho (la Croix, résistance absolue).",
+     "Son épouse Mélia (Princesse d'Avelorn) découvrit comment lui permettre de transmettre sa condition par morsure — 95 % des mordus meurent calcinés de l'intérieur.",
+     "Igna, jalouse, maudit Mélia en la rendant Médine — conséquence imprévue : Mélia devint Déesse de la Nature.",
+     "Leur fille Salys, première et seule Médine, vit à Avelorn et ignore que son père est Sylas.",
+     "Il craint Igna — il se cache en partie à cause d'elle."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "valene",
+    "nom": "Valène",
+    "titre": "La Fondatrice — Magistère Mère",
+    "origine": "Îles Saintes",
+    "race": "Grande Lignée",
+    "statut": "Morte (version publique : an 300)",
+    "naissance": "180",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/valene.jpg",
+    "description": "Aux yeux du monde : la grande ambassadrice de la paix, celle qui mit fin à la Guerre des Races, fonda les Îles Saintes en 200 et régna comme Magistère Mère. Sa réputation est immaculée — le Deuil Blanc, chaque 7 Septius, pleure sa disparition depuis l'an 300. Maîtrise absolue des quatre éléments.",
+    "details": [
+     "Le monde la vénère comme une sainte."
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-valene-but",
+      "titre": "Son vrai but",
+      "revele": false,
+      "texte": "Manipulatrice née, elle voulait tuer Zork et Limehahu et prendre leur place à la tête de l'univers. Sa réputation immaculée est une construction — Morigane en est la gardienne involontaire."
+     },
+     {
+      "id": "sec-valene-ectelon",
+      "titre": "La 1ère Ectelon",
+      "revele": false,
+      "texte": "Née en 180, fille de Yon et d'Elfia — 1ère réincarnation d'Estel. Elle ressemble énormément à Estel."
+     },
+     {
+      "id": "sec-valene-300",
+      "titre": "L'an 300 — la vérité",
+      "revele": false,
+      "texte": "C'est elle qui tenta d'ouvrir la Porte des Dieux, en faisant croire à Morigane qu'elles ouvraient la Porte des Démons. La catastrophe lia les mages aux démons et la perdit dans le monde des démons. Le monde la croit morte — elle a survécu jusqu'en 505, tuée par Lord."
+     },
+     {
+      "id": "sec-valene-peches",
+      "titre": "Les 7 Péchés et Acharne",
+      "revele": false,
+      "texte": "Ses 7 enfants avec Alexius, entièrement calculés, devinrent les 7 Péchés Capitaux. Avec Sandor (Dieu Démon), le calcul devint amour réel : Acharne, leur dernier fils, est le seul né d'un amour véritable — un demi-démon, incarnation de la fin, l'un des 4 Valets de la Mort (Acharne · Wyatt · Rebecca · Milena)."
+     },
+     {
+      "id": "sec-valene-zazel",
+      "titre": "Le plan de Zazel",
+      "revele": false,
+      "texte": "Avec Zazel, Magistère de la Nouvelle Contrée, elle élabora un plan secret : une terre uniquement peuplée de mages dans le Nouveau Continent. Zazel l'exécute encore aujourd'hui."
+     }
+    ]
+   },
+   {
+    "id": "voss-adrenneth",
+    "nom": "Voss Adrenneth",
+    "titre": "Le Roi-Mage de Cendrelune — l'un des Cinq Invoqués",
+    "origine": "Cendrelune (disparu)",
+    "race": "Humain",
+    "statut": "Mort — invoqué par Morigane",
+    "naissance": "Plusieurs siècles avant la Conjonction · apparu en 525",
+    "religion": "Aucune — le sang comme seule vérité",
+    "lieux": [],
+    "portrait": "images/pnj/voss-adrenneth.jpg",
+    "description": "Ancien roi-mage de Cendrelune, royaume effacé des cartes d'Asterre par le temps plus que par la guerre. Il fut l'un des tout premiers à comprendre que le sang n'était pas qu'un vecteur de rituel mais une discipline magique à part entière, capable de rivaliser avec la Mana. Pour transcender sa propre mortalité, il draina lentement son peuple entier, croyant fusionner des milliers de vies en une seule force inarrêtable. Le rituel échoua. Cendrelune tomba en cendres, et Voss mourut seul, entouré des cadavres de ceux qu'il avait juré de protéger. « Le sang ne ment jamais. Les dieux, si. »",
+    "details": [
+     "Pourquoi Morigane l'a invoqué : sa maîtrise théorique de la Magie du Sang est inégalée — il comprend le rituel de la Lune de Sang mieux que quiconque, y compris elle.",
+     "En scène : froid, calculateur, presque indifférent — pas un cri de guerre, un calcul. Il combat parce qu'un rituel inachevé est pour lui la pire des offenses.",
+     "Peut servir de voix d'exposition si les PJ cherchent à comprendre le rituel en cours."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "wyatt",
+    "nom": "Wyatt",
+    "titre": "Le Frère Perdu",
+    "origine": "Le Continent",
+    "race": "Grande Lignée",
+    "statut": "Vivant — en folie progressive",
+    "naissance": "An 0 (quelques mois avant la Conjonction)",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/wyatt.jpg",
+    "description": "Fils de Samaël et Estel. Yon le tenait dans ses bras lors de la Conjonction — et le perdit dans le chaos. Il grandit seul dans un orphelinat, idéaliste, rêveur, terrifié par son propre pouvoir, qu'il fuit à 14 ans. Ira, démon de cristal de l'Émeraude, sentit en lui une bonté rare et lui donna confiance ; installés à Ferelden, ils eurent Abigail (pouvoir des liens) et Namor (Savoir Absolu). En 500, le Docteur enleva et tua Namor. Abigail, voyant son père brisé, coupa tous ses fils sentimentaux liés à Namor — la coupure le rendit progressivement fou. Lord le manipule désormais vers Omega.",
+    "details": [
+     "Il était le plus doux d'entre eux. C'est le plus brisé qu'il est devenu.",
+     "Pouvoir divin « Let Me In » : brise toutes les barrières de l'Esprit — aucune défense ne l'arrête. Maîtrise totale de la peur.",
+     "Namor avait découvert les faiblesses de Yon grâce au Savoir Absolu avant de mourir.",
+     "Abigail a aussi coupé ses propres liens — elle ne ressent plus de regrets. Elle reste avec lui.",
+     "An 530 : il sera l'auteur du Massacre d'Omega — le massacre des Divins (événement futur).",
+     "L'un des 4 Valets de la Mort (avec Acharne, Rebecca, Milena)."
+    ],
+    "galerie": [
+     "images/pnj/wyatt-j1.jpg"
+    ],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "ysengrin",
+    "nom": "Ysengrin Pâle",
+    "titre": "Le Prêtre Hérétique — l'un des Cinq Invoqués",
+    "origine": "Îles Saintes",
+    "race": "Humain",
+    "statut": "Mort — invoqué par Morigane",
+    "naissance": "~380 · apparu en 525",
+    "religion": "Ancien prêtre de l'Église du Feu — renié pour hérésie",
+    "lieux": [],
+    "portrait": "images/pnj/ysengrin.jpg",
+    "description": "Orphelin élevé par l'Église du Feu, prêtre dévoué pendant des décennies — jusqu'à découvrir que certains rituels sacrés, poussés assez loin, se rapprochaient dangereusement de la Magie du Sang. Plutôt que de fuir cette découverte, il l'embrassa en secret, mêlant ferveur religieuse et sang versé. Découvert, jugé hérétique, il fut brûlé vif par ceux qu'il considérait comme ses frères. Sa dernière pensée ne fut pas pour ses dieux, mais une promesse silencieuse de revenir leur prouver qu'il avait eu raison. « J'ai prié pendant trente ans. Le feu qui m'a répondu n'était pas celui qu'on m'avait promis. »",
+    "details": [
+     "Pourquoi Morigane l'a invoqué : une haine pure et increvable envers les institutions divines — il se bat avec la ferveur d'un converti qui n'a plus rien à perdre.",
+     "En scène : le plus habité des cinq — chaque coup porté est une prière inversée. Bon contrepoint émotionnel à Voss.",
+     "Peut reconnaître et mépriser des symboles de l'Église du Feu si des PJ en portent."
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   }
+  ]
+ },
+ "suggestions": [],
+ "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
+ "version": "1.1"
 }
