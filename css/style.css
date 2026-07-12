@@ -312,3 +312,5 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 .titre-region small { color: var(--encre-3); font-family: "EB Garamond", serif; letter-spacing: 0; }
 .carte-pnj.mj-only { outline: 2px dashed var(--sang); outline-offset: -2px; }
 #btn-reveals { font-size: 13px; }
+.coche-inline { display: inline-flex; margin: 0 0 0 6px; font-size: 12.5px; color: var(--encre-3); vertical-align: baseline; }
+.pt-cache { opacity: .55; border-left: 3px solid var(--sang); padding-left: 6px; }
