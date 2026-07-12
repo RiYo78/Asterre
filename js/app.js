@@ -17,6 +17,17 @@ const S = {
   kmParUnite: 0.22
 };
 function estRevele(id) { return S.reveals.has(id); }
+function visib(id, def) { if (S.masques.has(id)) return false; if (S.reveals.has(id)) return true; return def; }
+function cocheMJ(id, def, label) {
+  if (!S.mj) return "";
+  const v = visib(id, def);
+  return `<label class="coche-mj"><input type="checkbox" data-vis="${esc(id)}" data-def="${def ? 1 : 0}" ${v ? "checked" : ""}> ${label || "Visible pour les joueurs"} <small>(cet appareil — publiez via 🔓)</small></label>`;
+}
+function blocMJ(id, def, contenu, label) {
+  const v = visib(id, def);
+  if (!v && !S.mj) return "";
+  return `<div class="bloc-mj ${v ? "" : "pt-cache"}" data-bloc="${esc(id)}">${contenu}${cocheMJ(id, def, label)}</div>`;
+}
 function sauveReveals() { try { localStorage.setItem("asterre-reveals", JSON.stringify([...S.reveals])); localStorage.setItem("asterre-masques", JSON.stringify([...S.masques])); } catch (e) {} }
 function chargeReveals() {
   try { S.reveals = new Set(JSON.parse(localStorage.getItem("asterre-reveals") || "[]")); } catch (e) { S.reveals = new Set(); }
@@ -212,6 +223,7 @@ function renderCarte() {
 
   // ── marqueurs & noms de lieux
   for (const l of S.pays.lieux) {
+    if (!S.mj && !visib("lieu-" + l.id, true)) continue;
     const g = el("g", { class: "marqueur", "data-id": l.id, tabindex: 0, role: "button", "aria-label": l.nom }, gMarqueurs);
     dessinerMarqueur(g, l);
     const ty = l.pos[1] + (l.type === "capitale" ? 40 : 32);
@@ -636,12 +648,15 @@ function ouvrirLieu(id) {
       <tr><td>Population</td><td>${esc(l.population)}</td></tr>
       <tr><td>Climat</td><td>${esc(l.climat)}</td></tr>
       <tr><td>Dirigeant</td><td>${esc(l.dirigeant)}</td></tr>
-    </table>
-    <p>${esc(l.description)}</p>`;
-  if (l.histoire) html += `<h3>Histoire</h3><p>${esc(l.histoire)}</p>`;
+    </table>`;
+  if (S.mj) html += `<div class="secret ${visib("lieu-" + l.id, true) ? "revele" : ""}"><span class="sceau-secret">${visib("lieu-" + l.id, true) ? "👁 Lieu visible des joueurs" : "🔒 Lieu caché aux joueurs"}</span>
+    ${cocheMJ("lieu-" + l.id, true, "Lieu visible sur la carte des joueurs")}</div>`;
+  html += blocMJ("desc-lieu-" + l.id, true, `<p>${esc(l.description)}</p>`, "Description visible");
+  if (l.histoire) html += blocMJ("hist-lieu-" + l.id, true, `<h3>Histoire</h3><p>${esc(l.histoire)}</p>`, "Histoire visible");
   if (l.lieuxNotables && l.lieuxNotables.length) {
-    html += `<h3>Lieux notables</h3><ul class="liste-lieux">` +
-      l.lieuxNotables.map(sl => `<li data-sl="${sl.id}"><b>${esc(sl.nom)}</b><small>${esc(NOMS_TYPES[sl.type] || "")}${sl.utilite ? " · " + esc(sl.utilite) : ""}</small></li>`).join("") + `</ul>`;
+    const lis = l.lieuxNotables.filter(sl => S.mj || visib("sl-" + sl.id, true))
+      .map(sl => `<li data-sl="${sl.id}" class="${visib("sl-" + sl.id, true) ? "" : "pt-cache"}"><b>${visib("sl-" + sl.id, true) ? "" : "🔒 "}${esc(sl.nom)}</b><small>${esc(NOMS_TYPES[sl.type] || "")}${sl.utilite ? " · " + esc(sl.utilite) : ""}</small></li>`).join("");
+    if (lis) html += `<h3>Lieux notables</h3><ul class="liste-lieux">${lis}</ul>`;
   }
   if (l.familles && l.familles.length) {
     html += `<h3>Familles présentes</h3><div class="chips">` +
@@ -660,6 +675,7 @@ function ouvrirLieu(id) {
 }
 function ouvrirSousLieu(sid) {
   const sl = S.sousLieux[sid]; if (!sl) return;
+  if (!S.mj && !visib("sl-" + sid, true)) return;
   const parent = S.lieux[sl.parent], p = $("#panneau");
   let html = `<button class="fermer" aria-label="Fermer">✕</button>
     <button class="retour" aria-label="Retour à ${esc(parent.nom)}">←</button>
@@ -667,7 +683,9 @@ function ouvrirSousLieu(sid) {
     <h2>${esc(sl.nom)}</h2>
     <div class="accroche">${esc(parent.nom)}</div>
     ${imgHTML(`images/lieux/${parent.id}/${sl.id}.jpg`, sl.nom)}`;
-  if (sl.description) html += `<p>${esc(sl.description)}</p>`;
+  if (S.mj) html += `<div class="secret ${visib("sl-" + sid, true) ? "revele" : ""}"><span class="sceau-secret">${visib("sl-" + sid, true) ? "👁 Visible des joueurs" : "🔒 Caché aux joueurs"}</span>
+    ${cocheMJ("sl-" + sid, true, "Lieu notable visible pour les joueurs")}</div>`;
+  if (sl.description) html += blocMJ("desc-sl-" + sid, true, `<p>${esc(sl.description)}</p>`, "Description visible");
   if (sl.utilite) html += `<h3>Que peut-on y faire ?</h3><p>${esc(sl.utilite)}</p>`;
   if (sl.pnj && sl.pnj.length) html += `<h3>PNJ présents</h3><div class="chips">` +
     sl.pnj.map(id2 => { const pn = pnj(id2); return pn ? `<span class="chip" data-pnj="${id2}">${esc(pn.nom)}</span>` : ""; }).join("") + `</div>`;
@@ -679,8 +697,8 @@ function ouvrirSousLieu(sid) {
 }
 function ouvrirPnj(id, retourVers) {
   const pn = pnj(id); if (!pn) return;
-  const cache = pn.mjOnly && !(estRevele("pnj-" + pn.id));
-  if (cache && !S.mj) return;
+  const ficheVisible = visib("pnj-" + pn.id, !pn.mjOnly);
+  if (!ficheVisible && !S.mj) return;
   const p = $("#panneau");
   let html = `<button class="fermer" aria-label="Fermer">✕</button>` +
     (retourVers ? `<button class="retour" aria-label="Retour">←</button>` : "") +
@@ -691,12 +709,12 @@ function ouvrirPnj(id, retourVers) {
   const meta = [["Origine", pn.origine], ["Race", pn.race], ["Statut", pn.statut], ["Naissance", pn.naissance], ["Religion", pn.religion]]
     .filter(x => x[1]);
   if (meta.length) html += `<table class="meta">` + meta.map(m => `<tr><td>${m[0]}</td><td>${esc(m[1])}</td></tr>`).join("") + `</table>`;
-  if (S.mj && pn.mjOnly) html += `<div class="secret"><span class="sceau-secret">🔒 Fiche cachée aux joueurs</span>
-    <label class="coche-mj"><input type="checkbox" data-rev="pnj-${esc(pn.id)}" ${estRevele("pnj-" + pn.id) ? "checked" : ""}> Fiche visible pour les joueurs <small>(cet appareil — publiez via 🔓)</small></label></div>`;
-  html += `<p>${esc(pn.description)}</p>`;
+  if (S.mj) html += `<div class="secret ${ficheVisible ? "revele" : ""}"><span class="sceau-secret">${ficheVisible ? "👁 Fiche visible des joueurs" : "🔒 Fiche cachée aux joueurs"}</span>
+    ${cocheMJ("pnj-" + pn.id, !pn.mjOnly, "Fiche visible pour les joueurs")}</div>`;
+  html += blocMJ("desc-pnj-" + pn.id, true, `<p>${esc(pn.description)}</p>`, "Description visible");
   if (pn.details && pn.details.length) { html += `<h3>À savoir</h3>` + detailsHTML(pn.details, "det-" + pn.id); }
   if (pn.galerie && pn.galerie.length) {
-    html += `<h3>Galerie</h3>` + pn.galerie.map(src => imgHTML(src, pn.nom)).join("");
+    html += blocMJ("gal-pnj-" + pn.id, true, `<h3>Galerie</h3>` + pn.galerie.map(src => imgHTML(src, pn.nom)).join(""), "Galerie visible");
   }
   html += secretsHTML(pn.secrets);
   if (pn.lieux && pn.lieux.length) html += `<h3>Lié aux lieux</h3><div class="chips">` +
@@ -752,15 +770,16 @@ function construireCodex() {
   });
   renderChapitre("lois");
 }
-function articleHTML(sec) {
-  return `<div class="article"><h4>${esc(sec.titre)}</h4><p>${esc(sec.contenu)}</p>${secretsHTML(sec.secrets)}</div>`;
+function articleHTML(sec, prefix) {
+  const contenu = `<h4>${esc(sec.titre)}</h4><p>${esc(sec.contenu)}</p>${secretsHTML(sec.secrets)}`;
+  return `<div class="article">${prefix ? blocMJ(prefix, true, contenu, "Section visible pour les joueurs") : contenu}</div>`;
 }
 function renderChapitre(ch) {
   const c = $("#codex-contenu"), cx = S.pays.codex;
   let html = "";
   if (["lois", "religions", "politique", "economie", "armees"].includes(ch)) {
     const bloc = cx[ch];
-    html = `<h2>${esc(bloc.titre)}</h2><div class="filet"></div>` + bloc.sections.map(articleHTML).join("");
+    html = `<h2>${esc(bloc.titre)}</h2><div class="filet"></div>` + bloc.sections.map((s, i) => articleHTML(s, `art-${ch}-${i}`)).join("");
   } else if (ch === "familles") {
     html = `<h2>Familles & Blasons</h2><div class="filet"></div>
       <p class="fell" style="max-width:720px;margin-bottom:18px">Dix blasons. Un royaume, une Église, huit lignées. Les sept familles fondatrices furent choisies par Valène pour superviser les piliers de la société.</p>
@@ -774,11 +793,11 @@ function renderChapitre(ch) {
       <select class="filtre" id="filtre-chrono" aria-label="Filtrer par lieu"><option value="">Tous les lieux</option>` +
       lieuxCites.map(id => `<option value="${id}" ${filtre === id ? "selected" : ""}>${esc(S.lieux[id].nom)}</option>`).join("") + `</select>
       <ul class="chrono">` +
-      cx.chronologie.filter(e => !filtre || e.lieux.includes(filtre)).map(e => `
-        <li><span class="date">${esc(e.date)}</span><br>${esc(e.evenement)}
-        ${e.lieux.length ? `<div class="liens-lieux">📍 ${e.lieux.filter(id => S.lieux[id]).map(id => esc(S.lieux[id].nom)).join(" · ")}</div>` : ""}</li>`).join("") + `</ul>`;
+      cx.chronologie.map((e, i) => ({ e, i })).filter(x => (!filtre || x.e.lieux.includes(filtre)) && (S.mj || visib(`chr-${x.i}`, true))).map(({ e, i }) => `
+        <li class="${visib(`chr-${i}`, true) ? "" : "pt-cache"}" data-bloc="chr-${i}"><span class="date">${esc(e.date)}</span><br>${esc(e.evenement)}
+        ${e.lieux.length ? `<div class="liens-lieux">📍 ${e.lieux.filter(id => S.lieux[id]).map(id => esc(S.lieux[id].nom)).join(" · ")}</div>` : ""}${cocheMJ(`chr-${i}`, true, "Visible")}</li>`).join("") + `</ul>`;
   } else if (ch === "personnages") {
-    const visiblesPnj = cx.personnages.filter(p => !p.mjOnly || S.mj || estRevele("pnj-" + p.id));
+    const visiblesPnj = cx.personnages.filter(p => S.mj || visib("pnj-" + p.id, !p.mjOnly));
     const ordre = ["Îles Saintes", "Drémora", "Babel", "Désert Magistral", "Eden"];
     const groupes = {};
     for (const p of visiblesPnj) (groupes[p.origine || "Origine inconnue"] = groupes[p.origine || "Origine inconnue"] || []).push(p);
@@ -790,22 +809,22 @@ function renderChapitre(ch) {
       <h3 class="titre-region">${esc(r)} <small>· ${groupes[r].length}</small></h3>
       <div class="grille-pnj">` +
       groupes[r].map(p => `
-        <div class="carte-pnj ${p.mjOnly ? "mj-only" : ""}" data-pnj="${p.id}" tabindex="0" role="button" aria-label="${esc(p.nom)}">
+        <div class="carte-pnj ${visib("pnj-" + p.id, !p.mjOnly) ? "" : "mj-only"}" data-pnj="${p.id}" tabindex="0" role="button" aria-label="${esc(p.nom)}">
           <div class="portrait"><img src="${esc(p.portrait)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Portrait à venir'}))"></div>
-          <div class="infos"><b>${p.mjOnly ? "🔒 " : ""}${esc(p.nom)}</b><small>${esc(p.titre || "")}</small></div>
+          <div class="infos"><b>${visib("pnj-" + p.id, !p.mjOnly) ? "" : "🔒 "}${esc(p.nom)}</b><small>${esc(p.titre || "")}</small></div>
         </div>`).join("") + `</div>`).join("");
   } else if (ch === "bestiaire") {
-    const betes = (cx.bestiaire || []).filter(b => !b.mjOnly || S.mj || estRevele("bete-" + b.id));
+    const betes = (cx.bestiaire || []).filter(b => S.mj || visib("bete-" + b.id, !b.mjOnly));
     html = `<h2>Bestiaire</h2><div class="filet"></div>
       <p class="fell" style="max-width:720px;margin-bottom:18px">Ce que la Magie du Sang laisse derrière elle. Toutes les créatures ne sont pas connues du commun des mortels.</p>` +
       (betes.length ? "" : `<p>Aucune créature répertoriée — pour l'instant.</p>`) +
       betes.map(b => {
-        const coche = S.mj && b.mjOnly ? `<label class="coche-mj"><input type="checkbox" data-rev="bete-${esc(b.id)}" ${estRevele("bete-" + b.id) ? "checked" : ""}> Fiche visible pour les joueurs <small>(cet appareil — publiez via 🔓)</small></label>` : "";
-        return `<div class="article carte-bete ${b.mjOnly ? "bete-mj" : ""}">
-          <h4>${b.mjOnly ? "🔒 " : ""}${esc(b.nom)} <span class="badge-danger">${esc(b.danger)}</span></h4>
+        const vB = visib("bete-" + b.id, !b.mjOnly);
+        return `<div class="article carte-bete ${vB ? "" : "bete-mj"}">
+          <h4>${vB ? "" : "🔒 "}${esc(b.nom)} <span class="badge-danger">${esc(b.danger)}</span></h4>
           <small class="ligne-bete">${esc(b.categorie)} · Origine : ${esc(b.origine)}</small>
-          <p>${esc(b.description)}</p>
-          ${detailsHTML(b.details, "bet-" + b.id)}${coche}
+          ${blocMJ("desc-bete-" + b.id, true, `<p>${esc(b.description)}</p>`, "Description visible")}
+          ${detailsHTML(b.details, "bet-" + b.id)}${cocheMJ("bete-" + b.id, !b.mjOnly, "Fiche visible pour les joueurs")}
         </div>`;
       }).join("");
   }
@@ -874,7 +893,7 @@ document.addEventListener("change", e => {
     const id = t.dataset.vis, defVisible = t.dataset.def === "1";
     if (t.checked) { S.masques.delete(id); if (!defVisible) S.reveals.add(id); else S.reveals.delete(id); }
     else { S.reveals.delete(id); if (defVisible) S.masques.add(id); else S.masques.delete(id); }
-    const li = t.closest("li"); if (li) li.classList.toggle("pt-cache", !t.checked);
+    const cible = t.closest("[data-bloc]") || t.closest("li"); if (cible) cible.classList.toggle("pt-cache", !t.checked);
     sauveReveals(); majBoutonMJ();
     toast(t.checked ? "👁 Point visible (cet appareil) — publiez via 🔓." : "🙈 Point masqué (cet appareil) — publiez via 🔓.");
   }
@@ -892,7 +911,7 @@ function toggleMJ() {
   if (S.vue === "codex") renderChapitre(document.querySelector("#codex-nav a.actif").dataset.ch);
 }
 function remplirRecherche() {
-  $("#lieux-datalist").innerHTML = S.pays.lieux.map(l => `<option value="${esc(l.nom)}">`).join("");
+  $("#lieux-datalist").innerHTML = S.pays.lieux.filter(l => S.mj || visib("lieu-" + l.id, true)).map(l => `<option value="${esc(l.nom)}">`).join("");
   $("#recherche").addEventListener("change", () => {
     const v = $("#recherche").value.trim().toLowerCase();
     const l = S.pays.lieux.find(x => x.nom.toLowerCase() === v) || S.pays.lieux.find(x => x.nom.toLowerCase().includes(v));
