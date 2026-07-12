@@ -740,7 +740,7 @@ function famille(id) { return S.pays.familles.find(f => f.id === id); }
 const CHAPITRES = [
   ["lois", "📜 Lois & Interdits"], ["religions", "⛪ Religions"], ["familles", "🛡 Familles & Blasons"],
   ["economie", "💰 Économie"], ["politique", "👑 Politique"], ["armees", "⚔ Armées"],
-  ["chronologie", "📅 Chronologie"], ["personnages", "👤 Personnages"]
+  ["chronologie", "📅 Chronologie"], ["personnages", "👤 Personnages"], ["bestiaire", "🩸 Bestiaire"]
 ];
 function construireCodex() {
   const nav = $("#codex-nav");
@@ -794,6 +794,20 @@ function renderChapitre(ch) {
           <div class="portrait"><img src="${esc(p.portrait)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Portrait à venir'}))"></div>
           <div class="infos"><b>${p.mjOnly ? "🔒 " : ""}${esc(p.nom)}</b><small>${esc(p.titre || "")}</small></div>
         </div>`).join("") + `</div>`).join("");
+  } else if (ch === "bestiaire") {
+    const betes = (cx.bestiaire || []).filter(b => !b.mjOnly || S.mj || estRevele("bete-" + b.id));
+    html = `<h2>Bestiaire</h2><div class="filet"></div>
+      <p class="fell" style="max-width:720px;margin-bottom:18px">Ce que la Magie du Sang laisse derrière elle. Toutes les créatures ne sont pas connues du commun des mortels.</p>` +
+      (betes.length ? "" : `<p>Aucune créature répertoriée — pour l'instant.</p>`) +
+      betes.map(b => {
+        const coche = S.mj && b.mjOnly ? `<label class="coche-mj"><input type="checkbox" data-rev="bete-${esc(b.id)}" ${estRevele("bete-" + b.id) ? "checked" : ""}> Fiche visible pour les joueurs <small>(cet appareil — publiez via 🔓)</small></label>` : "";
+        return `<div class="article carte-bete ${b.mjOnly ? "bete-mj" : ""}">
+          <h4>${b.mjOnly ? "🔒 " : ""}${esc(b.nom)} <span class="badge-danger">${esc(b.danger)}</span></h4>
+          <small class="ligne-bete">${esc(b.categorie)} · Origine : ${esc(b.origine)}</small>
+          <p>${esc(b.description)}</p>
+          ${detailsHTML(b.details, "bet-" + b.id)}${coche}
+        </div>`;
+      }).join("");
   }
   c.innerHTML = html; c.scrollTop = 0;
   const f = c.querySelector("#filtre-chrono");
