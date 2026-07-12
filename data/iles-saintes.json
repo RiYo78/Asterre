@@ -3565,11 +3565,224 @@
     "secrets": [],
     "mjOnly": true
    }
+  ],
+  "bestiaire": [
+   {
+    "id": "valdruin",
+    "nom": "Valdruin",
+    "categorie": "Créature Unique",
+    "danger": "Légendaire",
+    "origine": "Draconique — possédé par Sit Sanguinis",
+    "mjOnly": true,
+    "description": "Dragon de foudre né du même œuf qu'Alduin — même âme, communication mentale permanente. Enfermé avec lui dans la prison-amulette après le meurtre de Daenerys, libéré pendant la Guerre des Mages, il chargea Morigane aux côtés d'Alduin fou de rage. Morigane les vainquit tous les deux — mais ne tua pas le dragon. Elle l'offrit à Sit Sanguinis, l'Esprit du Sang : ce sacrifice lui donna accès aux mages de sang, permit d'invoquer les Cinq et de ramener Katlyn Nei. Valdruin conserve intégralement sa foudre et y ajoute le sang — un dragon dont la foudre coule dans le sang, et dont le sang frappe comme la foudre.",
+    "details": [
+     {
+      "texte": "Capacités : souffle de foudre, vitesse, puissance électrique (originelles, intactes) + capacités de Magie du Sang accordées par Sit Sanguinis.",
+      "mj": false
+     },
+     {
+      "texte": "Deux formes visuelles : le dragon de foudre qu'il était · la version sanguine qu'il est devenu.",
+      "mj": false
+     },
+     {
+      "texte": "Alduin est vivant, affaibli, sans son dragon — et il sait qui le lui a pris. Il cherchera un autre dragon (arc à venir).",
+      "mj": true
+     },
+     {
+      "texte": "Le lien Dragonien/dragon est indissoluble par nature, sauf force divine ou primordiale. Valdruin n'est pas mort — il est possédé. Ce qui est peut-être pire.",
+      "mj": true
+     },
+     {
+      "texte": "Apparaîtra dans la saison Lune de Sang.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "corrompu-du-sang",
+    "nom": "Corrompu du Sang",
+    "categorie": "Corrompu",
+    "danger": "Très Élevé (variable)",
+    "origine": "Corruption",
+    "description": "Un être vivant — humain, animal, mage — dont le sang a été corrompu par un maître de sang, sans qu'il meure. Il reste conscient. Il sait ce qui lui arrive. Il ne peut pas s'arrêter. Son corps se déforme progressivement : les veines noircissent et sortent de la peau, les os s'allongent, la voix se brise. Plus la corruption progresse, plus il devient puissant — et moins il reste de lui.",
+    "details": [
+     {
+      "texte": "Capacités : puissance croissante avec la corruption · conserve ses compétences d'avant · régénération · reste conscient — peut parler, supplier.",
+      "mj": false
+     },
+     {
+      "texte": "Un Corrompu peut être sauvé aux stades précoces. Aux stades avancés, la seule miséricorde est la mort.",
+      "mj": false
+     },
+     {
+      "texte": "Faiblesses : réversible aux stades précoces · conserve ses attaches émotionnelles (exploitable) · la mort du corrupteur peut le libérer.",
+      "mj": true
+     },
+     {
+      "texte": "En jeu : monstre tragique — peut être un PNJ connu des joueurs. Dilemme moral : tuer, ou tenter de sauver ?",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "ecarlate",
+    "nom": "L'Écarlate",
+    "categorie": "Créature d'Élite",
+    "danger": "Très Élevé",
+    "origine": "Magie du Sang",
+    "description": "Silhouette de haute taille, drapée dans ce qui ressemble à un manteau de sang figé. Sous le drapé, aucun corps — seulement du vide et un cœur suspendu, battant lentement. L'Écarlate ne se bat pas directement : il contrôle le sang de ceux qui l'entourent, y compris celui de ses adversaires. Un mouvement de main, et une artère se referme. Un autre, et un guerrier lutte contre son propre bras. Ce sont des créatures pensantes, méthodiques, presque élégantes.",
+    "details": [
+     {
+      "texte": "Capacités : contrôle du sang des vivants à distance · referme ou ouvre les blessures à volonté · peut forcer un mouvement · intelligence tactique.",
+      "mj": false
+     },
+     {
+      "texte": "Faiblesses : le cœur suspendu est son point vital · ne peut contrôler qu'une cible à la fois · vulnérable si sa concentration est brisée.",
+      "mj": true
+     },
+     {
+      "texte": "En jeu : boss intermédiaire — retourne les corps des PJ contre eux, force le groupe à le tuer vite ou à protéger son propre sang.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "choeur-des-gorges",
+    "nom": "Chœur des Gorges",
+    "categorie": "Créature d'Élite",
+    "danger": "Élevé",
+    "origine": "Magie du Sang",
+    "description": "Le Chœur n'est pas une créature mais plusieurs — trois à six cadavres fusionnés en une seule masse par des tendons de sang durci. Chaque tête garde un fragment de la voix de son propriétaire. Ensemble, elles murmurent, appellent, supplient. Beaucoup de victimes s'approchent en croyant reconnaître la voix d'un proche.",
+    "details": [
+     {
+      "texte": "Capacités : imite les voix des morts qu'il contient · attire ses proies · attaque multiple simultanée · chaque tête détruite le rend plus enragé.",
+      "mj": false
+     },
+     {
+      "texte": "Faiblesses : doit être détruit entièrement · vulnérable au feu · sa ruse échouée le rend prévisible.",
+      "mj": true
+     },
+     {
+      "texte": "En jeu : horrifique et tactique — les joueurs doivent décider s'ils font confiance à ce qu'ils entendent.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "limiers-de-sang",
+    "nom": "Limiers de Sang",
+    "categorie": "Invocation",
+    "danger": "Élevé",
+    "origine": "Invocation rituelle",
+    "description": "Une meute. Quatre à huit silhouettes canines faites de sang noirci et de tendons, silencieuses, rapides, coordonnées. Elles ne hurlent pas. Elles ne grognent pas. Elles courent. Les Limiers sont créés délibérément par les mages de sang pour la chasse — traquer un fuyard, cerner une cible, épuiser un groupe. Ils partagent une conscience commune : ce que l'un voit, tous le savent.",
+    "details": [
+     {
+      "texte": "Capacités : conscience partagée · suivent une trace de sang à des kilomètres · silencieux · tactique de meute.",
+      "mj": false
+     },
+     {
+      "texte": "Faiblesses : tuer l'invocateur les dissout · l'eau courante brouille leur trace · fragiles individuellement.",
+      "mj": true
+     },
+     {
+      "texte": "En jeu : monstre de poursuite — scènes de fuite, traques nocturnes, pression continue. Ils ne combattent pas jusqu'à la mort : ils épuisent.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "sangsue-pourpre",
+    "nom": "Sangsue Pourpre",
+    "categorie": "Créature Commune",
+    "danger": "Modéré",
+    "origine": "Magie du Sang",
+    "description": "Créature humanoïde décharnée, la peau tendue sur les os, dotée de longs bras et de doigts effilés comme des aiguilles. Le Sangsue Pourpre perce ses victimes et boit — non pas leur sang, mais la mana contenue dans leur sang. Plus sa victime est puissante magiquement, plus il s'acharne. Il ignore les non-mages s'il y a un mage à portée.",
+    "details": [
+     {
+      "texte": "Capacités : draine la mana par le sang · cible en priorité les mages les plus puissants · plus rapide à chaque drain réussi · sent la mana à distance.",
+      "mj": false
+     },
+     {
+      "texte": "Faiblesses : fragile physiquement · ignore les non-mages (exploitable) · devient imprévisible s'il draine trop.",
+      "mj": true
+     },
+     {
+      "texte": "En jeu : menace directe pour les mages du groupe — rappelle que la mana est une ressource convoitée.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "suaire-rampant",
+    "nom": "Suaire Rampant",
+    "categorie": "Créature Commune",
+    "danger": "Modéré",
+    "origine": "Magie du Sang",
+    "description": "Masse de sang semi-liquide, translucide et rouge sombre, qui rampe le long des murs et des plafonds. Le Suaire ne frappe pas : il enveloppe. Il se laisse tomber sur sa proie et l'étouffe lentement, absorbant son sang par la peau. Sa matière est étrangement silencieuse — beaucoup de victimes ne le voient jamais venir.",
+    "details": [
+     {
+      "texte": "Capacités : déplacement silencieux · rampe murs et plafonds · étouffe et absorbe le sang par contact · quasi invisible dans l'obscurité.",
+      "mj": false
+     },
+     {
+      "texte": "Faiblesses : lumière vive (le rend visible) · froid (le fige) · sel.",
+      "mj": true
+     },
+     {
+      "texte": "En jeu : monstre d'embuscade — couloirs, plafonds sombres, lieux clos. Récompense les joueurs qui lèvent les yeux.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "carcasses-sanglantes",
+    "nom": "Carcasses Sanglantes",
+    "categorie": "Créature Commune",
+    "danger": "Faible",
+    "origine": "Magie du Sang",
+    "description": "Cadavres dont le sang a été réveillé mais pas la conscience. Contrairement à un mort-vivant classique, la Carcasse n'est pas animée par une âme — c'est le sang lui-même qui bouge, tirant les muscles comme des ficelles. Elles avancent avec une lenteur désarticulée, mais ne s'arrêtent jamais. On peut leur trancher un bras : le sang continuera de couler, et le bras continuera de bouger au sol.",
+    "details": [
+     {
+      "texte": "Capacités : ne ressent pas la douleur · membres tranchés continuent de bouger · ne s'arrête jamais · immunisée à la peur et aux effets mentaux.",
+      "mj": false
+     },
+     {
+      "texte": "Faiblesses : lentes · destruction complète du corps · vidage du sang · feu.",
+      "mj": true
+     },
+     {
+      "texte": "En jeu : ennemi d'usure — un groupe qui avance sans jamais reculer devient un problème de terrain et de ressources.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "sanguinaires",
+    "nom": "Sanguinaires",
+    "categorie": "Créature Commune",
+    "danger": "Faible",
+    "origine": "Magie du Sang",
+    "description": "Petites créatures de sang coagulé animé, de la taille d'un chien. Elles apparaissent là où beaucoup de sang a été versé — champs de bataille, lieux de rituel, scènes de massacre. Le sang s'agrège, prend forme, et se met à chercher davantage de sang. Stupides et prévisibles, mais rarement seules : là où il y en a une, il y en a une dizaine.",
+    "details": [
+     {
+      "texte": "Capacités : attaque en meute · se reforment si le sang n'est pas dispersé · peuvent fusionner entre elles si trop nombreuses.",
+      "mj": false
+     },
+     {
+      "texte": "Faiblesses : le feu (coagule et détruit) · dispersion physique du sang · aucune intelligence tactique.",
+      "mj": true
+     },
+     {
+      "texte": "En jeu : ennemis de déblaiement — dangereuses en nombre, triviales isolées. Elles marquent un lieu comme « souillé par le sang ».",
+      "mj": true
+     }
+    ]
+   }
   ]
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "1.2",
+ "version": "1.3",
  "labels": [
   {
    "texte": "Le Passage du Silence",
