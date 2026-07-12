@@ -11,14 +11,17 @@ const SVGNS = "http://www.w3.org/2000/svg";
 
 const S = {
   monde: null, pays: null, lieux: {}, sousLieux: {}, graphe: {},
-  mj: false, vue: "carte", reveals: new Set(),
+  mj: false, vue: "carte", reveals: new Set(), masques: new Set(),
   voyage: { actif: false, etapes: [], modifs: new Set(), choix: {} },
   vb: { x: 0, y: 0, w: 2000, h: 1500 }, vb0: null,
   kmParUnite: 0.22
 };
 function estRevele(id) { return S.reveals.has(id); }
-function sauveReveals() { try { localStorage.setItem("asterre-reveals", JSON.stringify([...S.reveals])); } catch (e) {} }
-function chargeReveals() { try { S.reveals = new Set(JSON.parse(localStorage.getItem("asterre-reveals") || "[]")); } catch (e) { S.reveals = new Set(); } }
+function sauveReveals() { try { localStorage.setItem("asterre-reveals", JSON.stringify([...S.reveals])); localStorage.setItem("asterre-masques", JSON.stringify([...S.masques])); } catch (e) {} }
+function chargeReveals() {
+  try { S.reveals = new Set(JSON.parse(localStorage.getItem("asterre-reveals") || "[]")); } catch (e) { S.reveals = new Set(); }
+  try { S.masques = new Set(JSON.parse(localStorage.getItem("asterre-masques") || "[]")); } catch (e) { S.masques = new Set(); }
+}
 
 /* ─────────────── Utilitaires ─────────────── */
 const $ = s => document.querySelector(s);
@@ -199,6 +202,11 @@ function renderCarte() {
     t2.textContent = `${cont.distanceDepuis.km} km — 3 j de navire`;
   }
 
+  for (const lb of (S.pays.labels || [])) {
+    const t = el("text", { x: lb.pos[0], y: lb.pos[1], "text-anchor": "middle", "font-size": lb.taille || 15, class: "label-ile",
+      transform: lb.angle ? `rotate(${lb.angle} ${lb.pos[0]} ${lb.pos[1]})` : "" }, gTextes);
+    t.textContent = lb.texte;
+  }
   dessinerRose(gTextes, 1000, 218, 62);
   dessinerEchelle(gTextes, 830, 1442);
 
@@ -599,9 +607,20 @@ function secretsHTML(liste) {
     </div>`;
   }).join("");
 }
-function detailsHTML(liste) {
+function detailsHTML(liste, prefix) {
   if (!liste || !liste.length) return "";
-  return `<ul class="tensions">` + liste.map(d => `<li>${esc(d)}</li>`).join("") + `</ul>`;
+  const items = [];
+  liste.forEach((d, i) => {
+    const obj = typeof d === "string" ? { texte: d } : d;
+    const id = `${prefix}-${i}`;
+    const defVisible = !obj.mj;
+    const visible = S.masques.has(id) ? false : (S.reveals.has(id) ? true : defVisible);
+    if (!visible && !S.mj) return;
+    const coche = S.mj ? ` <label class="coche-mj coche-inline"><input type="checkbox" data-vis="${id}" data-def="${defVisible ? 1 : 0}" ${visible ? "checked" : ""}> joueurs</label>` : "";
+    items.push(`<li class="${visible ? "" : "pt-cache"}">${esc(obj.texte)}${coche}</li>`);
+  });
+  if (!items.length) return "";
+  return `<ul class="tensions">${items.join("")}</ul>`;
 }
 const NOMS_TYPES = { capitale: "Capitale", ville: "Ville", "ville-detruite": "Ville détruite", village: "Village", academie: "Académie", "lieu-dit": "Lieu-dit", danger: "Zone mortelle", "lieu-saint": "Lieu saint", prison: "Prison", palais: "Palais", port: "Port", caserne: "Caserne", auberge: "Auberge", taverne: "Taverne", commerce: "Commerce", illegal: "Activité illégale", mystere: "Mystère" };
 
@@ -632,7 +651,7 @@ function ouvrirLieu(id) {
     html += `<h3>Personnages liés</h3><div class="chips">` +
       l.personnages.map(id2 => { const pn = pnj(id2); return pn ? `<span class="chip" data-pnj="${id2}">${esc(pn.nom)}</span>` : ""; }).join("") + `</div>`;
   }
-  if (l.tensions && l.tensions.length) html += `<h3>⚡ En jeu</h3><ul class="tensions">` + l.tensions.map(t => `<li>${esc(t)}</li>`).join("") + `</ul>`;
+  if (l.tensions && l.tensions.length) { const th = detailsHTML(l.tensions, "ten-" + l.id); if (th) html += `<h3>⚡ En jeu</h3>` + th; }
   html += secretsHTML(l.secrets);
   p.innerHTML = html; p.classList.add("ouvert"); p.scrollTop = 0;
   p.querySelector(".fermer").addEventListener("click", fermerPanneau);
@@ -675,7 +694,7 @@ function ouvrirPnj(id, retourVers) {
   if (S.mj && pn.mjOnly) html += `<div class="secret"><span class="sceau-secret">🔒 Fiche cachée aux joueurs</span>
     <label class="coche-mj"><input type="checkbox" data-rev="pnj-${esc(pn.id)}" ${estRevele("pnj-" + pn.id) ? "checked" : ""}> Fiche visible pour les joueurs <small>(cet appareil — publiez via 🔓)</small></label></div>`;
   html += `<p>${esc(pn.description)}</p>`;
-  if (pn.details && pn.details.length) { html += `<h3>À savoir</h3>` + detailsHTML(pn.details); }
+  if (pn.details && pn.details.length) { html += `<h3>À savoir</h3>` + detailsHTML(pn.details, "det-" + pn.id); }
   if (pn.galerie && pn.galerie.length) {
     html += `<h3>Galerie</h3>` + pn.galerie.map(src => imgHTML(src, pn.nom)).join("");
   }
@@ -816,25 +835,35 @@ function majBoutonMJ() {
       $("#btn-mj").before(b);
       b.addEventListener("click", copierReveals);
     }
-    b.textContent = `🔓 ${S.reveals.size}`;
+    b.textContent = `🔓 ${S.reveals.size + S.masques.size}`;
   } else if (b) b.remove();
 }
 function copierReveals() {
-  const liste = [...S.reveals];
-  const texte = liste.length
-    ? `Révélations Asterre à publier (passer "revele" à true / rendre visibles) :\n${liste.join("\n")}`
-    : "Aucune révélation cochée sur cet appareil.";
+  const rev = [...S.reveals], mas = [...S.masques];
+  const texte = (rev.length || mas.length)
+    ? `Modifications Asterre à publier :\nÀ RENDRE VISIBLES :\n${rev.join("\n") || "(aucun)"}\nÀ MASQUER :\n${mas.join("\n") || "(aucun)"}`
+    : "Aucune modification cochée sur cet appareil.";
   (navigator.clipboard ? navigator.clipboard.writeText(texte) : Promise.reject()).then(
-    () => toast(liste.length ? "Liste copiée — collez-la à Claude pour publier aux joueurs." : "Aucune révélation cochée."),
+    () => toast((rev.length || mas.length) ? "Liste copiée — collez-la à Claude pour publier aux joueurs." : "Aucune modification cochée."),
     () => { prompt("Copiez cette liste :", texte); }
   );
 }
 document.addEventListener("change", e => {
-  const id = e.target && e.target.dataset && e.target.dataset.rev;
-  if (!id) return;
-  e.target.checked ? S.reveals.add(id) : S.reveals.delete(id);
-  sauveReveals(); majBoutonMJ();
-  toast(e.target.checked ? "🔓 Visible sur cet appareil — pensez à publier (bouton 🔓)." : "🔒 De nouveau caché sur cet appareil.");
+  const t = e.target;
+  if (t && t.dataset && t.dataset.rev) {
+    t.checked ? S.reveals.add(t.dataset.rev) : S.reveals.delete(t.dataset.rev);
+    sauveReveals(); majBoutonMJ();
+    toast(t.checked ? "🔓 Visible sur cet appareil — pensez à publier (bouton 🔓)." : "🔒 De nouveau caché sur cet appareil.");
+    return;
+  }
+  if (t && t.dataset && t.dataset.vis) {
+    const id = t.dataset.vis, defVisible = t.dataset.def === "1";
+    if (t.checked) { S.masques.delete(id); if (!defVisible) S.reveals.add(id); else S.reveals.delete(id); }
+    else { S.reveals.delete(id); if (defVisible) S.masques.add(id); else S.masques.delete(id); }
+    const li = t.closest("li"); if (li) li.classList.toggle("pt-cache", !t.checked);
+    sauveReveals(); majBoutonMJ();
+    toast(t.checked ? "👁 Point visible (cet appareil) — publiez via 🔓." : "🙈 Point masqué (cet appareil) — publiez via 🔓.");
+  }
 });
 function toggleMJ() {
   if (S.mj) { S.mj = false; sessionStorage.removeItem("asterre-mj"); toast("Mode MJ désactivé."); }
