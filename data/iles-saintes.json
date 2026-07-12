@@ -1634,6 +1634,30 @@
    "images": [
     "images/lieux/iles-de-glace/principale.jpg"
    ]
+  },
+  {
+   "id": "francheneige",
+   "nom": "Francheneige",
+   "type": "village",
+   "ile": "limehahu",
+   "pos": [
+    1372,
+    300
+   ],
+   "population": "À développer",
+   "climat": "Neiges des Montagnes du Nord",
+   "dirigeant": "—",
+   "accroche": "Le village des neiges, accroché aux hauteurs des Montagnes du Nord.",
+   "description": "Fiche en cours d'écriture — l'existence et la position de Francheneige sont actées, ses habitants et son histoire restent à définir avec le MJ.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/francheneige/principale.jpg"
+   ]
   }
  ],
  "routes": [
@@ -2084,6 +2108,26 @@
     [
      612,
      1080
+    ]
+   ]
+  },
+  {
+   "de": "val-des-pierres",
+   "a": "francheneige",
+   "km": 20,
+   "type": "montagne",
+   "points": [
+    [
+     1408,
+     362
+    ],
+    [
+     1388,
+     330
+    ],
+    [
+     1372,
+     300
     ]
    ]
   }
@@ -2917,7 +2961,7 @@
     "id": "adelia",
     "nom": "Adelia",
     "titre": "Héritière de l'Eau",
-    "origine": "Les Cercles",
+    "origine": "Îles Saintes",
     "race": "Héritière (fille de Ziriel)",
     "statut": "Vivante — enlevée pour la Lune de Sang",
     "naissance": "~505 (une vingtaine d'années)",
@@ -3525,5 +3569,16 @@
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "1.1"
+ "version": "1.2",
+ "labels": [
+  {
+   "texte": "Le Passage du Silence",
+   "pos": [
+    1458,
+    288
+   ],
+   "taille": 15,
+   "angle": -83
+  }
+ ]
 }
