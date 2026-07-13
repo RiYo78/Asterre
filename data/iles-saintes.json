@@ -3778,11 +3778,639 @@
      }
     ]
    }
+  ],
+  "races": [
+   {
+    "id": "demi-elfes",
+    "nom": "Les Demi-Elfes",
+    "icone": "🌱",
+    "categorie": "Race Majeure",
+    "statut": "Florissante mais en dégénérescence",
+    "origine": "Asterre (Humain × Elfe)",
+    "vie": "~550 ans (1ère gén) → ~137 ans (3e) → trait perdu (4e)",
+    "magie": "Druidique ou Élémentaire, affaiblie selon la génération",
+    "localisation": "Tout le continent",
+    "description": "Le pont vivant entre deux peuples qui se haïssent. Nés du mélange entre Humains et Elfes après la Conjonction, d'abord perçus comme une honte par les Elfes et avec méfiance par les Humains. Leur tragédie : la lignée s'éteint à chaque mélange — longévité, magie druidique et connexion à la nature se diluent, jusqu'à disparaître en quatrième génération. La génération est un marqueur identitaire. Historiquement, la famille Asta des Colmores — les ancêtres des Îles Saintes — était demi-elfe.",
+    "details": [
+     {
+      "texte": "Certaines communautés elfiques conservatrices rejettent ouvertement les Demi-Elfes, vus comme une dilution de l'identité elfique.",
+      "mj": false
+     },
+     {
+      "texte": "Mei est une Demi-Elfe de 2e génération.",
+      "mj": false
+     },
+     {
+      "texte": "La dégénérescence est une conséquence de la corruption magique des Elfes d'Aeline.",
+      "mj": true
+     },
+     {
+      "texte": "Les Demi-Elfes de 1ère génération ont un sang assez riche pour être ciblés par Kami.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "elfes",
+    "nom": "Les Elfes",
+    "icone": "🌿",
+    "categorie": "Race Majeure",
+    "statut": "En déclin",
+    "origine": "Aeline",
+    "vie": "jusqu'à ~1100 ans",
+    "magie": "Druidique",
+    "localisation": "Enclaves forestières · refuges sur le continent sud",
+    "description": "Hérités d'Aeline, ils ont perdu leur monde et la moitié de leur peuple. Ils n'ont jamais été immortels — juste anciens, et terriblement fiers de l'avoir été. Sur Aeline, leurs guerres contre les Nains (et les Fées venues en renfort) poussèrent certains Elfes à corrompre leur magie druidique avec leur propre sang, invoquant des forces démoniaques : ce péché originel précipita la quasi-destruction de leur monde. Sur Asterre, la Guerre des Races (60-200) les décima. Aujourd'hui, ils survivent en marge, brisés, hautains, en deuil.",
+    "details": [
+     {
+      "texte": "À ne JAMAIS confondre avec les Elfes Purs — deux races totalement distinctes, sans autre parenté que le nom.",
+      "mj": false
+     },
+     {
+      "texte": "Communication intuitive avec la faune et la flore · sens développés · sensibilité accrue à la magie noire et aux possessions. Péché associé : l'Orgueil.",
+      "mj": false
+     },
+     {
+      "texte": "Le métissage avec les Humains fait perdre magie, longévité et connexion à la nature à chaque génération — les Demi-Elfes sont parfois méprisés par les communautés conservatrices.",
+      "mj": false
+     },
+     {
+      "texte": "Le monde croit les Humains responsables de la Guerre des Races — c'est la manipulation d'un Elfe Pur qui l'a déclenchée.",
+      "mj": true
+     },
+     {
+      "texte": "Sirraz, le démon multimonde, fut enfermé par les Elfes d'Aeline pour utiliser ses pouvoirs. Libéré, il n'a pris aucune représaille — il est devenu protecteur d'Asterre.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "humains",
+    "nom": "Les Humains",
+    "icone": "👤",
+    "categorie": "Race Majeure",
+    "statut": "Florissante — race dominante",
+    "origine": "Olympe",
+    "vie": "~100 ans",
+    "magie": "Élémentaire (via le Final Element)",
+    "localisation": "Tout le continent d'Asterre, des Îles Saintes à Harad",
+    "description": "Adaptables, fertiles, ambitieux — les héritiers d'Olympe ont conquis Asterre par le nombre et la volonté. Sur Olympe, monde de conflits et de monstres de sang, la magie ne s'exprimait que par le sang, don rare et terrible. Les « Dieux Olympiens » n'étaient pas de vrais dieux : des humains rendus immortels par la magie de sang (Sylvanus en est un exemple). À la Conjonction (an 0), Olympe fusionna avec Eden, Aeline, Halcë et Ruivë ; la diffusion du Final Element ouvrit aux Humains la magie élémentaire, impossible sur leur monde d'origine.",
+    "details": [
+     {
+      "texte": "Reproduction compatible avec les Elfes (→ Demi-Elfes) et la plupart des humanoïdes — mais pas avec les Vampires, universellement stériles.",
+      "mj": false
+     },
+     {
+      "texte": "Toutes les magies leur sont accessibles : Élémentaire, Occulte, Sang (héritage olympien), Démonologie, Magie Noire. Tous les péchés aussi — race polyvalente.",
+      "mj": false
+     },
+     {
+      "texte": "Les 4 Cavaliers de l'Apocalypse — humains immortels par la magie de sang : Erain « le Roi des Dieux », Bauth, Tortho (aussi l'un des 5 Originaux Vampires), Taur.",
+      "mj": true
+     },
+     {
+      "texte": "Trace résiduelle de magie de sang d'Olympe → plus susceptibles aux pactes démoniaques. L'Église de la Vie a sciemment occulté l'histoire des Magistères. Race-pivot du fil rouge.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "nains",
+    "nom": "Les Nains",
+    "icone": "⚒️",
+    "categorie": "Race Majeure",
+    "statut": "En déclin — repliés sur Hautecime",
+    "origine": "Aeline",
+    "vie": "Jusqu'à ~500 ans",
+    "magie": "Aucune — Mots de Pouvoir runiques (don des Fées)",
+    "localisation": "Royaume de Hautecime",
+    "description": "Lignés des Golems et bénis par les Fées, ils ont survécu à deux mondes et n'ont gardé qu'une certitude : on ne fait pas confiance à la magie. Leur lignée royale descend des Golems, créatures originelles d'Aeline ; les Fées leur offrirent les Mots de Pouvoir runiques pour compenser leur absence totale de mana. Repliés à Hautecime depuis la Guerre des Races, ils sont aujourd'hui la main-d'œuvre la plus respectée d'Asterre. Race la plus anti-magique du monde : résistance naturelle aux sorts, gravure de runes actives.",
+    "details": [
+     {
+      "texte": "Rite de passage : la gravure de la Première Rune. Alliance sacrée avec les Fées, méfiance envers les mages.",
+      "mj": false
+     },
+     {
+      "texte": "Le Roi actuel cache potentiellement une nature semi-immortelle (sang du Golem).",
+      "mj": true
+     },
+     {
+      "texte": "Les Nains sont probablement les seuls à pouvoir détecter — et possiblement bloquer — l'Outil Teck.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "atlantes",
+    "nom": "Les Atlantes",
+    "icone": "🌊",
+    "categorie": "Race de la Conjonction",
+    "statut": "Florissante mais isolée — un mythe pour beaucoup",
+    "origine": "Née de la Conjonction des Sphères",
+    "vie": "~150 ans",
+    "magie": "Aucune affinité — technologie très avancée",
+    "localisation": "Atlantis",
+    "description": "Une cité née d'une ride dans le tissu du réel. Apparus après la Conjonction, les Atlantes sont pour beaucoup une race imaginaire. Ils ont de la mana, mais sans affinité élémentaire : leur technologie, très en avance sur Asterre, remplace la magie dans leur quotidien. Monarchie de la Maison Thalassir, caste des Bras Droits, domination historique des Aquas depuis la Guerre des Océans.",
+    "details": [
+     {
+      "texte": "Le Fruit Royal : certains proches de la royauté mangent un fruit qui confère des pouvoirs — sa nature exacte reste un mystère.",
+      "mj": false
+     },
+     {
+      "texte": "Le Pacte des Bras Droits : si le prince meurt en combat, son bras droit choisit entre le bannissement et la mort.",
+      "mj": false
+     },
+     {
+      "texte": "Leur technologie pourrait devenir un atout majeur s'ils sortaient de leur isolement. 5 Fruits Royaux restants à définir.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "kitsunes",
+    "nom": "Les Kitsunes",
+    "icone": "🦊",
+    "categorie": "Race de la Conjonction",
+    "statut": "Stable, isolée — inconnue du continent principal",
+    "origine": "Née de la Conjonction des Sphères",
+    "vie": "Plus de 1000 ans",
+    "magie": "Forme rage · immunité aux maladies",
+    "localisation": "Sud de l'Autre Continent",
+    "description": "Mille ans de douceur, et un instant de rage qui suffit à raser une cité. Race exclusivement féminine du Sud de l'Autre Continent, à l'apparence douce — jusqu'à ce que la rage les saisisse : conditions physiques décuplées, douleur ignorée, conscience presque éteinte. Les anciennes maîtrisent mieux cette forme. Matriarcat strict sous une Reine Kitsune : les filles naissent toujours Kitsunes, les garçons héritent de la race du père et sont abandonnés — aucun mâle dans la tribu.",
+    "details": [
+     {
+      "texte": "Rite marquant : la Première Rage.",
+      "mj": false
+     },
+     {
+      "texte": "Pourquoi seulement des femmes ? Possibilité qu'elles aient été créées comme arme dormante.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "animagus",
+    "nom": "Les Animagus",
+    "icone": "🦉",
+    "categorie": "Naturelle & Cachée (création artificielle)",
+    "statut": "En émancipation — libérés des cuves depuis peu",
+    "origine": "Asterre — créés par Le Docteur",
+    "vie": "Variable selon l'espèce animale d'origine",
+    "magie": "Druidique (forte) · Alchimie — jamais élémentaire",
+    "localisation": "Cuves éparpillées à travers Asterre, beaucoup encore scellées",
+    "description": "Créés dans des cuves par un homme qu'on appelle Le Docteur. Conçus pour être esclaves — biologiquement conditionnés à servir. Réveillés un par un, par hasard ou par dessein. Humanoïdes aux traits animaux entremêlés (forme stable, contrairement aux Animaïs naturels que le Docteur utilisa comme cobayes jusqu'à leur quasi-extinction — il n'en reste qu'un, réfugié dans la Forêt Infinie). Leur mana est abondante mais répartie sur tous les éléments sans excédent : excellents druides et alchimistes, jamais mages élémentaires. Ils ne se reproduisent qu'entre eux — restriction voulue par leur créateur.",
+    "details": [
+     {
+      "texte": "Le Roi des Totems : l'unique exception voulue par le Docteur — un Animagus Hibou destiné à unir tous les Totems. C'est ce corps que l'âme de Sky habite désormais.",
+      "mj": false
+     },
+     {
+      "texte": "Beaucoup sortent de cuve avec l'empreinte mentale d'asservissement — ils cherchent un maître. Cela se surmonte, avec du temps et de l'aide.",
+      "mj": false
+     },
+     {
+      "texte": "Extrêmement vulnérables aux magies altérant la nature.",
+      "mj": true
+     },
+     {
+      "texte": "Le Docteur : savant mage indépendant, ancien croyant pieux de Limehahu et Zork, qui voulut dépasser les dieux après avoir compris leur échec. Le Projet Animagus n'est qu'une partie d'un programme plus vaste. Tué par Achabel en 520.",
+      "mj": true
+     },
+     {
+      "texte": "Pourquoi le Roi des Totems ? Fail-safe, cheval de Troie ou expérimentation — Sky, en habitant ce corps, est le grain de sable imprévu du plan.",
+      "mj": true
+     },
+     {
+      "texte": "Combien de cuves existent au total ? Chaque cuve découverte est un mini-arc narratif.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "animais",
+    "nom": "Les Animaïs",
+    "icone": "🐾",
+    "categorie": "Naturelle & Cachée",
+    "statut": "Quasi-éteinte — un seul survivant connu",
+    "origine": "Asterre",
+    "vie": "~100 ans (variable selon le Totem)",
+    "magie": "Druidique",
+    "localisation": "Le dernier vit dans la Forêt Infinie",
+    "description": "Humains le matin, fauves le soir. Humanoïdes naturels capables de se transformer volontairement — et totalement — en leur animal Totem, héréditaire et déterminé à la naissance. À ne pas confondre avec les Animagus (créations artificielles à forme hybride stable) ni avec les Garous (maudits, involontaires). Rite marquant : la Première Transformation, révélation du Totem.",
+    "details": [
+     {
+      "texte": "Le Docteur a délibérément exterminé les Animaïs pour créer les Animagus — le dernier survivant EST la mémoire vivante de sa race, et de toute la vérité sur les Animagus.",
+      "mj": true
+     },
+     {
+      "texte": "Il vit dans la Forêt Infinie avec Minvan. Pourquoi vivent-ils ensemble ? Quel lien les unit ?",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "dryades",
+    "nom": "Les Dryades",
+    "icone": "🌿",
+    "categorie": "Naturelle & Cachée",
+    "statut": "Cachée — environ une centaine",
+    "origine": "Asterre — liées à Dame Nature",
+    "vie": "Immortelles par le temps",
+    "magie": "Magie de la Nature · druidique",
+    "localisation": "Forêt de Drémora · Forêt Infinie",
+    "description": "Servantes de Dame Nature — la conscience vivante d'Asterre elle-même, née de l'énergie du Final Élément, sans matière physique. Uniquement féminines, élégantes, peau d'écorce ou verte douce, cheveux feuillus. Immortelles, immunisées aux maladies et aux poisons, en communication constante avec la faune et la flore. Elles ne se reproduisent pas : elles transforment des femmes jugées méritantes par un breuvage rituel — les autres qui y goûtent meurent.",
+    "details": [
+     {
+      "texte": "Le Jugement du Breuvage : le critère de mérite est entièrement arbitraire, laissé au jugement personnel de la Dryade. Aucune règle définie.",
+      "mj": false
+     },
+     {
+      "texte": "Fragiles physiquement et très sensibles aux sorts — paradoxalement plus vulnérables à la magie qu'aux coups.",
+      "mj": true
+     },
+     {
+      "texte": "Dame Nature est en principe soumise à Eldar — mais Eldar étant séparé en 5 entités (Lord + 4 fragments), elle agit librement pour l'instant.",
+      "mj": true
+     },
+     {
+      "texte": "An 279, la Danse des Dragons : Aratuza brûlée par Alduin — de nombreuses Dryades y périrent.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "velanes",
+    "nom": "Les Vélanes",
+    "icone": "🌙",
+    "categorie": "Naturelle & Cachée",
+    "statut": "Rare — méfiance générale",
+    "origine": "À préciser — race naturelle, PAS des maudits",
+    "vie": "Immortels par absorption d'énergie vitale",
+    "magie": "Magie de l'âme · charme",
+    "localisation": "Solitaires, dispersés",
+    "description": "On les appelle maudits. À tort. Ils sont seulement nés avec une faim qui ne se guérit qu'en prenant la vie d'un autre. Humanoïdes d'une beauté frappante et d'un charisme surnaturel, capables d'aspirer l'âme d'autrui pour prolonger la leur — immortels, mais entièrement dépendants de cette pratique. Sans absorption, ils dépérissent. Rite marquant : la Première Aspiration.",
+    "details": [
+     {
+      "texte": "Contrairement à la croyance, ils ne sont liés ni à Igna ni à Sit Sanguis — race naturelle mais incomprise. Péchés associés : Luxure et Avarice.",
+      "mj": false
+     },
+     {
+      "texte": "Minvan, première Vélane, fille de Morigane : née en 306 selon cette fiche, vit dans la Forêt Infinie, impossible à localiser — lien de destin fracturé par Morigane, qui l'a perdue en voulant la protéger.",
+      "mj": true
+     },
+     {
+      "texte": "Lien cosmologique : Samaël → Mary → Morigane → Minvan → les Vélanes. Le sang du destructeur de monde coule dans une race qui n'en sait rien. Une révélation serait explosive.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "garous",
+    "nom": "Les Garous",
+    "icone": "🐺",
+    "categorie": "Race Maudite",
+    "statut": "Cachée — clans dispersés dirigés par un Alpha",
+    "origine": "Asterre — expériences de Sylas, malédiction liée à Igna",
+    "vie": "Doublée par rapport à l'animal Totem (~150-200 ans pour un loup)",
+    "magie": "Lune · instinct · magies tribales",
+    "localisation": "Forêts profondes · montagnes · marges des royaumes",
+    "description": "Ils mordent — et la lune décide. Aucune malédiction n'est plus démocratique. Créés par Sylas avec son propre sang avant même les Vampires, ils se répandent par morsure : tous les mordus ne se transforment pas, mais ceux qui survivent gagnent un pouvoir immense et perdent une part d'humanité. Le cycle suit la lune : Dormance (contrôle total), Agitation (sens exacerbés), Transformation (pleine lune — forme bestiale, instinct dominant). Quatre piliers les définissent : l'Instinct, le Sang, la Malédiction, la Chasse.",
+    "details": [
+     {
+      "texte": "Garou ≠ Animagus : les Animagus sont naturels et volontaires, les Garous maudits et partiellement involontaires.",
+      "mj": false
+     },
+     {
+      "texte": "Le gène Garou est si fort qu'il peut dominer l'autre malédiction chez un enfant Garou × autre Maudit.",
+      "mj": false
+     },
+     {
+      "texte": "Vulnérabilités : épées d'Argent des Îles Saintes · Magie de Lumière · magies vampiriques (rivalité biologique). Leurs morsures sont en retour redoutables contre les Vampires.",
+      "mj": true
+     },
+     {
+      "texte": "Liés à Igna — dimension cosmique, pas seulement biologique. Possible armée sauvage dans un grand conflit final.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "hybrides",
+    "nom": "Les Hybrides",
+    "icone": "💉",
+    "categorie": "Race Maudite",
+    "statut": "Cachée — très rare, transmission périlleuse",
+    "origine": "Asterre — lignée exclusive de Sylas",
+    "vie": "Immortels (au même titre que les Vampires)",
+    "magie": "Cumul Vampire + Garou",
+    "localisation": "Dispersés · Désert Magistral avec Sylas",
+    "description": "Une seule morsure, deux malédictions, un homme. Sylas ne devait pas survivre au piège d'Igna — la lycanthropie injectée pour anéantir sa transformation vampirique. Il a survécu, absorbant les deux malédictions : premier et unique Hybride Vampire-Garou de l'histoire. Longtemps seul de son espèce, jusqu'à ce que son épouse Mélia trouve, par les rites anciens de la Terre, comment lui permettre de transmettre sa condition par morsure. Plus forts que Vampires et Garous réunis — et contrairement aux Vampires, les Hybrides ne sont pas stériles.",
+    "details": [
+     {
+      "texte": "Transmission : la plupart des mordus meurent calcinés de l'intérieur, le corps ne supportant pas la fusion des deux malédictions (survie ~5 %).",
+      "mj": true
+     },
+     {
+      "texte": "Tuer un Hybride ne tue PAS ceux qu'il a transformés — contrairement aux Vampires.",
+      "mj": true
+     },
+     {
+      "texte": "Résistants aux pouvoirs des Garous ET des Vampires ; vulnérables à l'Argent des Îles Saintes et à la Magie de Lumière.",
+      "mj": true
+     },
+     {
+      "texte": "Salys — fille de Sylas et Mélia, confiée à la capitale d'Avelorn, première et seule Médine — sait que sa mère est Déesse de la Nature, mais ignore que son père est Sylas.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "maledictus",
+    "nom": "Les Malédictus",
+    "icone": "☠️",
+    "categorie": "Race Maudite",
+    "statut": "Rare — cachés ou isolés",
+    "origine": "Asterre — malédiction infligée pendant la grossesse",
+    "vie": "Immortels — ne meurent pas de vieillesse",
+    "magie": "Liée à la nature animale de la malédiction",
+    "localisation": "Dispersés · fuyants une fois la condition visible",
+    "description": "Une malédiction glissée dans le ventre d'une mère. L'enfant naît marqué — taches, yeux, traits animaux subtils qui s'intensifient avec les années. Ce n'est pas la transformation lunaire des Garous : c'est une hybridation croissante entre forme humanoïde et nature animale. À 21 ans, le seuil critique : le Malédictus devient prisonnier de sa condition animale, de façon permanente ou quasi-permanente. La malédiction n'est pas héréditaire — les enfants d'un Malédictus naissent libres.",
+    "details": [
+     {
+      "texte": "Vulnérabilités communes aux Maudits : épées d'Argent des Îles Saintes · Magie de Lumière · magie sacrée.",
+      "mj": true
+     },
+     {
+      "texte": "Qui maudit ? Des sorciers de magie noire, pendant les grossesses. Chaque Malédictus créé alimente la force d'Igna. La nature animale est aléatoire — même le sorcier n'a pas la main dessus.",
+      "mj": true
+     },
+     {
+      "texte": "Briser la malédiction — voies connues : Igna elle-même (peu de raisons de le faire) · Sam, Grande Prêtresse de la Lumière (peut briser toute malédiction) · devenir démon pur par Fusion (irréversible ; l'Accord et la Domination ne suffisent pas) · le transfert d'esprit (la malédiction reste liée au corps d'origine, pas à l'esprit) · une cinquième voie à définir.",
+      "mj": true
+     },
+     {
+      "texte": "Hook : un PJ Malédictus porte une horloge narrative jusqu'à ses 21 ans.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "medines",
+    "nom": "Les Médines",
+    "icone": "🔮",
+    "categorie": "Race Maudite",
+    "statut": "Quasi-unique — une seule représentante : Salys",
+    "origine": "Asterre — malédiction d'Igna sur Mélia",
+    "vie": "Immortelles tant que leurs mues ne sont pas bloquées",
+    "magie": "Poison · venin · séduction",
+    "localisation": "Salys vit à la capitale d'Avelorn",
+    "description": "Derrière une beauté qui coupe le souffle, des écailles. Derrière des yeux doux, le regard d'un serpent. Igna, jalouse de l'union de Sylas et Mélia, maudit la Princesse d'Avelorn — mais au lieu de la détruire, la malédiction l'éleva : Mélia devint Déesse de la Nature. Leur fille Salys, confiée à Avelorn, est l'unique Médine d'Asterre. Immunisées à tous les poisons, capables d'en créer de toutes sortes, d'une beauté trompeuse — et tous les descendants d'une Médine hériteront de la condition, sans exception.",
+    "mjOnly": true,
+    "details": [
+     {
+      "texte": "Salys sait que sa mère est Déesse de la Nature — elle ignore que son père est Sylas, le premier Hybride. Son venin passe par les ongles ou la morsure.",
+      "mj": true
+     },
+     {
+      "texte": "Vulnérables à l'Argent des Îles Saintes et à la Magie de Lumière. Bloquer la mue d'une Médine = mort progressive.",
+      "mj": true
+     },
+     {
+      "texte": "Igna ne voulait pas créer les Médines — l'ironie cosmique de sa jalousie. Trois fils narratifs convergent ici : Igna, Sylas, Mélia.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "vampires",
+    "nom": "Les Vampires",
+    "icone": "🦇",
+    "categorie": "Race Maudite",
+    "statut": "Cachée — traqués, dispersés, clans secrets",
+    "origine": "Olympe — la Main de Sang",
+    "vie": "Immortels (tant que la soif est satisfaite)",
+    "magie": "Magie de Sang",
+    "localisation": "Cités nocturnes · refuges cachés",
+    "description": "Premiers maudits. Première soif. Nés de la Main de Sang : cinq mages de sang réalisèrent le rituel en utilisant Igna comme catalyseur involontaire — chacun sacrifia 100 hommes, 100 femmes et 100 enfants. Ces cinq devinrent les Originaux, souches de toutes les lignées. Beauté saisissante, peau pâle, force et sens démultipliés, régénération — et plus un Vampire vieillit, plus il devient puissant, sans plafond. Tous stériles, sans exception ; la transmission passe par morsure rituelle et volontaire.",
+    "details": [
+     {
+      "texte": "Mort en cascade : si un Vampire est tué, tous ceux qu'il a transformés meurent simultanément, quelle que soit la distance.",
+      "mj": false
+     },
+     {
+      "texte": "Vulnérabilités : épées d'Argent des Îles Saintes · Magie de Lumière (universelle chez les Maudits) · morsures et griffures de Garou (rivalité biologique) · privation de sang.",
+      "mj": true
+     },
+     {
+      "texte": "Les 5 Originaux : Sylas (Hybride Vampire-Garou), Samuel (feu violet qui trouble les sens), Elsuve (séduction — contrôle ce que la cible désire), Alec (ombres — déplacement, invisibilité, illusions), Tortho (résistance absolue et régénération — aussi l'un des 4 Cavaliers de l'Apocalypse).",
+      "mj": true
+     },
+     {
+      "texte": "Règle absolue : les Originaux ne peuvent être tués que par d'autres Originaux — argent, Lumière et acier sont inefficaces mortellement contre eux.",
+      "mj": true
+     },
+     {
+      "texte": "Les Vampires ignorent que leur existence est due à la manipulation d'Igna, fille de Malékit. Leur lien avec Sit Sanguis reste à explorer.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "demons",
+    "nom": "Les Démons",
+    "icone": "👿",
+    "categorie": "Surnaturelle",
+    "statut": "Actifs sur Babel — interdits sur Asterre par Sandor",
+    "origine": "Babel, le monde démoniaque",
+    "vie": "Immortels",
+    "magie": "Possession d'esprit · démonique",
+    "localisation": "Babel (7 Makais + le royaume de Sandor)",
+    "description": "Ils ne tuent pas le corps. Ils prennent l'esprit. Ce qui reste marche encore — mais ce n'est plus toi. Immortels de Babel, structurés en huit royaumes : les Makais de Gorath (Souffrance), Belialoth (Luxure et Dévoration), Zythor (Tromperie), Khazar (Guerre Éternelle), Nythrel (Rêves Brisés), Vorash (Putréfaction), Zagon (Thaumaturgie) — et au sommet Sandor, le Dieu Démon, dont la Loi est absolue : « Aucun Démon ne peut franchir le Seuil des Vivants. » Les Démons ont un mana et un esprit, mais pas d'âme.",
+    "details": [
+     {
+      "texte": "La possession est un combat d'Esprits : la victime est consciente et peut résister en renforçant le sien. L'issue détermine le demi-démon créé.",
+      "mj": false
+     },
+     {
+      "texte": "Les 3 types de demi-démons : l'Accord (contrôle à tour de rôle), la Domination (le vivant esclavagise le démon — qui attend la moindre faiblesse), la Fusion (absorption complète → démon pur, irréversible, rejeté des deux mondes — seule voie qui brise une malédiction Malédictus).",
+      "mj": false
+     },
+     {
+      "texte": "Le Makai est une technique rarissime : créer son propre plan démoniaque, reflet de son créateur.",
+      "mj": false
+     },
+     {
+      "texte": "Mort définitive par Magie de Lumière, Magie Noire ou un autre Démon ; sinon retour à Babel en stase. Faiblesse notable : la magie du sang gêne leur régénération.",
+      "mj": true
+     },
+     {
+      "texte": "Tout Démon qui franchit le Seuil des Vivants est exécuté s'il revient. Hook : un Démon transgresse sans être puni — Sandor laisse faire. Pourquoi ?",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "dieux",
+    "nom": "Les Dieux et Demi-Dieux",
+    "icone": "⚡",
+    "categorie": "Divine & Ancienne",
+    "statut": "Rares mais actifs",
+    "origine": "Asterre + héritages des anciens mondes",
+    "vie": "Les lois du temps sont inopérantes",
+    "magie": "Toutes — sans limite de niveau",
+    "localisation": "Variable",
+    "mjOnly": true,
+    "description": "On ne devient pas Dieu par mérite. On le devient par amour, ou par exception. Au sommet : l'Oracle, puis les Équilibres — Zork (Mort) et Limehahu (Vie) — puis les divinités secondaires. Zork et Limehahu eurent une fille, Estel ; parallèlement, Eldar créa Samaël, que Zork scella en 5 parties : l'âme en Estel elle-même, 4 autres dispersées — dont Lord, l'incarnation du Final Element, enfermé sur Eden. L'amour de Samaël et Estel donna Yon, Mary et Wyatt, tous nés avant la Conjonction. En tentant de libérer Lord, Estel affronta son père Zork — ce combat créa la Conjonction des Sphères, et Asterre.",
+    "details": [
+     {
+      "texte": "Dieux élémentaires : Zork (Mort), Limehahu (Vie), Sylvanus (Feu — humain olympien devenu Dieu), Ziriel (Eau — mère d'Adelia).",
+      "mj": true
+     },
+     {
+      "texte": "Divinités secondaires : Luxuria (Passion, fille de Sylvanus), Pavor (Peur), Duoror (Souffrance), Mélia (Nature — ancienne Princesse d'Avelorn, épouse de Sylas, mère de Salys, devenue Déesse en conséquence de la malédiction d'Igna).",
+      "mj": true
+     },
+     {
+      "texte": "Spéciaux : Malékit (a libéré Samaël), Manem (fille de Limehahu et de l'elfe Solas), Sandor (Dieu Démon, veuf de Valène), Akuma — PAS mort : dispersé en objets de pouvoir, dont l'Akuma no Kaki, le masque détenu par Livai. Réunir les fragments pourrait le reconstituer.",
+      "mj": true
+     },
+     {
+      "texte": "Reproduction sexuée mais sous condition d'amour sincère. Certains sont tuables — Estel a failli l'être par Zork.",
+      "mj": true
+     },
+     {
+      "texte": "Les Dieux sont au cœur du fil rouge : la rébellion d'Estel et la libération de Samaël par Malékit ont tout déclenché.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "divins",
+    "nom": "Les Divins",
+    "icone": "👁️",
+    "categorie": "Divine & Ancienne",
+    "statut": "Quasi-éteinte — il n'en restera que 3",
+    "origine": "Asterre — descendance de Valène et Sandor",
+    "vie": "Immortels tant que leurs deux yeux sont intacts",
+    "magie": "Pouvoir oculaire unique par individu",
+    "localisation": "Inconnue — sentinelles cachées",
+    "description": "Trois yeux d'immortalité. Trois sentinelles silencieuses. Descendance directe de Valène et de Sandor, ils ne se reproduisent qu'entre eux — par l'esprit, non par le corps. Leurs yeux sont le siège de leur pouvoir : perdre les deux, c'est perdre l'immortalité et agoniser en quelques semaines. Ils vivaient sur un pays Céleste, entre les plans, accessible à eux seuls.",
+    "mjOnly": true,
+    "details": [
+     {
+      "texte": "Les 3 derniers : Kisame (gravité), Kasarel son petit frère (création d'armes), Kaëlith (laser invisible — perce et coupe à distance).",
+      "mj": true
+     },
+     {
+      "texte": "Le Massacre d'Omega — an 530, ÉVÉNEMENT FUTUR : Wyatt exterminera leur peuple, sur l'idée d'Eldar, poussé par le Collectionneur.",
+      "mj": true
+     },
+     {
+      "texte": "Les Divins savent des choses sur le fil rouge. Meilleure résistance potentielle à la possession démoniaque.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "dragoniens",
+    "nom": "Les Dragoniens",
+    "icone": "🐉",
+    "categorie": "Divine & Ancienne",
+    "statut": "Très rare — 2 vivants connus : Alduin et Raegars",
+    "origine": "Conjonction — un homme-dragon et Luxuria (Déesse de la Passion)",
+    "vie": "Immortels",
+    "magie": "Lien dragonique + élémentaire de leur dragon",
+    "localisation": "Variable",
+    "description": "Nés du même œuf que leur dragon, ils partagent un visage et une âme — communication mentale permanente, lien indissoluble. Descendants d'un homme-dragon créé à la Conjonction même et de Luxuria, fille de Sylvanus : les Dragoniens sont les petits-enfants du Dieu du Feu. Humanoïdes à l'allure elfique, ovipares, aux pupilles allongées rappelant leur dragon. Leur sang disparaît au moindre mélange.",
+    "details": [
+     {
+      "texte": "Si le dragon meurt, il redevient un œuf en attendant un prochain Dragonien ; la mort de l'un ne tue pas l'autre.",
+      "mj": false
+     },
+     {
+      "texte": "Historique : Amaranthe (neutralisée par Morigane en 281) et Daenerys (tuée par leur frère Alduin — sa fille Alice avait épousé l'elfe Galwyn) étaient Dragoniennes.",
+      "mj": true
+     },
+     {
+      "texte": "Alduin, libéré de sa prison-amulette pendant la Guerre des Mages, a perdu son dragon Valdruin face à Morigane — offert à Sit Sanguinis. Seul, sans dragon, il est extrêmement dangereux et imprévisible.",
+      "mj": true
+     },
+     {
+      "texte": "Miwa et Katlyn, quart-Dragoniennes, portent des dons résiduels de cet héritage. Raegars reste à développer.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "elfes-purs",
+    "nom": "Les Elfes Purs",
+    "icone": "❄️",
+    "categorie": "Divine & Ancienne",
+    "statut": "Quasi-éteinte — extinction massive en l'an 60",
+    "origine": "Halcë (Glace) et Ruivë (Feu)",
+    "vie": "Immortels par nature",
+    "magie": "Élémentaire pure — niveau Maître d'office",
+    "localisation": "Disparus · fuyants · cachés",
+    "mjOnly": false,
+    "description": "Quatre mondes elfiques purs existaient : Halcë (Glace — roi Lych, reine Hilia), Ruivë (Feu — roi Sauron, reine Totarae), Cemen (Terre) et Alaco (Tempête). Seuls Halcë et Ruivë se lièrent à Asterre lors de la Conjonction. En l'an 50, Mirithal — Elfe Pur double Glace et Cendre — attaqua le roi des Îles Colmores, déclenchant la guerre qui mena à la Guerre des Races (60-200) : sous l'impulsion de Yon, une alliance des Humains, Elfes, Nains et Maudits commença l'extinction de masse des Elfes Purs. Beauté surnaturelle, manipulation absolue de leur élément, présence écrasante — tuables uniquement par puissance équivalente. Péché : l'Orgueil.",
+    "details": [
+     {
+      "texte": "À ne pas confondre avec les Elfes d'Aeline — aucun lien réel entre les deux races.",
+      "mj": false
+     },
+     {
+      "texte": "Le Collectionneur a manipulé Mirithal pour provoquer le génocide — le monde croit les Humains responsables de la Guerre des Races.",
+      "mj": true
+     },
+     {
+      "texte": "Lych et Sauron se cachent sur les Halruivë — les Îles de Glace et de Feu, à l'extrême nord — et préparent leur vengeance.",
+      "mj": true
+     },
+     {
+      "texte": "Hilia, reine de Halcë, vit sur Alecin, au-delà du Désert Magistral, rongée par la vengeance — alliée ou ennemie inattendue.",
+      "mj": true
+     },
+     {
+      "texte": "Cemen et Alaco existent encore quelque part dans l'univers. Que se passerait-il s'ils revenaient ?",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "fees",
+    "nom": "Les Fées",
+    "icone": "✨",
+    "categorie": "Divine & Ancienne",
+    "statut": "Quasi-éteinte — il n'en reste que 5",
+    "origine": "Aeline",
+    "vie": "Immortelles tant que leur sang est intact",
+    "magie": "Nature · Mots de Pouvoir",
+    "localisation": "Cachées dans leurs livres magiques",
+    "description": "Cinq survivantes scellées dans des livres, gardiennes d'une magie qui n'existe plus que dans leurs pages. Alliées de la nature et protectrices des Nains sur Aeline, elles leur apprirent à contrôler les Mots de Pouvoir runiques. Massacrées au fil des siècles sur Asterre, les cinq dernières — Aelindra, Sylvara, Luneth, Faerith, Elarwen — se sont réfugiées dans leurs livres magiques, dont elles entrent et sortent librement. Leur sang renferme à la fois leur immortalité et leurs pouvoirs.",
+    "details": [
+     {
+      "texte": "Aucun lien avec les Elfes Purs — leur conflit historique était avec les Elfes d'Aeline.",
+      "mj": false
+     },
+     {
+      "texte": "Un livre avec sa Fée à l'intérieur est à son plein potentiel magique ; sans elle, il reste puissant mais amoindri.",
+      "mj": false
+     },
+     {
+      "texte": "Capturer une Fée et drainer son sang = accès à une magie immense. Un trafic de sang de Fée existe chez certaines factions occultes.",
+      "mj": true
+     },
+     {
+      "texte": "Le sang d'une Fée pourrait débloquer des magies cruciales pour ou contre Lord/Samaël. Les Fées savent des choses sur Aeline. Aelindra fut l'une des 7 Magistères (Forêt Infinie).",
+      "mj": true
+     }
+    ]
+   }
   ]
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "1.3",
+ "version": "1.4",
  "labels": [
   {
    "texte": "Le Passage du Silence",
