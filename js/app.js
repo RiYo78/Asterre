@@ -758,7 +758,7 @@ function famille(id) { return S.pays.familles.find(f => f.id === id); }
 const CHAPITRES = [
   ["lois", "📜 Lois & Interdits"], ["religions", "⛪ Religions"], ["familles", "🛡 Familles & Blasons"],
   ["economie", "💰 Économie"], ["politique", "👑 Politique"], ["armees", "⚔ Armées"],
-  ["chronologie", "📅 Chronologie"], ["personnages", "👤 Personnages"], ["bestiaire", "🩸 Bestiaire"]
+  ["chronologie", "📅 Chronologie"], ["personnages", "👤 Personnages"], ["races", "🧬 Races"], ["bestiaire", "🩸 Bestiaire"]
 ];
 function construireCodex() {
   const nav = $("#codex-nav");
@@ -813,6 +813,22 @@ function renderChapitre(ch) {
           <div class="portrait"><img src="${esc(p.portrait)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Portrait à venir'}))"></div>
           <div class="infos"><b>${visib("pnj-" + p.id, !p.mjOnly) ? "" : "🔒 "}${esc(p.nom)}</b><small>${esc(p.titre || "")}</small></div>
         </div>`).join("") + `</div>`).join("");
+  } else if (ch === "races") {
+    const races = (cx.races || []).filter(r => S.mj || visib("race-" + r.id, !r.mjOnly));
+    const cats = [];
+    for (const r of races) { if (!cats.includes(r.categorie)) cats.push(r.categorie); }
+    html = `<h2>Les Peuples d'Asterre</h2><div class="filet"></div>
+      <p class="fell" style="max-width:720px;margin-bottom:18px">Cinq mondes ont fusionné lors de la Conjonction des Sphères. Voici ce qui en est né — et ce qui a survécu.</p>` +
+      cats.map(cat => `<h3 class="titre-region">${esc(cat)}</h3>` +
+        races.filter(r => r.categorie === cat).map(r => {
+          const vR = visib("race-" + r.id, !r.mjOnly);
+          return `<div class="article carte-bete ${vR ? "" : "bete-mj"}">
+            <h4>${vR ? "" : "🔒 "}${r.icone ? esc(r.icone) + " " : ""}${esc(r.nom)} <span class="badge-danger badge-race">${esc(r.statut)}</span></h4>
+            <small class="ligne-bete">Origine : ${esc(r.origine)} · Vie : ${esc(r.vie)} · Magie : ${esc(r.magie)}${r.localisation ? " · " + esc(r.localisation) : ""}</small>
+            ${blocMJ("desc-race-" + r.id, true, `<p>${esc(r.description)}</p>`, "Description visible")}
+            ${detailsHTML(r.details, "rac-" + r.id)}${cocheMJ("race-" + r.id, !r.mjOnly, "Fiche visible pour les joueurs")}
+          </div>`;
+        }).join("")).join("");
   } else if (ch === "bestiaire") {
     const betes = (cx.bestiaire || []).filter(b => S.mj || visib("bete-" + b.id, !b.mjOnly));
     html = `<h2>Bestiaire</h2><div class="filet"></div>
