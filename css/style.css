@@ -327,3 +327,4 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 .carte-pnj .portrait img { width: 100%; height: 100%; object-fit: contain; }
 .carte-pnj .infos { background: var(--parchemin); border-top: 1px solid var(--encre-3); position: relative; z-index: 1; }
 .bloc-mj { position: relative; }
+.badge-danger.badge-race { background: var(--encre-2); font-size: 10.5px; }
