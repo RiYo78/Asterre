@@ -228,7 +228,7 @@ function renderCarte() {
     dessinerMarqueur(g, l);
     const ty = l.pos[1] + (l.type === "capitale" ? 40 : 32);
     el("text", { x: l.pos[0], y: ty, "text-anchor": "middle", "font-size": tailleLabel(l.type), class: "label-lieu" }, g).textContent = l.nom;
-    g.addEventListener("click", () => clicLieu(l.id));
+    g.addEventListener("click", ev => { ev.stopPropagation(); clicLieu(l.id); });
     g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); clicLieu(l.id); } });
   }
 }
@@ -444,6 +444,79 @@ function fmtJours(j) {
   return F ? `${ent} ${F} j`.replace(" ¼", "¼").replace(" ½", "½").replace(" ¾", "¾") : `${ent} j`;
 }
 
+/* ── Voyage libre : géométrie ── */
+function eucKm(a, b) { return Math.hypot(a[0] - b[0], a[1] - b[1]) * S.kmParUnite; }
+function posEtape(et) { return et.type === "lieu" ? S.lieux[et.id].pos : et.pos; }
+function nomEtape(et, i) { return et.type === "lieu" ? S.lieux[et.id].nom : `Point libre ${et.no || i + 1}`; }
+function surIle(p) { for (const ile of S.pays.iles) { if (pointInPoly(p, ile.forme)) return ile.id; } return null; }
+function analyseLigne(a, b) {
+  const L = Math.hypot(b[0] - a[0], b[1] - a[1]), n = Math.max(3, Math.ceil(L / 10));
+  const pasKm = (L / n) * S.kmParUnite;
+  let eau = 0, eauMax = 0, eauCour = 0, mont = 0, marais = 0;
+  const iles = new Set();
+  for (let i = 0; i <= n; i++) {
+    const p = [a[0] + (b[0] - a[0]) * i / n, a[1] + (b[1] - a[1]) * i / n];
+    const ile = surIle(p);
+    if (ile) { iles.add(ile); if (eauCour > eauMax) eauMax = eauCour; eauCour = 0; }
+    else { eau++; eauCour += pasKm; }
+    if (ile) {
+      const io = S.pays.iles.find(x => x.id === ile);
+      for (const z of (io.zones || [])) {
+        if (pointInPoly(p, z.poly)) { if (z.type.indexOf("montagne") === 0) mont++; if (z.type === "marais") marais++; break; }
+      }
+    }
+  }
+  if (eauCour > eauMax) eauMax = eauCour;
+  return { kmTotal: L * S.kmParUnite, traverseMer: eau > 0, eauMaxKm: eauMax,
+           fracMont: mont / (n + 1), fracMarais: marais / (n + 1) };
+}
+function capVol() { return (S.pays.reglages && S.pays.reglages.volMaxTraiteKm) || 300; }
+/* Calcule le meilleur trajet A→B pour un transport : par les routes (si deux lieux)
+   et/ou en ligne directe (pied, cheval, vol). Renvoie null si impossible. */
+function calcSegment(A, B, t, opts) {
+  let meilleur = null;
+  if (A.type === "lieu" && B.type === "lieu") {
+    const r = dijkstra(S.graphe, A.id, B.id, t, opts);
+    if (r) meilleur = { ...r, mode: "routes" };
+  }
+  if (["pied", "cheval", "vol"].includes(t.id)) {
+    const a = posEtape(A), b = posEtape(B), an = analyseLigne(a, b);
+    let ok = true;
+    if (t.id !== "vol" && an.traverseMer) ok = false;
+    if (t.id === "vol" && an.eauMaxKm > capVol()) ok = false;
+    if (ok && an.kmTotal > 0.5) {
+      const base = vitesseGlobale(t, opts.modifs, opts.defsModifs);
+      let pen = 1, type = "direct", terrain;
+      if (t.id !== "vol" && an.fracMont > 0.25) { pen = t.id === "pied" ? .7 : .6; type = "montagne"; }
+      else if (t.id !== "vol" && an.fracMarais > 0.2) { pen = .7; type = "piste"; terrain = "difficile"; }
+      const jours = an.kmTotal / (base * pen);
+      const direct = { jours, km: Math.round(an.kmTotal), noeuds: [], mode: "direct",
+        edges: [{ type, terrain, km: Math.round(an.kmTotal), points: [a, b], direct: true }] };
+      if (!meilleur || direct.jours < meilleur.jours) meilleur = direct;
+    }
+  }
+  return meilleur;
+}
+function raisonSegment(t, A, B, modifs, defs) {
+  if (A.type === "lieu" && B.type === "lieu") {
+    const opts = { modifs, defsModifs: defs };
+    if (["pied", "cheval", "vol"].includes(t.id)) {
+      const an = analyseLigne(posEtape(A), posEtape(B));
+      if (t.id === "vol" && an.eauMaxKm > capVol())
+        return `Trop loin pour voler d'une traite au-dessus de la mer (max ${capVol()} km) — prévoyez une halte.`;
+    }
+    return raisonImpossible(t, A.id, B.id, modifs, defs);
+  }
+  const an = analyseLigne(posEtape(A), posEtape(B));
+  if (modifs.has("tempete") && (t.id === "navire" || t.id === "cotier")) return "Tempête — navigation impossible.";
+  if (t.id === "vol" && an.eauMaxKm > capVol())
+    return `Trop loin pour voler d'une traite au-dessus de la mer (max ${capVol()} km) — prévoyez une halte.`;
+  if ((t.id === "pied" || t.id === "cheval") && an.traverseMer) return "Impossible — la mer vous barre la route.";
+  if (t.id === "caleche") return "Routes uniquement — la calèche ne quitte pas les routes tracées.";
+  if (t.id === "cotier" || t.id === "navire") return "Les embarcations suivent les lignes portuaires — choisissez deux lieux reliés par la mer.";
+  return "Impossible avec ce moyen de transport.";
+}
+
 /* ── Interface voyage ── */
 function toggleVoyage(on) {
   S.voyage.actif = on == null ? !S.voyage.actif : on;
@@ -454,30 +527,35 @@ function toggleVoyage(on) {
   else viderTrajet();
 }
 function clicLieu(id) {
-  if (S.voyage.actif) {
-    const et = S.voyage.etapes;
-    if (et[et.length - 1] === id) return toast("Ce lieu est déjà la dernière étape.");
-    et.push(id); S.voyage.choix = {};
-    majVoyage();
-  } else {
-    ouvrirLieu(id);
-    zoomVers(S.lieux[id].pos, 620);
-  }
+  if (S.voyage.actif) ajouterEtape({ type: "lieu", id });
+  else { ouvrirLieu(id); zoomVers(S.lieux[id].pos, 620); }
+}
+function clicLibre(pos) {
+  if (!S.voyage.actif) return;
+  S._noLibre = (S._noLibre || 0) + 1;
+  ajouterEtape({ type: "libre", pos: [Math.round(pos[0]), Math.round(pos[1])], no: S._noLibre });
+}
+function ajouterEtape(et) {
+  const list = S.voyage.etapes, dern = list[list.length - 1];
+  if (dern && dern.type === "lieu" && et.type === "lieu" && dern.id === et.id)
+    return toast("Ce lieu est déjà la dernière étape.");
+  list.push(et); S.voyage.choix = {};
+  majVoyage();
 }
 function retirerEtape(i) { S.voyage.etapes.splice(i, 1); S.voyage.choix = {}; majVoyage(); }
 function majVoyage() {
   const box = $("#voyage-box"), et = S.voyage.etapes, defs = S.pays.modificateurs;
   let html = `<h3>🧭 Calcul de voyage</h3>`;
-  if (et.length === 0) html += `<p class="consigne">Cliquez sur votre point de <b style="color:var(--vert)">départ</b>.</p>`;
-  else if (et.length === 1) html += `<p class="consigne">Cliquez sur votre <b style="color:var(--sang)">arrivée</b> — puis, si vous voulez, d'autres étapes.</p>`;
-  else html += `<p class="consigne">Cliquez sur la carte pour ajouter des étapes, ou lisez les résultats.</p>`;
+  if (et.length === 0) html += `<p class="consigne">Cliquez votre <b style="color:var(--vert)">départ</b> — un lieu, ou n'importe quel point de la carte.</p>`;
+  else if (et.length === 1) html += `<p class="consigne">Cliquez votre <b style="color:var(--sang)">arrivée</b> — lieu ou point libre — puis d'autres étapes si besoin.</p>`;
+  else html += `<p class="consigne">Cliquez la carte pour ajouter des étapes (lieux ou points libres), ou lisez les résultats.</p>`;
 
   if (et.length) {
-    html += `<ul class="etapes-liste">` + et.map((id, i) => {
+    html += `<ul class="etapes-liste">` + et.map((e, i) => {
       const cl = i === 0 ? "d" : (i === et.length - 1 ? "a" : "i");
       const role = i === 0 ? "Départ" : (i === et.length - 1 ? "Arrivée" : "Étape");
-      return `<li><span class="pt ${cl}"></span> <span><b>${esc(S.lieux[id].nom)}</b> <small style="color:var(--encre-3)">— ${role}</small></span>
-        <button class="sup" data-i="${i}" title="Retirer" aria-label="Retirer ${esc(S.lieux[id].nom)}">✕</button></li>`;
+      return `<li><span class="pt ${cl}"></span> <span><b>${esc(nomEtape(e, i))}</b> <small style="color:var(--encre-3)">— ${role}${e.type === "libre" ? " · 📍" : ""}</small></span>
+        <button class="sup" data-i="${i}" title="Retirer" aria-label="Retirer">✕</button></li>`;
     }).join("") + `</ul>`;
   }
 
@@ -485,7 +563,8 @@ function majVoyage() {
 
   html += `<details id="modifs" ${S.voyage.modifs.size ? "open" : ""}><summary>⚙ Modificateurs (MJ) ${S.voyage.modifs.size ? "· " + S.voyage.modifs.size + " actif(s)" : ""}</summary>` +
     defs.map(m => `<label><input type="checkbox" data-m="${m.id}" ${S.voyage.modifs.has(m.id) ? "checked" : ""}> ${esc(m.nom)}
-      <span class="pct">${m.bloqueMer ? "mer ✕" : (m.effet > 0 ? "+" : "") + Math.round(m.effet * 100) + " %"}</span></label>`).join("") + `</details>`;
+      <span class="pct">${m.bloqueMer ? "mer ✕" : (m.effet > 0 ? "+" : "") + Math.round(m.effet * 100) + " %"}</span></label>`).join("") +
+    `<label style="margin-top:6px"><span>🦅 Vol max d'une traite (mer)</span><span class="pct">${capVol()} km</span></label></details>`;
 
   html += `<div class="mini-btns">
     <button class="btn" id="v-recommencer">Recommencer</button>
@@ -495,13 +574,13 @@ function majVoyage() {
   box.querySelectorAll(".sup").forEach(b => b.addEventListener("click", () => retirerEtape(+b.dataset.i)));
   box.querySelectorAll("#modifs input").forEach(c => c.addEventListener("change", () => {
     c.checked ? S.voyage.modifs.add(c.dataset.m) : S.voyage.modifs.delete(c.dataset.m);
-    majVoyage();
+    S.voyage.choix = {}; majVoyage();
   }));
   box.querySelectorAll(".segment select").forEach(sel => sel.addEventListener("change", () => {
     S.voyage.choix[sel.dataset.seg] = sel.value; majVoyage();
   }));
   const rec = box.querySelector("#v-recommencer");
-  if (rec) rec.addEventListener("click", () => { S.voyage.etapes = []; S.voyage.choix = {}; majVoyage(); });
+  if (rec) rec.addEventListener("click", () => { S.voyage.etapes = []; S.voyage.choix = {}; S._noLibre = 0; majVoyage(); });
   const fer = box.querySelector("#v-fermer");
   if (fer) fer.addEventListener("click", () => toggleVoyage(false));
   marquerEtapes(); dessinerTrajet();
@@ -511,47 +590,47 @@ function htmlResultats() {
   let html = `<h3 style="margin-top:14px">Durée totale par moyen</h3><table class="resultats"><tr><th></th><th>Moyen</th><th>Dist.</th><th>Durée</th></tr>`;
   const totaux = {};
   for (const t of S.pays.transports) {
-    let km = 0, jours = 0, ok = true, raison = "";
+    let km = 0, jours = 0, ok = true, raison = "", direct = false;
     for (let i = 0; i < et.length - 1; i++) {
-      const r = dijkstra(S.graphe, et[i], et[i + 1], t, opts);
-      if (!r) { ok = false; raison = raisonImpossible(t, et[i], et[i + 1], S.voyage.modifs, defs); break; }
-      km += r.km; jours += arrondiVoyageur(t, r);
+      const r = calcSegment(et[i], et[i + 1], t, opts);
+      if (!r) { ok = false; raison = raisonSegment(t, et[i], et[i + 1], S.voyage.modifs, defs); break; }
+      km += r.km; jours += arrondiVoyageur(t, r); if (r.mode === "direct") direct = true;
     }
     totaux[t.id] = ok ? { km, jours } : null;
     html += ok
-      ? `<tr><td>${t.icone}</td><td>${esc(t.nom)}</td><td>${km} km</td><td class="duree">${fmtJours(jours)}</td></tr>`
+      ? `<tr><td>${t.icone}</td><td>${esc(t.nom)}${direct ? " <small title=\"comprend un tronçon en ligne directe\">➤</small>" : ""}</td><td>${km} km</td><td class="duree">${fmtJours(jours)}</td></tr>`
       : `<tr class="impossible"><td>${t.icone}</td><td>${esc(t.nom)}</td><td colspan="2">❌ ${esc(raison)}</td></tr>`;
   }
   html += `</table>`;
 
-  // itinéraire suggéré (moyen réalisable le plus rapide)
   const rapide = S.pays.transports.filter(t => totaux[t.id]).sort((a, b) => totaux[a.id].jours - totaux[b.id].jours)[0];
   if (rapide) {
     const noms = [];
     for (let i = 0; i < et.length - 1; i++) {
-      const r = dijkstra(S.graphe, et[i], et[i + 1], rapide, { modifs: S.voyage.modifs, defsModifs: defs });
-      r.noeuds.forEach((n, j) => { if (!(i > 0 && j === 0)) noms.push(S.lieux[n].nom); });
+      const r = calcSegment(et[i], et[i + 1], rapide, opts);
+      if (r.mode === "routes") r.noeuds.forEach((n, j) => { if (!(i > 0 && j === 0)) noms.push(S.lieux[n].nom); });
+      else { if (i === 0) noms.push(nomEtape(et[i], i)); noms.push("➤ " + nomEtape(et[i + 1], i + 1)); }
     }
-    html += `<p style="font-size:14.5px"><b class="cinzel" style="font-size:12px">ITINÉRAIRE SUGGÉRÉ (${rapide.icone})</b><br>${noms.map(esc).join(" → ")}</p>`;
+    html += `<p style="font-size:14.5px"><b class="cinzel" style="font-size:12px">ITINÉRAIRE SUGGÉRÉ (${rapide.icone})</b><br>${noms.map(esc).join(" → ").replace(/→ ➤/g, "➤")}</p>`;
   }
 
-  // trajets mixtes : un moyen par segment
   html += `<h3>Trajet mixte — choisir par segment</h3>`;
   let totalMixte = 0, mixteOK = true;
   for (let i = 0; i < et.length - 1; i++) {
     const faisables = S.pays.transports
-      .map(t => ({ t, r: dijkstra(S.graphe, et[i], et[i + 1], t, { modifs: S.voyage.modifs, defsModifs: defs }) }))
+      .map(t => ({ t, r: calcSegment(et[i], et[i + 1], t, opts) }))
       .filter(x => x.r);
-    if (!faisables.length) { html += `<div class="segment"><span class="titre-seg">${esc(S.lieux[et[i]].nom)} → ${esc(S.lieux[et[i + 1]].nom)}</span><br>❌ Aucun moyen possible.</div>`; mixteOK = false; continue; }
+    const titre = `${esc(nomEtape(et[i], i))} → ${esc(nomEtape(et[i + 1], i + 1))}`;
+    if (!faisables.length) { html += `<div class="segment"><span class="titre-seg">${titre}</span><br>❌ Aucun moyen possible.</div>`; mixteOK = false; continue; }
     faisables.forEach(x => { x.jA = arrondiVoyageur(x.t, x.r); });
     faisables.sort((a, b) => a.jA - b.jA);
     const choisi = S.voyage.choix[i] && faisables.find(x => x.t.id === S.voyage.choix[i]) ? S.voyage.choix[i] : faisables[0].t.id;
     S.voyage.choix[i] = choisi;
-    const xChoisi = faisables.find(x => x.t.id === choisi);
-    totalMixte += xChoisi.jA;
-    html += `<div class="segment"><span class="titre-seg">${esc(S.lieux[et[i]].nom)} → ${esc(S.lieux[et[i + 1]].nom)} · ${xChoisi.r.km} km</span>
-      <select data-seg="${i}" aria-label="Moyen de transport du segment ${i + 1}">` +
-      faisables.map(x => `<option value="${x.t.id}" ${x.t.id === choisi ? "selected" : ""}>${x.t.icone} ${esc(x.t.nom)} — ${fmtJours(x.jA)}</option>`).join("") +
+    const xC = faisables.find(x => x.t.id === choisi);
+    totalMixte += xC.jA;
+    html += `<div class="segment"><span class="titre-seg">${titre} · ${xC.r.km} km${xC.r.mode === "direct" ? " ➤" : ""}</span>
+      <select data-seg="${i}" aria-label="Moyen du segment ${i + 1}">` +
+      faisables.map(x => `<option value="${x.t.id}" ${x.t.id === choisi ? "selected" : ""}>${x.t.icone} ${esc(x.t.nom)} — ${fmtJours(x.jA)}${x.r.mode === "direct" ? " ➤" : ""}</option>`).join("") +
       `</select></div>`;
   }
   if (mixteOK && et.length >= 2) html += `<div class="total-voyage">Total du trajet mixte : ${fmtJours(totalMixte)}</div>`;
@@ -560,22 +639,24 @@ function htmlResultats() {
   return html;
 }
 function htmlAvertissements() {
-  const et = S.voyage.etapes, defs = S.pays.modificateurs;
+  const et = S.voyage.etapes;
   let out = "";
   if (S.voyage.modifs.has("tempete")) out += `<div class="avert">⛈ Tempête active : toute navigation est impossible.</div>`;
-  if (et.includes("iles-glace-lieu")) out += `<div class="avert mortel">☠️ Les Îles de Glace sont mortelles — même pour des mages très puissants. Aucun voyage n'y est recommandé.</div>`;
+  if (et.some(e => e.type === "lieu" && e.id === "iles-glace-lieu")) out += `<div class="avert mortel">☠️ Les Îles de Glace sont mortelles — même pour des mages très puissants. Aucun voyage n'y est recommandé.</div>`;
   const edges = edgesDuTrajet();
-  if (edges.some(e => e.type === "montagne")) out += `<div class="avert">⛰ Passage en montagne : calèche impossible, cheval ralenti (−40 %).</div>`;
+  if (edges.some(e => e.type === "montagne")) out += `<div class="avert">⛰ Passage en montagne : calèche impossible, progression ralentie.</div>`;
   if (edges.some(e => e.terrain === "difficile")) out += `<div class="avert">🥾 Terrain difficile sur une partie du trajet (−30 % à pied).</div>`;
   if (edges.some(e => e.type === "maritime" || e.type === "cotier")) out += `<div class="avert" style="border-color:var(--mer)">⚓ Ce trajet comporte une traversée : une embarcation est nécessaire sur ces segments.</div>`;
+  if (edges.some(e => e.direct)) out += `<div class="avert" style="border-color:var(--or)">➤ Tronçon hors des routes : progression à travers la campagne, en ligne directe.</div>`;
   return out;
 }
 function edgesDuTrajet() {
   const et = S.voyage.etapes, defs = S.pays.modificateurs, out = [];
+  const opts = { modifs: S.voyage.modifs, defsModifs: defs };
   for (let i = 0; i < et.length - 1; i++) {
     const tid = S.voyage.choix[i];
     const t = S.pays.transports.find(x => x.id === tid) || S.pays.transports.find(x => x.id === "vol");
-    const r = dijkstra(S.graphe, et[i], et[i + 1], t, { modifs: S.voyage.modifs, defsModifs: defs });
+    const r = calcSegment(et[i], et[i + 1], t, opts);
     if (r) out.push(...r.edges);
   }
   return out;
@@ -583,8 +664,9 @@ function edgesDuTrajet() {
 function marquerEtapes() {
   document.querySelectorAll(".marqueur").forEach(m => m.classList.remove("depart", "arrivee", "etape-i"));
   const et = S.voyage.etapes;
-  et.forEach((id, i) => {
-    const m = document.querySelector(`.marqueur[data-id="${id}"]`);
+  et.forEach((e, i) => {
+    if (e.type !== "lieu") return;
+    const m = document.querySelector(`.marqueur[data-id="${e.id}"]`);
     if (m) m.classList.add(i === 0 ? "depart" : (i === et.length - 1 ? "arrivee" : "etape-i"));
   });
 }
@@ -592,12 +674,21 @@ function viderTrajet() { $("#g-trajet").innerHTML = ""; document.querySelectorAl
 function dessinerTrajet() {
   const g = $("#g-trajet"); g.innerHTML = "";
   const edges = edgesDuTrajet();
-  if (!edges.length) return;
   for (const e of edges) {
-    const d = catmullPath(e.points, false);
+    const d = e.direct
+      ? `M${e.points[0][0]},${e.points[0][1]} L${e.points[1][0]},${e.points[1][1]}`
+      : catmullPath(e.points, false);
     el("path", { d, class: "trace-voyage halo" }, g);
     el("path", { d, class: "trace-voyage" }, g);
   }
+  // épingles des points libres
+  const et = S.voyage.etapes;
+  et.forEach((e, i) => {
+    if (e.type !== "libre") return;
+    const cl = i === 0 ? "var(--vert)" : (i === et.length - 1 ? "var(--sang)" : "var(--mer-claire)");
+    el("circle", { cx: e.pos[0], cy: e.pos[1], r: 8, fill: cl, stroke: "#2e2314", "stroke-width": 2 }, g);
+    el("circle", { cx: e.pos[0], cy: e.pos[1], r: 2.6, fill: "#f3e9ce" }, g);
+  });
 }
 
 /* ─────────────── Fiches de lieux (panneau) ─────────────── */
@@ -897,7 +988,7 @@ function copierReveals() {
     () => { prompt("Copiez cette liste :", texte); }
   );
 }
-document.addEventListener("change", e => {
+if (IS_BROWSER) document.addEventListener("change", e => {
   const t = e.target;
   if (t && t.dataset && t.dataset.rev) {
     t.checked ? S.reveals.add(t.dataset.rev) : S.reveals.delete(t.dataset.rev);
@@ -958,7 +1049,11 @@ function brancherUI() {
     S.vb.x = drag.vb.x - dx; S.vb.y = drag.vb.y - dy;
     appliquerVB();
   });
-  svg.addEventListener("pointerup", () => { drag = null; svg.classList.remove("drag"); });
+  svg.addEventListener("pointerup", () => { S._dragBouge = drag && drag.bouge; drag = null; svg.classList.remove("drag"); });
+  svg.addEventListener("click", e => {
+    if (!S.voyage.actif || S._dragBouge) return;
+    clicLibre(coordsSouris(e));
+  });
   svg.addEventListener("wheel", e => {
     e.preventDefault();
     const [cx, cy] = coordsSouris(e);
@@ -972,4 +1067,4 @@ if (IS_BROWSER) {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
 }
-if (typeof module !== "undefined") module.exports = { construireGraphe, dijkstra, fmtJours, arrondiVoyageur, penalite, S };
+if (typeof module !== "undefined") module.exports = { construireGraphe, dijkstra, fmtJours, arrondiVoyageur, penalite, calcSegment, raisonSegment, analyseLigne, S };
