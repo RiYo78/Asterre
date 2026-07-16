@@ -2708,13 +2708,46 @@
    {
     "id": "arathak",
     "nom": "Arathak",
-    "titre": "Directeur de l'Académie",
+    "titre": "Fondateur de l'Académie — Héros officiel de la Guerre des Magistères",
+    "origine": "Îles Saintes",
+    "race": "Demi-Elfe",
+    "statut": "Vivant",
+    "naissance": "493 (32 ans en 525)",
+    "religion": "",
     "lieux": [
      "academie"
     ],
     "portrait": "images/pnj/arathak.jpg",
-    "description": "Demi-elfe, mage druidique. Il libéra les ressortissants du Cercle des Îles Saintes (1 Usos 520) et fonda l'Académie la même année. Sa vision : unir mages et non-mages. Chef du camp des mages pacifiques, allié de Yon.",
-    "origine": "Îles Saintes"
+    "description": "Il parle. Il convainc. Il croit. Et d'une façon ou d'une autre, le monde finit par le croire aussi. Fils de Divina et de Lirael, elfe médecin, il perd sa mère à 14 ans — disparue en 507 — et son père la même année. Achabel devient son frère adoptif ; Sam, leur figure maternelle. En 520, il libère Achabel et Manem du Cercle depuis l'extérieur, sauve un bébé renard mourant dans une forêt brûlée — Sky, son fils adoptif — et fonde l'Académie de Mage des Îles Saintes, la première depuis l'arrêt total des académies. Il convainquit Yon en parlant, parlant, parlant. Sa magie druidique est fondamentalement une magie d'union : elle rassemble ce qui est séparé — contrôle de la nature, familiers élémentaires, liens de familier.",
+    "details": [
+     {
+      "texte": "Sa vision : unir mages et non-mages — réconcilier ce que l'an 300 a brisé. Yon voit en lui « la puissance de Valène et le cœur de Divina ».",
+      "mj": false
+     },
+     {
+      "texte": "Héros officiel de la Guerre des Magistères. Il respecte profondément Kanius.",
+      "mj": false
+     },
+     {
+      "texte": "Sam, sa nièce et figure maternelle, est morte en 520 lors de la chute du Cercle.",
+      "mj": false
+     }
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-aca-defaite",
+      "titre": "Arathak a perdu",
+      "revele": false,
+      "texte": "Il a perdu le combat final contre Kanius — de justesse. Kanius demanda à Aurore, son bras droit, de le sauver. Morigane réécrivit l'histoire : Arathak vainqueur et sauveur. Il le sait et l'accepte."
+     },
+     {
+      "id": "sec-aca-divina",
+      "titre": "Divina",
+      "revele": false,
+      "texte": "Sa mère Divina — 4ème enfant de Valène — est le Péché de la Luxure depuis 507, basculée dans l'Antre de plein gré. Il l'ignore. Il est donc l'arrière-petit-fils de Valène : la magie druidique de la Fondatrice coule dans ses veines."
+     }
+    ]
    },
    {
     "id": "galwyn-nei",
@@ -2833,13 +2866,50 @@
    {
     "id": "achabel",
     "nom": "Achabel",
-    "titre": "—",
+    "titre": "Le Prophète des Ténèbres",
+    "origine": "Îles Saintes",
+    "race": "Descendant de la Grande Lignée",
+    "statut": "Vivant",
+    "naissance": "500",
+    "religion": "Aucune — ignore tout de la Mort et de Mary",
     "lieux": [
      "plaines-cotieres"
     ],
     "portrait": "images/pnj/achabel.jpg",
-    "description": "Vit paisiblement dans les plaines côtières de Vanhill avec Manem. Avec Sam, il a fait tomber le Cercle des Îles Saintes de l'intérieur en 520 et tué le Docteur.",
-    "origine": "Îles Saintes"
+    "description": "Il ressemble à sa mère sans le savoir. Il porte une puissance qu'il ne maîtrise pas, sur une île que rien ne semble pouvoir atteindre. Achabel vit sur l'île de Vanhill avec son épouse Manem. Enfermé avec elle au Cercle des Îles Saintes, il le détruisit de l'intérieur en 520 pendant qu'Arathak — son frère adoptif — le libérait de l'extérieur, et tua volontairement le Docteur. Mais dans la violence du moment, il perdit le contrôle de son pouvoir.",
+    "details": [
+     {
+      "texte": "Contrôle des Ténèbres sous de multiples formes — la plus connue : le Voile des Damnés. Sa puissance totale dépasse largement ce qu'il maîtrise, surtout en colère.",
+      "mj": false
+     },
+     {
+      "texte": "En 520, en perdant le contrôle lors de la chute du Cercle, il tua accidentellement Sam — sa propre fille.",
+      "mj": true
+     },
+     {
+      "texte": "En 507 déjà, sa colère incontrôlée avait tué le père biologique d'Arathak (Lirael, elfe médecin).",
+      "mj": true
+     },
+     {
+      "texte": "Vanhill est la seule partie des Îles Saintes qui sera épargnée par la Lune de Sang — hasard, protection naturelle, ou lien avec Achabel lui-même ? À développer.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-achabel-identite",
+      "titre": "Ce qu'il ignore",
+      "revele": false,
+      "texte": "Fils de Morigane, née ne l'a vu qu'une fois — la prophétie de Mary : « Tu ne pourras le voir qu'une seule fois avant son éclosion. » Confié à Divina en 520. Il ignore qui est sa mère, son lien avec la Grande Lignée, et son destin de Prophète des Ténèbres. Yon croit en la prophétie : « Arathak et Achabel libèreront le monde. » Morigane ne cherchera pas à le voir cette saison."
+     },
+     {
+      "id": "sec-achabel-sam",
+      "titre": "Sam",
+      "revele": false,
+      "texte": "Sa fille Sam était la 3ème Ectelon — réincarnation d'Estel. Il l'a tuée de ses propres ténèbres, involontairement, en 520."
+     }
+    ]
    },
    {
     "id": "manem",
@@ -2860,8 +2930,16 @@
      "plaines-cotieres"
     ],
     "portrait": "images/pnj/sam.jpg",
-    "description": "Fille d'Achabel et Manem. Elle participa à la chute du Cercle des Îles Saintes de l'intérieur — et y mourut (1 Usos 520).",
-    "origine": "Îles Saintes"
+    "description": "Fille d'Achabel et Manem. Avec son père, elle fit tomber le Cercle des Îles Saintes de l'intérieur (1 Usos 520) — et y mourut : lorsque Achabel perdit le contrôle du Voile des Damnés après avoir tué le Docteur, ses ténèbres la fauchèrent. Il ne se le pardonnera jamais.",
+    "origine": "Îles Saintes",
+    "secrets": [
+     {
+      "id": "sec-sam-ectelon",
+      "titre": "La 3ème Ectelon",
+      "revele": false,
+      "texte": "Sam était la 3ème réincarnation d'Estel — elle ne l'a jamais su. ⚠️ Les fiches Notion divergent sur son sort (morte en 520 / vivante en 525 pour la prise d'Ectelon par Morigane) : à trancher."
+     }
+    ]
    },
    {
     "id": "aerith-goldland",
@@ -3564,6 +3642,146 @@
     "galerie": [],
     "secrets": [],
     "mjOnly": true
+   },
+   {
+    "id": "divina",
+    "nom": "Divina",
+    "titre": "La Bonté Incarnée — 4ème enfant de Valène",
+    "origine": "Îles Saintes",
+    "race": "Descendante de la Grande Lignée",
+    "statut": "Disparue dans l'Antre (507)",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/divina.jpg",
+    "description": "4ème enfant de Valène et d'Alexius, l'elfe aveugle disparu. La bonté incarnée — méprisée pour sa faiblesse apparente, elle révolutionna pourtant les Îles Saintes à travers l'Église de la Lumière. Mère d'Arathak (avec Lirael, elfe médecin). En 507, elle entra dans l'Antre de plein gré — la dernière des enfants de Valène à basculer en Péché.",
+    "details": [
+     {
+      "texte": "Capacités : contrôle des 4 éléments (moindre que Valène) · soins par la magie élémentaire.",
+      "mj": true
+     },
+     {
+      "texte": "Elle est le Péché de la Luxure depuis 507. Arathak l'ignore — il l'a simplement perdue. C'est à elle que Morigane confia Achabel en 520.",
+      "mj": true
+     },
+     {
+      "texte": "Althar (Orgueil) et Seryne (Envie) — les parents d'Ildris/Veralion — sont de la même lignée de Péchés. ⚠️ Les fiches Notion divergent : enfants de Valène ou de Divina ? À trancher.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "ildris",
+    "nom": "Ildris / Veralion",
+    "titre": "Le Roi masqué de Harad",
+    "origine": "Harad",
+    "race": "Descendant de la Grande Lignée",
+    "statut": "Vivant",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/ildris.jpg",
+    "description": "Vrai nom : Ildris. Nom de règne : Veralion. L'homme masqué. Fils d'Althar (Péché de l'Orgueil) et de Seryne (Péché de l'Envie), descendant direct de Valène. Confié à un couvent, il idéalisait Yon — qui le rejeta. Il manipula Narcise, la sœur de Morigane, et faillit faire tomber les Îles Saintes. En 285, il enleva Minvan — introuvable depuis — puis prit le trône de Harad sous le nom de Veralion, d'où il chasse les Elfes d'Arcal.",
+    "details": [
+     {
+      "texte": "Il exploite les pouvoirs de Minvan (modification structurelle) pour créer des soldats de la Grande Lignée.",
+      "mj": true
+     },
+     {
+      "texte": "Personne ne sait que le Roi Veralion et l'homme masqué ne font qu'un — pas même Morigane.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "minvan",
+    "nom": "Minvan",
+    "titre": "La Première Vélane",
+    "origine": "Drémora",
+    "race": "Descendante de la Grande Lignée",
+    "statut": "Vivante — immortelle, captive à Harad",
+    "naissance": "260",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/minvan.jpg",
+    "description": "Fille de Morigane, petite-fille de Mary. Première Vélane d'Asterre — elle avait déjà des descendants Vélanes avant sa disparition. Mary avait prédit son envoi à Harad ; Morigane refusa la prophétie. En 285, l'homme masqué l'enleva : aucune magie ne permit jamais de la retrouver. Détenue à Harad depuis 240 ans, ses pouvoirs sont exploités pour engendrer des soldats de la Grande Lignée.",
+    "details": [
+     {
+      "texte": "Capacités : Aspiration d'Âme (Vélane) · Modification structurelle — changer la race ou la structure d'un être, rendre immortel.",
+      "mj": true
+     },
+     {
+      "texte": "Son geôlier est Ildris, qui règne sur Harad sous le nom de Veralion. Morigane sait qu'elle est vivante — toutes les âmes des morts passent par elle.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": [],
+    "mjOnly": true
+   },
+   {
+    "id": "selina",
+    "nom": "Selina",
+    "titre": "Mage de Sang — Croyante de l'Église du Feu",
+    "origine": "Lituania",
+    "race": "Humaine",
+    "statut": "Vivante — rentrée à Lituania (525)",
+    "naissance": "À définir",
+    "religion": "Église du Feu",
+    "lieux": [],
+    "portrait": "images/pnj/selina.jpg",
+    "description": "Elle a toujours voulu prouver qu'elle valait ses aînés. Elle n'a jamais eu à le prouver à Livai — il s'est sacrifié pour elle sans hésiter. Benjamine de la fratrie de Lituania (Livai, Talia, Selina), c'est en voulant démontrer sa maîtrise qu'elle se mit en danger : Livai se sacrifia et finit enfermé dans le Collier de Sang qui porte son nom. Mage de Sang elle-même, elle choisit pourtant une autre voie pour le ramener : le Rituel du Phœnix, à l'Église du Feu. Peu bavarde, fervente, avec un certain mépris pour les croyants des autres Églises. Elle tue sans plaisir — par nécessité. En couple avec Sky.",
+    "details": [
+     {
+      "texte": "Le Rituel du Phœnix ne l'a pas transformée — c'était un choix, pas une métamorphose. Il lui permettra de ramener Livai le moment venu.",
+      "mj": false
+     },
+     {
+      "texte": "Distinction avec Livai : lui est sociopathe et prend plaisir à tuer ; elle tue par nécessité pratique, sans jouissance.",
+      "mj": false
+     },
+     {
+      "texte": "En 525, pendant le rituel de Morigane pour ouvrir la Porte de l'Eau (via Adelia), Livai ordonna à ses sœurs de quitter Limehahu et de rentrer à Lituania.",
+      "mj": true
+     },
+     {
+      "texte": "La Magie du Sang n'est pas interdite par l'Église du Feu — mais elle l'est aux Îles Saintes (peine capitale). Loyautés en conflit potentiel : Sky d'un côté, Livai bras droit de Morigane de l'autre.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": []
+   },
+   {
+    "id": "talia",
+    "nom": "Talia",
+    "titre": "Le pilier discret de la fratrie",
+    "origine": "Lituania",
+    "race": "Humaine",
+    "statut": "Vivante — rentrée à Lituania (525)",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/talia.jpg",
+    "description": "Elle ne cherche ni gloire ni pouvoir. Elle accompagne les siens — c'est tout ce qui compte. Sœur du milieu de la fratrie de Lituania : cadette de Livai, aînée de Selina. Elle est le lien discret qui maintient la fratrie ensemble. En 525, comme Selina, elle fut renvoyée par Livai vers Lituania, loin du rituel de Morigane.",
+    "details": [
+     {
+      "texte": "Pouvoir : extraire de toute matière qu'elle touche des aiguilles faites de cette matière, puis les lancer comme armes. Pierre, métal, bois, os — ses aiguilles changent de propriétés selon la source.",
+      "mj": false
+     },
+     {
+      "texte": "Amie de Sky. Personnalité et limites du pouvoir : à développer.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": []
    }
   ],
   "bestiaire": [
@@ -4055,11 +4273,11 @@
       "mj": false
      },
      {
-      "texte": "Minvan, première Vélane, fille de Morigane : née en 306 selon cette fiche, vit dans la Forêt Infinie, impossible à localiser — lien de destin fracturé par Morigane, qui l'a perdue en voulant la protéger.",
+      "texte": "Minvan, première Vélane, fille de Morigane — captive et exploitée (voir sa fiche personnage). Le sang du destructeur de monde coule dans une race qui n'en sait rien.",
       "mj": true
      },
      {
-      "texte": "Lien cosmologique : Samaël → Mary → Morigane → Minvan → les Vélanes. Le sang du destructeur de monde coule dans une race qui n'en sait rien. Une révélation serait explosive.",
+      "texte": "Minvan, première Vélane, fille de Morigane — captive et exploitée (voir sa fiche personnage). Le sang du destructeur de monde coule dans une race qui n'en sait rien.",
       "mj": true
      }
     ]
@@ -4410,7 +4628,7 @@
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "1.5",
+ "version": "1.6",
  "labels": [
   {
    "texte": "Le Passage du Silence",
