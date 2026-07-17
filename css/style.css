@@ -328,3 +328,32 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 .carte-pnj .infos { background: var(--parchemin); border-top: 1px solid var(--encre-3); position: relative; z-index: 1; }
 .bloc-mj { position: relative; }
 .badge-danger.badge-race { background: var(--encre-2); font-size: 10.5px; }
+
+/* ── Table de Séance ── */
+#seance { position: fixed; inset: 0; z-index: 20; display: none; overflow: hidden; padding-top: 58px;
+  background: radial-gradient(1200px 700px at 65% -10%, rgba(255,250,232,.6), transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0 90px, rgba(92,75,52,.045) 90px 91px), var(--parchemin); }
+#seance.ouvert { display: flex; }
+#seance .contenu { flex: 1; overflow-y: auto; padding: 26px 4vw 70px; }
+#seance .contenu > h2 { font-size: 30px; margin-bottom: 4px; }
+.seance-outils { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
+.seance-outils input { font-family: "EB Garamond", serif; font-size: 15px; color: var(--encre);
+  background: rgba(255,252,240,.75); border: 1px solid var(--encre-3); border-radius: 3px; padding: 8px 10px; min-width: 230px; }
+.scene-lieu { display: grid; grid-template-columns: minmax(220px, 340px) 1fr; gap: 18px; align-items: start;
+  border: 1px solid var(--or); border-radius: 4px; padding: 14px; background: rgba(217,180,92,.1); margin-bottom: 20px; }
+.scene-lieu .cadre-img { margin: 0; }
+.grille-seance { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.carte-seance { position: relative; display: grid; grid-template-columns: 112px 1fr; gap: 12px;
+  border: 1px solid var(--encre-3); border-radius: 4px; padding: 12px; background: rgba(255,252,240,.6); }
+.carte-seance .cs-portrait { width: 112px; aspect-ratio: 3/4; border: 1px solid var(--encre-3); border-radius: 3px;
+  overflow: hidden; background: var(--parchemin-2); display: grid; place-items: center; }
+.carte-seance .cs-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.cs-vide { font-style: italic; font-size: 12px; color: var(--encre-3); text-align: center; padding: 6px; }
+.carte-seance h4 { font-size: 17px; }
+.cs-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--encre-2); margin: 4px 0 6px; }
+.cs-meta b { font-family: "Cinzel", serif; font-size: 10px; letter-spacing: .06em; }
+.carte-seance p { font-size: 13.5px; line-height: 1.42; margin: 4px 0 6px; }
+.carte-seance .tensions li { font-size: 12.5px; margin: 0 0 4px 14px; }
+.cs-retirer { position: absolute; top: 6px; right: 6px; width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid var(--encre-2); background: var(--parchemin-2); cursor: pointer; color: var(--sang); }
+@media (max-width: 700px) { .scene-lieu { grid-template-columns: 1fr; } .carte-seance { grid-template-columns: 92px 1fr; } }
