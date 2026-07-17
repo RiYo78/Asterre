@@ -21,6 +21,7 @@
   <nav class="onglets" role="tablist">
     <button class="onglet actif" id="ong-carte" role="tab">🗺 Carte</button>
     <button class="onglet" id="ong-codex" role="tab">📜 Codex</button>
+    <button class="onglet" id="ong-seance" role="tab">🎲 Séance</button>
   </nav>
   <div class="droite">
     <input id="recherche" list="lieux-datalist" placeholder="Chercher un lieu…" autocomplete="off">
@@ -49,6 +50,10 @@
 <main id="codex">
   <nav id="codex-nav"></nav>
   <div class="contenu" id="codex-contenu"></div>
+</main>
+
+<main id="seance">
+  <div class="contenu" id="seance-contenu"></div>
 </main>
 
 <div id="toast" role="status"></div>
