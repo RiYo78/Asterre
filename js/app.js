@@ -14,6 +14,7 @@ const S = {
   mj: false, vue: "carte", reveals: new Set(), masques: new Set(),
   voyage: { actif: false, etapes: [], modifs: new Set(), choix: {} },
   seance: { pnj: [], lieu: null },
+  des: { historique: [] }, musiques: [], pisteActive: null,
   vb: { x: 0, y: 0, w: 2000, h: 1500 }, vb0: null,
   kmParUnite: 0.22
 };
@@ -125,6 +126,8 @@ async function boot() {
   $("#titre-monde").textContent = S.monde.monde.toUpperCase();
   $("#sous-titre").textContent = S.pays.nom;
   renderCarte(); renderLegende(); construireCodex(); remplirRecherche(); brancherUI();
+  try { S.musiques = (await (await fetch("data/musiques.json")).json()).pistes || []; } catch (e) { S.musiques = []; }
+  initMusique();
   chargerSeanceHash();
   $("#chargement").remove();
 }
@@ -981,6 +984,71 @@ function majHashSeance() {
   if (S.seance.lieu) parts.push("lieu=" + S.seance.lieu);
   history.replaceState(null, "", parts.length ? "#" + parts.join("&") : location.pathname + location.search);
 }
+/* ── Dés ── */
+function tirage(faces) {
+  const u = new Uint32Array(1); crypto.getRandomValues(u);
+  return 1 + (u[0] % faces);
+}
+function lancerDes(n, faces, mod) {
+  n = Math.max(1, Math.min(20, n | 0)); mod = mod | 0;
+  const rolls = Array.from({ length: n }, () => tirage(faces));
+  const total = rolls.reduce((s, x) => s + x, 0) + mod;
+  const txt = `${n}d${faces}${mod ? (mod > 0 ? "+" + mod : mod) : ""}`;
+  S.des.historique.unshift({ txt, rolls, mod, total, crit: faces === 20 && n === 1 && (rolls[0] === 20 || rolls[0] === 1) ? rolls[0] : 0 });
+  S.des.historique = S.des.historique.slice(0, 8);
+  majDesUI();
+}
+function majDesUI() {
+  const z = document.querySelector("#zone-des"); if (!z) return;
+  const h = S.des.historique;
+  z.innerHTML = h.length ? `
+    <div class="de-resultat ${h[0].crit === 20 ? "crit-haut" : h[0].crit === 1 ? "crit-bas" : ""}">${h[0].total}</div>
+    <div class="de-detail">${esc(h[0].txt)} → [${h[0].rolls.join(" · ")}]${h[0].mod ? (h[0].mod > 0 ? " + " + h[0].mod : " − " + (-h[0].mod)) : ""}${h[0].crit === 20 ? " — ✨ Critique !" : h[0].crit === 1 ? " — 💀 Échec critique !" : ""}</div>
+    <div class="de-histo">${h.slice(1).map(x => `<span>${esc(x.txt)}=${x.total}</span>`).join(" ")}</div>`
+    : `<div class="de-detail fell">Les dés attendent votre main…</div>`;
+}
+/* ── Musique d'ambiance ── */
+let AUDIO = null;
+function initMusique() {
+  AUDIO = new Audio(); AUDIO.loop = true; AUDIO.volume = .7;
+  AUDIO.addEventListener("ended", majBarreMusique);
+  AUDIO.addEventListener("play", majBarreMusique);
+  AUDIO.addEventListener("pause", majBarreMusique);
+}
+function jouerPiste(i) {
+  const p = S.musiques[i]; if (!p) return;
+  if (S.pisteActive === i) { AUDIO.paused ? AUDIO.play() : AUDIO.pause(); majBarreMusique(); return; }
+  S.pisteActive = i;
+  AUDIO.src = p.fichier; AUDIO.loop = p.boucle !== false;
+  AUDIO.play().catch(() => toast("Lecture impossible — vérifiez que le fichier " + p.fichier + " est bien déposé."));
+  majBarreMusique();
+  const z = document.querySelector("#zone-musique"); if (z) majPistesUI();
+}
+function stopPiste() { if (AUDIO) { AUDIO.pause(); AUDIO.src = ""; } S.pisteActive = null; majBarreMusique(); majPistesUI(); }
+function majBarreMusique() {
+  const b = $("#musique-bar");
+  const p = S.pisteActive != null ? S.musiques[S.pisteActive] : null;
+  if (!p) { b.hidden = true; return; }
+  b.hidden = false;
+  b.innerHTML = `<span class="mb-titre">🎵 ${esc(p.titre)}</span>
+    <button class="btn" id="mb-play">${AUDIO.paused ? "▶" : "⏸"}</button>
+    <button class="btn ${AUDIO.loop ? "actif" : ""}" id="mb-loop" title="Boucle">🔁</button>
+    <input type="range" id="mb-vol" min="0" max="100" value="${Math.round(AUDIO.volume * 100)}" aria-label="Volume">
+    <button class="btn" id="mb-stop" title="Arrêter">✕</button>`;
+  b.querySelector("#mb-play").addEventListener("click", () => { AUDIO.paused ? AUDIO.play() : AUDIO.pause(); });
+  b.querySelector("#mb-loop").addEventListener("click", () => { AUDIO.loop = !AUDIO.loop; majBarreMusique(); });
+  b.querySelector("#mb-vol").addEventListener("input", e => { AUDIO.volume = e.target.value / 100; });
+  b.querySelector("#mb-stop").addEventListener("click", stopPiste);
+}
+function majPistesUI() {
+  const z = document.querySelector("#zone-musique"); if (!z) return;
+  z.innerHTML = S.musiques.length
+    ? `<div class="chips">` + S.musiques.map((p, i) =>
+        `<button class="chip ${S.pisteActive === i ? "chip-active" : ""}" data-piste="${i}">${S.pisteActive === i && !AUDIO.paused ? "⏸ " : "▶ "}${esc(p.titre)}</button>`).join("") + `</div>`
+    : `<p class="fell" style="font-size:13.5px">Aucune piste — déposez vos fichiers audio dans <code>musiques/</code> et listez-les dans <code>data/musiques.json</code> (ou dites-le à Claude).</p>`;
+  z.querySelectorAll("[data-piste]").forEach(b => b.addEventListener("click", () => jouerPiste(+b.dataset.piste)));
+}
+
 function carteSeance(id) {
   const pn = pnj(id); if (!pn) return "";
   const vFiche = visib("pnj-" + pn.id, !pn.mjOnly);
@@ -1012,6 +1080,21 @@ function renderSeance() {
       <button class="btn" id="copier-scene">🔗 Copier le lien de la scène</button>
       <button class="btn" id="vider-scene">Vider</button>
     </div>`;
+  html += `<div class="seance-outils2">
+    <div class="carte-outil">
+      <h4>🎲 Lancer de dés</h4>
+      <div class="de-boutons">${[4, 6, 8, 10, 12, 20, 100].map(f => `<button class="btn de" data-de="${f}">d${f}</button>`).join("")}</div>
+      <div class="de-options">
+        <label>Nb <input type="number" id="de-nb" min="1" max="20" value="1"></label>
+        <label>Mod <input type="number" id="de-mod" value="0"></label>
+      </div>
+      <div id="zone-des"></div>
+    </div>
+    <div class="carte-outil">
+      <h4>🎵 Ambiance</h4>
+      <div id="zone-musique"></div>
+    </div>
+  </div>`;
   if (sel.lieu && S.lieux[sel.lieu]) {
     const l = S.lieux[sel.lieu];
     const vD = visib("desc-lieu-" + l.id, true);
@@ -1053,6 +1136,10 @@ function renderSeance() {
   }));
   c.querySelectorAll("[data-fiche]").forEach(b => b.addEventListener("click", () => ouvrirPnj(b.dataset.fiche)));
   c.querySelectorAll("[data-lieu-s]").forEach(b => b.addEventListener("click", () => ouvrirLieu(b.dataset["lieuS"])));
+  c.querySelectorAll(".de-boutons [data-de]").forEach(b => b.addEventListener("click", () => {
+    lancerDes(+c.querySelector("#de-nb").value, +b.dataset.de, +c.querySelector("#de-mod").value);
+  }));
+  majDesUI(); majPistesUI();
 }
 function majBoutonMJ() {
   $("#btn-mj").classList.toggle("actif", S.mj);
