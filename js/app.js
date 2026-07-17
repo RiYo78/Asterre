@@ -994,16 +994,24 @@ function lancerDes(n, faces, mod) {
   const rolls = Array.from({ length: n }, () => tirage(faces));
   const total = rolls.reduce((s, x) => s + x, 0) + mod;
   const txt = `${n}d${faces}${mod ? (mod > 0 ? "+" + mod : mod) : ""}`;
-  S.des.historique.unshift({ txt, rolls, mod, total, crit: faces === 20 && n === 1 && (rolls[0] === 20 || rolls[0] === 1) ? rolls[0] : 0 });
+  let palier = "";
+  if (faces === 100 && n === 1) {
+    const v = rolls[0];
+    palier = v === 1 ? "un" : (v <= 5 ? "reussite" : (v === 100 ? "cent" : (v >= 96 ? "echec" : "")));
+  }
+  S.des.historique.unshift({ txt, rolls, mod, total, palier });
   S.des.historique = S.des.historique.slice(0, 8);
   majDesUI();
 }
 function majDesUI() {
   const z = document.querySelector("#zone-des"); if (!z) return;
   const h = S.des.historique;
+  const P = { un: ["crit-un", "✨ UN — Critique doré !"], reussite: ["crit-reussite", "⭐ Réussite critique !"],
+              echec: ["crit-echec", "💀 Échec critique !"], cent: ["crit-cent", "☠️ CENT — Échec catastrophique !"] };
+  const p0 = h.length ? P[h[0].palier] : null;
   z.innerHTML = h.length ? `
-    <div class="de-resultat ${h[0].crit === 20 ? "crit-haut" : h[0].crit === 1 ? "crit-bas" : ""}">${h[0].total}</div>
-    <div class="de-detail">${esc(h[0].txt)} → [${h[0].rolls.join(" · ")}]${h[0].mod ? (h[0].mod > 0 ? " + " + h[0].mod : " − " + (-h[0].mod)) : ""}${h[0].crit === 20 ? " — ✨ Critique !" : h[0].crit === 1 ? " — 💀 Échec critique !" : ""}</div>
+    <div class="de-resultat ${p0 ? p0[0] : ""}">${h[0].total}</div>
+    <div class="de-detail">${esc(h[0].txt)} → [${h[0].rolls.join(" · ")}]${h[0].mod ? (h[0].mod > 0 ? " + " + h[0].mod : " − " + (-h[0].mod)) : ""}${p0 ? ` — <b class="${p0[0]}-t">${p0[1]}</b>` : ""}</div>
     <div class="de-histo">${h.slice(1).map(x => `<span>${esc(x.txt)}=${x.total}</span>`).join(" ")}</div>`
     : `<div class="de-detail fell">Les dés attendent votre main…</div>`;
 }
@@ -1083,7 +1091,8 @@ function renderSeance() {
   html += `<div class="seance-outils2">
     <div class="carte-outil">
       <h4>🎲 Lancer de dés</h4>
-      <div class="de-boutons">${[4, 6, 8, 10, 12, 20, 100].map(f => `<button class="btn de" data-de="${f}">d${f}</button>`).join("")}</div>
+      <div class="de-boutons"><button class="btn de principal" data-de="100">🎲 d100</button>${[4, 6, 8, 10, 12, 20].map(f => `<button class="btn de" data-de="${f}">d${f}</button>`).join("")}</div>
+      <small class="de-regle">1 = doré · 2-5 réussite critique · 96-99 échec critique · 100 = catastrophe</small>
       <div class="de-options">
         <label>Nb <input type="number" id="de-nb" min="1" max="20" value="1"></label>
         <label>Mod <input type="number" id="de-mod" value="0"></label>
