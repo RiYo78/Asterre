@@ -2539,7 +2539,7 @@
    },
    {
     "date": "1 Usos 520",
-    "evenement": "Chute du Cercle des Îles Saintes — Arathak attaque de l'extérieur, Achabel et Sam de l'intérieur. Achabel tue le Docteur. Sam meurt.",
+    "evenement": "Chute du Cercle des Îles Saintes — Arathak libère Achabel et Manem de l'extérieur pendant qu'Achabel détruit le Cercle de l'intérieur et tue le Docteur. En perdant le contrôle, Achabel fauche Sam, son père adoptif. La même année naît sa fille, Sam.",
     "lieux": [
      "academie"
     ]
@@ -2718,7 +2718,7 @@
      "academie"
     ],
     "portrait": "images/pnj/arathak.jpg",
-    "description": "Il parle. Il convainc. Il croit. Et d'une façon ou d'une autre, le monde finit par le croire aussi. Fils de Divina et de Lirael, elfe médecin, il perd sa mère à 14 ans — disparue en 507 — et son père la même année. Achabel devient son frère adoptif ; Sam, leur figure maternelle. En 520, il libère Achabel et Manem du Cercle depuis l'extérieur, sauve un bébé renard mourant dans une forêt brûlée — Sky, son fils adoptif — et fonde l'Académie de Mage des Îles Saintes, la première depuis l'arrêt total des académies. Il convainquit Yon en parlant, parlant, parlant. Sa magie druidique est fondamentalement une magie d'union : elle rassemble ce qui est séparé — contrôle de la nature, familiers élémentaires, liens de familier.",
+    "description": "Il parle. Il convainc. Il croit. Et d'une façon ou d'une autre, le monde finit par le croire aussi. Fils de Divina et de Lirael, elfe médecin, il perd sa mère à 14 ans — disparue en 507 — et son père la même année. Achabel devient son frère adoptif, et c'est Sam qui prend les deux garçons sous son aile — leur père adoptif. En 520, il libère Achabel et Manem du Cercle depuis l'extérieur, sauve un bébé renard mourant dans une forêt brûlée — Sky, son fils adoptif — et fonde l'Académie de Mage des Îles Saintes, la première depuis l'arrêt total des académies. Il convainquit Yon en parlant, parlant, parlant. Sa magie druidique est fondamentalement une magie d'union : elle rassemble ce qui est séparé — contrôle de la nature, familiers élémentaires, liens de familier.",
     "details": [
      {
       "texte": "Sa vision : unir mages et non-mages — réconcilier ce que l'an 300 a brisé. Yon voit en lui « la puissance de Valène et le cœur de Divina ».",
@@ -2729,7 +2729,7 @@
       "mj": false
      },
      {
-      "texte": "Sam, sa nièce et figure maternelle, est morte en 520 lors de la chute du Cercle.",
+      "texte": "Sam, leur père adoptif, est mort en 520 lors de la chute du Cercle — fauché par le pouvoir d'Achabel.",
       "mj": false
      }
     ],
@@ -2883,12 +2883,16 @@
       "mj": false
      },
      {
-      "texte": "En 520, en perdant le contrôle lors de la chute du Cercle, il tua accidentellement Sam — sa propre fille.",
+      "texte": "En 520, en perdant le contrôle lors de la chute du Cercle, il tua accidentellement Sam — son père adoptif, celui qui l'avait élevé avec Arathak.",
       "mj": true
      },
      {
       "texte": "En 507 déjà, sa colère incontrôlée avait tué le père biologique d'Arathak (Lirael, elfe médecin).",
       "mj": true
+     },
+     {
+      "texte": "Sa fille Sam est née en 520, l'année même de la chute du Cercle.",
+      "mj": false
      },
      {
       "texte": "Vanhill est la seule partie des Îles Saintes qui sera épargnée par la Lune de Sang — hasard, protection naturelle, ou lien avec Achabel lui-même ? À développer.",
@@ -2901,13 +2905,13 @@
       "id": "sec-achabel-identite",
       "titre": "Ce qu'il ignore",
       "revele": false,
-      "texte": "Fils de Morigane, née ne l'a vu qu'une fois — la prophétie de Mary : « Tu ne pourras le voir qu'une seule fois avant son éclosion. » Confié à Divina en 520. Il ignore qui est sa mère, son lien avec la Grande Lignée, et son destin de Prophète des Ténèbres. Yon croit en la prophétie : « Arathak et Achabel libèreront le monde. » Morigane ne cherchera pas à le voir cette saison."
+      "texte": "Fils de Morigane, qui ne l'a vu qu'une fois — la prophétie de Mary : « Tu ne pourras le voir qu'une seule fois avant son éclosion. » Confié à Divina en 520. Il ignore qui est sa mère, son lien avec la Grande Lignée, et son destin de Prophète — il porte les deux noms : Prophète des Ténèbres et Prophète de la Mort. Yon croit en la prophétie : « Arathak et Achabel libèreront le monde. » Morigane ne cherchera pas à le voir cette saison."
      },
      {
       "id": "sec-achabel-sam",
-      "titre": "Sam",
+      "titre": "Sa fille",
       "revele": false,
-      "texte": "Sa fille Sam était la 3ème Ectelon — réincarnation d'Estel. Il l'a tuée de ses propres ténèbres, involontairement, en 520."
+      "texte": "Sa fille Sam est la 3ème Ectelon — la réincarnation d'Estel. Ni lui ni Manem ne le savent."
      }
     ]
    },
@@ -2925,21 +2929,24 @@
    {
     "id": "sam",
     "nom": "Sam",
-    "titre": "†",
+    "titre": "Fille d'Achabel et Manem",
     "lieux": [
      "plaines-cotieres"
     ],
     "portrait": "images/pnj/sam.jpg",
-    "description": "Fille d'Achabel et Manem. Avec son père, elle fit tomber le Cercle des Îles Saintes de l'intérieur (1 Usos 520) — et y mourut : lorsque Achabel perdit le contrôle du Voile des Damnés après avoir tué le Docteur, ses ténèbres la fauchèrent. Il ne se le pardonnera jamais.",
+    "description": "Fille d'Achabel et Manem, née en 520 — l'année même de la chute du Cercle. Elle grandit dans les plaines côtières de Vanhill, loin de tout, auprès de ses parents.",
     "origine": "Îles Saintes",
     "secrets": [
      {
       "id": "sec-sam-ectelon",
       "titre": "La 3ème Ectelon",
       "revele": false,
-      "texte": "Sam était la 3ème réincarnation d'Estel — elle ne l'a jamais su. ⚠️ Les fiches Notion divergent sur son sort (morte en 520 / vivante en 525 pour la prise d'Ectelon par Morigane) : à trancher."
+      "texte": "Sam est la 3ème réincarnation d'Estel — elle ne le sait pas, ses parents non plus. À sa mort, Morigane prendra l'Ectelon et créera Udona. Elle est aussi l'une des voies capables de briser les malédictions (Grande Prêtresse de la Lumière en devenir)."
      }
-    ]
+    ],
+    "statut": "Vivante",
+    "naissance": "520",
+    "details": []
    },
    {
     "id": "aerith-goldland",
@@ -2975,7 +2982,7 @@
     "description": "Née en 33 sur Drémora, première fille de Mary, la Grande Prêtresse de la Mort, et d'un père humain que Mary laissa mourir de vieillesse au nom des fils du Destin — une plaie qui ne se referma jamais. L'une des 7 Magistères d'Asterre, elle gouverna Drémora et fut le bras droit de Valène. Aux yeux du monde, elle est celle qui orchestra la catastrophe de l'an 300 — l'investigatrice de la liaison entre mages et démons. Maîtresse de l'Occulte et des Âmes : toutes les âmes des morts passent par elle. En 525, elle prépare le rituel de la Lune de Sang — elle veut ouvrir la Porte des Dieux.",
     "details": [
      "Les 7 Magistères : Valène (Îles Saintes, Mère), Morigane (Drémora), Kanius (Avelorn), Zazel (Nouvelle Contrée), Aldric Vorn (Ferelden), Raziel Al-Sahn (Désert Magistral), Aelindra (Forêt Infinie).",
-     "Sa fille Minvan, première Vélane, née en 260, fut enlevée en 285 par un homme masqué — aucune magie ne permit de la retrouver.",
+     "Sa fille Minvan, première Vélane, née en 260, fut enlevée en 306 par un homme masqué — aucune magie ne permit de la retrouver.",
      "En 281, elle tua Amaranthe aux côtés de Valène et arracha le cœur d'Alduin.",
      "Objets : le Qiladat al-Ruh (Collier de l'Âme) · le Kitab al-Zalam (Livre des Ténèbres)."
     ],
@@ -3123,7 +3130,7 @@
     "portrait": "images/pnj/estel.jpg",
     "description": "Vraie fille de Zork (Dieu de la Mort) et Limehahu (Déesse de la Vie), sœur de Malékit, née sur Eden. Idéaliste, volontaire, coriace : elle croyait que Samaël pouvait être plus qu'une entité de destruction — leur amour donna Yon, Mary, Wyatt et Mierka. Elle croyait aussi en Eldar, enfermé sur Eden. En tentant de libérer Lord, la partie d'Eldar emprisonnée, elle affronta son père Zork : ce combat créa la Conjonction des Sphères (an 0) — et Asterre. Mourante, elle lança le Cycle du Recommencement et devint Ectelon, la boule de lumière qui se réincarne. Samaël lui accorda 5 réincarnations avant de détruire Asterre.",
     "details": [
-     "Réincarnations d'Ectelon : 1. Valène (†505, avait compris) · 2. Dae (†520, ne l'a jamais su) · 3. Sam (vivante en 525, ne le sait pas) · 4. à venir · 5. la dernière — sa mort déclenche la destruction d'Asterre.",
+     "Réincarnations d'Ectelon : 1. Valène (†505, avait compris) · 2. Dae (†520, ne l'a jamais su) · 3. Sam, fille d'Achabel, née en 520 (vivante en 525, ne le sait pas) · 4. à venir · 5. la dernière — sa mort déclenche la destruction d'Asterre.",
      "Deux cicatrices en forme d'ailes dans le dos — arrachées par les Elfes du temps d'Aeline.",
      "L'essence d'Eldar est en elle depuis toujours : sa mana est instable, leurs magies se mélangent.",
      "⚠️ Morigane prend l'Ectelon à la mort de Sam et crée Udona avec.",
@@ -3665,7 +3672,7 @@
       "mj": true
      },
      {
-      "texte": "Althar (Orgueil) et Seryne (Envie) — les parents d'Ildris/Veralion — sont de la même lignée de Péchés. ⚠️ Les fiches Notion divergent : enfants de Valène ou de Divina ? À trancher.",
+      "texte": "Althar (Orgueil) et Seryne (Envie) — ses frère et sœur, enfants de Valène — sont les parents d'Ildris/Veralion : Divina est donc sa tante.",
       "mj": true
      }
     ],
@@ -3684,7 +3691,7 @@
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/ildris.jpg",
-    "description": "Vrai nom : Ildris. Nom de règne : Veralion. L'homme masqué. Fils d'Althar (Péché de l'Orgueil) et de Seryne (Péché de l'Envie), descendant direct de Valène. Confié à un couvent, il idéalisait Yon — qui le rejeta. Il manipula Narcise, la sœur de Morigane, et faillit faire tomber les Îles Saintes. En 285, il enleva Minvan — introuvable depuis — puis prit le trône de Harad sous le nom de Veralion, d'où il chasse les Elfes d'Arcal.",
+    "description": "Vrai nom : Ildris. Nom de règne : Veralion. L'homme masqué. Fils d'Althar (Péché de l'Orgueil) et de Seryne (Péché de l'Envie), descendant direct de Valène. Confié à un couvent, il idéalisait Yon — qui le rejeta. Il manipula Narcise, la sœur de Morigane, et faillit faire tomber les Îles Saintes. En 306, il enleva Minvan — introuvable depuis — puis prit le trône de Harad sous le nom de Veralion, d'où il chasse les Elfes d'Arcal.",
     "details": [
      {
       "texte": "Il exploite les pouvoirs de Minvan (modification structurelle) pour créer des soldats de la Grande Lignée.",
@@ -3705,12 +3712,12 @@
     "titre": "La Première Vélane",
     "origine": "Drémora",
     "race": "Descendante de la Grande Lignée",
-    "statut": "Vivante — immortelle, captive à Harad",
+    "statut": "Vivante — immortelle, captive à Harad (525)",
     "naissance": "260",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/minvan.jpg",
-    "description": "Fille de Morigane, petite-fille de Mary. Première Vélane d'Asterre — elle avait déjà des descendants Vélanes avant sa disparition. Mary avait prédit son envoi à Harad ; Morigane refusa la prophétie. En 285, l'homme masqué l'enleva : aucune magie ne permit jamais de la retrouver. Détenue à Harad depuis 240 ans, ses pouvoirs sont exploités pour engendrer des soldats de la Grande Lignée.",
+    "description": "Fille de Morigane, petite-fille de Mary. Première Vélane d'Asterre — elle avait déjà des descendants Vélanes avant sa disparition. Mary avait prédit son envoi à Harad ; Morigane refusa la prophétie. En 306, l'homme masqué l'enleva : aucune magie ne permit jamais de la retrouver. Détenue à Harad depuis 240 ans, ses pouvoirs sont exploités pour engendrer des soldats de la Grande Lignée.",
     "details": [
      {
       "texte": "Capacités : Aspiration d'Âme (Vélane) · Modification structurelle — changer la race ou la structure d'un être, rendre immortel.",
@@ -3718,6 +3725,10 @@
      },
      {
       "texte": "Son geôlier est Ildris, qui règne sur Harad sous le nom de Veralion. Morigane sait qu'elle est vivante — toutes les âmes des morts passent par elle.",
+      "mj": true
+     },
+     {
+      "texte": "⏳ À venir chronologiquement : bien plus tard, elle s'enfuira de Harad et se réfugiera dans la Forêt Infinie, aux côtés du dernier Animaï — ce n'est pas encore le cas en 525.",
       "mj": true
      }
     ],
@@ -3780,6 +3791,22 @@
       "mj": true
      }
     ],
+    "galerie": [],
+    "secrets": []
+   },
+   {
+    "id": "sam-aine",
+    "nom": "Sam (l'Ancien)",
+    "titre": "Père adoptif d'Arathak et Achabel",
+    "origine": "Îles Saintes",
+    "race": "Humain",
+    "statut": "Mort en 520 — chute du Cercle",
+    "naissance": "À définir",
+    "religion": "",
+    "lieux": [],
+    "portrait": "images/pnj/sam-aine.jpg",
+    "description": "En 507, quand Arathak perdit ses deux parents et qu'Achabel perdit le contrôle de son pouvoir, c'est Sam qui prit les deux garçons sous son aile — leur père adoptif, leur pilier. En 520, lors de la chute du Cercle des Îles Saintes, il fut fauché par le Voile des Damnés d'Achabel, qui venait de tuer le Docteur et perdait le contrôle. Achabel ne se le pardonnera jamais. Sa petite-fille de cœur, née la même année, porte son nom.",
+    "details": [],
     "galerie": [],
     "secrets": []
    }
@@ -4221,7 +4248,7 @@
       "mj": true
      },
      {
-      "texte": "Il vit dans la Forêt Infinie avec Minvan. Pourquoi vivent-ils ensemble ? Quel lien les unit ?",
+      "texte": "Le dernier Animaï vivra plus tard aux côtés de Minvan, lorsqu'elle s'enfuira de Harad — chronologiquement à venir. Quel lien les unira ?",
       "mj": true
      }
     ]
@@ -4628,7 +4655,7 @@
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "1.6",
+ "version": "1.7",
  "labels": [
   {
    "texte": "Le Passage du Silence",
