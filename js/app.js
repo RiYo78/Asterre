@@ -13,6 +13,7 @@ const S = {
   monde: null, pays: null, lieux: {}, sousLieux: {}, graphe: {},
   mj: false, vue: "carte", reveals: new Set(), masques: new Set(),
   voyage: { actif: false, etapes: [], modifs: new Set(), choix: {} },
+  seance: { pnj: [], lieu: null },
   vb: { x: 0, y: 0, w: 2000, h: 1500 }, vb0: null,
   kmParUnite: 0.22
 };
@@ -124,6 +125,7 @@ async function boot() {
   $("#titre-monde").textContent = S.monde.monde.toUpperCase();
   $("#sous-titre").textContent = S.pays.nom;
   renderCarte(); renderLegende(); construireCodex(); remplirRecherche(); brancherUI();
+  chargerSeanceHash();
   $("#chargement").remove();
 }
 
@@ -959,9 +961,98 @@ function carteBlason(f, institution) {
 function montrerVue(v) {
   S.vue = v;
   $("#codex").classList.toggle("ouvert", v === "codex");
+  $("#seance").classList.toggle("ouvert", v === "seance");
   $("#ong-carte").classList.toggle("actif", v === "carte");
   $("#ong-codex").classList.toggle("actif", v === "codex");
-  if (v === "codex") { fermerPanneau(); toggleVoyage(false); }
+  $("#ong-seance").classList.toggle("actif", v === "seance");
+  if (v !== "carte") { fermerPanneau(); toggleVoyage(false); }
+  if (v === "seance") renderSeance();
+}
+/* ── Table de Séance ── */
+function chargerSeanceHash() {
+  const h = location.hash.match(/pj=([^&]*)/), l = location.hash.match(/lieu=([^&]*)/);
+  if (h) S.seance.pnj = decodeURIComponent(h[1]).split(",").filter(id => pnj(id)).slice(0, 6);
+  if (l) { const id = decodeURIComponent(l[1]); if (S.lieux[id]) S.seance.lieu = id; }
+  if (h || l) montrerVue("seance");
+}
+function majHashSeance() {
+  const parts = [];
+  if (S.seance.pnj.length) parts.push("pj=" + S.seance.pnj.join(","));
+  if (S.seance.lieu) parts.push("lieu=" + S.seance.lieu);
+  history.replaceState(null, "", parts.length ? "#" + parts.join("&") : location.pathname + location.search);
+}
+function carteSeance(id) {
+  const pn = pnj(id); if (!pn) return "";
+  const vFiche = visib("pnj-" + pn.id, !pn.mjOnly);
+  if (!vFiche && !S.mj) return `<div class="carte-seance"><div class="cs-infos"><h4>❔ Personnage inconnu</h4><p class="fell">Les joueurs ne connaissent pas encore cette personne.</p></div></div>`;
+  const vDesc = visib("desc-pnj-" + pn.id, true);
+  const meta = [["Origine", pn.origine], ["Race", pn.race], ["Statut", pn.statut]].filter(x => x[1]);
+  const dets = (pn.details || []).map((d, i) => ({ d: typeof d === "string" ? { texte: d } : d, i }))
+    .filter(x => S.mj || visib(`det-${pn.id}-${x.i}`, !x.d.mj));
+  return `<div class="carte-seance ${vFiche ? "" : "bete-mj"}">
+    <button class="cs-retirer" data-ret="${esc(pn.id)}" title="Retirer" aria-label="Retirer ${esc(pn.nom)}">✕</button>
+    <div class="cs-portrait"><img src="${esc(pn.portrait)}" alt="" loading="lazy"
+      onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Portrait à venir',className:'cs-vide'}))"></div>
+    <div class="cs-infos">
+      <h4>${vFiche ? "" : "🔒 "}${esc(pn.nom)}</h4>
+      <small class="fell">${esc(pn.titre || "")}</small>
+      ${meta.length ? `<div class="cs-meta">${meta.map(m => `<span><b>${m[0]}</b> ${esc(m[1])}</span>`).join("")}</div>` : ""}
+      ${(vDesc || S.mj) ? `<p class="${vDesc ? "" : "pt-cache"}">${esc(pn.description)}</p>` : ""}
+      ${dets.length ? `<ul class="tensions">${dets.map(x => `<li class="${(S.masques.has(`det-${pn.id}-${x.i}`) ? false : (S.reveals.has(`det-${pn.id}-${x.i}`) ? true : !x.d.mj)) ? "" : "pt-cache"}">${esc(x.d.texte)}</li>`).join("")}</ul>` : ""}
+      <button class="chip" data-fiche="${esc(pn.id)}">Fiche complète →</button>
+    </div></div>`;
+}
+function renderSeance() {
+  const c = $("#seance-contenu"), sel = S.seance;
+  let html = `<h2>Table de Séance</h2><div class="filet"></div>
+    <div class="seance-outils">
+      <input id="aj-pnj" list="pnj-datalist" placeholder="+ Ajouter un personnage (max 6)…" autocomplete="off">
+      <datalist id="pnj-datalist">${S.pays.codex.personnages.filter(p => S.mj || visib("pnj-" + p.id, !p.mjOnly)).map(p => `<option value="${esc(p.nom)}">`).join("")}</datalist>
+      <input id="aj-lieu-s" list="lieux-datalist" placeholder="📍 Lieu de la scène…" autocomplete="off">
+      <button class="btn" id="copier-scene">🔗 Copier le lien de la scène</button>
+      <button class="btn" id="vider-scene">Vider</button>
+    </div>`;
+  if (sel.lieu && S.lieux[sel.lieu]) {
+    const l = S.lieux[sel.lieu];
+    const vD = visib("desc-lieu-" + l.id, true);
+    html += `<div class="scene-lieu">
+      ${imgHTML((l.images || [])[0] || `images/lieux/${l.id}/principale.jpg`, l.nom)}
+      <div><span class="badge-type">${NOMS_TYPES[l.type] || l.type}</span>
+      <h3 style="border:none;text-transform:none;font-size:22px;margin:4px 0">${esc(l.nom)}</h3>
+      <div class="accroche">${esc(l.accroche)}</div>
+      ${(vD || S.mj) ? `<p class="${vD ? "" : "pt-cache"}">${esc(l.description)}</p>` : ""}
+      <button class="chip" data-lieu-s="${esc(l.id)}">Fiche du lieu →</button></div>
+    </div>`;
+  }
+  html += `<div class="grille-seance">` + sel.pnj.map(carteSeance).join("") + `</div>`;
+  if (!sel.pnj.length && !sel.lieu) html += `<p class="fell" style="max-width:640px">Composez votre scène : choisissez jusqu'à six personnages et un lieu, puis partagez le lien à vos joueurs — ils verront exactement ce que vous avez rendu visible.</p>`;
+  c.innerHTML = html;
+  c.querySelector("#aj-pnj").addEventListener("change", e => {
+    const v = e.target.value.trim().toLowerCase();
+    const p = S.pays.codex.personnages.find(x => x.nom.toLowerCase() === v) || S.pays.codex.personnages.find(x => x.nom.toLowerCase().includes(v));
+    if (!p) return toast("Personnage introuvable.");
+    if (S.seance.pnj.includes(p.id)) return toast("Déjà sur la table.");
+    if (S.seance.pnj.length >= 6) return toast("Six personnages maximum — retirez-en un d'abord.");
+    S.seance.pnj.push(p.id); majHashSeance(); renderSeance();
+  });
+  c.querySelector("#aj-lieu-s").addEventListener("change", e => {
+    const v = e.target.value.trim().toLowerCase();
+    const l = S.pays.lieux.find(x => x.nom.toLowerCase() === v) || S.pays.lieux.find(x => x.nom.toLowerCase().includes(v));
+    if (!l) return toast("Lieu introuvable.");
+    S.seance.lieu = l.id; majHashSeance(); renderSeance();
+  });
+  c.querySelector("#copier-scene").addEventListener("click", () => {
+    majHashSeance();
+    (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(
+      () => toast("Lien de la scène copié — envoyez-le à vos joueurs."),
+      () => prompt("Copiez ce lien :", location.href));
+  });
+  c.querySelector("#vider-scene").addEventListener("click", () => { S.seance = { pnj: [], lieu: null }; majHashSeance(); renderSeance(); });
+  c.querySelectorAll("[data-ret]").forEach(b => b.addEventListener("click", () => {
+    S.seance.pnj = S.seance.pnj.filter(x => x !== b.dataset.ret); majHashSeance(); renderSeance();
+  }));
+  c.querySelectorAll("[data-fiche]").forEach(b => b.addEventListener("click", () => ouvrirPnj(b.dataset.fiche)));
+  c.querySelectorAll("[data-lieu-s]").forEach(b => b.addEventListener("click", () => ouvrirLieu(b.dataset["lieuS"])));
 }
 function majBoutonMJ() {
   $("#btn-mj").classList.toggle("actif", S.mj);
@@ -1029,6 +1120,7 @@ function remplirRecherche() {
 function brancherUI() {
   $("#ong-carte").addEventListener("click", () => montrerVue("carte"));
   $("#ong-codex").addEventListener("click", () => montrerVue("codex"));
+  $("#ong-seance").addEventListener("click", () => montrerVue("seance"));
   $("#btn-voyage").addEventListener("click", () => { montrerVue("carte"); toggleVoyage(); });
   $("#btn-mj").addEventListener("click", toggleMJ);
   $("#z-plus").addEventListener("click", () => zoomer(.72));
