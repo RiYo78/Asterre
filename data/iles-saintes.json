@@ -2986,7 +2986,10 @@
      "En 281, elle tua Amaranthe aux côtés de Valène et arracha le cœur d'Alduin.",
      "Objets : le Qiladat al-Ruh (Collier de l'Âme) · le Kitab al-Zalam (Livre des Ténèbres)."
     ],
-    "galerie": [],
+    "galerie": [
+     "images/pnj/morigane-destruction.jpg",
+     "images/pnj/morigane-achabel.jpg"
+    ],
     "secrets": [
      {
       "id": "sec-morigane-300",
