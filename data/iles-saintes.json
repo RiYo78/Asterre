@@ -2591,7 +2591,21 @@
     ],
     "portrait": "images/pnj/yon.jpg",
     "description": "Autorité suprême de l'Église, dirige la Garde Sainte. Devenu Archange en 525 après avoir cédé le rôle de Grand Prêtre à sa fille Yumi. Il vient de retrouver son immortalité (rendue par Mei via une Pierre de Rosette) et traverse une période de fragilité. Certains considèrent qu'il est le vrai souverain des Îles Saintes.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "affiliations": [
+     {
+      "groupe": "La Grande Lignée",
+      "gid": "grande-lignee-g",
+      "rang": "Archange · doyen",
+      "mj": false
+     },
+     {
+      "groupe": "L'Église de la Vie (de la Lumière)",
+      "gid": "eglise-lumiere",
+      "rang": "Archange (chef spirituel)",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "yumi",
@@ -2602,7 +2616,21 @@
     ],
     "portrait": "images/pnj/yumi.jpg",
     "description": "Fille de Yon. Tête opérationnelle de l'Église depuis 525 — c'est elle qui la porte pleinement pendant la transition. C'est sur son conseil que Yon a conclu l'accord avec Arathak en 520. Elle ignore ce que contient le niveau interdit des Archives.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "affiliations": [
+     {
+      "groupe": "La Grande Lignée",
+      "gid": "grande-lignee-g",
+      "rang": "Prophète de la Lumière",
+      "mj": false
+     },
+     {
+      "groupe": "L'Église de la Vie (de la Lumière)",
+      "gid": "eglise-lumiere",
+      "rang": "Grande Prêtresse (depuis 525)",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "stanislas",
@@ -2647,7 +2675,15 @@
     ],
     "portrait": "images/pnj/arthur-sauvage.jpg",
     "description": "Chef de la Garde Sainte — officiellement déclaré mort, puis nommé Chef Paladin en remplacement de Samus Wines. Pourquoi fut-il déclaré mort ? Ancien commandement au QG des Paladins de Roncedroite.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "affiliations": [
+     {
+      "groupe": "L'Église de la Vie (de la Lumière)",
+      "gid": "eglise-lumiere",
+      "rang": "Chef Paladin (Garde Sainte)",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "reyna-sauvage",
@@ -2659,7 +2695,15 @@
     ],
     "portrait": "images/pnj/reyna-sauvage.jpg",
     "description": "Fille d'Arthur. A combattu Pride, démon de l'Orgueil, aux côtés de Mei, Sky et Ark lors de la destruction de Préfet (524).",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "affiliations": [
+     {
+      "groupe": "L'Église de la Vie (de la Lumière)",
+      "gid": "eglise-lumiere",
+      "rang": "Paladine · fille d'Arthur",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "allen-sauvage",
@@ -2681,7 +2725,15 @@
     ],
     "portrait": "images/pnj/cullen.jpg",
     "description": "Dirige la traque des mages corrompus. Il a rencontré Adelia dans le Dôme d'Entraînement de l'Académie — un mois en temps réel.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "affiliations": [
+     {
+      "groupe": "L'Église de la Vie (de la Lumière)",
+      "gid": "eglise-lumiere",
+      "rang": "Chef Templier (Inquisition)",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "clyctus-elden",
@@ -2692,7 +2744,15 @@
     ],
     "portrait": "images/pnj/clyctus-elden.jpg",
     "description": "Sa race fut décimée sur ordre de Yon après la Guerre des Colmores — mais tous ne périrent pas. Les survivants se cachent. Lui a choisi de servir : il sait que les Elfes Purs ont cherché la guerre, et il œuvre pour la paix.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "affiliations": [
+     {
+      "groupe": "L'Église de la Vie (de la Lumière)",
+      "gid": "eglise-lumiere",
+      "rang": "Paladin · Elfe Pur de Glace",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "berthold",
@@ -2795,7 +2855,15 @@
     ],
     "portrait": "images/pnj/narcise.jpg",
     "description": "Elle n'enseigne pas, mais a offert à l'Académie le Dôme d'Entraînement : un jour dehors = trois jours dedans.",
-    "origine": "Drémora"
+    "origine": "Drémora",
+    "affiliations": [
+     {
+      "groupe": "La Grande Lignée",
+      "gid": "grande-lignee-g",
+      "rang": "le Cycle de la Mort",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "araignee",
@@ -2913,6 +2981,14 @@
       "revele": false,
       "texte": "Sa fille Sam est la 3ème Ectelon — la réincarnation d'Estel. Ni lui ni Manem ne le savent."
      }
+    ],
+    "affiliations": [
+     {
+      "groupe": "La Grande Lignée",
+      "gid": "grande-lignee-g",
+      "rang": "Prophète des Ténèbres et de la Mort",
+      "mj": false
+     }
     ]
    },
    {
@@ -2966,7 +3042,15 @@
     "lieux": [],
     "portrait": "images/pnj/kanius.jpg",
     "description": "Revenu du monde des Démons, il mène le camp des mages renégats et cherche vengeance contre les Cercles. Il attaqua Roncedroite et l'Académie en 521. La Guerre des Magistères s'est achevée en 525.",
-    "origine": "Avelorn (Continent)"
+    "origine": "Avelorn (Continent)",
+    "affiliations": [
+     {
+      "groupe": "Les 7 Magistères",
+      "gid": "sept-magisteres",
+      "rang": "Avelorn",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "morigane",
@@ -3020,6 +3104,20 @@
       "titre": "Le vrai but",
       "revele": false,
       "texte": "Elle veut accéder au monde d'Eden pour tuer les faux dieux et briser le cycle du Destin — promesse faite à sa grand-mère Estel. Pouvoirs divins : Destruction de l'Âme (mort absolue), Absorption Divine (acquiert les traits et pouvoirs raciaux de l'âme absorbée), Réincarnation des Âmes. À la mort de Sam, elle prendra l'Ectelon et créera Udona."
+     }
+    ],
+    "affiliations": [
+     {
+      "groupe": "La Grande Lignée",
+      "gid": "grande-lignee-g",
+      "rang": "Ancienne Magistère de Drémora",
+      "mj": false
+     },
+     {
+      "groupe": "Les 7 Magistères",
+      "gid": "sept-magisteres",
+      "rang": "Drémora",
+      "mj": false
      }
     ]
    },
@@ -3079,6 +3177,14 @@
       "revele": false,
       "texte": "Ce qui arrivera à Adelia si Morigane force Ctululu reste à déterminer — résistance ou résignation ?"
      }
+    ],
+    "affiliations": [
+     {
+      "groupe": "Les Héritiers",
+      "gid": "heritiers",
+      "rang": "Héritière de l'Eau",
+      "mj": false
+     }
     ]
    },
    {
@@ -3118,7 +3224,15 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": [
+     {
+      "groupe": "Les Cinq Invoqués",
+      "gid": "cinq-invoques",
+      "rang": "la Guérisseuse",
+      "mj": true
+     }
+    ]
    },
    {
     "id": "estel",
@@ -3184,7 +3298,15 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": [
+     {
+      "groupe": "Les Cinq Invoqués",
+      "gid": "cinq-invoques",
+      "rang": "la Noble Déchue",
+      "mj": true
+     }
+    ]
    },
    {
     "id": "katlyn",
@@ -3237,7 +3359,15 @@
      "images/pnj/kharzeth-garou.jpg"
     ],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": [
+     {
+      "groupe": "Les Cinq Invoqués",
+      "gid": "cinq-invoques",
+      "rang": "le Chef de guerre Garou",
+      "mj": true
+     }
+    ]
    },
    {
     "id": "livai",
@@ -3263,6 +3393,14 @@
       "titre": "Le charme et la lame",
       "revele": false,
       "texte": "Sa nature sociopathe et son plaisir à tuer ne se voient pas au premier abord — il reste charmant. Rôle cette saison : bras droit de Morigane, actif dans le rituel de la Lune de Sang."
+     }
+    ],
+    "affiliations": [
+     {
+      "groupe": "La Fratrie de Lituania",
+      "gid": "fratrie-lituania",
+      "rang": "aîné · bras droit de Morigane",
+      "mj": false
      }
     ]
    },
@@ -3323,6 +3461,14 @@
       "titre": "Prescience Éternelle",
       "revele": false,
       "texte": "Elle voit le destin complet de chaque membre de la Grande Lignée dès sa naissance. Elle sait ce qui attend chacun de ses enfants — et ne dit pas tout."
+     }
+    ],
+    "affiliations": [
+     {
+      "groupe": "La Grande Lignée",
+      "gid": "grande-lignee-g",
+      "rang": "Grande Prêtresse de la Mort",
+      "mj": false
      }
     ]
    },
@@ -3415,6 +3561,20 @@
       "titre": "Le collier d'Achnologia",
       "revele": false,
       "texte": "Le collier peut-il être descellé ? Et le pardon à Galwyn — possible, ou rupture définitive ?"
+     }
+    ],
+    "affiliations": [
+     {
+      "groupe": "Les Héritiers",
+      "gid": "heritiers",
+      "rang": "Héritière du Feu (Achnologia, scellé)",
+      "mj": false
+     },
+     {
+      "groupe": "Les Scoïatels d'Eredin",
+      "gid": "scoiatels",
+      "rang": "membre",
+      "mj": false
      }
     ]
    },
@@ -3534,7 +3694,15 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": [
+     {
+      "groupe": "Les 5 Originaux",
+      "gid": "originaux",
+      "rang": "le Loup — Hybride Vampire-Garou",
+      "mj": true
+     }
+    ]
    },
    {
     "id": "valene",
@@ -3604,7 +3772,15 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": [
+     {
+      "groupe": "Les Cinq Invoqués",
+      "gid": "cinq-invoques",
+      "rang": "le Roi-Mage de Cendrelune",
+      "mj": true
+     }
+    ]
    },
    {
     "id": "wyatt",
@@ -3651,7 +3827,15 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": [
+     {
+      "groupe": "Les Cinq Invoqués",
+      "gid": "cinq-invoques",
+      "rang": "le Prêtre Hérétique",
+      "mj": true
+     }
+    ]
    },
    {
     "id": "divina",
@@ -3707,7 +3891,15 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": [
+     {
+      "groupe": "La Grande Lignée",
+      "gid": "grande-lignee-g",
+      "rang": "branche déchue (Harad)",
+      "mj": true
+     }
+    ]
    },
    {
     "id": "minvan",
@@ -3737,7 +3929,15 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": [
+     {
+      "groupe": "La Grande Lignée",
+      "gid": "grande-lignee-g",
+      "rang": "1ère Vélane",
+      "mj": true
+     }
+    ]
    },
    {
     "id": "selina",
@@ -3770,7 +3970,15 @@
      }
     ],
     "galerie": [],
-    "secrets": []
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "La Fratrie de Lituania",
+      "gid": "fratrie-lituania",
+      "rang": "benjamine",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "talia",
@@ -3795,7 +4003,15 @@
      }
     ],
     "galerie": [],
-    "secrets": []
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "La Fratrie de Lituania",
+      "gid": "fratrie-lituania",
+      "rang": "cadette",
+      "mj": false
+     }
+    ]
    },
    {
     "id": "sam-aine",
@@ -4654,11 +4870,524 @@
      }
     ]
    }
+  ],
+  "lignees": [
+   {
+    "id": "grande-lignee",
+    "nom": "La Grande Lignée",
+    "icone": "🌑",
+    "resume": "Les descendants de Zork (Mort) et Limehahu (Vie), par Estel et Samaël. La lignée la plus puissante et la plus tragique d'Asterre — elle porte le poids du Destin.",
+    "racine": {
+     "nom": "Zork ✕ Limehahu",
+     "note": "Dieu de la Mort ✕ Déesse de la Vie",
+     "enfants": [
+      {
+       "nom": "Estel ✕ Samaël",
+       "note": "rencontrés avant la Conjonction",
+       "enfants": [
+        {
+         "nom": "Yon",
+         "ref": "yon",
+         "note": "Archange · ✕ Elfia (†505)",
+         "enfants": [
+          {
+           "nom": "Valène",
+           "note": "†505, tuée par Lord",
+           "enfants": [
+            {
+             "nom": "Les 7 Péchés",
+             "ref": "sept-peches",
+             "note": "Althar, Seryne, Raziel, Divina, Lethys, Vorath, Aurel"
+            }
+           ]
+          },
+          {
+           "nom": "Yumi",
+           "ref": "yumi",
+           "note": "Prophète de la Lumière → Grande Prêtresse (525)"
+          },
+          {
+           "nom": "Dae",
+           "note": "née 505 · 2ème Ectelon (réincarnation d'Estel)"
+          }
+         ]
+        },
+        {
+         "nom": "Mary",
+         "ref": "mary",
+         "note": "jumelle de Yon · Grande Prêtresse de la Mort",
+         "enfants": [
+          {
+           "nom": "Morigane ✕ Richard",
+           "ref": "morigane",
+           "note": "née 33 · époux humain rendu immortel",
+           "enfants": [
+            {
+             "nom": "Rael",
+             "note": "la Mémoire (faux jumeau)"
+            },
+            {
+             "nom": "Raena",
+             "note": "l'Oubli (faux jumelle)"
+            },
+            {
+             "nom": "Arkos",
+             "note": "le Faucheur"
+            },
+            {
+             "nom": "Narcise",
+             "ref": "narcise",
+             "note": "le Cycle · cadette"
+            },
+            {
+             "nom": "Minvan",
+             "ref": "minvan",
+             "note": "née 260, enlevée 306 · 1ère Vélane",
+             "enfants": [
+              {
+               "nom": "les Vélanes",
+               "note": "ses descendants"
+              }
+             ]
+            },
+            {
+             "nom": "Achabel",
+             "ref": "achabel",
+             "note": "né 500 · Prophète des Ténèbres et de la Mort · ✕ Manem",
+             "enfants": [
+              {
+               "nom": "Sam",
+               "ref": "sam",
+               "note": "née 520 · 3ème Ectelon (secret)"
+              }
+             ]
+            },
+            {
+             "nom": "Udona",
+             "note": "à naître · fille de Morigane + Ectelon"
+            }
+           ]
+          },
+          {
+           "nom": "Rael · Raena · Arkos · Narcise",
+           "note": "préceptes de la Mort (fratrie de Morigane)"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "id": "peches",
+    "nom": "Les 7 Enfants de Valène — les 7 Péchés",
+    "icone": "😈",
+    "resume": "Les sept enfants de Valène (et d'Alexius, l'elfe aveugle), chacun devenu l'incarnation d'un Péché capital après la chute de leur mère. Deux d'entre eux engendrèrent Ildris/Veralion.",
+    "racine": {
+     "nom": "Valène ✕ Alexius",
+     "note": "Magistère Mère †505 ✕ elfe aveugle disparu",
+     "enfants": [
+      {
+       "nom": "Althar",
+       "note": "Péché de l'Orgueil",
+       "enfants": [
+        {
+         "nom": "Ildris / Veralion",
+         "ref": "ildris",
+         "note": "avec Seryne · le Roi masqué de Harad"
+        }
+       ]
+      },
+      {
+       "nom": "Seryne",
+       "note": "Péché de l'Envie · co-parent d'Ildris"
+      },
+      {
+       "nom": "Raziel",
+       "note": "Péché (à préciser) · Magistère du Désert ?"
+      },
+      {
+       "nom": "Divina",
+       "ref": "divina",
+       "note": "Péché de la Luxure (507) · mère d'Arathak",
+       "enfants": [
+        {
+         "nom": "Arathak",
+         "ref": "arathak",
+         "note": "avec Lirael · Fondateur de l'Académie"
+        }
+       ]
+      },
+      {
+       "nom": "Lethys",
+       "note": "Péché (à préciser)"
+      },
+      {
+       "nom": "Vorath",
+       "note": "Péché (à préciser)"
+      },
+      {
+       "nom": "Aurel",
+       "note": "Péché (à préciser)"
+      }
+     ]
+    }
+   },
+   {
+    "id": "nei",
+    "nom": "La Famille Nei",
+    "icone": "🔥",
+    "resume": "Une lignée métissée elfe-dragonienne, brisée par la nuit de l'an 300. Miwa, Héritière du Feu, en est la dernière porteuse debout.",
+    "racine": {
+     "nom": "Daenerys",
+     "note": "Dragonienne †, tuée par son frère Alduin",
+     "enfants": [
+      {
+       "nom": "Alice ✕ Galwyn",
+       "note": "Demi-Dragonienne (médecin) ✕ Galwyn (Elfe, mage de Feu)",
+       "ref": "galwyn-nei",
+       "enfants": [
+        {
+         "nom": "Miwa Nei",
+         "ref": "miwa",
+         "note": "née 270 · Héritière du Feu (Achnologia scellé)"
+        },
+        {
+         "nom": "Katlyn",
+         "ref": "katlyn",
+         "note": "†300, tuée par Galwyn à sa demande · ramenée par Morigane en 525"
+        }
+       ]
+      },
+      {
+       "nom": "Alduin",
+       "note": "Dragonien · grand-oncle · a perdu son dragon Valdruin"
+      }
+     ]
+    }
+   },
+   {
+    "id": "lituania",
+    "nom": "La Fratrie de Lituania",
+    "icone": "🩸",
+    "resume": "Trois frère et sœurs de Lituania, croyants de l'Église du Feu. Livai, l'aîné, est le bras droit de Morigane cette saison.",
+    "racine": {
+     "nom": "Fratrie de Lituania",
+     "note": "humains · Église du Feu",
+     "enfants": [
+      {
+       "nom": "Livai",
+       "ref": "livai",
+       "note": "aîné · bras droit de Morigane · fragment du masque d'Akuma"
+      },
+      {
+       "nom": "Talia",
+       "ref": "talia",
+       "note": "cadette · extraction d'aiguilles"
+      },
+      {
+       "nom": "Selina",
+       "ref": "selina",
+       "note": "benjamine · mage de sang · Rituel du Phœnix · ✕ Sky"
+      }
+     ]
+    }
+   }
+  ],
+  "groupes": [
+   {
+    "id": "grande-lignee-g",
+    "nom": "La Grande Lignée",
+    "icone": "🌑",
+    "type": "Lignée divine",
+    "resume": "Les descendants directs de Zork et Limehahu. Immortels ou quasi, porteurs de pouvoirs divins. Le sang le plus convoité et le plus maudit d'Asterre.",
+    "membres": [
+     {
+      "ref": "yon",
+      "nom": "Yon",
+      "rang": "Archange · doyen"
+     },
+     {
+      "ref": "mary",
+      "nom": "Mary",
+      "rang": "Grande Prêtresse de la Mort"
+     },
+     {
+      "ref": "morigane",
+      "nom": "Morigane",
+      "rang": "Ancienne Magistère de Drémora"
+     },
+     {
+      "ref": "narcise",
+      "nom": "Narcise",
+      "rang": "le Cycle de la Mort"
+     },
+     {
+      "ref": "achabel",
+      "nom": "Achabel",
+      "rang": "Prophète des Ténèbres et de la Mort"
+     },
+     {
+      "ref": "yumi",
+      "nom": "Yumi",
+      "rang": "Prophète de la Lumière"
+     },
+     {
+      "ref": "minvan",
+      "nom": "Minvan",
+      "rang": "1ère Vélane",
+      "mj": true
+     },
+     {
+      "ref": "ildris",
+      "nom": "Ildris / Veralion",
+      "rang": "branche déchue (Harad)",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "eglise-lumiere",
+    "nom": "L'Église de la Vie (de la Lumière)",
+    "icone": "✨",
+    "type": "Institution religieuse",
+    "resume": "Religion d'État des Îles Saintes, vouée à Limehahu. Elle protège la Vie, enferme les mages, et cache de lourds secrets. Membre fondateur de l'Union Blanche (6 royaumes). Chiffre sacré : 7.",
+    "membres": [
+     {
+      "ref": "yon",
+      "nom": "Yon",
+      "rang": "Archange (chef spirituel)"
+     },
+     {
+      "ref": "yumi",
+      "nom": "Yumi",
+      "rang": "Grande Prêtresse (depuis 525)"
+     },
+     {
+      "ref": "arthur-sauvage",
+      "nom": "Arthur Sauvage",
+      "rang": "Chef Paladin (Garde Sainte)"
+     },
+     {
+      "ref": "reyna-sauvage",
+      "nom": "Reyna Sauvage",
+      "rang": "Paladine · fille d'Arthur"
+     },
+     {
+      "ref": "clyctus-elden",
+      "nom": "Clyctus Elden",
+      "rang": "Paladin · Elfe Pur de Glace"
+     },
+     {
+      "nom": "Darian Angerac",
+      "rang": "Paladin"
+     },
+     {
+      "nom": "Ewart Langley",
+      "rang": "Paladin"
+     },
+     {
+      "nom": "Firos Polidras",
+      "rang": "Paladin"
+     },
+     {
+      "nom": "Harol Zylfir",
+      "rang": "Paladin (Elfe)"
+     },
+     {
+      "ref": "cullen",
+      "nom": "Cullen",
+      "rang": "Chef Templier (Inquisition)"
+     }
+    ],
+    "details": [
+     {
+      "texte": "Hiérarchie : Archange → Grande Prêtresse → Clergé (4 Prêtres : Souffle, Lien, Baume, Passage) + Mains Blanches (bénévoles) ; Garde Sainte → Chef Paladin → 7 Paladins → Inquisiteurs → Chef Templier → Templiers.",
+      "mj": false
+     },
+     {
+      "texte": "Union Blanche : Îles Saintes (siège), Avelorn, Ferelden, Cintra, Aloy, Harad. Taxes collectées par la famille Aurélion.",
+      "mj": false
+     },
+     {
+      "texte": "Magie du Sang = peine capitale · Soufre alchimique = Geôles Blanches · système de phylactères pour localiser tout mage.",
+      "mj": false
+     },
+     {
+      "texte": "Niveau interdit des Archives (accès Yon seul) : les vrais rapports des Cercles et la vérité sur l'an 300 (Valène voulait la Porte des Dieux). Yon savait, il n'a rien fait.",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "sept-magisteres",
+    "nom": "Les 7 Magistères",
+    "icone": "🔮",
+    "type": "Ordre de mages",
+    "resume": "Les sept plus grandes praticiennes de magie de leur époque, chacune gouvernant une région d'Asterre. L'ordre a implosé lors de la Guerre des Magistères (520-525).",
+    "membres": [
+     {
+      "nom": "Valène",
+      "rang": "Îles Saintes — Magistère Mère"
+     },
+     {
+      "ref": "morigane",
+      "nom": "Morigane",
+      "rang": "Drémora"
+     },
+     {
+      "ref": "kanius",
+      "nom": "Kanius",
+      "rang": "Avelorn"
+     },
+     {
+      "nom": "Zazel",
+      "rang": "Nouvelle Contrée · la traîtresse",
+      "mj": true
+     },
+     {
+      "nom": "Aldric Vorn",
+      "rang": "Ferelden"
+     },
+     {
+      "nom": "Raziel Al-Sahn",
+      "rang": "Désert Magistral"
+     },
+     {
+      "nom": "Aelindra",
+      "rang": "Forêt Infinie (aussi l'une des Fées)"
+     }
+    ]
+   },
+   {
+    "id": "heritiers",
+    "nom": "Les Héritiers",
+    "icone": "⭐",
+    "type": "Porteurs de Primordiaux",
+    "resume": "Les porteurs des Primordiaux — des entités élémentaires d'une puissance colossale. Maîtres d'office. Quatre en vie à tout moment.",
+    "membres": [
+     {
+      "ref": "miwa",
+      "nom": "Miwa Nei",
+      "rang": "Héritière du Feu (Achnologia, scellé)"
+     },
+     {
+      "ref": "adelia",
+      "nom": "Adelia",
+      "rang": "Héritière de l'Eau"
+     }
+    ]
+   },
+   {
+    "id": "scoiatels",
+    "nom": "Les Scoïatels d'Eredin",
+    "icone": "🏹",
+    "type": "Groupe armé",
+    "resume": "Un groupe que Miwa Nei a rejoint après sa libération des Cercles. Détails à développer.",
+    "membres": [
+     {
+      "ref": "miwa",
+      "nom": "Miwa Nei",
+      "rang": "membre"
+     }
+    ]
+   },
+   {
+    "id": "cinq-invoques",
+    "nom": "Les Cinq Invoqués",
+    "icone": "🩸",
+    "type": "Mages de sang ressuscités",
+    "mj": true,
+    "resume": "Cinq mages de sang du passé, ramenés par Morigane grâce au sacrifice de Valdruin à Sit Sanguinis, pour le rituel de la Lune de Sang.",
+    "membres": [
+     {
+      "ref": "voss-adrenneth",
+      "nom": "Voss Adrenneth",
+      "rang": "le Roi-Mage de Cendrelune"
+     },
+     {
+      "ref": "ysengrin",
+      "nom": "Ysengrin Pâle",
+      "rang": "le Prêtre Hérétique"
+     },
+     {
+      "ref": "dahlia-verkant",
+      "nom": "Dahlia Verkant",
+      "rang": "la Guérisseuse"
+     },
+     {
+      "ref": "kharzeth",
+      "nom": "Kharzeth",
+      "rang": "le Chef de guerre Garou"
+     },
+     {
+      "ref": "iseult-morne",
+      "nom": "Iseult Morne",
+      "rang": "la Noble Déchue"
+     }
+    ]
+   },
+   {
+    "id": "originaux",
+    "nom": "Les 5 Originaux",
+    "icone": "🦇",
+    "type": "Souches vampiriques",
+    "mj": true,
+    "resume": "Les cinq premiers vampires, nés de la Main de Sang de Sylas. Souches de toutes les lignées vampiriques. Ne peuvent être tués que par un autre Originel.",
+    "membres": [
+     {
+      "ref": "sylas",
+      "nom": "Sylas",
+      "rang": "le Loup — Hybride Vampire-Garou"
+     },
+     {
+      "nom": "Samuel",
+      "rang": "la Flamme — feu violet"
+     },
+     {
+      "nom": "Elsuve",
+      "rang": "les Lèvres — séduction"
+     },
+     {
+      "nom": "Alec",
+      "rang": "l'Ombre"
+     },
+     {
+      "nom": "Tortho",
+      "rang": "la Croix — résistance absolue (aussi Cavalier)"
+     }
+    ]
+   },
+   {
+    "id": "fratrie-lituania",
+    "nom": "La Fratrie de Lituania",
+    "icone": "🔥",
+    "type": "Fratrie",
+    "resume": "Livai, Talia et Selina — trois croyants de l'Église du Feu venus de Lituania. Livai sert Morigane cette saison.",
+    "membres": [
+     {
+      "ref": "livai",
+      "nom": "Livai",
+      "rang": "aîné · bras droit de Morigane"
+     },
+     {
+      "ref": "talia",
+      "nom": "Talia",
+      "rang": "cadette"
+     },
+     {
+      "ref": "selina",
+      "nom": "Selina",
+      "rang": "benjamine"
+     }
+    ]
+   }
   ]
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "1.7",
+ "version": "1.8",
  "labels": [
   {
    "texte": "Le Passage du Silence",
