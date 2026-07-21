@@ -521,3 +521,38 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 .alch-mod span { font-size: 13px; color: var(--encre-2); }
 .alch-mod b { font-family: "Cinzel", serif; font-size: 13px; }
 @media (max-width: 640px) { .alch-grille { grid-template-columns: 1fr; } }
+
+/* ── Lignées & Groupes ── */
+#lignees { position: fixed; inset: 0; z-index: 20; display: none; overflow: hidden; padding-top: 58px;
+  background: radial-gradient(1200px 700px at 65% -10%, rgba(255,250,232,.6), transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0 90px, rgba(92,75,52,.045) 90px 91px), var(--parchemin); }
+#lignees.ouvert { display: flex; }
+#lignees .contenu { flex: 1; overflow-y: auto; padding: 26px 4vw 80px; }
+.lig-switch { display: flex; gap: 8px; margin-bottom: 20px; }
+.lig-switch button { font-family: "Cinzel", serif; font-size: 13px; padding: 8px 16px; cursor: pointer;
+  background: rgba(255,252,240,.6); border: 1px solid var(--encre-3); border-radius: 4px; color: var(--encre-2); }
+.lig-switch button.actif { border-color: var(--or); color: var(--encre); background: rgba(217,180,92,.15); }
+.lig-arbre { margin-bottom: 30px; }
+.arbre { overflow-x: auto; padding: 8px 0; }
+.arbre-branche { display: flex; flex-direction: column; }
+.arbre-noeud { display: inline-flex; flex-direction: column; padding: 7px 12px; margin: 4px 0;
+  background: rgba(255,252,240,.7); border: 1px solid var(--encre-3); border-left: 3px solid var(--or); border-radius: 3px; align-self: flex-start; }
+.arbre-noeud b { font-family: "Cinzel", serif; font-size: 13.5px; color: var(--encre); }
+.arbre-noeud small { font-size: 12px; color: var(--encre-2); }
+.arbre-cliq { cursor: pointer; transition: all .15s; }
+.arbre-cliq:hover { border-left-color: var(--sang); background: rgba(217,180,92,.15); }
+.arbre-enfants { margin-left: 26px; padding-left: 16px; border-left: 2px dotted var(--encre-3); }
+.grille-groupes { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.carte-groupe { display: flex; align-items: center; gap: 12px; padding: 14px 16px; cursor: pointer;
+  background: rgba(255,252,240,.6); border: 1px solid var(--encre-3); border-radius: 4px; transition: all .15s; }
+.carte-groupe:hover { border-color: var(--or); transform: translateY(-1px); }
+.carte-groupe.grp-mj { outline: 2px dashed var(--sang); outline-offset: -2px; }
+.grp-icone { font-size: 26px; }
+.carte-groupe b { font-family: "Cinzel", serif; font-size: 15px; display: block; }
+.carte-groupe small { font-size: 12px; color: var(--encre-2); }
+.grp-membres { width: 100%; border-collapse: collapse; }
+.grp-membres td { padding: 6px 8px; border-bottom: 1px dotted var(--encre-3); font-size: 14px; vertical-align: top; }
+.grp-rang { color: var(--encre-2); font-style: italic; text-align: right; }
+.lien-membre { color: var(--sang); cursor: pointer; border-bottom: 1px dotted var(--sang); }
+.chip-grp { cursor: pointer; }
+.chip-grp i { font-style: italic; color: var(--encre-3); }
