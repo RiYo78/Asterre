@@ -17,6 +17,7 @@ const S = {
   des: { historique: [] }, musiques: [], pisteActive: null,
   joueur: { perso: null, sousOnglet: "fiche" }, fichesJoueur: {},
   meca: { fiche: "alchimie", tab: "bases", sel: {} }, mecaData: {},
+  lignees: { mode: "arbres", ouvert: null },
   vb: { x: 0, y: 0, w: 2000, h: 1500 }, vb0: null,
   kmParUnite: 0.22
 };
@@ -833,6 +834,11 @@ function ouvrirPnj(id, retourVers) {
   if (pn.galerie && pn.galerie.length) {
     html += blocMJ("gal-pnj-" + pn.id, true, `<h3>Galerie</h3>` + pn.galerie.map(src => imgHTML(src, pn.nom)).join(""), "Galerie visible");
   }
+  if (pn.affiliations && pn.affiliations.length) {
+    const vis = pn.affiliations.filter(af => !af.mj || S.mj || estRevele("grp-" + af.gid));
+    if (vis.length) html += `<h3>Affiliations</h3><div class="chips">` +
+      vis.map(af => `<span class="chip chip-grp" data-grp="${esc(af.gid)}">${af.mj ? "🔒 " : ""}${esc(af.groupe)}${af.rang ? ` — <i>${esc(af.rang)}</i>` : ""}</span>`).join("") + `</div>`;
+  }
   html += secretsHTML(pn.secrets);
   if (pn.lieux && pn.lieux.length) html += `<h3>Lié aux lieux</h3><div class="chips">` +
     pn.lieux.map(lid => S.lieux[lid] ? `<span class="chip" data-lieu="${lid}">📍 ${esc(S.lieux[lid].nom)}</span>` : "").join("") + `</div>`;
@@ -842,6 +848,7 @@ function ouvrirPnj(id, retourVers) {
   p.querySelectorAll("[data-lieu]").forEach(c => c.addEventListener("click", () => {
     montrerVue("carte"); ouvrirLieu(c.dataset.lieu); zoomVers(S.lieux[c.dataset.lieu].pos, 620);
   }));
+  p.querySelectorAll("[data-grp]").forEach(c => c.addEventListener("click", () => { montrerVue("lignees"); S.lignees.mode = "groupes"; renderLignees(); ouvrirGroupe(c.dataset.grp); }));
 }
 function ouvrirFamille(fid, retourVers) {
   const f = famille(fid); if (!f) return;
@@ -1024,6 +1031,62 @@ function brancherAlch(A, s) {
   corps.querySelectorAll("[data-sac]").forEach(b => b.addEventListener("click", () => { s.sacrifice = b.dataset.sac; s.resultat = null; renderAlchimie(); }));
   const calc = corps.querySelector("#alch-calc");
   if (calc) calc.addEventListener("click", () => { calcAlch(A, s); renderAlchimie(); });
+}
+
+/* ═══════════════ LIGNÉES & GROUPES ═══════════════ */
+function renderLignees() {
+  const c = $("#lignees-contenu"), L = S.lignees, cx = S.pays.codex;
+  let html = `<h2>Lignées & Groupes</h2><div class="filet"></div>
+    <div class="lig-switch">
+      <button class="${L.mode === "arbres" ? "actif" : ""}" data-mode="arbres">🌳 Arbres généalogiques</button>
+      <button class="${L.mode === "groupes" ? "actif" : ""}" data-mode="groupes">⚔ Groupes & Organisations</button>
+    </div>`;
+  if (L.mode === "arbres") {
+    html += (cx.lignees || []).map(a => `
+      <div class="lig-arbre">
+        <h3 class="titre-region">${a.icone || ""} ${esc(a.nom)}</h3>
+        <p class="fell" style="max-width:680px;margin-bottom:10px">${esc(a.resume)}</p>
+        <div class="arbre">${noeudArbre(a.racine, 0)}</div>
+      </div>`).join("");
+  } else {
+    const groupes = (cx.groupes || []).filter(g => !g.mj || S.mj || estRevele("grp-" + g.id));
+    html += `<div class="grille-groupes">` + groupes.map(g => `
+      <div class="carte-groupe ${g.mj ? "grp-mj" : ""}" data-grp="${g.id}">
+        <div class="grp-icone">${g.icone || "⚑"}</div>
+        <div><b>${g.mj ? "🔒 " : ""}${esc(g.nom)}</b><small>${esc(g.type)} · ${g.membres.length} membres</small></div>
+      </div>`).join("") + `</div>`;
+  }
+  c.innerHTML = html;
+  c.querySelectorAll("[data-mode]").forEach(b => b.addEventListener("click", () => { L.mode = b.dataset.mode; renderLignees(); }));
+  c.querySelectorAll(".arbre [data-ref]").forEach(n => n.addEventListener("click", () => ouvrirPnj(n.dataset.ref)));
+  c.querySelectorAll("[data-grp]").forEach(b => b.addEventListener("click", () => ouvrirGroupe(b.dataset.grp)));
+}
+function noeudArbre(n, prof) {
+  if (!n) return "";
+  const cliq = n.ref && pnj(n.ref) ? ` arbre-cliq" data-ref="${esc(n.ref)}` : "";
+  const enfants = (n.enfants || []).map(e => noeudArbre(e, prof + 1)).join("");
+  return `<div class="arbre-branche">
+    <div class="arbre-noeud${cliq}"><b>${esc(n.nom)}</b>${n.note ? `<small>${esc(n.note)}</small>` : ""}</div>
+    ${enfants ? `<div class="arbre-enfants">${enfants}</div>` : ""}
+  </div>`;
+}
+function ouvrirGroupe(gid) {
+  const g = (S.pays.codex.groupes || []).find(x => x.id === gid); if (!g) return;
+  const p = $("#panneau");
+  const membres = g.membres.filter(m => !m.mj || S.mj || (m.ref && estRevele("pnj-" + m.ref)));
+  let html = `<button class="fermer">✕</button>
+    <span class="badge-type ${g.mj ? "danger" : ""}">${esc(g.type)}</span>
+    <h2>${g.icone || ""} ${esc(g.nom)}</h2>
+    <p>${esc(g.resume)}</p>
+    ${g.mj && S.mj ? `<div class="secret"><span class="sceau-secret">🔒 Groupe caché aux joueurs</span>${cocheMJ("grp-" + g.id, false, "Groupe visible pour les joueurs")}</div>` : ""}
+    <h3>Membres & rangs</h3>
+    <table class="grp-membres">${membres.map(m => `<tr>
+      <td>${m.ref && pnj(m.ref) ? `<span class="lien-membre" data-ref="${esc(m.ref)}">${m.mj ? "🔒 " : ""}${esc(m.nom)}</span>` : `${m.mj ? "🔒 " : ""}${esc(m.nom)}`}</td>
+      <td class="grp-rang">${esc(m.rang || "")}</td></tr>`).join("")}</table>`;
+  if (g.details && g.details.length) html += `<h3>À savoir</h3>` + detailsHTML(g.details, "grp-det-" + g.id);
+  p.innerHTML = html; p.classList.add("ouvert"); p.scrollTop = 0;
+  p.querySelector(".fermer").addEventListener("click", fermerPanneau);
+  p.querySelectorAll("[data-ref]").forEach(n => n.addEventListener("click", () => ouvrirPnj(n.dataset.ref)));
 }
 
 /* ═══════════════ PARTIE JOUEUR ═══════════════ */
@@ -1294,15 +1357,18 @@ function montrerVue(v) {
   $("#seance").classList.toggle("ouvert", v === "seance");
   $("#joueur").classList.toggle("ouvert", v === "joueur");
   $("#meca").classList.toggle("ouvert", v === "meca");
+  $("#lignees").classList.toggle("ouvert", v === "lignees");
   $("#ong-carte").classList.toggle("actif", v === "carte");
   $("#ong-codex").classList.toggle("actif", v === "codex");
   $("#ong-seance").classList.toggle("actif", v === "seance");
   $("#ong-joueur").classList.toggle("actif", v === "joueur");
   $("#ong-meca").classList.toggle("actif", v === "meca");
+  $("#ong-lignees").classList.toggle("actif", v === "lignees");
   if (v !== "carte") { fermerPanneau(); toggleVoyage(false); }
   if (v === "seance") renderSeance();
   if (v === "joueur") renderJoueur();
   if (v === "meca") renderMeca();
+  if (v === "lignees") renderLignees();
 }
 /* ── Table de Séance ── */
 function chargerSeanceHash() {
@@ -1552,6 +1618,7 @@ function brancherUI() {
   $("#ong-seance").addEventListener("click", () => montrerVue("seance"));
   $("#ong-joueur").addEventListener("click", () => montrerVue("joueur"));
   $("#ong-meca").addEventListener("click", () => montrerVue("meca"));
+  $("#ong-lignees").addEventListener("click", () => montrerVue("lignees"));
   $("#btn-voyage").addEventListener("click", () => { montrerVue("carte"); toggleVoyage(); });
   $("#btn-mj").addEventListener("click", toggleMJ);
   $("#z-plus").addEventListener("click", () => zoomer(.72));
