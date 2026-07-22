@@ -2967,7 +2967,9 @@
       "mj": true
      }
     ],
-    "galerie": [],
+    "galerie": [
+     "images/pnj/morigane-achabel.jpg"
+    ],
     "secrets": [
      {
       "id": "sec-achabel-identite",
@@ -3247,11 +3249,26 @@
     "portrait": "images/pnj/estel.jpg",
     "description": "Vraie fille de Zork (Dieu de la Mort) et Limehahu (Déesse de la Vie), sœur de Malékit, née sur Eden. Idéaliste, volontaire, coriace : elle croyait que Samaël pouvait être plus qu'une entité de destruction — leur amour donna Yon, Mary, Wyatt et Mierka. Elle croyait aussi en Eldar, enfermé sur Eden. En tentant de libérer Lord, la partie d'Eldar emprisonnée, elle affronta son père Zork : ce combat créa la Conjonction des Sphères (an 0) — et Asterre. Mourante, elle lança le Cycle du Recommencement et devint Ectelon, la boule de lumière qui se réincarne. Samaël lui accorda 5 réincarnations avant de détruire Asterre.",
     "details": [
-     "Réincarnations d'Ectelon : 1. Valène (†505, avait compris) · 2. Dae (†520, ne l'a jamais su) · 3. Sam, fille d'Achabel, née en 520 (vivante en 525, ne le sait pas) · 4. à venir · 5. la dernière — sa mort déclenche la destruction d'Asterre.",
-     "Deux cicatrices en forme d'ailes dans le dos — arrachées par les Elfes du temps d'Aeline.",
-     "L'essence d'Eldar est en elle depuis toujours : sa mana est instable, leurs magies se mélangent.",
-     "⚠️ Morigane prend l'Ectelon à la mort de Sam et crée Udona avec.",
-     "Toutes les réincarnations se ressemblent physiquement — le portrait d'Estel sert de référence pour Valène, Dae et Sam."
+     {
+      "texte": "Vraie fille de Zork et Limehahu, sœur de Malékit, née sur Eden.",
+      "mj": true
+     },
+     {
+      "texte": "Elle porte l'essence d'Eldar — sa mana est instable, leurs magies peuvent se mélanger involontairement.",
+      "mj": true
+     },
+     {
+      "texte": "Deux cicatrices en forme d'ailes dans le dos : deux ailes arrachées par les Elfes, du temps d'Aeline.",
+      "mj": true
+     },
+     {
+      "texte": "Sa tentative de libérer Lord et le combat contre Zork ont créé la Conjonction des Sphères — et Asterre.",
+      "mj": true
+     },
+     {
+      "texte": "Cycle du Recommencement : elle devient Ectelon et se réincarne. Valène (1ère), Dae (2ème), Sam (3ème, vivante).",
+      "mj": true
+     }
     ],
     "galerie": [],
     "secrets": [],
@@ -3591,11 +3608,26 @@
     "portrait": "images/pnj/samael.jpg",
     "description": "Créé par l'Oracle sur demande de Zork et Limehahu pour réguler les mondes trop évolués — il n'est pas un dieu, il est ce que les dieux ont créé pour nettoyer leurs erreurs. Sa création engendra simultanément Eldar, son équilibre cosmique. Au contact d'Estel, fille de Zork et Limehahu, il dévia de son rôle : il crut pouvoir bâtir un monde meilleur avec ses enfants — Yon, Mary, Wyatt, Mierka. Zork le scella alors en 5 parties. Libéré peu après la Conjonction par Malékit, le frère d'Estel, il se cache avec lui au Désert Magistral. Il attend. Il observe.",
     "details": [
-     "Forme monstrueuse : un monstre de fumée gigantesque capable de tout engloutir.",
-     "4/5 de ses pouvoirs sont scellés dans l'Outre-Monde — il attend la mort de la 5ème réincarnation d'Estel (Ectelon) pour les récupérer.",
-     "Il a accordé à Yon 5 réincarnations avant de détruire Asterre — un respect immense pour le seul qu'il croit capable d'atteindre son but.",
-     "Sa vision : détruire ce qui reste pour repartir sur des bases saines. Mary la partage en secret — ils ne se le sont jamais dit.",
-     "An 530 : Massacre d'Omega (événement futur)."
+     {
+      "texte": "Entité de Destruction créée par l'Oracle à la demande de Zork et Limehahu — pas un dieu, et pas leur fils.",
+      "mj": true
+     },
+     {
+      "texte": "Eldar fut créé simultanément comme son équilibre : toute puissance absolue en exige un.",
+      "mj": true
+     },
+     {
+      "texte": "4 de ses 5 pouvoirs sont scellés dans l'Outre-Monde. Il attend la mort de la 5ème Ectelon pour les recouvrer.",
+      "mj": true
+     },
+     {
+      "texte": "Forme monstrueuse : un monstre de fumée gigantesque capable de tout engloutir.",
+      "mj": true
+     },
+     {
+      "texte": "Il a accordé 5 réincarnations à Estel — par respect pour Yon, le seul qu'il croit capable d'atteindre son but.",
+      "mj": true
+     }
     ],
     "galerie": [
      "images/pnj/samael-forme-complete.jpg"
@@ -4876,28 +4908,33 @@
     "id": "grande-lignee",
     "nom": "La Grande Lignée",
     "icone": "🌑",
-    "resume": "Les descendants de Zork (Mort) et Limehahu (Vie), par Estel et Samaël. La lignée la plus puissante et la plus tragique d'Asterre — elle porte le poids du Destin.",
+    "resume": "Zork (Mort) et Limehahu (Vie) eurent deux vrais enfants : Estel et Malékit. Samaël, lui, est une création de l'Oracle — une entité de Destruction, équilibrée par Eldar. De l'union d'Estel et Samaël naquit la lignée la plus puissante et la plus tragique d'Asterre.",
     "racine": {
      "nom": "Zork ✕ Limehahu",
-     "note": "Dieu de la Mort ✕ Déesse de la Vie",
+     "note": "Dieu de la Mort ✕ Déesse de la Vie · monde d'Eden",
      "enfants": [
       {
+       "nom": "Malékit",
+       "ref": "malekit",
+       "note": "frère d'Estel · a libéré Samaël · caché au Désert Magistral"
+      },
+      {
        "nom": "Estel ✕ Samaël",
-       "note": "rencontrés avant la Conjonction",
+       "ref": "estel",
+       "note": "Estel : vraie fille · Samaël : création de l'Oracle (Destruction)",
        "enfants": [
         {
          "nom": "Yon",
          "ref": "yon",
-         "note": "Archange · ✕ Elfia (†505)",
+         "note": "jumeau de Mary · Archange · ✕ Elfia (†505)",
          "enfants": [
           {
            "nom": "Valène",
-           "note": "†505, tuée par Lord",
+           "note": "†505, tuée par Lord · 1ère Ectelon",
            "enfants": [
             {
              "nom": "Les 7 Péchés",
-             "ref": "sept-peches",
-             "note": "Althar, Seryne, Raziel, Divina, Lethys, Vorath, Aurel"
+             "note": "Althar, Seryne, Raziel, Divina, Lethys, Vorath, Aurel — voir l'arbre dédié"
             }
            ]
           },
@@ -4908,7 +4945,7 @@
           },
           {
            "nom": "Dae",
-           "note": "née 505 · 2ème Ectelon (réincarnation d'Estel)"
+           "note": "née 505 · 2ème Ectelon · †520"
           }
          ]
         },
@@ -4920,25 +4957,8 @@
           {
            "nom": "Morigane ✕ Richard",
            "ref": "morigane",
-           "note": "née 33 · époux humain rendu immortel",
+           "note": "née 33 · la Pupille · époux humain immortalisé",
            "enfants": [
-            {
-             "nom": "Rael",
-             "note": "la Mémoire (faux jumeau)"
-            },
-            {
-             "nom": "Raena",
-             "note": "l'Oubli (faux jumelle)"
-            },
-            {
-             "nom": "Arkos",
-             "note": "le Faucheur"
-            },
-            {
-             "nom": "Narcise",
-             "ref": "narcise",
-             "note": "le Cycle · cadette"
-            },
             {
              "nom": "Minvan",
              "ref": "minvan",
@@ -4951,9 +4971,9 @@
              ]
             },
             {
-             "nom": "Achabel",
+             "nom": "Achabel ✕ Manem",
              "ref": "achabel",
-             "note": "né 500 · Prophète des Ténèbres et de la Mort · ✕ Manem",
+             "note": "né 500 · Prophète des Ténèbres et de la Mort",
              "enfants": [
               {
                "nom": "Sam",
@@ -4969,10 +4989,33 @@
            ]
           },
           {
-           "nom": "Rael · Raena · Arkos · Narcise",
-           "note": "préceptes de la Mort (fratrie de Morigane)"
+           "nom": "Rael",
+           "note": "la Mémoire (faux jumeau de Morigane)"
+          },
+          {
+           "nom": "Raena",
+           "note": "l'Oubli (fausse jumelle)"
+          },
+          {
+           "nom": "Arkos",
+           "note": "le Faucheur"
+          },
+          {
+           "nom": "Narcise",
+           "ref": "narcise",
+           "note": "le Cycle · cadette"
           }
          ]
+        },
+        {
+         "nom": "Wyatt",
+         "ref": "wyatt",
+         "note": "né en -10"
+        },
+        {
+         "nom": "Mierka",
+         "ref": "mierka",
+         "note": "née en 179 — après la Conjonction"
         }
        ]
       }
@@ -5090,6 +5133,40 @@
        "nom": "Selina",
        "ref": "selina",
        "note": "benjamine · mage de sang · Rituel du Phœnix · ✕ Sky"
+      }
+     ]
+    }
+   },
+   {
+    "id": "ectelon",
+    "nom": "Le Cycle d'Ectelon",
+    "icone": "⭐",
+    "mj": true,
+    "resume": "À sa mort lors de la Conjonction, Estel lança le Cycle du Recommencement et devint Ectelon — une boule de lumière qui se réincarne. Samaël lui a accordé 5 réincarnations avant de détruire Asterre. Toutes se ressemblent physiquement.",
+    "racine": {
+     "nom": "Estel → Ectelon",
+     "note": "Cycle du Recommencement (après l'an 0)",
+     "enfants": [
+      {
+       "nom": "1ère — Valène",
+       "note": "†505 · a compris par ses recherches et via Eldar"
+      },
+      {
+       "nom": "2ème — Dae",
+       "note": "née 505, †520 · ne l'a jamais su"
+      },
+      {
+       "nom": "3ème — Sam",
+       "ref": "sam",
+       "note": "née 520 · vivante en 525 · ne le sait pas"
+      },
+      {
+       "nom": "4ème — à venir",
+       "note": "—"
+      },
+      {
+       "nom": "5ème — la dernière",
+       "note": "sa mort déclenche la destruction d'Asterre"
       }
      ]
     }
@@ -5387,7 +5464,7 @@
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "1.8",
+ "version": "1.9",
  "labels": [
   {
    "texte": "Le Passage du Silence",
