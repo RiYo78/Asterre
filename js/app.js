@@ -13,7 +13,7 @@ const S = {
   monde: null, pays: null, lieux: {}, sousLieux: {}, graphe: {},
   mj: false, vue: "carte", reveals: new Set(), masques: new Set(),
   voyage: { actif: false, etapes: [], modifs: new Set(), choix: {} },
-  seance: { pnj: [], lieu: null },
+  seance: { pnj: [], lieu: null, images: {} },
   des: { historique: [] }, musiques: [], pisteActive: null,
   joueur: { perso: null, sousOnglet: "fiche" }, fichesJoueur: {},
   meca: { fiche: "alchimie", tab: "bases", sel: {} }, mecaData: {},
@@ -831,8 +831,14 @@ function ouvrirPnj(id, retourVers) {
     ${cocheMJ("pnj-" + pn.id, !pn.mjOnly, "Fiche visible pour les joueurs")}</div>`;
   html += blocMJ("desc-pnj-" + pn.id, true, `<p>${esc(pn.description)}</p>`, "Description visible");
   if (pn.details && pn.details.length) { html += `<h3>À savoir</h3>` + detailsHTML(pn.details, "det-" + pn.id); }
-  if (pn.galerie && pn.galerie.length) {
-    html += blocMJ("gal-pnj-" + pn.id, true, `<h3>Galerie</h3>` + pn.galerie.map(src => imgHTML(src, pn.nom)).join(""), "Galerie visible");
+  const toutes = imagesDe(pn);
+  if (toutes.length > 1) {
+    const items = toutes.slice(1).map((src, k) => {
+      const i = k + 1, v = visib(`img-${pn.id}-${i}`, true);
+      if (!v && !S.mj) return "";
+      return `<div class="${v ? "" : "pt-cache"}" data-bloc="img-${pn.id}-${i}">${imgHTML(src, pn.nom)}${cocheMJ(`img-${pn.id}-${i}`, true, "Image visible")}</div>`;
+    }).join("");
+    if (items) html += `<h3>Galerie</h3>` + items;
   }
   if (pn.affiliations && pn.affiliations.length) {
     const vis = pn.affiliations.filter(af => !af.mj || S.mj || estRevele("grp-" + af.gid));
@@ -1063,10 +1069,14 @@ function renderLignees() {
 }
 function noeudArbre(n, prof) {
   if (!n) return "";
-  const cliq = n.ref && pnj(n.ref) ? ` arbre-cliq" data-ref="${esc(n.ref)}` : "";
+  const P = n.ref ? pnj(n.ref) : null;
+  const visP = P ? visib("pnj-" + P.id, !P.mjOnly) : true;
+  if (P && !visP && !S.mj) return "";
+  const cliq = P ? ` arbre-cliq" data-ref="${esc(n.ref)}` : "";
+  const vign = P ? `<span class="arbre-photo"><img src="${esc(imagesDe(P)[0])}" alt="" loading="lazy" onerror="this.style.display='none'"></span>` : "";
   const enfants = (n.enfants || []).map(e => noeudArbre(e, prof + 1)).join("");
   return `<div class="arbre-branche">
-    <div class="arbre-noeud${cliq}"><b>${esc(n.nom)}</b>${n.note ? `<small>${esc(n.note)}</small>` : ""}</div>
+    <div class="arbre-noeud${cliq} ${P && !visP ? "pt-cache" : ""}">${vign}<span class="arbre-txt"><b>${P && !visP ? "🔒 " : ""}${esc(n.nom)}</b>${n.note ? `<small>${esc(n.note)}</small>` : ""}</span></div>
     ${enfants ? `<div class="arbre-enfants">${enfants}</div>` : ""}
   </div>`;
 }
@@ -1080,9 +1090,14 @@ function ouvrirGroupe(gid) {
     <p>${esc(g.resume)}</p>
     ${g.mj && S.mj ? `<div class="secret"><span class="sceau-secret">🔒 Groupe caché aux joueurs</span>${cocheMJ("grp-" + g.id, false, "Groupe visible pour les joueurs")}</div>` : ""}
     <h3>Membres & rangs</h3>
-    <table class="grp-membres">${membres.map(m => `<tr>
-      <td>${m.ref && pnj(m.ref) ? `<span class="lien-membre" data-ref="${esc(m.ref)}">${m.mj ? "🔒 " : ""}${esc(m.nom)}</span>` : `${m.mj ? "🔒 " : ""}${esc(m.nom)}`}</td>
-      <td class="grp-rang">${esc(m.rang || "")}</td></tr>`).join("")}</table>`;
+    <div class="trombino">${membres.map(m => {
+      const P = m.ref ? pnj(m.ref) : null;
+      const vis = P ? visib("pnj-" + P.id, !P.mjOnly) : true;
+      const img = P && vis ? `<img src="${esc(imagesDe(P)[0])}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'—',className:'tromb-vide'}))">` : `<span class="tromb-vide">${vis ? "—" : "🔒"}</span>`;
+      return `<div class="tromb ${P ? "tromb-cliq" : ""} ${vis ? "" : "pt-cache"}" ${P ? `data-ref="${esc(m.ref)}"` : ""}>
+        <div class="tromb-img">${img}</div>
+        <b>${vis ? "" : "🔒 "}${esc(m.nom)}</b><small>${esc(m.rang || "")}</small></div>`;
+    }).join("")}</div>`;
   if (g.details && g.details.length) html += `<h3>À savoir</h3>` + detailsHTML(g.details, "grp-det-" + g.id);
   p.innerHTML = html; p.classList.add("ouvert"); p.scrollTop = 0;
   p.querySelector(".fermer").addEventListener("click", fermerPanneau);
@@ -1456,6 +1471,10 @@ function majPistesUI() {
   z.querySelectorAll("[data-piste]").forEach(b => b.addEventListener("click", () => jouerPiste(+b.dataset.piste)));
 }
 
+function imagesDe(pn) {
+  const base = [pn.portrait || `images/pnj/${pn.id}.jpg`, ...(pn.galerie || [])];
+  return base.filter((v, i) => base.indexOf(v) === i);
+}
 function carteSeance(id) {
   const pn = pnj(id); if (!pn) return "";
   const vFiche = visib("pnj-" + pn.id, !pn.mjOnly);
@@ -1464,10 +1483,15 @@ function carteSeance(id) {
   const meta = [["Origine", pn.origine], ["Race", pn.race], ["Statut", pn.statut]].filter(x => x[1]);
   const dets = (pn.details || []).map((d, i) => ({ d: typeof d === "string" ? { texte: d } : d, i }))
     .filter(x => S.mj || visib(`det-${pn.id}-${x.i}`, !x.d.mj));
+  const imgs = imagesDe(pn).filter((src, i) => S.mj || visib(`img-${pn.id}-${i}`, true));
+  const imgSel = S.seance.images[pn.id] && imgs.includes(S.seance.images[pn.id]) ? S.seance.images[pn.id] : imgs[0];
   return `<div class="carte-seance ${vFiche ? "" : "bete-mj"}">
     <button class="cs-retirer" data-ret="${esc(pn.id)}" title="Retirer" aria-label="Retirer ${esc(pn.nom)}">✕</button>
-    <div class="cs-portrait"><img src="${esc(pn.portrait)}" alt="" loading="lazy"
-      onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Portrait à venir',className:'cs-vide'}))"></div>
+    <div class="cs-portrait-zone">
+      <div class="cs-portrait"><img src="${esc(imgSel)}" alt="" loading="lazy"
+        onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Portrait à venir',className:'cs-vide'}))"></div>
+      ${imgs.length > 1 ? `<div class="cs-vignettes">${imgs.map((src, i) => `<button class="cs-vig ${src === imgSel ? "actif" : ""}" data-img="${esc(pn.id)}|${i}" title="Image ${i + 1}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
+    </div>
     <div class="cs-infos">
       <h4>${vFiche ? "" : "🔒 "}${esc(pn.nom)}</h4>
       <small class="fell">${esc(pn.titre || "")}</small>
@@ -1543,6 +1567,10 @@ function renderSeance() {
     S.seance.pnj = S.seance.pnj.filter(x => x !== b.dataset.ret); majHashSeance(); renderSeance();
   }));
   c.querySelectorAll("[data-fiche]").forEach(b => b.addEventListener("click", () => ouvrirPnj(b.dataset.fiche)));
+  c.querySelectorAll("[data-img]").forEach(b => b.addEventListener("click", () => {
+    const [pid, i] = b.dataset.img.split("|"); const pn2 = pnj(pid);
+    S.seance.images[pid] = imagesDe(pn2)[+i]; renderSeance();
+  }));
   c.querySelectorAll("[data-lieu-s]").forEach(b => b.addEventListener("click", () => ouvrirLieu(b.dataset["lieuS"])));
   c.querySelectorAll(".de-boutons [data-de]").forEach(b => b.addEventListener("click", () => {
     lancerDes(+c.querySelector("#de-nb").value, +b.dataset.de, +c.querySelector("#de-mod").value);
