@@ -556,3 +556,26 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 .lien-membre { color: var(--sang); cursor: pointer; border-bottom: 1px dotted var(--sang); }
 .chip-grp { cursor: pointer; }
 .chip-grp i { font-style: italic; color: var(--encre-3); }
+
+/* ── Multi-images Séance · Trombinoscope ── */
+.cs-portrait-zone { display: flex; flex-direction: column; gap: 5px; }
+.cs-vignettes { display: flex; gap: 4px; flex-wrap: wrap; }
+.cs-vig { width: 32px; height: 32px; padding: 0; border: 1px solid var(--encre-3); border-radius: 3px;
+  overflow: hidden; cursor: pointer; background: var(--parchemin-2); opacity: .6; }
+.cs-vig.actif { border-color: var(--or); border-width: 2px; opacity: 1; }
+.cs-vig img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.arbre-noeud { flex-direction: row !important; align-items: center; gap: 9px; }
+.arbre-txt { display: flex; flex-direction: column; }
+.arbre-photo { width: 38px; height: 48px; flex-shrink: 0; border: 1px solid var(--encre-3); border-radius: 2px;
+  overflow: hidden; background: var(--parchemin-2); display: block; }
+.arbre-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.trombino { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+.tromb { text-align: center; }
+.tromb-cliq { cursor: pointer; }
+.tromb-cliq:hover .tromb-img { border-color: var(--or); }
+.tromb-img { aspect-ratio: 3/4; border: 1px solid var(--encre-3); border-radius: 3px; overflow: hidden;
+  background: var(--parchemin-2); display: grid; place-items: center; margin-bottom: 4px; transition: border-color .15s; }
+.tromb-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.tromb-vide { font-size: 18px; color: var(--encre-3); }
+.tromb b { font-family: "Cinzel", serif; font-size: 11.5px; display: block; line-height: 1.25; }
+.tromb small { font-size: 10.5px; color: var(--encre-2); font-style: italic; line-height: 1.2; display: block; }
