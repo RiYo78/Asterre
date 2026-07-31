@@ -1,3 +1,6 @@
 {
-  "pistes": []
+  "pistes": [
+    { "titre": "Opening — Blood Moon", "fichier": "musiques/opening-blood-moon.mp3", "boucle": true },
+    { "titre": "Ending — Une main sur le point de se briser", "fichier": "musiques/ending-main-brisee.mp3", "boucle": true }
+  ]
 }
