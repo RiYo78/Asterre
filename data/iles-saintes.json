@@ -1648,7 +1648,7 @@
    "climat": "Neiges des Montagnes du Nord",
    "dirigeant": "—",
    "accroche": "Le village des neiges, accroché aux hauteurs des Montagnes du Nord.",
-   "description": "Fiche en cours d'écriture — l'existence et la position de Francheneige sont actées, ses habitants et son histoire restent à définir avec le MJ.",
+   "description": "Fiche en cours d'écriture — l'existence et la position de Francheneige sont actées, ses habitants et son histoire restent avec le MJ.",
    "histoire": "",
    "familles": [],
    "lieuxNotables": [],
@@ -2356,145 +2356,361 @@
  ],
  "codex": {
   "lois": {
-   "titre": "Lois & Interdits",
-   "sections": [
-    {
-     "titre": "Magies autorisées — dites « naturelles »",
-     "contenu": "✅ Élémentaire · Génétique · Druidique"
-    },
-    {
-     "titre": "Magies interdites",
-     "contenu": "Magie du Sang → peine capitale · Soufre alchimique → emprisonnement (Geôles Blanches) · Magie Noire → bannissement ou mort · Magie Démonique → bannissement ou mort · Objets magiques et invocations → interdits"
-    },
-    {
-     "titre": "Le Système de Phylactères",
-     "contenu": "Tout mage arrivant aux Îles Saintes subit un rituel d'enregistrement : contrôle au port, escorte par les Templiers vers la Cathédrale, extraction d'une essence magique, création du phylactère conservé dans la Salle des Phylactères. L'Église peut localiser le mage à tout moment et surveiller ses activités magiques à distance. Objectif déclaré : prévenir la corruption magique, protéger la population."
-    },
-    {
-     "titre": "Sanctité de la Vie",
-     "contenu": "Protection des nouveaux-nés · interdiction de l'avortement et de l'euthanasie."
-    },
-    {
-     "titre": "Encadrement des mœurs",
-     "contenu": "Interdiction de l'homosexualité et de l'adultère."
-    },
-    {
-     "titre": "Lois économiques",
-     "contenu": "Protectionnisme (protection des artisans locaux) · régulation des biens vitaux : interdiction de profiter excessivement du pain et de l'eau · l'Église contrôle le marché du travail et garantit des conditions équitables · emplois rémunérés d'utilité publique offerts par l'Église · interdiction de la paresse et de la mendicité sans cause."
-    }
-   ]
+   "iles-saintes": {
+    "intro": "Aux Îles Saintes, la loi et la foi ne font qu'une. L'Église de la Vie dicte ce qui est permis, et sa Garde Sainte y veille.",
+    "sections": [
+     {
+      "titre": "Magies interdites",
+      "type": "table",
+      "lignes": [
+       [
+        "Magie du Sang",
+        "Peine capitale"
+       ],
+       [
+        "Soufre alchimique",
+        "Emprisonnement"
+       ],
+       [
+        "Magie Noire",
+        "Bannissement ou mort"
+       ],
+       [
+        "Magie Démonique",
+        "Bannissement ou mort"
+       ],
+       [
+        "Objets magiques & Invocations",
+        "Interdits"
+       ]
+      ]
+     },
+     {
+      "titre": "Magies autorisées",
+      "contenu": "Seules les magies dites « naturelles » sont tolérées : élémentaire, génétique et druidique."
+     },
+     {
+      "titre": "Le Système de Phylactères",
+      "contenu": "À son arrivée, tout mage subit un rituel d'enregistrement : le phylactère contient une essence de sa magie et permet à l'Église de le localiser et de surveiller ses activités à distance — officiellement pour prévenir la corruption magique."
+     },
+     {
+      "titre": "Encadrement des mœurs",
+      "type": "table",
+      "lignes": [
+       [
+        "Sanctité de la Vie",
+        "Avortement et euthanasie interdits"
+       ],
+       [
+        "Mœurs",
+        "Homosexualité et adultère interdits"
+       ],
+       [
+        "Éthique du travail",
+        "Paresse et mendicité sans cause interdites"
+       ]
+      ]
+     },
+     {
+      "titre": "Lois économiques",
+      "contenu": "Protectionnisme au profit des artisans locaux ; régulation des biens vitaux (nul ne peut spéculer sur le pain et l'eau) ; l'Église garantit des conditions de travail équitables et offre des emplois d'utilité publique."
+     }
+    ],
+    "secrets": [
+     {
+      "id": "loi-sec-1",
+      "titre": "La vérité des Cercles",
+      "texte": "Les Cercles de Mages, justifiés par la « corruption magique » de l'an 300, furent en réalité 220 ans d'enfermement, de torture et d'oblitération magique.",
+      "mj": true
+     }
+    ]
+   }
   },
   "religions": {
-   "titre": "Religions",
-   "sections": [
-    {
-     "titre": "L'Église de la Vie / de la Lumière",
-     "contenu": "L'Église dominante d'Asterre — les deux appellations désignent la même institution. Divinité : Limehahu, Déesse de la Vie. Siège : la Cathédrale de la Vie, Roche-Sainte. Religion d'État, co-dirige le royaume. Chiffre sacré : 7 — sept jours, sept familles, sept Paladins, sept bougies."
-    },
-    {
-     "titre": "Hiérarchie (525)",
-     "contenu": "Archange Yon (autorité suprême, dirige la Garde Sainte) → Grande Prêtresse Yumi (tête opérationnelle) → d'un côté le Clergé (les 4 Prêtres, puis les Mains Blanches), de l'autre la Garde Sainte (Chef Paladin Arthur Sauvage → 6 Paladins → Inquisiteurs → Chef Templier Cullen → Templiers). En 525, Yon devient Archange et cède le rôle de Grand Prêtre à sa fille Yumi ; il vient de retrouver son immortalité (rendue par Mei via une Pierre de Rosette) et traverse une période de fragilité — c'est Yumi qui porte pleinement l'Église."
-    },
-    {
-     "titre": "Les 4 Prêtres — Fonctions Saintes",
-     "contenu": "Quatre par grande ville (les villages partagent souvent un prêtre polyvalent). Le Prêtre du Souffle — naissances, baptêmes (la Vie qui commence). Le Prêtre du Lien — mariages, serments, contrats sacrés (la Vie qui unit). Le Prêtre du Baume — soins, dispensaires (la Vie qui soigne). Le Prêtre du Passage — funérailles, derniers instants (la Vie qui s'achève)."
-    },
-    {
-     "titre": "Les Mains Blanches",
-     "contenu": "Les bénévoles. Ils assistent les prêtres, tiennent les dispensaires, distribuent l'aide. Volontaires du peuple, aucune ordination, reconnaissables à leurs gants blancs. Ils sont partout. Ils voient tout. Ils ne disent jamais rien."
-    },
-    {
-     "titre": "Rituels",
-     "contenu": "Le Premier Souffle (baptême — l'enfant est présenté à la Lumière dans les 7 jours) · Le Serment de Lien (mariage — les époux échangent une flamme) · L'Imposition du Baume (onction des malades) · La Dernière Lumière (funérailles — une bougie brûle 7 jours) · L'Ordination (par la Grande Prêtresse) · L'Enregistrement (rituel des phylactères, par les Templiers)."
-    },
-    {
-     "titre": "Calendrier — les 12 mois",
-     "contenu": "Primus, Frigus (hiver) · Verna, Florus, Maius (printemps) · Solis, Aestus, Messis (été) · Septius, Autumnus, Usos (automne) · Nivis (hiver)."
-    },
-    {
-     "titre": "Les 5 fêtes",
-     "contenu": "La Nuit du Souffle (1 Primus — nouvel an, 7 bougies) · La Fête des Sept (7 Solis — les 7 familles fondatrices) · La Fondation (7 Septius — fondation des Îles Saintes, 200) · Le Deuil Blanc (7 Septius — mort de Valène, 300 : le même jour. Une fête et un deuil, célébrés ensemble ; personne n'ose dire à quel point c'est cruel) · La Chute (1 Usos — chute des Cercles, 520, fête récente et controversée)."
-    },
-    {
-     "titre": "Les Cercles de Mages (300–520)",
-     "contenu": "Créés par Yon après la mort de Valène, dans tous les pays de l'Union Blanche. Raison invoquée : l'ouverture de la Porte avait lié les vivants à la magie démoniaque, rendant dangereux même les mages inexpérimentés. Réalité : 220 ans d'enfermement, de torture et d'oblitération magique. Le Cercle des Îles Saintes est tombé le 1 Usos 520.",
+   "iles-saintes": {
+    "cite": "Les Dieux existent. Les Églises, elles, sont humaines.",
+    "eglise": {
+     "nom": "L'Église de la Vie (de la Lumière)",
+     "embleme": "images/blasons/eglise.png",
+     "divinite": "Limehahu, Déesse de la Vie",
+     "siege": "Roche-Sainte — la Cathédrale de la Vie",
+     "intro": "L'Église dominante d'Asterre et religion d'État des Îles Saintes. Elle co-dirige le royaume en binôme avec la Couronne, protège la Vie et surveille la magie. « Église de la Vie » et « Église de la Lumière » désignent la même institution.",
+     "dogmes": [
+      [
+       "Sanctité de la Vie",
+       "Protection des nouveau-nés · interdiction de l'avortement et de l'euthanasie"
+      ],
+      [
+       "La Lumière comme guide",
+       "Éducation religieuse dès le plus jeune âge"
+      ],
+      [
+       "Éthique du travail",
+       "Valorisation du labeur · interdiction de la paresse"
+      ],
+      [
+       "Respect des autorités",
+       "Prêtres, magistrats, famille royale"
+      ]
+     ],
+     "hierarchie": {
+      "titre": "Hiérarchie de l'Église (525)",
+      "branches": [
+       {
+        "nom": "Autorité",
+        "noeuds": [
+         {
+          "rang": "Archange",
+          "qui": "Yon",
+          "note": "Autorité suprême · dirige la Garde Sainte",
+          "ref": "yon"
+         },
+         {
+          "rang": "Grande Prêtresse",
+          "qui": "Yumi",
+          "note": "Tête opérationnelle de l'Église",
+          "ref": "yumi"
+         }
+        ]
+       },
+       {
+        "nom": "Clergé",
+        "noeuds": [
+         {
+          "rang": "Les 4 Prêtres",
+          "qui": "Souffle · Lien · Baume · Passage",
+          "note": "Le clergé de la Lumière"
+         },
+         {
+          "rang": "Mains Blanches",
+          "qui": "Bénévoles laïcs",
+          "note": "Œuvres et soins"
+         }
+        ]
+       },
+       {
+        "nom": "Garde Sainte",
+        "noeuds": [
+         {
+          "rang": "Paladin en chef",
+          "qui": "Arthur Sauvage",
+          "note": "Officiellement déclaré mort",
+          "ref": "arthur-sauvage"
+         },
+         {
+          "rang": "Les 7 Paladins",
+          "qui": "dont Reyna Sauvage, Clyctus Elden",
+          "note": "Combattent les menaces magiques"
+         },
+         {
+          "rang": "Chef Templier",
+          "qui": "Cullen",
+          "note": "Traque des mages corrompus",
+          "ref": "cullen"
+         },
+         {
+          "rang": "Inquisiteurs",
+          "qui": "",
+          "note": "Enquête · purification"
+         }
+        ]
+       }
+      ]
+     },
+     "evolution": "En 525, Yon devient Archange et cède le rôle de Grand Prêtre à sa fille Yumi. Ayant retrouvé son immortalité (rendue par Mei via une Pierre de Rosette), il traverse une période de fragilité : c'est Yumi qui porte pleinement l'Église.",
      "secrets": [
       {
-       "id": "sec-rel-yon",
+       "id": "rel-sec-1",
+       "titre": "La fratrie divine",
+       "texte": "Yon (Archange de la Lumière) et Mary (Grande Prêtresse de la Mort) sont frère et sœur — enfants de Samaël et Estel. Le monde l'ignore.",
+       "mj": true
+      },
+      {
+       "id": "rel-sec-2",
        "titre": "Le poids de Yon",
-       "revele": false,
-       "texte": "Yon, Mary et Wyatt sont les enfants de Samaël et Estel — le monde l'ignore largement. Mary, Grande Prêtresse de la Mort, est la sœur de Yon, Archange de la Lumière. Yon a « sauvé 5 milliards de vies » en 300 sans que personne ne le sache — il en porte le poids seul. L'Église ferma les yeux sur les dérives magiques du temps des Magistères."
+       "texte": "Les Archives cachent les vrais rapports des Cercles et la vérité de l'an 300 : c'est Valène qui voulait ouvrir la Porte des Dieux. Yon a « sauvé 5 milliards de vies » sans que personne ne le sache — il en porte le poids seul.",
+       "mj": true
       }
      ]
     },
-    {
-     "titre": "Les 4 autres Églises élémentaires",
-     "contenu": "Église du Feu — divinité Sylvanus (humain Olympien devenu Dieu), associée à Luxuria (Passion, sa fille) et Duoror (Souffrance) ; rituel connu : le Rituel du Phœnix, utilisé par Selina pour pouvoir ramener son frère Livai. Église de l'Eau — divinité Ziriel, associée à Pavor (Peur) ; Ziriel est la mère d'Adelia, Héritière de l'Eau. Église de la Terre — territoire : Avelorn ; associée à Mélia, Déesse de la Nature, Princesse d'Avelorn, épouse de Sylas, mère de Salys (seule Médine d'Asterre). Église de la Mort — divinité Zork ; Grande Prêtresse : Mary, fille de Samaël et Estel, mère de Morigane. Discrète."
+    "autres": [
+     {
+      "nom": "Église du Feu",
+      "divinite": "Sylvanus",
+      "note": "Rituel du Phœnix connu (utilisé par Selina). Divinités associées : Luxuria, Duoror.",
+      "icone": "🔥"
+     },
+     {
+      "nom": "Église de l'Eau",
+      "divinite": "Ziriel",
+      "note": "Ziriel est la mère d'Adelia, Héritière de l'Eau. Divinité associée : Pavor.",
+      "icone": "💧"
+     },
+     {
+      "nom": "Église de la Terre",
+      "divinite": "Déesse de la Terre",
+      "note": "Territoire : Avelorn. Associée à Mélia, Déesse de la Nature.",
+      "icone": "🌍"
+     },
+     {
+      "nom": "Église de la Mort",
+      "divinite": "Zork",
+      "note": "Grande Prêtresse : Mary. Discrète, présente surtout à Drémora (la Table Ronde).",
+      "icone": "💀"
+     }
+    ],
+    "union": {
+     "titre": "L'Union Blanche",
+     "intro": "Traité unissant six royaumes sous l'égide de l'Église de la Vie : Îles Saintes (siège), Avelorn, Ferelden, Cintra, Aloy, Harad. Templiers et Paladins y sont présents ; les taxes sont collectées par la famille Aurélion.",
+     "hors": [
+      [
+       "Drémora",
+       "Échappa aux Cercles · Mary y créa la Table Ronde"
+      ],
+      [
+       "Désert Magistral",
+       "Indépendant · refuge de Sylas"
+      ],
+      [
+       "Babel",
+       "Monde des démons · gouverné par Sandor"
+      ]
+     ]
     }
-   ]
+   }
   },
   "politique": {
-   "titre": "Politique",
-   "sections": [
-    {
-     "titre": "Théocratie en binôme",
-     "contenu": "Le pouvoir est partagé — et Yon semble avoir le dernier mot. La Couronne (van Emris, roi Stanislas Ier) : relations internationales, diplomatie, annonces générales, défense nationale. L'Église (Archange Yon, Grande Prêtresse Yumi) : autorité spirituelle, lois, justice, doctrine, surveillance des mages. Tensions potentielles quand les décisions de la Couronne heurtent les dogmes — ou l'inverse."
-    },
-    {
+   "iles-saintes": {
+    "intro": "Théocratie en binôme : la Couronne (van Emris) et l'Église (Yon, Yumi) se partagent le pouvoir. Dans les faits, l'Archange semble avoir le dernier mot.",
+    "pouvoirs": [
+     [
+      "Couronne",
+      "Famille van Emris — Roi Stanislas Ier « le Soumis »",
+      "Diplomatie · défense nationale · annonces générales"
+     ],
+     [
+      "Église",
+      "Archange Yon · Grande Prêtresse Yumi",
+      "Lois · justice · doctrine · surveillance des mages"
+     ]
+    ],
+    "dynastie": {
      "titre": "La dynastie van Emris (300 – présent)",
-     "contenu": "Alistair van Emris (100-450), 1er roi nommé par Yon, époux de Léliana († ). Leur fils Stanislas (430-…) « Le Soumis », roi actuel, époux d'Estrid, père d'Eivor. Leur fille Milthae (432-…), veuve de Klaus (456-479, tué par le roi Stanislas), mère d'Angelina et Aleric Klaus (479-…), belle-mère de Theirin (482-…), grand-mère d'Eyma (504-…)."
+     "texte": "Alistair van Emris, 1er roi nommé par Yon, portait le sang de la famille Asta (anciens rois des Îles Colmores) et symbolisait l'alliance humains-elfes. Le roi actuel, Stanislas « le Soumis », est si influencé par Yon que certains tiennent l'Archange pour le vrai souverain."
     },
-    {
-     "titre": "L'Union Blanche",
-     "contenu": "Traité unissant six royaumes sous l'égide de l'Église de la Vie : Îles Saintes (siège, puissance dominante), Avelorn, Ferelden, Cintra, Aloy, Harad. Obligations : Cercles de Mages (300–520), présence de Templiers et Paladins, taxes collectées par la famille Aurélion. Non-membres notables : Drémora (échappa aux Cercles — Mary y créa la Table Ronde), le Désert Magistral (indépendant, refuge de Sylas), Babel (monde des démons, gouverné par Sandor)."
+    "cercles": {
+     "titre": "Les Cercles de Mages (300 – 520)",
+     "texte": "Créés par Yon après la mort de Valène dans tous les pays de l'Union Blanche. Raison invoquée : l'ouverture de la Porte avait lié les vivants à la magie démoniaque, rendant même les mages inexpérimentés très dangereux. Réalité : 220 ans d'enfermement et de torture. Le Cercle des Îles Saintes est tombé le 1 Usos 520.",
+     "secrets": [
+      {
+       "id": "pol-sec-cercle",
+       "titre": "Le sacrifice de Yon",
+       "texte": "En 300, Yon a empêché une catastrophe qui aurait coûté des milliards de vies — les Cercles en furent la conséquence. Il a porté ce choix, et sa cruauté, seul.",
+       "mj": true
+      }
+     ]
     },
-    {
-     "titre": "Conflit actuel (525)",
-     "contenu": "Mages pacifiques (Arathak, allié de Yon — cohésion mage/non-mage) contre mages renégats (ex-Magistère Kanius, revenu du monde des Démons, vengeance contre les Cercles). Menace nouvelle : Morigane prépare le rituel de la Lune de Sang — elle veut ouvrir la Porte des Dieux."
+    "conflit": {
+     "titre": "Conflit actuel — la Guerre des Magistères (520-525)",
+     "camps": [
+      [
+       "Mages pacifiques",
+       "Arathak",
+       "Allié de Yon et de l'Église · prône la cohésion mage / non-mage",
+       "arathak"
+      ],
+      [
+       "Mages renégats",
+       "Ex-Magistère Kanius",
+       "Revenu du monde des Démons · cherche vengeance contre les Cercles",
+       "kanius"
+      ]
+     ],
+     "menace": "Et une menace nouvelle plane : Morigane prépare le rituel de la Lune de Sang pour ouvrir la Porte des Dieux. Seule l'île de Vanhill sera épargnée.",
+     "evenements": [
+      [
+       "521",
+       "Attaque du Magistère Kanius — Roncedroite (Arathak) ; Gojo attaque l'Académie"
+      ],
+      [
+       "524",
+       "Destruction de Préfet par Pride, démon de l'Orgueil"
+      ],
+      [
+       "525",
+       "Reconstruction de Préfet · Yon devient Archange, Yumi Grande Prêtresse"
+      ]
+     ]
     }
-   ]
+   }
   },
   "economie": {
-   "titre": "Économie",
-   "sections": [
-    {
-     "titre": "Monnaie",
-     "contenu": "1 pièce de bronze ≈ 0,10 € · 1 pièce d'argent ≈ 10 € · 1 pièce d'or ≈ 1 000 €."
+   "iles-saintes": {
+    "intro": "Un royaume autosuffisant (agriculture, bois, minerais, pêche) dont la renommée mondiale tient à son textile de luxe.",
+    "piliers": [
+     [
+      "Exportation phare",
+      "Textile de luxe de la famille Merlyn — renommée mondiale"
+     ],
+     [
+      "Revenus complémentaires",
+      "Taxes de l'Union Blanche, collectées par les Aurélion"
+     ],
+     [
+      "Secteurs",
+      "Textile · forgerie · exploitation forestière · agriculture · commerce maritime"
+     ]
+    ],
+    "guilde": {
+     "titre": "La Guilde Marchande de Vanhille (217 – présent)",
+     "texte": "La plus grande guilde marchande du monde connu. Elle dirige le Marché Géant de Vanhille, sert d'intermédiaire entre fournisseurs, fabricants et marchands, et rayonne sur tout Asterre. On dit qu'elle peut trouver n'importe quoi — y compris ce qui est illégal aux Îles Saintes."
     },
-    {
-     "titre": "Modèle",
-     "contenu": "Ressources autosuffisantes : agriculture, bois, minerais, pêche. Exportation principale : le textile de luxe (famille Merlyn), de renommée mondiale. Revenus complémentaires : taxes de l'Union Blanche collectées par les Aurélion. Secteurs : textile, forgerie, exploitation forestière, agriculture, commerce maritime."
-    },
-    {
-     "titre": "La Guilde Marchande de Vahill (217 – présent)",
-     "contenu": "La plus grande guilde marchande du monde connu. Dirige le Marché Géant de Vanhille, sert d'intermédiaire entre fournisseurs, fabricants et marchands, possède des repaires à travers le monde. Peut trouver n'importe quoi — y compris ce qui est illégal aux Îles Saintes."
-    },
-    {
-     "titre": "Prix courants",
-     "contenu": "Nuit à La Coupe d'Argent (Haute-Ville, Roche-Sainte) : 5 pièces d'argent · nuit Au Filet Percé (port) : 1 pièce d'argent · au Recel de Noir Marais : le double du marché, aucune question posée."
-    }
-   ]
+    "monnaie": [
+     [
+      "Pièce de bronze",
+      "≈ 0,10 €"
+     ],
+     [
+      "Pièce d'argent",
+      "≈ 10 €"
+     ],
+     [
+      "Pièce d'or",
+      "≈ 1 000 €"
+     ]
+    ]
+   }
   },
   "armees": {
-   "titre": "Armées",
-   "sections": [
-    {
-     "titre": "L'armée la plus grande d'Asterre",
-     "contenu": "Hiérarchie : Garde Sainte > Garde Royale. En cas de crise majeure, les deux forces collaborent sous le Conseil de Défense des Îles Saintes, présidé par le roi."
-    },
-    {
-     "titre": "La Garde Sainte — l'élite spirituelle",
-     "contenu": "Dirigée par l'Archange Yon. Composée des Paladins (combat des menaces magiques majeures, protection des lieux saints), des Inquisiteurs (reçoivent les rapports des Templiers, arbitrent, enquêtent, jugent — un Templier vous arrête, un Inquisiteur décide de votre sort) et des Templiers (traque et capture des mages corrompus, surveillance des phylactères, présents dans les 6 royaumes de l'Union Blanche ; ils furent les geôliers des Cercles). Chef Templier : Cullen. Missions : neutralisation de la magie impure, traque des mages corrompus, purification des zones corrompues, protection des lieux saints."
-    },
-    {
-     "titre": "Les 7 Paladins",
-     "contenu": "Chef Paladin : Arthur Sauvage (humain, officiellement déclaré mort). Paladins : Clyctus Elden (Elfe Pur de Glace — sa race fut décimée sur ordre de Yon, mais tous ne périrent pas ; les survivants se cachent, lui a choisi de servir et œuvre pour la paix), Darian Angerac (humain), Ewart Langley (humain), Firos Polidras (humain), Harol Zylfir (elfe), Reyna Sauvage (humaine, fille d'Arthur — elle a combattu Pride lors de la destruction de Préfet en 524)."
-    },
-    {
-     "titre": "La Garde Royale — les défenseurs du royaume",
-     "contenu": "Missions : défense des frontières, sécurité du palais, protection de la famille royale, maintien de la paix. Commandement : Grand Commandeur → Maréchal → Général → Colonel → Major → Capitaine → Lieutenant → Sous-lieutenant → Sergent-Major → Sergent → Caporal → Soldat 1re classe → Soldat."
-    }
-   ]
+   "iles-saintes": {
+    "intro": "L'armée la plus grande du monde d'Asterre. Deux forces s'y superposent : la Garde Sainte, élite spirituelle, prime sur la Garde Royale.",
+    "corps": [
+     {
+      "nom": "La Garde Sainte",
+      "icone": "🕊️",
+      "sous": "L'élite spirituelle — dirigée par l'Archange Yon",
+      "texte": "Paladins, Templiers et Inquisiteurs, recrutés dans toute l'Union Blanche. Missions : neutraliser la magie impure, traquer les mages corrompus, purifier les zones souillées, protéger les lieux saints.",
+      "chefs": [
+       [
+        "Paladin en chef",
+        "Arthur Sauvage (déclaré mort)"
+       ],
+       [
+        "Chef Templier",
+        "Cullen"
+       ]
+      ]
+     },
+     {
+      "nom": "La Garde Royale",
+      "icone": "👑",
+      "sous": "Les défenseurs du royaume",
+      "texte": "Défense des frontières, sécurité du palais, protection de la famille royale, maintien de la paix. Commandement : Grand Commandeur → Maréchal → Général → Colonel → Major → Capitaine → Lieutenant → Sergent → Caporal → Soldat.",
+      "chefs": []
+     }
+    ],
+    "note": "En cas de crise majeure, les deux forces collaborent sous le Conseil de Défense des Îles Saintes, présidé par le roi."
+   }
   },
   "chronologie": [
    {
@@ -2532,7 +2748,7 @@
    },
    {
     "date": "7 Septius 300",
-    "evenement": "Mort de Valène — après la tentative d'ouverture de la Porte. Yon crée les Cercles de Mages. Alistair van Emris devient roi.",
+    "evenement": "Mort de Valène — après la tentative d'ouverture de la Porte. Alistair van Emris devient roi.",
     "lieux": [
      "roche-sainte"
     ]
@@ -2605,7 +2821,8 @@
       "rang": "Archange (chef spirituel)",
       "mj": false
      }
-    ]
+    ],
+    "details": []
    },
    {
     "id": "yumi",
@@ -2630,7 +2847,8 @@
       "rang": "Grande Prêtresse (depuis 525)",
       "mj": false
      }
-    ]
+    ],
+    "details": []
    },
    {
     "id": "stanislas",
@@ -2641,7 +2859,8 @@
     ],
     "portrait": "images/pnj/stanislas.jpg",
     "description": "Roi actuel (né en 430). Si influencé par Yon que certains considèrent l'Archange comme le vrai souverain. Il a tué Klaus, l'époux de sa sœur Milthae, en 479.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "estrid",
@@ -2652,7 +2871,8 @@
     ],
     "portrait": "images/pnj/estrid.jpg",
     "description": "Épouse du roi Stanislas.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "eivor",
@@ -2663,7 +2883,8 @@
     ],
     "portrait": "images/pnj/eivor.jpg",
     "description": "Fils du roi Stanislas et de la reine Estrid.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "arthur-sauvage",
@@ -2683,7 +2904,8 @@
       "rang": "Chef Paladin (Garde Sainte)",
       "mj": false
      }
-    ]
+    ],
+    "details": []
    },
    {
     "id": "reyna-sauvage",
@@ -2703,7 +2925,8 @@
       "rang": "Paladine · fille d'Arthur",
       "mj": false
      }
-    ]
+    ],
+    "details": []
    },
    {
     "id": "allen-sauvage",
@@ -2714,7 +2937,8 @@
     ],
     "portrait": "images/pnj/allen-sauvage.jpg",
     "description": "Tient la Grande Forge des Îles Saintes à Roncedroite.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "cullen",
@@ -2733,7 +2957,8 @@
       "rang": "Chef Templier (Inquisition)",
       "mj": false
      }
-    ]
+    ],
+    "details": []
    },
    {
     "id": "clyctus-elden",
@@ -2752,7 +2977,8 @@
       "rang": "Paladin · Elfe Pur de Glace",
       "mj": false
      }
-    ]
+    ],
+    "details": []
    },
    {
     "id": "berthold",
@@ -2763,7 +2989,8 @@
     ],
     "portrait": "images/pnj/berthold.jpg",
     "description": "Dirige le Bastion du Nord depuis sa forteresse sur la colline.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "arathak",
@@ -2844,7 +3071,8 @@
     ],
     "portrait": "images/pnj/zed.jpg",
     "description": "Elfe, mage de Terre.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "narcise",
@@ -2863,7 +3091,8 @@
       "rang": "le Cycle de la Mort",
       "mj": false
      }
-    ]
+    ],
+    "details": []
    },
    {
     "id": "araignee",
@@ -2874,7 +3103,8 @@
     ],
     "portrait": "images/pnj/araignee.jpg",
     "description": "Personne ne connaît son visage. Ne paraît jamais, parle par intermédiaires. Sait tout ce qui se passe aux Îles Saintes — y compris à Roche-Sainte : qui a besoin de disparaître, qui cherche l'interdit, ce qui entre et sort du Grand Port. On ne trouve pas l'Araignée. L'Araignée vous trouve.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "charlie",
@@ -2885,7 +3115,8 @@
     ],
     "portrait": "images/pnj/charlie.jpg",
     "description": "Parieur ultra-riche venu du Désert Magistral. Possède l'arène de paris de combat illégale de BlancheFleure.",
-    "origine": "Désert Magistral"
+    "origine": "Désert Magistral",
+    "details": []
    },
    {
     "id": "geralt",
@@ -2896,7 +3127,8 @@
     ],
     "portrait": "images/pnj/geralt.jpg",
     "description": "Ancien soldat. Tient la Taverne de Travail.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "elara",
@@ -2907,7 +3139,8 @@
     ],
     "portrait": "images/pnj/elara.jpg",
     "description": "Elfe. Tient Les Aiguilles d'Or.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "bogdan",
@@ -2918,7 +3151,8 @@
     ],
     "portrait": "images/pnj/bogdan.jpg",
     "description": "Commande la Maison de la Garde Royale de BlancheFleure.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "lazaro",
@@ -2929,7 +3163,8 @@
     ],
     "portrait": "images/pnj/lazaro.jpg",
     "description": "Tenait autrefois La Flore des Prairies.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "achabel",
@@ -2963,7 +3198,7 @@
       "mj": false
      },
      {
-      "texte": "Vanhill est la seule partie des Îles Saintes qui sera épargnée par la Lune de Sang — hasard, protection naturelle, ou lien avec Achabel lui-même ? À développer.",
+      "texte": "Vanhill est la seule partie des Îles Saintes qui sera épargnée par la Lune de Sang — hasard, protection naturelle, ou lien avec Achabel lui-même ? .",
       "mj": true
      }
     ],
@@ -3002,7 +3237,8 @@
     ],
     "portrait": "images/pnj/manem.jpg",
     "description": "Vit dans les plaines côtières de Vanhill avec Achabel.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "sam",
@@ -3035,7 +3271,8 @@
     ],
     "portrait": "images/pnj/aerith-goldland.jpg",
     "description": "Créatrice du dôme de lumière qui protège le Manoir Goldland.",
-    "origine": "Îles Saintes"
+    "origine": "Îles Saintes",
+    "details": []
    },
    {
     "id": "kanius",
@@ -3052,7 +3289,8 @@
       "rang": "Avelorn",
       "mj": false
      }
-    ]
+    ],
+    "details": []
    },
    {
     "id": "morigane",
@@ -3196,7 +3434,7 @@
     "origine": "Îles Saintes",
     "race": "Demi-Dragonienne (fille de Daenerys)",
     "statut": "Morte de vieillesse au Cercle (~350)",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/alice.jpg",
@@ -3281,7 +3519,7 @@
     "origine": "Désert Magistral",
     "race": "Grande Lignée",
     "statut": "Vivante — immortelle tant que des malédictions existent",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/igna.jpg",
@@ -3351,7 +3589,7 @@
       "id": "sec-katlyn-choix",
       "titre": "Pourquoi elle ?",
       "revele": false,
-      "texte": "Pourquoi Morigane l'a choisie spécifiquement reste à définir. Sait-elle que Galwyn et Miwa sont vivants ? Tension énorme si elle les croise en session."
+      "texte": "Pourquoi Morigane l'a choisie spécifiquement reste . Sait-elle que Galwyn et Miwa sont vivants ? Tension énorme si elle les croise en session."
      }
     ]
    },
@@ -3393,7 +3631,7 @@
     "origine": "Lituania",
     "race": "Humain",
     "statut": "Vivant",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/livai.jpg",
@@ -3642,7 +3880,7 @@
     "origine": "Babel",
     "race": "Démon (Dieu Démon)",
     "statut": "Vivant",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/sandor.jpg",
@@ -3712,7 +3950,7 @@
     "origine": "Désert Magistral",
     "race": "Hybride Vampire-Garou (humain du Monde Olympe)",
     "statut": "Vivant — constitue une armée",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/sylas.jpg",
@@ -3876,7 +4114,7 @@
     "origine": "Îles Saintes",
     "race": "Descendante de la Grande Lignée",
     "statut": "Disparue dans l'Antre (507)",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/divina.jpg",
@@ -3906,7 +4144,7 @@
     "origine": "Harad",
     "race": "Descendant de la Grande Lignée",
     "statut": "Vivant",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/ildris.jpg",
@@ -3978,7 +4216,7 @@
     "origine": "Lituania",
     "race": "Humaine",
     "statut": "Vivante — rentrée à Lituania (525)",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "Église du Feu",
     "lieux": [],
     "portrait": "images/pnj/selina.jpg",
@@ -4019,7 +4257,7 @@
     "origine": "Lituania",
     "race": "Humaine",
     "statut": "Vivante — rentrée à Lituania (525)",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/talia.jpg",
@@ -4030,7 +4268,7 @@
       "mj": false
      },
      {
-      "texte": "Amie de Sky. Personnalité et limites du pouvoir : à développer.",
+      "texte": "Amie de Sky. Personnalité et limites du pouvoir : .",
       "mj": true
      }
     ],
@@ -4052,7 +4290,7 @@
     "origine": "Îles Saintes",
     "race": "Humain",
     "statut": "Mort en 520 — chute du Cercle",
-    "naissance": "À définir",
+    "naissance": "",
     "religion": "",
     "lieux": [],
     "portrait": "images/pnj/sam-aine.jpg",
@@ -4417,7 +4655,7 @@
       "mj": false
      },
      {
-      "texte": "Leur technologie pourrait devenir un atout majeur s'ils sortaient de leur isolement. 5 Fruits Royaux restants à définir.",
+      "texte": "Leur technologie pourrait devenir un atout majeur s'ils sortaient de leur isolement. 5 Fruits Royaux restants .",
       "mj": true
      }
     ]
@@ -4641,7 +4879,7 @@
       "mj": true
      },
      {
-      "texte": "Briser la malédiction — voies connues : Igna elle-même (peu de raisons de le faire) · Sam, Grande Prêtresse de la Lumière (peut briser toute malédiction) · devenir démon pur par Fusion (irréversible ; l'Accord et la Domination ne suffisent pas) · le transfert d'esprit (la malédiction reste liée au corps d'origine, pas à l'esprit) · une cinquième voie à définir.",
+      "texte": "Briser la malédiction — voies connues : Igna elle-même (peu de raisons de le faire) · Sam, Grande Prêtresse de la Lumière (peut briser toute malédiction) · devenir démon pur par Fusion (irréversible ; l'Accord et la Domination ne suffisent pas) · le transfert d'esprit (la malédiction reste liée au corps d'origine, pas à l'esprit) · une cinquième voie .",
       "mj": true
      },
      {
@@ -4690,6 +4928,10 @@
     "description": "Premiers maudits. Première soif. Nés de la Main de Sang : cinq mages de sang réalisèrent le rituel en utilisant Igna comme catalyseur involontaire — chacun sacrifia 100 hommes, 100 femmes et 100 enfants. Ces cinq devinrent les Originaux, souches de toutes les lignées. Beauté saisissante, peau pâle, force et sens démultipliés, régénération — et plus un Vampire vieillit, plus il devient puissant, sans plafond. Tous stériles, sans exception ; la transmission passe par morsure rituelle et volontaire.",
     "details": [
      {
+      "texte": "Il existe 5 Originaux — les cinq premiers vampires, souches de toutes les lignées. Ils ne peuvent être tués que par un autre Originel.",
+      "mj": false
+     },
+     {
       "texte": "Mort en cascade : si un Vampire est tué, tous ceux qu'il a transformés meurent simultanément, quelle que soit la distance.",
       "mj": false
      },
@@ -4698,15 +4940,31 @@
       "mj": true
      },
      {
-      "texte": "Les 5 Originaux : Sylas (Hybride Vampire-Garou), Samuel (feu violet qui trouble les sens), Elsuve (séduction — contrôle ce que la cible désire), Alec (ombres — déplacement, invisibilité, illusions), Tortho (résistance absolue et régénération — aussi l'un des 4 Cavaliers de l'Apocalypse).",
-      "mj": true
-     },
-     {
       "texte": "Règle absolue : les Originaux ne peuvent être tués que par d'autres Originaux — argent, Lumière et acier sont inefficaces mortellement contre eux.",
       "mj": true
      },
      {
       "texte": "Les Vampires ignorent que leur existence est due à la manipulation d'Igna, fille de Malékit. Leur lien avec Sit Sanguis reste à explorer.",
+      "mj": true
+     },
+     {
+      "texte": "🦇 Originel — Sylas — le Loup : seul Hybride Vampire-Garou. Se cache au Désert Magistral et lève une armée.",
+      "mj": true
+     },
+     {
+      "texte": "🦇 Originel — Samuel — la Flamme : un feu violet qui trouble les sens de ceux qui le voient.",
+      "mj": true
+     },
+     {
+      "texte": "🦇 Originel — Elsuve — les Lèvres : contrôle ce que sa cible désire. La séduction faite arme.",
+      "mj": true
+     },
+     {
+      "texte": "🦇 Originel — Alec — l'Ombre : déplacement par les ombres, invisibilité, illusions.",
+      "mj": true
+     },
+     {
+      "texte": "🦇 Originel — Tortho — la Croix : résistance et régénération absolues. Aussi l'un des 4 Cavaliers de l'Apocalypse.",
       "mj": true
      }
     ]
@@ -4724,6 +4982,10 @@
     "description": "Ils ne tuent pas le corps. Ils prennent l'esprit. Ce qui reste marche encore — mais ce n'est plus toi. Immortels de Babel, structurés en huit royaumes : les Makais de Gorath (Souffrance), Belialoth (Luxure et Dévoration), Zythor (Tromperie), Khazar (Guerre Éternelle), Nythrel (Rêves Brisés), Vorash (Putréfaction), Zagon (Thaumaturgie) — et au sommet Sandor, le Dieu Démon, dont la Loi est absolue : « Aucun Démon ne peut franchir le Seuil des Vivants. » Les Démons ont un mana et un esprit, mais pas d'âme.",
     "details": [
      {
+      "texte": "Babel compte 8 royaumes : 7 Makais dirigés chacun par un Roi-Démon, et au sommet Sandor, le Dieu Démon. Plus un démon monte dans les niveaux, plus il est puissant.",
+      "mj": false
+     },
+     {
       "texte": "La possession est un combat d'Esprits : la victime est consciente et peut résister en renforçant le sien. L'issue détermine le demi-démon créé.",
       "mj": false
      },
@@ -4732,15 +4994,43 @@
       "mj": false
      },
      {
-      "texte": "Le Makai est une technique rarissime : créer son propre plan démoniaque, reflet de son créateur.",
-      "mj": false
-     },
-     {
       "texte": "Mort définitive par Magie de Lumière, Magie Noire ou un autre Démon ; sinon retour à Babel en stase. Faiblesse notable : la magie du sang gêne leur régénération.",
       "mj": true
      },
      {
       "texte": "Tout Démon qui franchit le Seuil des Vivants est exécuté s'il revient. Hook : un Démon transgresse sans être puni — Sandor laisse faire. Pourquoi ?",
+      "mj": true
+     },
+     {
+      "texte": "👑 Roi de Babel — Makai Gorath — Domaine de la Souffrance.",
+      "mj": true
+     },
+     {
+      "texte": "👑 Roi de Babel — Makai Belialoth — Domaine de la Luxure et de la Dévoration.",
+      "mj": true
+     },
+     {
+      "texte": "👑 Roi de Babel — Makai Zythor — Domaine de la Tromperie.",
+      "mj": true
+     },
+     {
+      "texte": "👑 Roi de Babel — Makai Khazar — Domaine de la Guerre Éternelle.",
+      "mj": true
+     },
+     {
+      "texte": "👑 Roi de Babel — Makai Nythrel — Domaine des Rêves Brisés.",
+      "mj": true
+     },
+     {
+      "texte": "👑 Roi de Babel — Makai Vorash — Domaine de la Putréfaction.",
+      "mj": true
+     },
+     {
+      "texte": "👑 Roi de Babel — Makai Zagon — Domaine de la Thaumaturgie.",
+      "mj": true
+     },
+     {
+      "texte": "👑 Roi de Babel — Sandor — le Dieu Démon, gouverneur de Babel entière. Sa Loi : aucun démon ne peut franchir le Seuil des Vivants.",
       "mj": true
      }
     ]
@@ -4812,7 +5102,7 @@
     "nom": "Les Dragoniens",
     "icone": "🐉",
     "categorie": "Divine & Ancienne",
-    "statut": "Très rare — 2 vivants connus : Alduin et Raegars",
+    "statut": "Très rare — 2 Dragoniens vivants connus",
     "origine": "Conjonction — un homme-dragon et Luxuria (Déesse de la Passion)",
     "vie": "Immortels",
     "magie": "Lien dragonique + élémentaire de leur dragon",
@@ -4829,10 +5119,6 @@
      },
      {
       "texte": "Alduin, libéré de sa prison-amulette pendant la Guerre des Mages, a perdu son dragon Valdruin face à Morigane — offert à Sit Sanguinis. Seul, sans dragon, il est extrêmement dangereux et imprévisible.",
-      "mj": true
-     },
-     {
-      "texte": "Miwa et Katlyn, quart-Dragoniennes, portent des dons résiduels de cet héritage. Raegars reste à développer.",
       "mj": true
      }
     ]
@@ -5460,11 +5746,19 @@
      }
     ]
    }
+  ],
+  "pays_codex": [
+   {
+    "id": "iles-saintes",
+    "nom": "Îles Saintes",
+    "embleme": "images/blasons/eglise.png",
+    "blasonRoyaume": "images/blasons/royaume.png"
+   }
   ]
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "1.9",
+ "version": "2.1",
  "labels": [
   {
    "texte": "Le Passage du Silence",
