@@ -120,20 +120,62 @@ function scatterInPoly(poly, n, seed) {
 function polyLength(pts) { let L = 0; for (let i = 1; i < pts.length; i++) L += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); return L; }
 
 /* ─────────────── Chargement ─────────────── */
-async function boot() {
-  try {
-    S.monde = await (await fetch("data/monde.json")).json();
-    const actifs = S.monde.pays.filter(p => p.actif && p.fichier);
-    S.pays = await (await fetch(actifs[0].fichier)).json();
-  } catch (e) {
-    $("#chargement").innerHTML = "Impossible de lire les données.<br><small style='font-size:14px'>Si vous avez ouvert le fichier en double-cliquant (file://), lancez plutôt un petit serveur local — voir le README — ou déployez sur GitHub Pages.</small>";
-    return;
-  }
+function initPays() {
+  S.lieux = {}; S.sousLieux = {};
   for (const l of S.pays.lieux) {
     S.lieux[l.id] = l;
     for (const sl of (l.lieuxNotables || [])) S.sousLieux[sl.id] = { ...sl, parent: l.id };
   }
   S.graphe = construireGraphe(S.pays.routes);
+  const refs = S.pays.routes.filter(r => r.type === "maritime");
+  if (refs.length) S.kmParUnite = refs.reduce((s, r) => s + r.km / polyLength(r.points), 0) / refs.length;
+  $("#sous-titre").textContent = S.pays.nom;
+}
+function remplirChoixPays() {
+  const sel = $("#choix-pays"); if (!sel) return;
+  const ids = Object.keys(S.paysData || {});
+  if (ids.length < 2) { sel.hidden = true; return; }
+  sel.hidden = false;
+  sel.innerHTML = ids.map(id => `<option value="${id}" ${id === S.paysActifId ? "selected" : ""}>${esc(S.paysData[id].nom)}</option>`).join("");
+  sel.onchange = () => chargerPays(sel.value);
+}
+function chargerPays(id) {
+  if (!S.paysData[id] || id === S.paysActifId) return;
+  fermerPanneau(); toggleVoyage(false);
+  S.paysActifId = id; S.pays = S.paysData[id];
+  try { localStorage.setItem("asterre-pays", id); } catch (e) {}
+  initPays();
+  S.vb = { ...S.vb0 };
+  renderCarte(); renderLegende(); remplirRecherche();
+  montrerVue("carte");
+  toast("🗺 " + S.pays.nom);
+}
+async function boot() {
+  try {
+    S.monde = await (await fetch("data/monde.json")).json();
+    const actifs = S.monde.pays.filter(p => p.actif && p.fichier);
+    S.paysData = {};
+    for (const p of actifs) S.paysData[p.id] = await (await fetch(p.fichier)).json();
+    const base = S.paysData[actifs[0].id];
+    const cx = base.codex; cx.pays_codex = cx.pays_codex || [];
+    for (const p of actifs) {
+      const d = S.paysData[p.id]; if (d === base) continue;
+      d.transports = d.transports || base.transports;
+      d.modificateurs = d.modificateurs || base.modificateurs;
+      for (const ch of ["lois", "religions", "politique", "economie", "armees", "familles"]) {
+        if (d.codex && d.codex[ch]) { cx[ch] = cx[ch] || {}; Object.assign(cx[ch], d.codex[ch]); }
+      }
+      if (d.pays_codex_entry && !cx.pays_codex.find(x => x.id === d.pays_codex_entry.id)) cx.pays_codex.push(d.pays_codex_entry);
+      d.codex = cx;
+    }
+    let choix = localStorage.getItem("asterre-pays");
+    if (!choix || !S.paysData[choix]) choix = actifs[0].id;
+    S.paysActifId = choix; S.pays = S.paysData[choix];
+  } catch (e) {
+    $("#chargement").innerHTML = "Impossible de lire les données.<br><small style='font-size:14px'>Si vous avez ouvert le fichier en double-cliquant (file://), lancez plutôt un petit serveur local — voir le README — ou déployez sur GitHub Pages.</small>";
+    return;
+  }
+  initPays();
   S.mj = sessionStorage.getItem("asterre-mj") === "1";
   chargeReveals();
   chargeFiches();
@@ -141,12 +183,8 @@ async function boot() {
   const vb = S.monde.vueMonde.viewBox;
   S.vb = { x: vb[0], y: vb[1], w: vb[2], h: vb[3] };
   S.vb0 = { ...S.vb };
-  // échelle km/unité dérivée des routes maritimes canoniques
-  const refs = S.pays.routes.filter(r => r.type === "maritime");
-  if (refs.length) S.kmParUnite = refs.reduce((s, r) => s + r.km / polyLength(r.points), 0) / refs.length;
   $("#titre-monde").textContent = S.monde.monde.toUpperCase();
-  $("#sous-titre").textContent = S.pays.nom;
-  renderCarte(); renderLegende(); construireCodex(); remplirRecherche(); brancherUI();
+  renderCarte(); renderLegende(); construireCodex(); remplirRecherche(); brancherUI(); remplirChoixPays();
   try { S.mecaData.alchimie = await (await fetch("data/alchimie.json")).json(); } catch (e) { S.mecaData.alchimie = null; }
   try { S.musiques = (await (await fetch("data/musiques.json")).json()).pistes || []; } catch (e) { S.musiques = []; }
   initMusique();
@@ -752,7 +790,7 @@ function detailsHTML(liste, prefix) {
   if (!items.length) return "";
   return `<ul class="tensions">${items.join("")}</ul>`;
 }
-const NOMS_TYPES = { capitale: "Capitale", ville: "Ville", "ville-detruite": "Ville détruite", village: "Village", academie: "Académie", "lieu-dit": "Lieu-dit", danger: "Zone mortelle", "lieu-saint": "Lieu saint", prison: "Prison", palais: "Palais", port: "Port", caserne: "Caserne", auberge: "Auberge", taverne: "Taverne", commerce: "Commerce", illegal: "Activité illégale", mystere: "Mystère" };
+const NOMS_TYPES = { continent: "Continent", forteresse: "Forteresse", temple: "Lieu de prière", pouvoir: "Siège du pouvoir", residence: "Résidence", banque: "Banque", forge: "Forge", bibliotheque: "Bibliothèque", capitale: "Capitale", ville: "Ville", "ville-detruite": "Ville détruite", village: "Village", academie: "Académie", "lieu-dit": "Lieu-dit", danger: "Zone mortelle", "lieu-saint": "Lieu saint", prison: "Prison", palais: "Palais", port: "Port", caserne: "Caserne", auberge: "Auberge", taverne: "Taverne", commerce: "Commerce", illegal: "Activité illégale", mystere: "Mystère" };
 
 function ouvrirLieu(id) {
   const l = S.lieux[id]; if (!l) return;
@@ -1291,17 +1329,18 @@ function renderChapitre(ch) {
     const paysList = cx.pays_codex || [];
     const fPays = S._filtreChronoPays || "";
     const lieuxDuPays = id => { const l = S.lieux[id]; return l ? true : false; };
-    const lieuxCites = [...new Set(cx.chronologie.flatMap(e => e.lieux))].filter(id => S.lieux[id]);
+    const tousLieux = {}; for (const pd of Object.values(S.paysData || { x: S.pays })) for (const l of pd.lieux) tousLieux[l.id] = l;
+    const lieuxCites = [...new Set(cx.chronologie.flatMap(e => e.lieux))].filter(id => tousLieux[id]);
     const filtreV = S._filtreChrono || "";
     html = `<h2>Chronologie</h2><div class="filet"></div>
       <div class="chrono-filtres">
         ${paysList.length > 1 ? `<select class="filtre" id="filtre-pays"><option value="">Tout Asterre</option>${paysList.map(p => `<option value="${p.id}" ${fPays === p.id ? "selected" : ""}>${esc(p.nom)}</option>`).join("")}</select>` : ""}
-        <select class="filtre" id="filtre-chrono" aria-label="Filtrer par ville"><option value="">Toutes les villes</option>${lieuxCites.map(id => `<option value="${id}" ${filtreV === id ? "selected" : ""}>${esc(S.lieux[id].nom)}</option>`).join("")}</select>
+        <select class="filtre" id="filtre-chrono" aria-label="Filtrer par ville"><option value="">Toutes les villes</option>${lieuxCites.map(id => `<option value="${id}" ${filtreV === id ? "selected" : ""}>${esc(tousLieux[id].nom)}</option>`).join("")}</select>
       </div>
       <ul class="chrono">` +
-      cx.chronologie.map((e, i) => ({ e, i })).filter(x => (!filtreV || x.e.lieux.includes(filtreV)) && (S.mj || visib(`chr-${x.i}`, true))).map(({ e, i }) => `
+      cx.chronologie.map((e, i) => ({ e, i })).filter(x => (!fPays || (x.e.pays || "iles-saintes") === fPays) && (!filtreV || x.e.lieux.includes(filtreV)) && (S.mj || visib(`chr-${x.i}`, true))).map(({ e, i }) => `
         <li class="${visib(`chr-${i}`, true) ? "" : "pt-cache"}" data-bloc="chr-${i}"><span class="date">${esc(e.date)}</span><br>${esc(e.evenement)}
-        ${e.lieux.length ? `<div class="liens-lieux">📍 ${e.lieux.filter(id => S.lieux[id]).map(id => esc(S.lieux[id].nom)).join(" · ")}</div>` : ""}${cocheMJ(`chr-${i}`, true, "Visible")}</li>`).join("") + `</ul>`;
+        ${e.lieux.length ? `<div class="liens-lieux">📍 ${e.lieux.filter(id => tousLieux[id]).map(id => esc(tousLieux[id].nom)).join(" · ")}</div>` : ""}${cocheMJ(`chr-${i}`, true, "Visible")}</li>`).join("") + `</ul>`;
   } else if (ch === "personnages") {
     const visiblesPnj = cx.personnages.filter(p => S.mj || visib("pnj-" + p.id, !p.mjOnly));
     const ordre = ["Îles Saintes", "Drémora", "Babel", "Désert Magistral", "Eden"];
@@ -1378,8 +1417,10 @@ function rendreChapPays(ch, pid) {
   const cx = S.pays.codex;
   const D = (cx[ch] || {})[pid];
   if (ch === "familles") {
+    const P = (S.paysData || {})[pid] || S.pays;
+    if (!P.familles || !P.familles.length) return `<p class="fell">${esc((D && D.note) || "Les blasons de ce pays restent à dessiner.")}</p>`;
     return `<p class="fell" style="max-width:720px;margin-bottom:18px">Dix blasons. Un royaume, une Église, huit lignées. Les sept familles fondatrices furent choisies par Valène pour superviser les piliers de la société.</p>
-      <div class="grille-familles">` + S.pays.blasonsInstitutions.map(b => carteBlason(b, true)).join("") + S.pays.familles.map(f => carteBlason(f, false)).join("") + `</div>`;
+      <div class="grille-familles">` + (P.blasonsInstitutions || []).map(b => carteBlason(b, true)).join("") + P.familles.map(f => carteBlason(f, false)).join("") + `</div>`;
   }
   if (!D) return `<p class="fell">Ce chapitre n'est pas encore renseigné pour ce pays.</p>`;
 
