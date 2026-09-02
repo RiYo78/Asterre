@@ -1,0 +1,3986 @@
+{
+ "id": "dremora",
+ "nom": "L'Empire de Drémora",
+ "version": "1.0",
+ "reglages": {
+  "volMaxTraiteKm": 300
+ },
+ "transports": null,
+ "modificateurs": null,
+ "iles": [
+  {
+   "id": "dremora",
+   "nom": "Empire de Drémora",
+   "type": "continent",
+   "population": "≈ 820 000 (continent)",
+   "seed": 21,
+   "labelPos": [
+    1000,
+    1200
+   ],
+   "description": "Le nord du Continent : sept régions, chacune à une race, autour d'une capitale mixte.",
+   "forme": [
+    [
+     340,
+     300
+    ],
+    [
+     420,
+     220
+    ],
+    [
+     560,
+     180
+    ],
+    [
+     720,
+     150
+    ],
+    [
+     900,
+     170
+    ],
+    [
+     1080,
+     150
+    ],
+    [
+     1250,
+     120
+    ],
+    [
+     1420,
+     150
+    ],
+    [
+     1600,
+     180
+    ],
+    [
+     1780,
+     240
+    ],
+    [
+     1920,
+     340
+    ],
+    [
+     1960,
+     520
+    ],
+    [
+     1940,
+     700
+    ],
+    [
+     1960,
+     880
+    ],
+    [
+     1900,
+     1040
+    ],
+    [
+     1760,
+     1140
+    ],
+    [
+     1600,
+     1230
+    ],
+    [
+     1420,
+     1240
+    ],
+    [
+     1250,
+     1200
+    ],
+    [
+     1100,
+     1180
+    ],
+    [
+     980,
+     1160
+    ],
+    [
+     900,
+     1150
+    ],
+    [
+     820,
+     1170
+    ],
+    [
+     700,
+     1200
+    ],
+    [
+     580,
+     1170
+    ],
+    [
+     470,
+     1080
+    ],
+    [
+     380,
+     940
+    ],
+    [
+     330,
+     760
+    ],
+    [
+     300,
+     580
+    ],
+    [
+     320,
+     420
+    ]
+   ],
+   "fleuves": [
+    {
+     "nom": "",
+     "points": [
+      [
+       760,
+       1080
+      ],
+      [
+       720,
+       900
+      ],
+      [
+       650,
+       760
+      ],
+      [
+       600,
+       650
+      ]
+     ]
+    },
+    {
+     "nom": "",
+     "points": [
+      [
+       780,
+       440
+      ],
+      [
+       850,
+       600
+      ],
+      [
+       950,
+       720
+      ],
+      [
+       1000,
+       790
+      ]
+     ]
+    }
+   ],
+   "zones": [
+    {
+     "type": "prairie",
+     "poly": [
+      [
+       520,
+       860
+      ],
+      [
+       900,
+       860
+      ],
+      [
+       920,
+       1120
+      ],
+      [
+       520,
+       1140
+      ]
+     ],
+     "densite": 10
+    },
+    {
+     "type": "foret",
+     "poly": [
+      [
+       360,
+       420
+      ],
+      [
+       700,
+       420
+      ],
+      [
+       720,
+       840
+      ],
+      [
+       380,
+       860
+      ]
+     ],
+     "densite": 26
+    },
+    {
+     "type": "colline",
+     "poly": [
+      [
+       640,
+       260
+      ],
+      [
+       980,
+       260
+      ],
+      [
+       980,
+       560
+      ],
+      [
+       650,
+       560
+      ]
+     ],
+     "densite": 10
+    },
+    {
+     "type": "foret",
+     "poly": [
+      [
+       660,
+       300
+      ],
+      [
+       940,
+       300
+      ],
+      [
+       920,
+       520
+      ],
+      [
+       680,
+       520
+      ]
+     ],
+     "densite": 10
+    },
+    {
+     "type": "montagne-neige",
+     "poly": [
+      [
+       1240,
+       180
+      ],
+      [
+       1660,
+       180
+      ],
+      [
+       1720,
+       480
+      ],
+      [
+       1300,
+       500
+      ]
+     ],
+     "densite": 16
+    },
+    {
+     "type": "foret",
+     "poly": [
+      [
+       1300,
+       1020
+      ],
+      [
+       1620,
+       1020
+      ],
+      [
+       1640,
+       1230
+      ],
+      [
+       1320,
+       1230
+      ]
+     ],
+     "densite": 22
+    },
+    {
+     "type": "colline",
+     "poly": [
+      [
+       1600,
+       860
+      ],
+      [
+       1800,
+       860
+      ],
+      [
+       1840,
+       1120
+      ],
+      [
+       1620,
+       1140
+      ]
+     ],
+     "densite": 10
+    },
+    {
+     "type": "foret",
+     "poly": [
+      [
+       1780,
+       300
+      ],
+      [
+       1950,
+       300
+      ],
+      [
+       1950,
+       1040
+      ],
+      [
+       1760,
+       1120
+      ],
+      [
+       1800,
+       860
+      ]
+     ],
+     "densite": 30
+    }
+   ]
+  },
+  {
+   "id": "lituania",
+   "nom": "Lituania",
+   "type": "ile",
+   "population": "≈ 400 000",
+   "seed": 33,
+   "labelPos": [
+    720,
+    1250
+   ],
+   "description": "Une île, trois peuples : Vhalkir (Humains), Mornhal (Garous), Pourpre-Rive (Vampires).",
+   "forme": [
+    [
+     540,
+     1260
+    ],
+    [
+     640,
+     1230
+    ],
+    [
+     760,
+     1240
+    ],
+    [
+     880,
+     1290
+    ],
+    [
+     940,
+     1370
+    ],
+    [
+     900,
+     1430
+    ],
+    [
+     780,
+     1450
+    ],
+    [
+     660,
+     1440
+    ],
+    [
+     580,
+     1400
+    ],
+    [
+     540,
+     1330
+    ]
+   ],
+   "zones": [
+    {
+     "type": "foret",
+     "poly": [
+      [
+       560,
+       1260
+      ],
+      [
+       680,
+       1250
+      ],
+      [
+       680,
+       1340
+      ],
+      [
+       570,
+       1340
+      ]
+     ],
+     "densite": 8
+    }
+   ]
+  },
+  {
+   "id": "ile-volcanique",
+   "nom": "L'Île Volcanique",
+   "type": "ile",
+   "population": "—",
+   "seed": 40,
+   "labelPos": [
+    560,
+    1495
+   ],
+   "description": "Réservée aux adeptes de l'Église du Feu.",
+   "forme": [
+    [
+     520,
+     1450
+    ],
+    [
+     560,
+     1435
+    ],
+    [
+     600,
+     1450
+    ],
+    [
+     610,
+     1480
+    ],
+    [
+     570,
+     1495
+    ],
+    [
+     525,
+     1485
+    ]
+   ],
+   "zones": [
+    {
+     "type": "montagne-neige",
+     "poly": [
+      [
+       540,
+       1445
+      ],
+      [
+       585,
+       1445
+      ],
+      [
+       590,
+       1480
+      ],
+      [
+       540,
+       1480
+      ]
+     ],
+     "densite": 2
+    }
+   ]
+  }
+ ],
+ "lieux": [
+  {
+   "id": "dremora-cite",
+   "nom": "Drémora",
+   "type": "capitale",
+   "ile": "dremora",
+   "pos": [
+    1000,
+    800
+   ],
+   "population": "~80 000 (très dense)",
+   "climat": "Plaine centrale",
+   "dirigeant": "Aucun — la Table Ronde",
+   "region": "Cité-Région",
+   "accroche": "La seule ville de l'Empire où un Nain peut boire à côté d'un Garou sans que personne ne s'en étonne.",
+   "description": "Capitale impériale et siège de la Table Ronde, la seule cité mixte de tout l'Empire. Au centre, le Cercle : la salle octogonale où siègent les huit voix, l'Église de la Mort aux flèches interminables et l'administration. De là partent les Huit Rues, une par siège, chacune à la saveur d'une race sans jamais être ségréguée. Le Marché Franc vend tout, toutes races confondues ; la Basse-Cendre abrite ouvriers et immigrés récents. Drémora tolère tous les cultes — l'une des raisons de la méfiance de l'Union Blanche.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "table-ronde",
+     "nom": "La Table Ronde",
+     "type": "pouvoir",
+     "utilite": "Salle octogonale · l'Urne aux Morts",
+     "description": "Siège du pouvoir impérial. Chaque siège fait face au centre — personne ne domine. Chaque gouverneur possède une pièce qu'il dépose dans l'Urne aux Morts, tenue par Mary, qui compte les voix et n'en dépose jamais."
+    },
+    {
+     "id": "eglise-mort",
+     "nom": "L'Église de la Mort",
+     "type": "temple",
+     "utilite": "Prière — Zork",
+     "description": "Temple principal du culte de Zork. Architecture gothique noire, flèches interminables. Elle abrite l'Antre des Damnés."
+    },
+    {
+     "id": "palais-mary",
+     "nom": "Le Palais de Mary",
+     "type": "residence",
+     "utilite": "Résidence de la Grande Prêtresse",
+     "description": "Sobre pour un palais — Mary n'aime pas l'ostentation."
+    },
+    {
+     "id": "octave",
+     "nom": "L'Octave",
+     "type": "taverne",
+     "utilite": "La plus célèbre taverne de l'Empire",
+     "description": "Huit salles, une par race."
+    },
+    {
+     "id": "comptoir-huit",
+     "nom": "Le Comptoir des Huit",
+     "type": "banque",
+     "utilite": "Change entre monnaies régionales",
+     "description": ""
+    },
+    {
+     "id": "forge-krath",
+     "nom": "La Forge de Krath",
+     "type": "forge",
+     "utilite": "Forge naine",
+     "description": "Tenue par un banni de Hautecime installé ici."
+    },
+    {
+     "id": "archives-neutres",
+     "nom": "Les Archives Neutres",
+     "type": "bibliotheque",
+     "utilite": "Mémoire de la Table Ronde",
+     "description": "Conserve les décisions de la Table Ronde depuis sa fondation."
+    },
+    {
+     "id": "chapelle-braises",
+     "nom": "La Chapelle des Braises",
+     "type": "temple",
+     "utilite": "Sylvanus · petite communauté du Feu",
+     "description": ""
+    },
+    {
+     "id": "bassin-zireael",
+     "nom": "Le Bassin de Zireael",
+     "type": "temple",
+     "utilite": "Fontaine sacrée en plein air",
+     "description": ""
+    },
+    {
+     "id": "jardin-malia",
+     "nom": "Le Jardin de Malia",
+     "type": "temple",
+     "utilite": "Jardin votif de la Nature, entretenu par des Elfes",
+     "description": ""
+    },
+    {
+     "id": "autel-achaea",
+     "nom": "L'Autel d'Achaea",
+     "type": "temple",
+     "utilite": "Terre · fréquenté par les Nains",
+     "description": ""
+    },
+    {
+     "id": "haut-du-vin",
+     "nom": "Le Haut du Vin",
+     "type": "temple",
+     "utilite": "Petit sanctuaire nain des Hauts",
+     "description": ""
+    }
+   ],
+   "personnages": [
+    "mary",
+    "morigane",
+    "richard"
+   ],
+   "secrets": [
+    {
+     "id": "sec-dremora-antre",
+     "titre": "L'Antre des Damnés",
+     "revele": false,
+     "texte": "Une porte au sein de l'Église de la Mort : c'est de là que Mary tire son pouvoir. Elle convainc les morts qui s'y trouvent de se lier à elle, puis les invoque. Chaque mort lié est un pacte — combien en a-t-elle scellé en des siècles ?"
+    }
+   ],
+   "tensions": [],
+   "images": [
+    "images/lieux/dremora-cite/principale.jpg"
+   ]
+  },
+  {
+   "id": "valmorne",
+   "nom": "Valmorne",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    700,
+    1000
+   ],
+   "population": "~45 000",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Cité gothique dense aux remparts noirs, dominée par sa cathédrale de la Mort.",
+   "description": "Capitale régionale des Humains de l'Empire. Remparts noirs, arcs brisés, et la Cathédrale de Zork — le plus grand temple de la Mort après celui de Drémora.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "cathedrale-zork",
+     "nom": "La Cathédrale de Zork",
+     "type": "temple",
+     "utilite": "Prière — Zork",
+     "description": "Le plus grand temple de la Mort après celui de Drémora."
+    },
+    {
+     "id": "temple-braises",
+     "nom": "Le Temple des Braises",
+     "type": "temple",
+     "utilite": "Prière — Sylvanus",
+     "description": "Petit temple du Feu · communauté discrète mais respectée."
+    },
+    {
+     "id": "source-zireael",
+     "nom": "La Source de Zireael",
+     "type": "temple",
+     "utilite": "Prière — Zireael",
+     "description": "Source naturelle · les malades viennent y boire."
+    },
+    {
+     "id": "autel-achaea-v",
+     "nom": "L'Autel d'Achaea",
+     "type": "temple",
+     "utilite": "Prière — Achaea (Terre)",
+     "description": "Fréquenté par les paysans."
+    }
+   ],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/valmorne/principale.jpg"
+   ]
+  },
+  {
+   "id": "hautecendre",
+   "nom": "Hautecendre",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    850,
+    900
+   ],
+   "population": "~20 000",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Ville marchande sur la route de Drémora.",
+   "description": "Grand relais commercial entre Valmorne et la capitale.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/hautecendre/principale.jpg"
+   ]
+  },
+  {
+   "id": "pierregrise",
+   "nom": "Pierregrise",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    560,
+    1120
+   ],
+   "population": "~15 000",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Ville de carriers et de tailleurs.",
+   "description": "Fournit la pierre noire de toute la région.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/pierregrise/principale.jpg"
+   ]
+  },
+  {
+   "id": "bles-hauts",
+   "nom": "Les Blés-Hauts",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    660,
+    1060
+   ],
+   "population": "",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Le grenier de la région.",
+   "description": "Village agricole.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/bles-hauts/principale.jpg"
+   ]
+  },
+  {
+   "id": "fond-riviere",
+   "nom": "Fond-Rivière",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    760,
+    1080
+   ],
+   "population": "",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Pêche fluviale et moulins.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/fond-riviere/principale.jpg"
+   ]
+  },
+  {
+   "id": "corneval",
+   "nom": "Corneval",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    600,
+    940
+   ],
+   "population": "",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Élevage de chevaux de trait.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/corneval/principale.jpg"
+   ]
+  },
+  {
+   "id": "sainte-ombre",
+   "nom": "Sainte-Ombre",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    740,
+    940
+   ],
+   "population": "",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Village de tisserands.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/sainte-ombre/principale.jpg"
+   ]
+  },
+  {
+   "id": "champ-des-mille",
+   "nom": "Le Champ des Mille",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    640,
+    860
+   ],
+   "population": "",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Ancien champ de bataille de la Guerre des Races.",
+   "description": "Stèles alignées à perte de vue.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/champ-des-mille/principale.jpg"
+   ]
+  },
+  {
+   "id": "pont-deux-voix",
+   "nom": "Le Pont des Deux Voix",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    610,
+    780
+   ],
+   "population": "",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Frontière symbolique avec les Crocs Gris.",
+   "description": "Ancien pont.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/pont-deux-voix/principale.jpg"
+   ]
+  },
+  {
+   "id": "ruines-karn",
+   "nom": "Les Ruines de Karn",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    820,
+    1040
+   ],
+   "population": "",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Vestiges d'avant la Conjonction.",
+   "description": "Personne ne sait qui les a bâties.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/ruines-karn/principale.jpg"
+   ]
+  },
+  {
+   "id": "bois-muet",
+   "nom": "Le Bois Muet",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    520,
+    1010
+   ],
+   "population": "",
+   "climat": "Plaines · collines · rivières",
+   "dirigeant": "",
+   "region": "Valmorne",
+   "accroche": "Un bosquet où aucun oiseau ne chante.",
+   "description": "Les locaux l'évitent.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/bois-muet/principale.jpg"
+   ]
+  },
+  {
+   "id": "khal-drotak",
+   "nom": "Khal Drotak",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    560,
+    660
+   ],
+   "population": "~35 000",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "La clairière neutre où toutes les tribus déposent leurs griefs.",
+   "description": "Capitale régionale bâtie autour d'une clairière ancestrale. Territoire neutre où toutes les tribus peuvent venir sans crainte. C'est ici qu'on élit le Grand Khal.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "clairiere-serments",
+     "nom": "La Clairière des Serments",
+     "type": "lieu-dit",
+     "utilite": "Mémoire",
+     "description": "Où les Khals scellent leurs pactes depuis des siècles."
+    },
+    {
+     "id": "arbre-mere",
+     "nom": "L'Arbre-Mère",
+     "type": "lieu-dit",
+     "utilite": "Sacré",
+     "description": "Arbre millénaire · cœur spirituel de la région."
+    },
+    {
+     "id": "cercle-malia",
+     "nom": "Le Cercle de Malia",
+     "type": "temple",
+     "utilite": "Prière — Malia (Nature)",
+     "description": "Pierres dressées."
+    },
+    {
+     "id": "ossuaires",
+     "nom": "Les Ossuaires",
+     "type": "temple",
+     "utilite": "Prière — Zork",
+     "description": "Grottes funéraires des anciennes tribus."
+    }
+   ],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/khal-drotak/principale.jpg"
+   ]
+  },
+  {
+   "id": "hurlevent",
+   "nom": "Hurlevent",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    420,
+    560
+   ],
+   "population": "~20 000",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "Ville de chasseurs et de pisteurs.",
+   "description": "Point de départ des grandes chasses.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/hurlevent/principale.jpg"
+   ]
+  },
+  {
+   "id": "sous-ramure",
+   "nom": "Sous-Ramure",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    470,
+    790
+   ],
+   "population": "~15 000",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "Bâtie sous la canopée, dans une lumière tamisée en permanence.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/sous-ramure/principale.jpg"
+   ]
+  },
+  {
+   "id": "pleine-lune",
+   "nom": "Pleine-Lune",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    600,
+    620
+   ],
+   "population": "",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "Rassemblement rituel des tribus.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/pleine-lune/principale.jpg"
+   ]
+  },
+  {
+   "id": "sang-chaud",
+   "nom": "Sang-Chaud",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    500,
+    700
+   ],
+   "population": "",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "Boucherie et tannerie.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/sang-chaud/principale.jpg"
+   ]
+  },
+  {
+   "id": "trois-souches",
+   "nom": "Les Trois Souches",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    460,
+    620
+   ],
+   "population": "",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "Bûcherons et charpentiers.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/trois-souches/principale.jpg"
+   ]
+  },
+  {
+   "id": "rive-loup",
+   "nom": "Rive-Loup",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    620,
+    720
+   ],
+   "population": "",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "Pêche et gué sur la rivière.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/rive-loup/principale.jpg"
+   ]
+  },
+  {
+   "id": "fosse-silencieuse",
+   "nom": "La Fosse Silencieuse",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    400,
+    660
+   ],
+   "population": "",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "Aucun Garou ne s'y transforme.",
+   "description": "On ignore pourquoi.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/fosse-silencieuse/principale.jpg"
+   ]
+  },
+  {
+   "id": "gue-deux-rives",
+   "nom": "Le Gué des Deux Rives",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    640,
+    760
+   ],
+   "population": "",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "Frontière avec Valmorne · lieu d'échanges.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/gue-deux-rives/principale.jpg"
+   ]
+  },
+  {
+   "id": "terres-kharzeth",
+   "nom": "Les Terres de Kharzeth",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    480,
+    470
+   ],
+   "population": "Abandonné",
+   "climat": "Forêts profondes · clairières · rivières",
+   "dirigeant": "Khal Ordrek, Grand Khal",
+   "region": "Les Crocs Gris",
+   "accroche": "L'ancien territoire d'une tribu décimée.",
+   "description": "Kharzeth menait sa tribu dans les forêts du nord des Crocs Gris. Voulant briser la lycanthropie pour lui et les siens, il tenta un rituel de Magie du Sang. Le rituel échoua : la tribu s'entre-déchira en une nuit, et Kharzeth mourut le dernier. Le territoire est abandonné. C'est une histoire qu'on raconte encore chez les Crocs Gris.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/terres-kharzeth/principale.jpg"
+   ]
+  },
+  {
+   "id": "sombrelune",
+   "nom": "Sombrelune",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    780,
+    440
+   ],
+   "population": "~28 000",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "Une cité de pierre pâle sous brume permanente, éclairée en plein jour.",
+   "description": "Capitale régionale des Vampires.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "chateau-premier",
+     "nom": "Le Château Premier",
+     "type": "pouvoir",
+     "utilite": "Résidence de Samuel Witlock",
+     "description": "Résidence de l'Originel et de sa famille de morsure."
+    },
+    {
+     "id": "crypte-zork",
+     "nom": "La Crypte de Zork",
+     "type": "temple",
+     "utilite": "Prière — Zork",
+     "description": "Les Vampires honorent la Mort qu'ils ont fuie."
+    },
+    {
+     "id": "autel-souffle",
+     "nom": "L'Autel du Souffle",
+     "type": "temple",
+     "utilite": "Prière — Limehahu",
+     "description": "Petit autel de la Vie · fréquenté par les humains de la région."
+    },
+    {
+     "id": "chapelle-gula",
+     "nom": "La Chapelle de Gula",
+     "type": "temple",
+     "utilite": "Prière — Gula (Déesse du Sang)",
+     "description": "Culte discret mais tenace."
+    }
+   ],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/sombrelune/principale.jpg"
+   ]
+  },
+  {
+   "id": "vestemort",
+   "nom": "Vestemort",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    900,
+    370
+   ],
+   "population": "~18 000",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "La ville des grandes maisons vampiriques.",
+   "description": "Politique, intrigues, alliances.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/vestemort/principale.jpg"
+   ]
+  },
+  {
+   "id": "sanguemont",
+   "nom": "Sanguemont",
+   "type": "caserne",
+   "ile": "dremora",
+   "pos": [
+    700,
+    300
+   ],
+   "population": "~14 000",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "Ville-forteresse sur les hauteurs.",
+   "description": "Garnison régionale.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/sanguemont/principale.jpg"
+   ]
+  },
+  {
+   "id": "les-donneurs",
+   "nom": "Les Donneurs",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    800,
+    480
+   ],
+   "population": "",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "Village humain sous protection, qui fournit le sang volontairement.",
+   "description": "Le sang se donne, il ne se prend pas. C'est la loi de Sombrelune.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/les-donneurs/principale.jpg"
+   ]
+  },
+  {
+   "id": "basse-brume",
+   "nom": "Basse-Brume",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    820,
+    510
+   ],
+   "population": "",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "Village agricole qui nourrit les humains de la région.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/basse-brume/principale.jpg"
+   ]
+  },
+  {
+   "id": "fontenoire",
+   "nom": "Fontenoire",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    880,
+    470
+   ],
+   "population": "",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "Sources et thermes.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/fontenoire/principale.jpg"
+   ]
+  },
+  {
+   "id": "guet-pale",
+   "nom": "Le Guet-Pâle",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    660,
+    540
+   ],
+   "population": "",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "Poste frontière avec les Crocs Gris.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/guet-pale/principale.jpg"
+   ]
+  },
+  {
+   "id": "miroir-noir",
+   "nom": "Le Miroir Noir",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    720,
+    380
+   ],
+   "population": "",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "Un lac d'eau immobile qui ne reflète rien.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/miroir-noir/principale.jpg"
+   ]
+  },
+  {
+   "id": "tombes-ouvertes",
+   "nom": "Les Tombes Ouvertes",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    850,
+    420
+   ],
+   "population": "",
+   "climat": "Vallées brumeuses · falaises · forêts sombres",
+   "dirigeant": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "region": "Sombrelune",
+   "accroche": "Un cimetière où toutes les tombes sont ouvertes de l'intérieur.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/tombes-ouvertes/principale.jpg"
+   ]
+  },
+  {
+   "id": "krath-dun",
+   "nom": "Krath-Dun",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    1420,
+    380
+   ],
+   "population": "~30 000",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Cité en terrasses au pied des montagnes, chaque niveau plus ancien que le précédent.",
+   "description": "Capitale régionale. Les forges tournent jour et nuit.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "haut-tetons-vin",
+     "nom": "Le Haut des Tétons et du Vin",
+     "type": "temple",
+     "utilite": "Prière — Les Hauts",
+     "description": "Sanctuaire principal · mémoire des bannis illustres."
+    },
+    {
+     "id": "sanctuaire-zork-kd",
+     "nom": "Le Sanctuaire de Zork",
+     "type": "temple",
+     "utilite": "Prière — Zork",
+     "description": "Taillé dans la roche · tombeaux ancestraux."
+    },
+    {
+     "id": "autel-achaea-kd",
+     "nom": "L'Autel d'Achaea",
+     "type": "temple",
+     "utilite": "Prière — Achaea",
+     "description": "« Ce qui naît de la Terre retournera sous Terre. »"
+    },
+    {
+     "id": "belvedere",
+     "nom": "Le Belvédère",
+     "type": "lieu-dit",
+     "utilite": "Point de vue · relais de messagers",
+     "description": "Vue sur toute la région."
+    }
+   ],
+   "personnages": [],
+   "secrets": [
+    {
+     "id": "sec-kd-porte",
+     "titre": "La Porte Scellée",
+     "revele": false,
+     "texte": "Ancienne entrée vers Hautecime, murée de l'intérieur. Y mène-t-elle vraiment ? Et pourquoi les ancêtres des Nains de Krath-Dun ont-ils été bannis ?"
+    }
+   ],
+   "tensions": [],
+   "images": [
+    "images/lieux/krath-dun/principale.jpg"
+   ]
+  },
+  {
+   "id": "fer-profond",
+   "nom": "Fer-Profond",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    1520,
+    300
+   ],
+   "population": "~18 000",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Ville minière aux plus riches veines de la région.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/fer-profond/principale.jpg"
+   ]
+  },
+  {
+   "id": "hautgrave",
+   "nom": "Hautgrave",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    1300,
+    270
+   ],
+   "population": "~12 000",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Ville d'artisans et de graveurs.",
+   "description": "On y taille la pierre pour tout l'Empire.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/hautgrave/principale.jpg"
+   ]
+  },
+  {
+   "id": "col-ferme",
+   "nom": "Col-Fermé",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1360,
+    440
+   ],
+   "population": "",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Poste de garde du col principal.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/col-ferme/principale.jpg"
+   ]
+  },
+  {
+   "id": "roche-chaude",
+   "nom": "Roche-Chaude",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1480,
+    440
+   ],
+   "population": "",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Sources thermales · lieu de repos.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/roche-chaude/principale.jpg"
+   ]
+  },
+  {
+   "id": "les-soufflets",
+   "nom": "Les Soufflets",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1440,
+    340
+   ],
+   "population": "",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Charbonniers qui alimentent les forges.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/les-soufflets/principale.jpg"
+   ]
+  },
+  {
+   "id": "basse-enclume",
+   "nom": "Basse-Enclume",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1400,
+    400
+   ],
+   "population": "",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Apprentis forgerons · écoles de métier.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/basse-enclume/principale.jpg"
+   ]
+  },
+  {
+   "id": "grande-faille",
+   "nom": "La Grande Faille",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1560,
+    380
+   ],
+   "population": "",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Un gouffre immense dont personne ne connaît le fond.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/grande-faille/principale.jpg"
+   ]
+  },
+  {
+   "id": "vieille-mine",
+   "nom": "La Vieille Mine",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1330,
+    340
+   ],
+   "population": "",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Épuisée depuis des siècles — on y entend des bruits.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/vieille-mine/principale.jpg"
+   ]
+  },
+  {
+   "id": "statues-debout",
+   "nom": "Les Statues Debout",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1600,
+    280
+   ],
+   "population": "",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Douze figures de pierre, antérieures aux Nains.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/statues-debout/principale.jpg"
+   ]
+  },
+  {
+   "id": "porte-scellee",
+   "nom": "La Porte Scellée",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1470,
+    240
+   ],
+   "population": "",
+   "climat": "Montagnes · contreforts · vallées minérales",
+   "dirigeant": "Thorgan Brasefer",
+   "region": "Krath-Dun",
+   "accroche": "Ancienne entrée vers Hautecime, murée de l'intérieur.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/porte-scellee/principale.jpg"
+   ]
+  },
+  {
+   "id": "aelriven",
+   "nom": "Aelriven",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    1450,
+    1140
+   ],
+   "population": "~15 000",
+   "climat": "Forêts anciennes · clairières sacrées",
+   "dirigeant": "Ilvaren Aelthir",
+   "region": "Aelriven",
+   "accroche": "Des tours de pierre claire enlacées aux arbres, autour d'une clairière millénaire.",
+   "description": "Capitale régionale des Elfes.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "sanctuaire-arbre",
+     "nom": "Le Sanctuaire de l'Arbre",
+     "type": "temple",
+     "utilite": "Prière — Arbre de la Nature",
+     "description": "Le plus grand lieu de culte elfe de l'Empire · orienté vers la Forêt Infinie."
+    },
+    {
+     "id": "bosquet-noms",
+     "nom": "Le Bosquet des Noms",
+     "type": "lieu-dit",
+     "utilite": "Mémoire",
+     "description": "Chaque arbre porte le nom d'un Elfe mort pendant la Guerre des Races."
+    },
+    {
+     "id": "source-premiere",
+     "nom": "La Source Première",
+     "type": "lieu-dit",
+     "utilite": "Sacré",
+     "description": "Source dont l'eau ne gèle jamais."
+    },
+    {
+     "id": "autel-malia-ae",
+     "nom": "L'Autel de Malia",
+     "type": "temple",
+     "utilite": "Prière — Malia (Nature)",
+     "description": "Culte secondaire."
+    }
+   ],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/aelriven/principale.jpg"
+   ]
+  },
+  {
+   "id": "silvebrume",
+   "nom": "Silvebrume",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    1560,
+    1210
+   ],
+   "population": "~9 000",
+   "climat": "Forêts anciennes · clairières sacrées",
+   "dirigeant": "Ilvaren Aelthir",
+   "region": "Aelriven",
+   "accroche": "Ville de guildes et d'artisans — bois et soie.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/silvebrume/principale.jpg"
+   ]
+  },
+  {
+   "id": "feuille-haute",
+   "nom": "Feuille-Haute",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1400,
+    1090
+   ],
+   "population": "",
+   "climat": "Forêts anciennes · clairières sacrées",
+   "dirigeant": "Ilvaren Aelthir",
+   "region": "Aelriven",
+   "accroche": "Herboristerie et alchimie végétale.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/feuille-haute/principale.jpg"
+   ]
+  },
+  {
+   "id": "vieux-sentier",
+   "nom": "Le Vieux Sentier",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1370,
+    1180
+   ],
+   "population": "",
+   "climat": "Forêts anciennes · clairières sacrées",
+   "dirigeant": "Ilvaren Aelthir",
+   "region": "Aelriven",
+   "accroche": "Relais et accueil des voyageurs.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/vieux-sentier/principale.jpg"
+   ]
+  },
+  {
+   "id": "chant-clair",
+   "nom": "Chant-Clair",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1500,
+    1090
+   ],
+   "population": "",
+   "climat": "Forêts anciennes · clairières sacrées",
+   "dirigeant": "Ilvaren Aelthir",
+   "region": "Aelriven",
+   "accroche": "Musiciens, conteurs, mémoire orale.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/chant-clair/principale.jpg"
+   ]
+  },
+  {
+   "id": "pierres-chantees",
+   "nom": "Les Pierres Chantées",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1520,
+    1160
+   ],
+   "population": "",
+   "climat": "Forêts anciennes · clairières sacrées",
+   "dirigeant": "Ilvaren Aelthir",
+   "region": "Aelriven",
+   "accroche": "Un cercle de pierres qui résonne certaines nuits.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/pierres-chantees/principale.jpg"
+   ]
+  },
+  {
+   "id": "la-cloture",
+   "nom": "La Clôture",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1590,
+    1080
+   ],
+   "population": "",
+   "climat": "Forêts anciennes · clairières sacrées",
+   "dirigeant": "Ilvaren Aelthir",
+   "region": "Aelriven",
+   "accroche": "Frontière gardée avec le Val des Neuf Queues.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/la-cloture/principale.jpg"
+   ]
+  },
+  {
+   "id": "neuf-queues",
+   "nom": "Neuf-Queues",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    1680,
+    970
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "Cité en terrasses sur les collines. Des lanternes partout, même de jour.",
+   "description": "Capitale régionale des Kitsune.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "sanctuaire-neuf",
+     "nom": "Le Sanctuaire des Neuf",
+     "type": "temple",
+     "utilite": "Prière — traditions kitsune",
+     "description": "Neuf autels · rituels anciens."
+    },
+    {
+     "id": "les-perdus",
+     "nom": "Les Perdus",
+     "type": "lieu-dit",
+     "utilite": "Mémoire",
+     "description": "Stèles pour ceux qui sont entrés dans la Forêt sans revenir."
+    }
+   ],
+   "personnages": [],
+   "secrets": [
+    {
+     "id": "sec-nq-seuil",
+     "titre": "Ce que gardent les Kitsune",
+     "revele": false,
+     "texte": "Pourquoi les autres races sont-elles interdites ? Que gardent réellement les Kitsune — le Seuil, ou ce qu'il y a derrière ? L'Arbre de Vie vénéré par les Elfes se trouve dans cette Forêt."
+    }
+   ],
+   "tensions": [],
+   "images": [
+    "images/lieux/neuf-queues/principale.jpg"
+   ]
+  },
+  {
+   "id": "sous-bois-long",
+   "nom": "Sous-Bois-Long",
+   "type": "ville",
+   "ile": "dremora",
+   "pos": [
+    1810,
+    1010
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "Ville-frontière, dernier point avant la Forêt Infinie.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/sous-bois-long/principale.jpg"
+   ]
+  },
+  {
+   "id": "les-lanternes",
+   "nom": "Les Lanternes",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1700,
+    930
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "Fabrication de lampes et de papier.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/les-lanternes/principale.jpg"
+   ]
+  },
+  {
+   "id": "renard-blanc",
+   "nom": "Renard-Blanc",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1760,
+    1050
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "Le village des guides de la Forêt.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/renard-blanc/principale.jpg"
+   ]
+  },
+  {
+   "id": "brume-basse",
+   "nom": "Brume-Basse",
+   "type": "village",
+   "ile": "dremora",
+   "pos": [
+    1650,
+    1020
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "Cultures en terrasses.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/brume-basse/principale.jpg"
+   ]
+  },
+  {
+   "id": "le-seuil",
+   "nom": "Le Seuil",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1850,
+    960
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "L'entrée de la Forêt Infinie, gardée en permanence.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/le-seuil/principale.jpg"
+   ]
+  },
+  {
+   "id": "arbre-roi",
+   "nom": "L'Arbre-Roi",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1900,
+    900
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "On l'aperçoit de toute la région. Personne ne l'a atteint.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/arbre-roi/principale.jpg"
+   ]
+  },
+  {
+   "id": "bois-dryades",
+   "nom": "Le Bois des Dryades",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1790,
+    880
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "Territoire dryade — les Kitsune n'y entrent pas.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/bois-dryades/principale.jpg"
+   ]
+  },
+  {
+   "id": "pas-larges",
+   "nom": "Les Pas Larges",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1830,
+    1090
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "Des empreintes de géants, certaines très récentes.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/pas-larges/principale.jpg"
+   ]
+  },
+  {
+   "id": "chemin-revient",
+   "nom": "Le Chemin qui Revient",
+   "type": "lieu-dit",
+   "ile": "dremora",
+   "pos": [
+    1750,
+    1140
+   ],
+   "population": "",
+   "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "dirigeant": "Ysoline, la Dame des Neuf",
+   "region": "Val des Neuf Queues",
+   "accroche": "Un sentier qui ramène toujours à son point de départ.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/chemin-revient/principale.jpg"
+   ]
+  },
+  {
+   "id": "port-lituania",
+   "nom": "Port vers Lituania",
+   "type": "port",
+   "ile": "dremora",
+   "pos": [
+    880,
+    1130
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Cité-Région",
+   "accroche": "Le port du continent d'où l'on embarque pour Lituania.",
+   "description": "À trois jours de cheval de la capitale, puis un jour de mer.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/port-lituania/principale.jpg"
+   ]
+  },
+  {
+   "id": "vhalkir",
+   "nom": "Vhalkir",
+   "type": "ville",
+   "ile": "lituania",
+   "pos": [
+    760,
+    1340
+   ],
+   "population": "~200 000 (région)",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir — Humains",
+   "accroche": "La seule région de l'Empire où une religion est imposée : le Feu.",
+   "description": "Capitale de la région humaine de Lituania, gouvernée par la lignée Vhalen depuis des générations — Aldric Vhalen en est le gouverneur. Par dérogation votée à la Table Ronde, l'Église du Feu y règne en culte exclusif : Sylvanus, Luxuria, Gula (Déesse du Sang) et Duoror. Le culte de Gula explique pourquoi la Magie du Sang y est parfaitement légale. C'est la patrie de Livai, Talia et Selina — et l'endroit où Sky les rencontra.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [
+    "livai",
+    "talia",
+    "selina"
+   ],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/vhalkir/principale.jpg"
+   ]
+  },
+  {
+   "id": "port-cendre",
+   "nom": "Port-Cendre",
+   "type": "port",
+   "ile": "lituania",
+   "pos": [
+    690,
+    1400
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir",
+   "accroche": "Le port d'où l'on embarque pour l'Île Volcanique.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/port-cendre/principale.jpg"
+   ]
+  },
+  {
+   "id": "ile-volcanique",
+   "nom": "L'Île Volcanique",
+   "type": "lieu-dit",
+   "ile": "ile-volcanique",
+   "pos": [
+    560,
+    1465
+   ],
+   "population": "Aucune population civile",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Église du Feu",
+   "accroche": "Une petite île de feu réservée aux adeptes de l'Église du Feu.",
+   "description": "Uniquement les adeptes et membres de l'Église du Feu y vivent. On y accède depuis Port-Cendre, à une demi-journée de bateau.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [
+    {
+     "id": "sec-volc-phoenix",
+     "titre": "Le Rituel du Phœnix",
+     "revele": false,
+     "texte": "C'est ici que Selina accomplira le Rituel du Phœnix pour pouvoir ramener son frère Livai."
+    }
+   ],
+   "tensions": [],
+   "images": [
+    "images/lieux/ile-volcanique/principale.jpg"
+   ]
+  },
+  {
+   "id": "mornhal",
+   "nom": "Mornhal",
+   "type": "ville",
+   "ile": "lituania",
+   "pos": [
+    600,
+    1290
+   ],
+   "population": "~100 000 (région)",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Mornhal — Garous",
+   "accroche": "Les tribus garous de l'île, sous le Grand Khal Ordrek.",
+   "description": "Région garou de Lituania, dirigée par le même Grand Khal que les Crocs Gris.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/mornhal/principale.jpg"
+   ]
+  },
+  {
+   "id": "pourpre-rive",
+   "nom": "Pourpre-Rive",
+   "type": "ville",
+   "ile": "lituania",
+   "pos": [
+    860,
+    1400
+   ],
+   "population": "~100 000 (région)",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Pourpre-Rive — Vampires",
+   "accroche": "Le domaine d'Elsuve, l'Originelle qui ne quitte jamais son île.",
+   "description": "Région vampire de Lituania. Elsuve, l'une des cinq Originelles, y réside au Domaine et gouverne les Vampires de tout l'Empire depuis cette île sans presque jamais se déplacer. Son pouvoir signature : la séduction — elle connaît et contrôle ce que sa cible désire le plus.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/pourpre-rive/principale.jpg"
+   ]
+  }
+ ],
+ "routes": [
+  {
+   "de": "dremora-cite",
+   "a": "hautecendre",
+   "km": 110,
+   "type": "route",
+   "points": [
+    [
+     1000,
+     800
+    ],
+    [
+     925,
+     850
+    ],
+    [
+     850,
+     900
+    ]
+   ]
+  },
+  {
+   "de": "hautecendre",
+   "a": "valmorne",
+   "km": 70,
+   "type": "route",
+   "points": [
+    [
+     850,
+     900
+    ],
+    [
+     775,
+     950
+    ],
+    [
+     700,
+     1000
+    ]
+   ]
+  },
+  {
+   "de": "dremora-cite",
+   "a": "khal-drotak",
+   "km": 220,
+   "type": "route",
+   "points": [
+    [
+     1000,
+     800
+    ],
+    [
+     780,
+     730
+    ],
+    [
+     560,
+     660
+    ]
+   ]
+  },
+  {
+   "de": "dremora-cite",
+   "a": "sombrelune",
+   "km": 200,
+   "type": "route",
+   "points": [
+    [
+     1000,
+     800
+    ],
+    [
+     890,
+     620
+    ],
+    [
+     780,
+     440
+    ]
+   ]
+  },
+  {
+   "de": "dremora-cite",
+   "a": "krath-dun",
+   "km": 260,
+   "type": "montagne",
+   "points": [
+    [
+     1000,
+     800
+    ],
+    [
+     1210,
+     590
+    ],
+    [
+     1420,
+     380
+    ]
+   ]
+  },
+  {
+   "de": "dremora-cite",
+   "a": "aelriven",
+   "km": 300,
+   "type": "route",
+   "points": [
+    [
+     1000,
+     800
+    ],
+    [
+     1225,
+     970
+    ],
+    [
+     1450,
+     1140
+    ]
+   ]
+  },
+  {
+   "de": "dremora-cite",
+   "a": "neuf-queues",
+   "km": 340,
+   "type": "route",
+   "points": [
+    [
+     1000,
+     800
+    ],
+    [
+     1340,
+     885
+    ],
+    [
+     1680,
+     970
+    ]
+   ]
+  },
+  {
+   "de": "dremora-cite",
+   "a": "port-lituania",
+   "km": 150,
+   "type": "route",
+   "points": [
+    [
+     1000,
+     800
+    ],
+    [
+     940,
+     965
+    ],
+    [
+     880,
+     1130
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "khal-drotak",
+   "km": 140,
+   "type": "route",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     630,
+     830
+    ],
+    [
+     560,
+     660
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "sombrelune",
+   "km": 210,
+   "type": "route",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     740,
+     720
+    ],
+    [
+     780,
+     440
+    ]
+   ]
+  },
+  {
+   "de": "khal-drotak",
+   "a": "sombrelune",
+   "km": 180,
+   "type": "route",
+   "points": [
+    [
+     560,
+     660
+    ],
+    [
+     670,
+     550
+    ],
+    [
+     780,
+     440
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "hautecendre",
+   "km": 70,
+   "type": "route",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     775,
+     950
+    ],
+    [
+     850,
+     900
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "pierregrise",
+   "km": 95,
+   "type": "route",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     630,
+     1060
+    ],
+    [
+     560,
+     1120
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "bles-hauts",
+   "km": 25,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     680,
+     1030
+    ],
+    [
+     660,
+     1060
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "fond-riviere",
+   "km": 40,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     730,
+     1040
+    ],
+    [
+     760,
+     1080
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "corneval",
+   "km": 55,
+   "type": "route",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     650,
+     970
+    ],
+    [
+     600,
+     940
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "sainte-ombre",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     720,
+     970
+    ],
+    [
+     740,
+     940
+    ]
+   ]
+  },
+  {
+   "de": "khal-drotak",
+   "a": "hurlevent",
+   "km": 70,
+   "type": "route",
+   "points": [
+    [
+     560,
+     660
+    ],
+    [
+     490,
+     610
+    ],
+    [
+     420,
+     560
+    ]
+   ]
+  },
+  {
+   "de": "khal-drotak",
+   "a": "sous-ramure",
+   "km": 95,
+   "type": "route",
+   "points": [
+    [
+     560,
+     660
+    ],
+    [
+     515,
+     725
+    ],
+    [
+     470,
+     790
+    ]
+   ]
+  },
+  {
+   "de": "khal-drotak",
+   "a": "pleine-lune",
+   "km": 20,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     660
+    ],
+    [
+     580,
+     640
+    ],
+    [
+     600,
+     620
+    ]
+   ]
+  },
+  {
+   "de": "khal-drotak",
+   "a": "sang-chaud",
+   "km": 35,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     660
+    ],
+    [
+     530,
+     680
+    ],
+    [
+     500,
+     700
+    ]
+   ]
+  },
+  {
+   "de": "khal-drotak",
+   "a": "trois-souches",
+   "km": 50,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     660
+    ],
+    [
+     510,
+     640
+    ],
+    [
+     460,
+     620
+    ]
+   ]
+  },
+  {
+   "de": "khal-drotak",
+   "a": "rive-loup",
+   "km": 45,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     660
+    ],
+    [
+     590,
+     690
+    ],
+    [
+     620,
+     720
+    ]
+   ]
+  },
+  {
+   "de": "sombrelune",
+   "a": "vestemort",
+   "km": 55,
+   "type": "route",
+   "points": [
+    [
+     780,
+     440
+    ],
+    [
+     840,
+     405
+    ],
+    [
+     900,
+     370
+    ]
+   ]
+  },
+  {
+   "de": "sombrelune",
+   "a": "sanguemont",
+   "km": 80,
+   "type": "route",
+   "points": [
+    [
+     780,
+     440
+    ],
+    [
+     740,
+     370
+    ],
+    [
+     700,
+     300
+    ]
+   ]
+  },
+  {
+   "de": "sombrelune",
+   "a": "les-donneurs",
+   "km": 12,
+   "type": "piste",
+   "points": [
+    [
+     780,
+     440
+    ],
+    [
+     790,
+     460
+    ],
+    [
+     800,
+     480
+    ]
+   ]
+  },
+  {
+   "de": "sombrelune",
+   "a": "basse-brume",
+   "km": 25,
+   "type": "piste",
+   "points": [
+    [
+     780,
+     440
+    ],
+    [
+     800,
+     475
+    ],
+    [
+     820,
+     510
+    ]
+   ]
+  },
+  {
+   "de": "sombrelune",
+   "a": "fontenoire",
+   "km": 40,
+   "type": "piste",
+   "points": [
+    [
+     780,
+     440
+    ],
+    [
+     830,
+     455
+    ],
+    [
+     880,
+     470
+    ]
+   ]
+  },
+  {
+   "de": "sombrelune",
+   "a": "guet-pale",
+   "km": 60,
+   "type": "route",
+   "points": [
+    [
+     780,
+     440
+    ],
+    [
+     720,
+     490
+    ],
+    [
+     660,
+     540
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "fer-profond",
+   "km": 40,
+   "type": "montagne",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1470,
+     340
+    ],
+    [
+     1520,
+     300
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "hautgrave",
+   "km": 65,
+   "type": "route",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1360,
+     325
+    ],
+    [
+     1300,
+     270
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "col-ferme",
+   "km": 25,
+   "type": "montagne",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1390,
+     410
+    ],
+    [
+     1360,
+     440
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "roche-chaude",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1450,
+     410
+    ],
+    [
+     1480,
+     440
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "les-soufflets",
+   "km": 15,
+   "type": "piste",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1430,
+     360
+    ],
+    [
+     1440,
+     340
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "basse-enclume",
+   "km": 8,
+   "type": "piste",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1410,
+     390
+    ],
+    [
+     1400,
+     400
+    ]
+   ]
+  },
+  {
+   "de": "aelriven",
+   "a": "silvebrume",
+   "km": 45,
+   "type": "piste",
+   "points": [
+    [
+     1450,
+     1140
+    ],
+    [
+     1505,
+     1175
+    ],
+    [
+     1560,
+     1210
+    ]
+   ]
+  },
+  {
+   "de": "aelriven",
+   "a": "feuille-haute",
+   "km": 18,
+   "type": "piste",
+   "points": [
+    [
+     1450,
+     1140
+    ],
+    [
+     1425,
+     1115
+    ],
+    [
+     1400,
+     1090
+    ]
+   ]
+  },
+  {
+   "de": "aelriven",
+   "a": "vieux-sentier",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     1450,
+     1140
+    ],
+    [
+     1410,
+     1160
+    ],
+    [
+     1370,
+     1180
+    ]
+   ]
+  },
+  {
+   "de": "aelriven",
+   "a": "chant-clair",
+   "km": 22,
+   "type": "piste",
+   "points": [
+    [
+     1450,
+     1140
+    ],
+    [
+     1475,
+     1115
+    ],
+    [
+     1500,
+     1090
+    ]
+   ]
+  },
+  {
+   "de": "neuf-queues",
+   "a": "sous-bois-long",
+   "km": 50,
+   "type": "piste",
+   "points": [
+    [
+     1680,
+     970
+    ],
+    [
+     1745,
+     990
+    ],
+    [
+     1810,
+     1010
+    ]
+   ]
+  },
+  {
+   "de": "neuf-queues",
+   "a": "les-lanternes",
+   "km": 12,
+   "type": "piste",
+   "points": [
+    [
+     1680,
+     970
+    ],
+    [
+     1690,
+     950
+    ],
+    [
+     1700,
+     930
+    ]
+   ]
+  },
+  {
+   "de": "neuf-queues",
+   "a": "renard-blanc",
+   "km": 35,
+   "type": "piste",
+   "points": [
+    [
+     1680,
+     970
+    ],
+    [
+     1720,
+     1010
+    ],
+    [
+     1760,
+     1050
+    ]
+   ]
+  },
+  {
+   "de": "neuf-queues",
+   "a": "brume-basse",
+   "km": 20,
+   "type": "piste",
+   "points": [
+    [
+     1680,
+     970
+    ],
+    [
+     1665,
+     995
+    ],
+    [
+     1650,
+     1020
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "pourpre-rive",
+   "km": 90,
+   "type": "route",
+   "points": [
+    [
+     760,
+     1340
+    ],
+    [
+     810,
+     1370
+    ],
+    [
+     860,
+     1400
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "mornhal",
+   "km": 70,
+   "type": "route",
+   "points": [
+    [
+     760,
+     1340
+    ],
+    [
+     680,
+     1315
+    ],
+    [
+     600,
+     1290
+    ]
+   ]
+  },
+  {
+   "de": "mornhal",
+   "a": "pourpre-rive",
+   "km": 60,
+   "type": "route",
+   "points": [
+    [
+     600,
+     1290
+    ],
+    [
+     730,
+     1345
+    ],
+    [
+     860,
+     1400
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "port-cendre",
+   "km": 20,
+   "type": "piste",
+   "points": [
+    [
+     760,
+     1340
+    ],
+    [
+     725,
+     1370
+    ],
+    [
+     690,
+     1400
+    ]
+   ]
+  },
+  {
+   "de": "port-lituania",
+   "a": "vhalkir",
+   "km": 120,
+   "type": "maritime",
+   "points": [
+    [
+     880,
+     1130
+    ],
+    [
+     830,
+     1230
+    ],
+    [
+     770,
+     1320
+    ],
+    [
+     760,
+     1340
+    ]
+   ]
+  },
+  {
+   "de": "port-cendre",
+   "a": "ile-volcanique",
+   "km": 40,
+   "type": "cotier",
+   "points": [
+    [
+     690,
+     1400
+    ],
+    [
+     620,
+     1435
+    ],
+    [
+     560,
+     1465
+    ]
+   ]
+  }
+ ],
+ "labels": [
+  {
+   "texte": "La Forêt Infinie",
+   "pos": [
+    1880,
+    640
+   ],
+   "taille": 18,
+   "angle": -90
+  },
+  {
+   "texte": "La Route Pâle",
+   "pos": [
+    890,
+    600
+   ],
+   "taille": 13,
+   "angle": 58
+  }
+ ],
+ "regions": [
+  {
+   "id": "valmorne",
+   "nom": "Valmorne",
+   "race": "Humains",
+   "population": "~200 000",
+   "terrain": "Plaines · collines · rivières",
+   "architecture": "Gothique — pierre sombre, arcs brisés",
+   "accroche": "Des plaines à perte de vue, et des cités de pierre noire qui percent le ciel."
+  },
+  {
+   "id": "crocs-gris",
+   "nom": "Les Crocs Gris",
+   "race": "Garous",
+   "population": "~200 000",
+   "terrain": "Forêts profondes · clairières · rivières",
+   "gouverneur": "Khal Ordrek, Grand Khal",
+   "accroche": "Des centaines de tribus. Un seul lieu où elles ne s'entretuent pas.",
+   "description": "Les Garous ne forment pas un peuple unifié : plusieurs centaines de tribus, chacune menée par un Khal à l'autorité absolue. Les Khals se rassemblent à Khal Drotak, seul lieu neutre du territoire, pour élire le Grand Khal qui portera leur voix à la Table Ronde. Hors de Khal Drotak, les tribus se disputent territoires, gibier et honneur ; à l'intérieur, verser le sang est le plus grand des crimes."
+  },
+  {
+   "id": "sombrelune",
+   "nom": "Sombrelune",
+   "race": "Vampires",
+   "population": "~100 000",
+   "terrain": "Vallées brumeuses · falaises · forêts sombres",
+   "architecture": "Châteaux · manoirs · gothique flamboyant",
+   "gouverneur": "Elsuve (siège) · Samuel Witlock (chef de région)",
+   "accroche": "Le brouillard ne se lève jamais complètement. C'est arrangé ainsi.",
+   "description": "Deux Originaux, deux rôles : Samuel Witlock dirige Sombrelune sur le terrain depuis le Château Premier, entouré de sa famille de morsure — chez les Vampires, la famille n'est pas de sang, elle est de morsure. Elsuve porte la voix des Vampires à la Table Ronde. La région est la plus socialement mélangée de l'Empire après la capitale : grandes maisons anciennes, vampires solitaires, humains protégés, nouveaux transformés."
+  },
+  {
+   "id": "krath-dun",
+   "nom": "Krath-Dun",
+   "race": "Nains de la Surface",
+   "population": "~100 000",
+   "terrain": "Montagnes · contreforts · vallées minérales",
+   "gouverneur": "Thorgan Brasefer",
+   "accroche": "Ils ne creusent plus les tréfonds. Ils bâtissent au pied des montagnes, à la lumière — parce qu'on les a chassés.",
+   "description": "Les Nains de la Surface ne sont pas un peuple à part : ce sont des bannis, chassés des tréfonds de Hautecime, l'empire nain souterrain niché dans une chaîne de montagnes du continent. Le nom même de « Nains de la Surface » est une désignation d'exil. Les bannis n'ont refusé aucune foi — Krath-Dun compte de petits autels à presque tous les dieux, et le culte des Hauts honore les Nains vénérables, bannis illustres dont on vénère la mémoire, pas des dieux."
+  },
+  {
+   "id": "aelriven",
+   "nom": "Aelriven",
+   "race": "Elfes",
+   "population": "~40 000 — la plus petite région",
+   "terrain": "Forêts anciennes · clairières sacrées",
+   "architecture": "Intégrée aux arbres · pierre claire · élancée",
+   "gouverneur": "Ilvaren Aelthir",
+   "accroche": "La plus petite région de l'Empire. Et la plus ancienne.",
+   "description": "Les Elfes d'Aelriven vénèrent l'Arbre de la Nature — religion ancienne, antérieure aux Églises élémentaires — dont l'objet, l'Arbre de Vie, se dresse quelque part dans la Forêt Infinie. Aucun Elfe d'Aelriven ne l'a jamais atteint : la Forêt Infinie ne se laisse pas traverser. Ils prient vers l'ouest, en direction de ce qu'ils ne verront jamais. Peu nombreux — séquelle directe de la Guerre des Races."
+  },
+  {
+   "id": "neuf-queues",
+   "nom": "Val des Neuf Queues",
+   "race": "Kitsune",
+   "population": "Faible",
+   "terrain": "Vallées · collines boisées · frontière de la Forêt Infinie",
+   "gouverneur": "Ysoline, la Dame des Neuf",
+   "accroche": "La région la plus fermée de l'Empire. On n'y entre pas — sauf si l'on est Dryade.",
+   "description": "La seule région de Drémora où les autres races sont formellement interdites. Deux exceptions : les Dryades, venues de la Forêt Infinie, plus nombreuses que les Kitsune eux-mêmes — présence ancienne, tolérée, presque sacrée, hors de toute politique ; et des centaines de Géants dans la partie montagneuse et forestière. Cette portion de la Forêt Infinie est celle qui s'étend dans Drémora : les Kitsune en gardent le seuil."
+  }
+ ],
+ "codex": {
+  "lois": {
+   "dremora": {
+    "intro": "Ici, personne ne dicte votre foi ni votre magie. Mais chaque région a ses règles — et on les respecte. Deux niveaux de lois : les Lois Impériales, votées à la Table Ronde, s'appliquent à tout l'Empire ; les Lois Régionales, édictées par chaque gouverneur, à sa région seulement.",
+    "sections": [
+     {
+      "titre": "Les six Lois Impériales",
+      "type": "table",
+      "lignes": [
+       [
+        "Liberté de culte",
+        "Aucune foi n'est interdite — mais aucune n'a le droit de se mettre en avant. Pas de prosélytisme, pas d'Église d'État. Dérogation : Vhalkir (culte exclusif du Feu)."
+       ],
+       [
+        "Liberté de magie",
+        "Aucune magie n'est interdite par principe — y compris la Magie du Sang."
+       ],
+       [
+        "Souveraineté régionale",
+        "Un gouverneur est maître chez lui ; l'Empire ne s'immisce pas."
+       ],
+       [
+        "Neutralité de Drémora",
+        "La capitale n'appartient à aucune race. Aucune loi raciale ne s'y applique."
+       ],
+       [
+        "Inviolabilité de la Table Ronde",
+        "Verser le sang en séance est puni de mort."
+       ],
+       [
+        "Droit de passage",
+        "Nul ne peut être empêché de traverser une région. Dérogation : le Val des Neuf Queues exige un laissez-passer."
+       ]
+      ]
+     },
+     {
+      "titre": "La Justice",
+      "contenu": "Un crime dans une région relève du gouverneur, selon les lois régionales. Un conflit entre régions relève de l'Église de la Mort : Mary envoie ses agents. Les Envoyés de la Mort sont des duos liés à vie — un Grand Frère et une Petite Sœur ; elle porte un collier quasi indestructible contenant l'âme de l'homme, guerrier aguerri dont la puissance vient de cette âme liée. Si l'homme meurt, elle peut le ramener. Les Faucheurs, plus indépendants, traquent les ennemis numéro un de l'Empire. Un Envoyé vient négocier ; un Faucheur vient conclure."
+     },
+     {
+      "titre": "Sanctions impériales",
+      "type": "table",
+      "lignes": [
+       [
+        "Peine de mort",
+        "Crimes majeurs · sang versé à la Table Ronde"
+       ],
+       [
+        "Bannissement",
+        "Exil hors de l'Empire ou de la région"
+       ],
+       [
+        "Amende",
+        "Délits mineurs · compensations"
+       ]
+      ]
+     },
+     {
+      "titre": "Drémora — la neutralité absolue",
+      "type": "table",
+      "lignes": [
+       [
+        "Aucune ségrégation",
+        "Nul ne peut refuser un service pour motif racial"
+       ],
+       [
+        "Armes tolérées",
+        "Sauf dans le quartier de la Table Ronde"
+       ],
+       [
+        "Tribunal Mixte",
+        "Des représentants de chaque race jugent tous les cas"
+       ],
+       [
+        "Droit d'asile",
+        "Un banni d'une région peut vivre à Drémora — la capitale n'expulse personne"
+       ]
+      ]
+     },
+     {
+      "titre": "Valmorne — le droit écrit",
+      "type": "table",
+      "lignes": [
+       [
+        "Code de Valmorne",
+        "Recueil écrit · chaque délit a sa peine tarifée"
+       ],
+       [
+        "Tribunaux de ville",
+        "Un juge par cité, nommé par le gouverneur"
+       ],
+       [
+        "Preuve écrite",
+        "Un contrat non écrit n'a aucune valeur"
+       ],
+       [
+        "Prescription",
+        "Vingt ans — sauf le meurtre"
+       ]
+      ]
+     },
+     {
+      "titre": "Krath-Dun — le Droit de la Forge",
+      "type": "table",
+      "lignes": [
+       [
+        "Contrat scellé",
+        "Un accord scellé devant une forge ne peut être rompu"
+       ],
+       [
+        "Dettes héréditaires",
+        "Une dette non payée passe aux enfants"
+       ],
+       [
+        "Loi du Marteau",
+        "Voler un outil de forge = amputation de la main"
+       ],
+       [
+        "Justice de guilde",
+        "Chaque guilde règle ses litiges internes"
+       ]
+      ]
+     },
+     {
+      "titre": "Les Crocs Gris — la loi tribale",
+      "type": "table",
+      "lignes": [
+       [
+        "Autonomie tribale",
+        "Chaque clan applique ses règles ; un Khal le mène"
+       ],
+       [
+        "Bannis",
+        "On n'accueille jamais un banni d'un autre clan"
+       ],
+       [
+        "Khal Drotak, cité neutre",
+        "Armes, combat et vol interdits — sous peine de mort"
+       ],
+       [
+        "Territoire",
+        "Chasser sur les terres d'une autre tribu sans permission = acte de guerre"
+       ]
+      ]
+     },
+     {
+      "titre": "Sombrelune — le sang se donne",
+      "type": "table",
+      "lignes": [
+       [
+        "Sang consenti uniquement",
+        "Prendre le sang sans consentement = mort"
+       ],
+       [
+        "Protection des Donneurs",
+        "Les villages humains sont sous protection du Château Premier"
+       ],
+       [
+        "Registre des Morsures",
+        "Toute transformation doit être déclarée"
+       ],
+       [
+        "Responsabilité de la Lignée",
+        "Un vampire répond des actes de ceux qu'il a mordus"
+       ],
+       [
+        "Faim publique",
+        "Se nourrir en public : amende, puis bannissement"
+       ]
+      ]
+     },
+     {
+      "titre": "Aelriven — le droit ancien",
+      "type": "table",
+      "lignes": [
+       [
+        "Bosquet des Noms",
+        "Blesser un de ses arbres = mort"
+       ],
+       [
+        "Droit d'Ancienneté",
+        "La parole du plus ancien prévaut"
+       ],
+       [
+        "Parole donnée",
+        "Un serment oral vaut contrat"
+       ],
+       [
+        "Feu en forêt",
+        "Interdit hors foyers déclarés · bannissement"
+       ],
+       [
+        "Droit de Mémoire",
+        "Nul n'est condamné sans qu'un conteur ait récité son histoire entière"
+       ]
+      ]
+     },
+     {
+      "titre": "Val des Neuf Queues — la fermeture",
+      "type": "table",
+      "lignes": [
+       [
+        "Races interdites",
+        "Seul un laissez-passer autorise l'entrée · les Dryades circulent librement"
+       ],
+       [
+        "Le Seuil",
+        "Franchir la Forêt sans guide = bannissement définitif"
+       ],
+       [
+        "Serment du Guide",
+        "Un guide qui perd un voyageur répond devant les Neuf"
+       ],
+       [
+        "Cartographier",
+        "Dessiner la Forêt est un crime — et un mensonge : ses arbres bougent"
+       ]
+      ]
+     },
+     {
+      "titre": "Lituania — Vhalkir, Mornhal, Pourpre-Rive",
+      "type": "table",
+      "lignes": [
+       [
+        "Vhalkir",
+        "Culte exclusif du Feu · les rites ont force de loi · Magie du Sang autorisée (Gula) · incinération obligatoire · trahir un pacte de sang = mort"
+       ],
+       [
+        "Mornhal",
+        "Loi tribale insulaire · les Trois Meutes, lieu neutre · Droit de la Côte · pacte de non-chasse avec Pourpre-Rive"
+       ],
+       [
+        "Pourpre-Rive",
+        "Respect dû aux vampires d'Elsuve · sang consenti · la gouverneure tranche sans appel · tout étranger débarquant à Crique-Sombre se déclare"
+       ]
+      ]
+     }
+    ],
+    "secrets": []
+   }
+  },
+  "religions": {
+   "dremora": {
+    "cite": "Aucune foi n'est interdite. Aucune n'a le droit de se mettre en avant.",
+    "eglise": {
+     "nom": "L'Église de la Mort",
+     "embleme": "images/blasons/eglise-mort.png",
+     "divinite": "Zork, Dieu de la Mort",
+     "siege": "Drémora — l'Église de la Mort, au Cercle",
+     "intro": "Religion dominante de l'Empire, sans jamais être Église d'État. Son temple gothique noir domine la capitale, et sa Grande Prêtresse, Mary, arbitre la Table Ronde sans jamais y voter. Elle rend aussi la justice entre régions par ses Envoyés et ses Faucheurs.",
+     "dogmes": [
+      [
+       "Neutralité",
+       "L'Église ne vote pas, elle arbitre"
+      ],
+      [
+       "La Mort comme passage",
+       "Les Vampires eux-mêmes honorent la Mort qu'ils ont fuie"
+      ],
+      [
+       "Justice inter-régions",
+       "Envoyés pour négocier, Faucheurs pour conclure"
+      ]
+     ],
+     "hierarchie": {
+      "titre": "Hiérarchie de l'Église de la Mort",
+      "branches": [
+       {
+        "nom": "Autorité",
+        "noeuds": [
+         {
+          "rang": "Grande Prêtresse",
+          "qui": "Mary",
+          "note": "Arbitre de la Table Ronde · tient l'Urne aux Morts",
+          "ref": "mary"
+         },
+         {
+          "rang": "Les 5 Prêtres de la Mort",
+          "qui": "",
+          "note": "Le clergé"
+         }
+        ]
+       },
+       {
+        "nom": "Justice",
+        "noeuds": [
+         {
+          "rang": "Les Envoyés de la Mort",
+          "qui": "Grand Frère & Petite Sœur",
+          "note": "Duos liés à vie · le collier porte l'âme"
+         },
+         {
+          "rang": "Les Faucheurs",
+          "qui": "",
+          "note": "Traquent les ennemis de l'Empire"
+         }
+        ]
+       }
+      ]
+     },
+     "evolution": "",
+     "secrets": [
+      {
+       "id": "rel-dre-antre",
+       "titre": "L'Antre des Damnés",
+       "texte": "Une porte au sein de l'Église : Mary y convainc les morts de se lier à elle, puis les invoque. Chaque mort lié est un pacte.",
+       "mj": true
+      }
+     ]
+    },
+    "autres": [
+     {
+      "nom": "Église du Feu",
+      "divinite": "Sylvanus · Luxuria · Gula · Duoror",
+      "note": "Culte exclusif à Vhalkir (Lituania) par dérogation. L'Île Volcanique n'accueille que ses adeptes.",
+      "icone": "🔥"
+     },
+     {
+      "nom": "L'Arbre de la Nature",
+      "divinite": "L'Arbre de Vie (Forêt Infinie)",
+      "note": "Religion ancienne des Elfes d'Aelriven. Nul ne l'a jamais atteint — ils prient vers l'ouest.",
+      "icone": "🌳"
+     },
+     {
+      "nom": "Les Hauts",
+      "divinite": "Nains vénérables (pas des dieux)",
+      "note": "Culte de lignée et de mémoire des bannis illustres de Hautecime, à Krath-Dun.",
+      "icone": "⛏️"
+     },
+     {
+      "nom": "Cultes secondaires",
+      "divinite": "Zireael · Malia · Achaea · Limehahu",
+      "note": "Fontaines, jardins votifs et autels dans toutes les régions. Drémora tolère tout.",
+      "icone": "🕊️"
+     }
+    ],
+    "union": {
+     "titre": "Face à l'Union Blanche",
+     "intro": "Drémora n'est pas membre de l'Union Blanche : neutre, mais en tension. Très peu d'échanges. Mary n'a jamais accepté les Cercles de Mages — pendant que 220 ans d'enfermement s'abattaient sur les mages de l'Union, Drémora restait libre.",
+     "hors": [
+      [
+       "Liberté de magie",
+       "Y compris la Magie du Sang — impensable pour l'Union"
+      ],
+      [
+       "Liberté de culte",
+       "Sans Église d'État"
+      ]
+     ]
+    }
+   }
+  },
+  "politique": {
+   "dremora": {
+    "intro": "Ici, aucune race ne domine. Huit sièges, huit voix, et une arbitre qui ne vote jamais. Le pouvoir appartient au vote.",
+    "pouvoirs": [
+     [
+      "Vampires",
+      "Elsuve (Originelle)",
+      "Sombrelune + Pourpre-Rive"
+     ],
+     [
+      "Humains",
+      "Aldric Vhalen",
+      "Valmorne + Vhalkir"
+     ],
+     [
+      "Nains de la Surface",
+      "Thorgan Brasefer",
+      "Krath-Dun"
+     ],
+     [
+      "Garous",
+      "Khal Ordrek, Grand Khal",
+      "Les Crocs Gris + Mornhal"
+     ],
+     [
+      "Elfes",
+      "Ilvaren Aelthir",
+      "Aelriven"
+     ],
+     [
+      "Kitsune",
+      "Ysoline, la Dame des Neuf",
+      "Val des Neuf Queues"
+     ],
+     [
+      "Les Minorités",
+      "Nym",
+      "Aucune région — vit à Drémora"
+     ],
+     [
+      "Arbitre",
+      "Mary",
+      "Ne vote jamais"
+     ]
+    ],
+    "dynastie": {
+     "titre": "La Table Ronde",
+     "texte": "Salle octogonale où chaque siège fait face au centre — personne ne domine. Chaque gouverneur possède une pièce qu'il dépose dans l'Urne aux Morts, tenue par Mary : elle compte les voix et n'en dépose jamais. Un gouverneur dirige toutes les régions de sa race, continent et Lituania confondus. Verser le sang en séance est puni de mort."
+    },
+    "cercles": {
+     "titre": "Drémora et les Cercles",
+     "texte": "Mary n'a jamais accepté l'existence des Cercles de Mages. Drémora y a échappé : pendant que l'Union Blanche enfermait ses mages, l'Empire restait libre — et libre de pratiquer toutes les magies.",
+     "secrets": []
+    },
+    "conflit": {
+     "titre": "Position actuelle (525)",
+     "camps": [
+      [
+       "Union Blanche",
+       "Neutralité tendue",
+       "Très peu de commerce · défiance mutuelle sur la magie et les cultes",
+       ""
+      ],
+      [
+       "Les régions",
+       "Six gouverneurs",
+       "Chacun maître chez lui · l'Empire ne s'immisce pas",
+       ""
+      ]
+     ],
+     "menace": "La mixité est rare, voire très rare — sauf dans la capitale. Deux dérogations votées et maintenues depuis des générations : le monopole du Feu à Vhalkir, et la fermeture du Val des Neuf Queues.",
+     "evenements": []
+    }
+   }
+  },
+  "economie": {
+   "dremora": {
+    "intro": "Un empire aux économies régionales juxtaposées : forges naines, pierre noire de Valmorne, bois et soie elfes, chasse garou. La capitale fait le lien.",
+    "piliers": [
+     [
+      "Le Marché Franc",
+      "Grand marché couvert de Drémora — tout se vend, toutes races confondues"
+     ],
+     [
+      "Le Comptoir des Huit",
+      "Banque de la capitale · change entre monnaies régionales"
+     ],
+     [
+      "Spécialités",
+      "Forges de Krath-Dun · pierre de Pierregrise · textile de Sainte-Ombre · bois et soie de Silvebrume · lanternes et papier des Lanternes"
+     ]
+    ],
+    "guilde": {
+     "titre": "Commerce extérieur",
+     "texte": "Très peu d'échanges avec l'Union Blanche. L'Empire vit largement en autarcie, chaque région produisant selon sa nature."
+    },
+    "monnaie": [
+     [
+      "Monnaies régionales",
+      "Chaque région frappe la sienne — le Comptoir des Huit fait le change"
+     ]
+    ]
+   }
+  },
+  "armees": {
+   "dremora": {
+    "intro": "Pas d'armée impériale unifiée : chaque région lève ses forces. L'Église de la Mort dispose de ses propres agents pour la justice.",
+    "corps": [
+     {
+      "nom": "Les Envoyés de la Mort",
+      "icone": "⚰️",
+      "sous": "La justice de Mary entre les régions",
+      "texte": "Duos liés à vie, un Grand Frère et une Petite Sœur : elle porte le collier qui contient son âme, lui est le guerrier. Si l'homme tombe, elle le ramène. Un Envoyé vient négocier.",
+      "chefs": []
+     },
+     {
+      "nom": "Les Faucheurs",
+      "icone": "💀",
+      "sous": "Les traqueurs de l'Empire",
+      "texte": "Plus indépendants que les Envoyés, dépêchés contre les ennemis numéro un de Drémora. Un Faucheur vient conclure.",
+      "chefs": []
+     },
+     {
+      "nom": "Forces régionales",
+      "icone": "⚔️",
+      "sous": "Milices et garnisons",
+      "texte": "Milice de Valmorne (pouvoir d'arrestation) · garnison de Sanguemont · tribus garous (chaque Khal lève les siens) · gardes du Seuil au Val des Neuf Queues · Col-Fermé pour les Nains.",
+      "chefs": []
+     }
+    ],
+    "note": "Khal Drotak et les Trois Meutes sont des lieux neutres où toute arme est interdite sous peine de mort."
+   }
+  },
+  "familles": {
+   "dremora": {
+    "note": "Blasons de l'Empire et des régions à venir."
+   }
+  }
+ },
+ "pays_codex_entry": {
+  "id": "dremora",
+  "nom": "Drémora",
+  "embleme": "images/blasons/eglise-mort.png",
+  "blasonRoyaume": "images/blasons/dremora.png"
+ }
+}
