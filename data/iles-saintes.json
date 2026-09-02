@@ -3449,25 +3449,22 @@
    {
     "id": "dahlia-verkant",
     "nom": "Dahlia Verkant",
-    "titre": "La Guérisseuse — l'une des Cinq Invoqués",
+    "titre": "La Guérisseuse",
     "origine": "Désert Magistral",
     "race": "Humaine",
-    "statut": "Morte — invoquée par Morigane",
-    "naissance": "~410 · apparue en 525",
+    "statut": "Mort",
+    "naissance": "~410",
     "religion": "Aucune — la science du corps et du sang",
     "lieux": [],
     "portrait": "images/pnj/dahlia-verkant.jpg",
     "description": "Fille d'une lignée de guérisseuses respectées du Désert Magistral, où la Magie du Sang s'utilise avec parcimonie, à des fins médicales. Brillante et obsessionnelle, elle repoussa ces limites — expérimentant sur des patients en fin de vie, puis sur des patients tout court, convaincue de pouvoir vaincre la mort par la science du sang. Démasquée, elle fut jugée et exécutée par les siens — non par haine, mais par nécessité, ce qui la hanta plus que la mort elle-même. « Je n'ai jamais tué personne. J'ai seulement repoussé la définition de la mort. »",
-    "details": [
-     "Pourquoi Morigane l'a invoquée : elle comprend le sang comme une matière vivante à manipuler — sa précision technique en fait une combattante qui ne gaspille jamais une goutte.",
-     "En scène : méthodique, presque clinique — elle observe ses adversaires comme des patients avant de frapper. Si un PJ est blessé, elle commentera la blessure avec un détachement dérangeant."
-    ],
+    "details": [],
     "galerie": [],
     "secrets": [],
     "mjOnly": true,
     "affiliations": [
      {
-      "groupe": "Les Cinq Invoqués",
+      "groupe": "Les Cinq Mages de Sang",
       "gid": "cinq-invoques",
       "rang": "la Guérisseuse",
       "mj": true
@@ -3537,26 +3534,24 @@
    {
     "id": "iseult-morne",
     "nom": "Iseult Morne",
-    "titre": "La Noble Déchue — l'une des Cinq Invoqués",
+    "titre": "La Noble Déchue",
     "origine": "Îles Saintes",
     "race": "Humaine",
-    "statut": "Morte — invoquée par Morigane",
-    "naissance": "~460 · apparue en 525",
+    "statut": "Mort",
+    "naissance": "~460",
     "religion": "Église de la Lumière (reniée intérieurement)",
     "lieux": [],
     "portrait": "images/pnj/iseult-morne.jpg",
     "description": "D'une maison noble mineure des Îles Saintes, vouée à l'effacement derrière sa sœur aînée, héritière légitime. Rongée par l'injustice de sa condition, elle apprit en secret la Magie du Sang pour usurper l'apparence et l'identité de sa sœur — un rituel de substitution profondément interdit. Elle fut démasquée le jour même de son mariage arrangé, alors qu'elle portait le visage de sa sœur depuis des mois. Exécutée pour trahison et hérésie. « Je voulais juste exister un peu plus que ce qu'on m'avait laissé. »",
     "details": [
-     "Pourquoi Morigane l'a invoquée : elle maîtrise les usages les plus subtils de la Magie du Sang — déguisement, substitution, illusion.",
-     "La plus humaine et la plus tragique des cinq : elle hésite parfois, regarde les PJ avec presque de l'empathie — avant de se reprendre.",
-     "Point d'entrée possible si les joueurs cherchent à raisonner l'un des Cinq plutôt que combattre."
+     "La plus humaine et la plus tragique des cinq : elle hésite parfois, regarde les PJ avec presque de l'empathie — avant de se reprendre."
     ],
     "galerie": [],
     "secrets": [],
     "mjOnly": true,
     "affiliations": [
      {
-      "groupe": "Les Cinq Invoqués",
+      "groupe": "Les Cinq Mages de Sang",
       "gid": "cinq-invoques",
       "rang": "la Noble Déchue",
       "mj": true
@@ -3569,7 +3564,7 @@
     "titre": "Mage de Sang — Ramenée par Morigane",
     "origine": "Îles Saintes",
     "race": "Demi-Elfe (quart-dragonienne)",
-    "statut": "Vivante — ressuscitée en 525",
+    "statut": "Vivante — ramenée à la vie en 525",
     "naissance": "272 · morte 300 · ressuscitée 525",
     "religion": "",
     "lieux": [],
@@ -3578,7 +3573,10 @@
     "details": [
      "Famille : Galwyn (père), Alice (mère, morte au Cercle), Miwa (sœur aînée — elles ne se sont pas revues), Daenerys (grand-mère dragonienne), Alduin (grand-oncle).",
      "Ce fut son choix, pas une exécution.",
-     "Elle ne fait PAS partie des Cinq Mages de Sang — cas totalement distinct."
+     {
+      "texte": "Elle est revenue à la vie après la guerre entre Arathak et le Magistère Kanius — véritablement, pas comme une invocation temporaire.",
+      "mj": true
+     }
     ],
     "galerie": [
      "images/pnj/katlyn-2.jpg",
@@ -3596,18 +3594,16 @@
    {
     "id": "kharzeth",
     "nom": "Kharzeth",
-    "titre": "Chef de guerre — l'un des Cinq Invoqués",
+    "titre": "Chef de guerre",
     "origine": "Drémora",
     "race": "Humain (chef d'un clan Garou)",
-    "statut": "Mort — invoqué par Morigane",
-    "naissance": "~350 · apparu en 525",
+    "statut": "Mort",
+    "naissance": "~350",
     "religion": "Croyances tribales disparues avec son peuple",
     "lieux": [],
     "portrait": "images/pnj/kharzeth.jpg",
     "description": "Chef d'un clan Garou nomade de Drémora — un peuple maudit par la lycanthropie depuis des générations. Là où d'autres chefs acceptaient la malédiction comme une force, Kharzeth la vivait comme une prison. Après des années de recherche, il mit au point un rituel de Magie du Sang censé briser le lien lycanthropique de tout le clan simultanément, via leur sang partagé. Le rituel échoua catastrophiquement : la malédiction s'amplifia, les Garous perdirent tout contrôle et s'entre-déchirèrent dans une nuit de chaos. Kharzeth, ritualiste au centre, survécut assez longtemps pour voir son peuple entier s'autodétruire — puis fut dévoré par les derniers survivants. « Je voulais leur rendre leur humanité. Je leur ai pris jusqu'à ça. »",
     "details": [
-     "Pourquoi Morigane l'a invoqué : il connaît les mécaniques profondes du sang des Maudits — comment la Magie du Sang interagit avec une malédiction héréditaire.",
-     "En scène : le plus brut des cinq, une rage silencieuse. Ce n'est pas de la fierté qu'il porte, c'est de la honte.",
      "Ironie : lui-même n'était pas Garou — chef humain d'un clan maudit. Si les PJ mentionnent les Garous ou les Maudits, il réagira."
     ],
     "galerie": [
@@ -3617,7 +3613,7 @@
     "mjOnly": true,
     "affiliations": [
      {
-      "groupe": "Les Cinq Invoqués",
+      "groupe": "Les Cinq Mages de Sang",
       "gid": "cinq-invoques",
       "rang": "le Chef de guerre Garou",
       "mj": true
@@ -4026,26 +4022,22 @@
    {
     "id": "voss-adrenneth",
     "nom": "Voss Adrenneth",
-    "titre": "Le Roi-Mage de Cendrelune — l'un des Cinq Invoqués",
+    "titre": "Le Roi-Mage de Cendrelune",
     "origine": "Cendrelune (disparu)",
     "race": "Humain",
-    "statut": "Mort — invoqué par Morigane",
-    "naissance": "Plusieurs siècles avant la Conjonction · apparu en 525",
+    "statut": "Mort",
+    "naissance": "Plusieurs siècles avant la Conjonction",
     "religion": "Aucune — le sang comme seule vérité",
     "lieux": [],
     "portrait": "images/pnj/voss-adrenneth.jpg",
     "description": "Ancien roi-mage de Cendrelune, royaume effacé des cartes d'Asterre par le temps plus que par la guerre. Il fut l'un des tout premiers à comprendre que le sang n'était pas qu'un vecteur de rituel mais une discipline magique à part entière, capable de rivaliser avec la Mana. Pour transcender sa propre mortalité, il draina lentement son peuple entier, croyant fusionner des milliers de vies en une seule force inarrêtable. Le rituel échoua. Cendrelune tomba en cendres, et Voss mourut seul, entouré des cadavres de ceux qu'il avait juré de protéger. « Le sang ne ment jamais. Les dieux, si. »",
-    "details": [
-     "Pourquoi Morigane l'a invoqué : sa maîtrise théorique de la Magie du Sang est inégalée — il comprend le rituel de la Lune de Sang mieux que quiconque, y compris elle.",
-     "En scène : froid, calculateur, presque indifférent — pas un cri de guerre, un calcul. Il combat parce qu'un rituel inachevé est pour lui la pire des offenses.",
-     "Peut servir de voix d'exposition si les PJ cherchent à comprendre le rituel en cours."
-    ],
+    "details": [],
     "galerie": [],
     "secrets": [],
     "mjOnly": true,
     "affiliations": [
      {
-      "groupe": "Les Cinq Invoqués",
+      "groupe": "Les Cinq Mages de Sang",
       "gid": "cinq-invoques",
       "rang": "le Roi-Mage de Cendrelune",
       "mj": true
@@ -4081,26 +4073,22 @@
    {
     "id": "ysengrin",
     "nom": "Ysengrin Pâle",
-    "titre": "Le Prêtre Hérétique — l'un des Cinq Invoqués",
+    "titre": "Le Prêtre Hérétique",
     "origine": "Îles Saintes",
     "race": "Humain",
-    "statut": "Mort — invoqué par Morigane",
-    "naissance": "~380 · apparu en 525",
+    "statut": "Mort",
+    "naissance": "~380",
     "religion": "Ancien prêtre de l'Église du Feu — renié pour hérésie",
     "lieux": [],
     "portrait": "images/pnj/ysengrin.jpg",
     "description": "Orphelin élevé par l'Église du Feu, prêtre dévoué pendant des décennies — jusqu'à découvrir que certains rituels sacrés, poussés assez loin, se rapprochaient dangereusement de la Magie du Sang. Plutôt que de fuir cette découverte, il l'embrassa en secret, mêlant ferveur religieuse et sang versé. Découvert, jugé hérétique, il fut brûlé vif par ceux qu'il considérait comme ses frères. Sa dernière pensée ne fut pas pour ses dieux, mais une promesse silencieuse de revenir leur prouver qu'il avait eu raison. « J'ai prié pendant trente ans. Le feu qui m'a répondu n'était pas celui qu'on m'avait promis. »",
-    "details": [
-     "Pourquoi Morigane l'a invoqué : une haine pure et increvable envers les institutions divines — il se bat avec la ferveur d'un converti qui n'a plus rien à perdre.",
-     "En scène : le plus habité des cinq — chaque coup porté est une prière inversée. Bon contrepoint émotionnel à Voss.",
-     "Peut reconnaître et mépriser des symboles de l'Église du Feu si des PJ en portent."
-    ],
+    "details": [],
     "galerie": [],
     "secrets": [],
     "mjOnly": true,
     "affiliations": [
      {
-      "groupe": "Les Cinq Invoqués",
+      "groupe": "Les Cinq Mages de Sang",
       "gid": "cinq-invoques",
       "rang": "le Prêtre Hérétique",
       "mj": true
@@ -4298,6 +4286,24 @@
     "details": [],
     "galerie": [],
     "secrets": []
+   },
+   {
+    "id": "richard",
+    "nom": "Richard",
+    "titre": "Époux de Morigane",
+    "origine": "Drémora",
+    "race": "Humain rendu immortel",
+    "statut": "Vivant",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "dremora-cite"
+    ],
+    "portrait": "images/pnj/richard.jpg",
+    "description": "Humain, époux de Morigane et père de ses enfants. Il vit à Drémora, aux côtés de la Pupille de la Mort.",
+    "details": [],
+    "galerie": [],
+    "secrets": []
    }
   ],
   "bestiaire": [
@@ -4308,7 +4314,7 @@
     "danger": "Légendaire",
     "origine": "Draconique — possédé par Sit Sanguinis",
     "mjOnly": true,
-    "description": "Dragon de foudre né du même œuf qu'Alduin — même âme, communication mentale permanente. Enfermé avec lui dans la prison-amulette après le meurtre de Daenerys, libéré pendant la Guerre des Mages, il chargea Morigane aux côtés d'Alduin fou de rage. Morigane les vainquit tous les deux — mais ne tua pas le dragon. Elle l'offrit à Sit Sanguinis, l'Esprit du Sang : ce sacrifice lui donna accès aux mages de sang, permit d'invoquer les Cinq et de ramener Katlyn Nei. Valdruin conserve intégralement sa foudre et y ajoute le sang — un dragon dont la foudre coule dans le sang, et dont le sang frappe comme la foudre.",
+    "description": "Dragon de foudre né du même œuf qu'Alduin — même âme, communication mentale permanente. Enfermé avec lui dans la prison-amulette après le meurtre de Daenerys, libéré pendant la Guerre des Mages, il chargea Morigane aux côtés d'Alduin fou de rage. Morigane les vainquit tous les deux — mais ne tua pas le dragon. Elle l'offrit à Sit Sanguinis, l'Esprit du Sang : ce sacrifice lui donna accès aux mages de sang, permit de ramener Katlyn Nei à la vie. Valdruin conserve intégralement sa foudre et y ajoute le sang — un dragon dont la foudre coule dans le sang, et dont le sang frappe comme la foudre.",
     "details": [
      {
       "texte": "Capacités : souffle de foudre, vitesse, puissance électrique (originelles, intactes) + capacités de Magie du Sang accordées par Sit Sanguinis.",
@@ -5658,11 +5664,11 @@
    },
    {
     "id": "cinq-invoques",
-    "nom": "Les Cinq Invoqués",
+    "nom": "Les Cinq Mages de Sang",
     "icone": "🩸",
-    "type": "Mages de sang ressuscités",
+    "type": "Mages de sang du passé",
     "mj": true,
-    "resume": "Cinq mages de sang du passé, ramenés par Morigane grâce au sacrifice de Valdruin à Sit Sanguinis, pour le rituel de la Lune de Sang.",
+    "resume": "Cinq mages de sang d'autrefois, chacun brisé par son propre rituel. Leurs histoires se racontent encore — à voix basse.",
     "membres": [
      {
       "ref": "voss-adrenneth",
@@ -5758,7 +5764,7 @@
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "2.1",
+ "version": "2.2",
  "labels": [
   {
    "texte": "Le Passage du Silence",
