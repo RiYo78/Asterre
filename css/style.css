@@ -660,3 +660,13 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 .bete-nom { font-family: "Cinzel", serif; font-size: 15px; }
 .bete-corps { padding: 12px 14px; }
 #choix-pays { font-family: "Cinzel", serif; font-size: 12.5px; padding: 6px 8px; background: var(--parchemin); border: 1px solid var(--encre-3); border-radius: 3px; color: var(--encre); max-width: 190px; }
+.grille-terr { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; max-width: 1000px; margin-bottom: 8px; }
+.carte-terr { background: rgba(255,252,240,.55); border: 1px solid var(--encre-3); border-left: 3px solid var(--or); border-radius: 4px; padding: 12px 14px; height: 100%; }
+.carte-terr.terr-dispo { cursor: pointer; border-left-color: var(--sang); }
+.carte-terr.terr-dispo:hover { background: rgba(217,180,92,.15); }
+.terr-t { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+.terr-ico { font-size: 24px; }
+.carte-terr b { font-family: "Cinzel", serif; font-size: 14.5px; display: block; }
+.carte-terr small { color: var(--encre-2); font-style: italic; }
+.carte-terr p { font-size: 13px; color: var(--encre-2); }
+.terr-lien { display: inline-block; margin-top: 6px; font-family: "Cinzel", serif; font-size: 11.5px; color: var(--sang); }
