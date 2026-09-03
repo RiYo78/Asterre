@@ -2860,7 +2860,8 @@
     "portrait": "images/pnj/stanislas.jpg",
     "description": "Roi actuel (né en 430). Si influencé par Yon que certains considèrent l'Archange comme le vrai souverain. Il a tué Klaus, l'époux de sa sœur Milthae, en 479.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "estrid",
@@ -2872,7 +2873,8 @@
     "portrait": "images/pnj/estrid.jpg",
     "description": "Épouse du roi Stanislas.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "eivor",
@@ -2884,7 +2886,8 @@
     "portrait": "images/pnj/eivor.jpg",
     "description": "Fils du roi Stanislas et de la reine Estrid.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "arthur-sauvage",
@@ -2938,7 +2941,8 @@
     "portrait": "images/pnj/allen-sauvage.jpg",
     "description": "Tient la Grande Forge des Îles Saintes à Roncedroite.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "cullen",
@@ -2990,7 +2994,8 @@
     "portrait": "images/pnj/berthold.jpg",
     "description": "Dirige le Bastion du Nord depuis sa forteresse sur la colline.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "arathak",
@@ -3034,7 +3039,8 @@
       "revele": false,
       "texte": "Sa mère Divina — 4ème enfant de Valène — est le Péché de la Luxure depuis 507, basculée dans l'Antre de plein gré. Il l'ignore. Il est donc l'arrière-petit-fils de Valène : la magie druidique de la Fondatrice coule dans ses veines."
      }
-    ]
+    ],
+    "affiliations": []
    },
    {
     "id": "galwyn-nei",
@@ -3060,7 +3066,8 @@
     ],
     "galerie": [
      "images/pnj/galwyn-avant.jpg"
-    ]
+    ],
+    "affiliations": []
    },
    {
     "id": "zed",
@@ -3072,7 +3079,8 @@
     "portrait": "images/pnj/zed.jpg",
     "description": "Elfe, mage de Terre.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "narcise",
@@ -3104,7 +3112,8 @@
     "portrait": "images/pnj/araignee.jpg",
     "description": "Personne ne connaît son visage. Ne paraît jamais, parle par intermédiaires. Sait tout ce qui se passe aux Îles Saintes — y compris à Roche-Sainte : qui a besoin de disparaître, qui cherche l'interdit, ce qui entre et sort du Grand Port. On ne trouve pas l'Araignée. L'Araignée vous trouve.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "charlie",
@@ -3116,7 +3125,8 @@
     "portrait": "images/pnj/charlie.jpg",
     "description": "Parieur ultra-riche venu du Désert Magistral. Possède l'arène de paris de combat illégale de BlancheFleure.",
     "origine": "Désert Magistral",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "geralt",
@@ -3128,7 +3138,8 @@
     "portrait": "images/pnj/geralt.jpg",
     "description": "Ancien soldat. Tient la Taverne de Travail.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "elara",
@@ -3140,7 +3151,8 @@
     "portrait": "images/pnj/elara.jpg",
     "description": "Elfe. Tient Les Aiguilles d'Or.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "bogdan",
@@ -3152,7 +3164,8 @@
     "portrait": "images/pnj/bogdan.jpg",
     "description": "Commande la Maison de la Garde Royale de BlancheFleure.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "lazaro",
@@ -3164,7 +3177,8 @@
     "portrait": "images/pnj/lazaro.jpg",
     "description": "Tenait autrefois La Flore des Prairies.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "achabel",
@@ -3238,7 +3252,8 @@
     "portrait": "images/pnj/manem.jpg",
     "description": "Vit dans les plaines côtières de Vanhill avec Achabel.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "sam",
@@ -3260,7 +3275,8 @@
     ],
     "statut": "Vivante",
     "naissance": "520",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "aerith-goldland",
@@ -3272,7 +3288,8 @@
     "portrait": "images/pnj/aerith-goldland.jpg",
     "description": "Créatrice du dôme de lumière qui protège le Manoir Goldland.",
     "origine": "Îles Saintes",
-    "details": []
+    "details": [],
+    "affiliations": []
    },
    {
     "id": "kanius",
@@ -3381,7 +3398,8 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": []
    },
    {
     "id": "adelia",
@@ -3444,7 +3462,8 @@
      "L'héritage draconique se perd sans reproduction entre Dragoniens purs — Miwa et Katlyn sont quart-dragoniennes."
     ],
     "galerie": [],
-    "secrets": []
+    "secrets": [],
+    "affiliations": []
    },
    {
     "id": "dahlia-verkant",
@@ -3507,7 +3526,8 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": []
    },
    {
     "id": "igna",
@@ -3529,7 +3549,8 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": []
    },
    {
     "id": "iseult-morne",
@@ -3589,7 +3610,8 @@
       "revele": false,
       "texte": "Pourquoi Morigane l'a choisie spécifiquement reste . Sait-elle que Galwyn et Miwa sont vivants ? Tension énorme si elle les croise en session."
      }
-    ]
+    ],
+    "affiliations": []
    },
    {
     "id": "kharzeth",
@@ -3674,7 +3696,8 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": []
    },
    {
     "id": "mary",
@@ -3685,7 +3708,9 @@
     "statut": "Vivante",
     "naissance": "Avant l'an 0",
     "religion": "Église de la Mort",
-    "lieux": [],
+    "lieux": [
+     "dremora-cite"
+    ],
     "portrait": "images/pnj/mary.jpg",
     "description": "Grande Prêtresse de la Mort, à la tête de l'Église de la Mort dans la capitale de Drémora — la représentante de Zork sur Asterre, et la voix neutre de la Table Ronde de Drémora, le pays le plus cosmopolite du monde, où même les races maudites sont représentées. Elle voit tout. Elle ne dit rien. Elle attend. Sage, distante, inébranlable : ses prophéties sont prises très au sérieux. Elle croit que les fils du Destin sont immuables et dangereux à contrarier — c'est pour cela qu'elle n'a pas cherché à rendre son époux Aldric immortel.",
     "details": [
@@ -3719,6 +3744,12 @@
       "groupe": "La Grande Lignée",
       "gid": "grande-lignee-g",
       "rang": "Grande Prêtresse de la Mort",
+      "mj": false
+     },
+     {
+      "groupe": "La Table Ronde de Drémora",
+      "gid": "table-ronde",
+      "rang": "Arbitre — ne vote jamais",
       "mj": false
      }
     ]
@@ -3762,7 +3793,8 @@
       "revele": false,
       "texte": "Contenu à dévoiler à la fin. Ach'olo (Achnologia) est scellé dans le collier de Miwa par Yon."
      }
-    ]
+    ],
+    "affiliations": []
    },
    {
     "id": "mierka",
@@ -3784,7 +3816,8 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": []
    },
    {
     "id": "miwa",
@@ -3867,7 +3900,8 @@
      "images/pnj/samael-forme-complete.jpg"
     ],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": []
    },
    {
     "id": "sandor",
@@ -3903,7 +3937,8 @@
       "revele": false,
       "texte": "Neutre en apparence — mais potentiellement dans le camp des joueurs si les circonstances l'y poussent. Le Hakai peut être projeté à distance, pas seulement au contact."
      }
-    ]
+    ],
+    "affiliations": []
    },
    {
     "id": "sky",
@@ -3937,7 +3972,8 @@
       "revele": false,
       "texte": "Le hibou humain trouvé dans la cuve avait une histoire avant lui. Il est le seul hors Grande Lignée à qui Morigane fait vraiment confiance."
      }
-    ]
+    ],
+    "affiliations": []
    },
    {
     "id": "sylas",
@@ -4017,7 +4053,8 @@
       "revele": false,
       "texte": "Avec Zazel, Magistère de la Nouvelle Contrée, elle élabora un plan secret : une terre uniquement peuplée de mages dans le Nouveau Continent. Zazel l'exécute encore aujourd'hui."
      }
-    ]
+    ],
+    "affiliations": []
    },
    {
     "id": "voss-adrenneth",
@@ -4068,7 +4105,8 @@
      "images/pnj/wyatt-j1.jpg"
     ],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": []
    },
    {
     "id": "ysengrin",
@@ -4123,7 +4161,8 @@
     ],
     "galerie": [],
     "secrets": [],
-    "mjOnly": true
+    "mjOnly": true,
+    "affiliations": []
    },
    {
     "id": "ildris",
@@ -4285,7 +4324,8 @@
     "description": "En 507, quand Arathak perdit ses deux parents et qu'Achabel perdit le contrôle de son pouvoir, c'est Sam qui prit les deux garçons sous son aile — leur père adoptif, leur pilier. En 520, lors de la chute du Cercle des Îles Saintes, il fut fauché par le Voile des Damnés d'Achabel, qui venait de tuer le Docteur et perdait le contrôle. Achabel ne se le pardonnera jamais. Sa petite-fille de cœur, née la même année, porte son nom.",
     "details": [],
     "galerie": [],
-    "secrets": []
+    "secrets": [],
+    "affiliations": []
    },
    {
     "id": "richard",
@@ -4303,7 +4343,256 @@
     "description": "Humain, époux de Morigane et père de ses enfants. Il vit à Drémora, aux côtés de la Pupille de la Mort.",
     "details": [],
     "galerie": [],
-    "secrets": []
+    "secrets": [],
+    "affiliations": []
+   },
+   {
+    "id": "aldric-vhalen",
+    "nom": "Aldric Vhalen",
+    "titre": "Gouverneur des Humains — Valmorne & Vhalkir",
+    "origine": "Drémora",
+    "race": "Humain",
+    "statut": "Vivant",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "vhalkir",
+     "valmorne"
+    ],
+    "portrait": "images/pnj/aldric-vhalen.jpg",
+    "description": "Gouverneur des Humains de l'Empire, il dirige Valmorne sur le continent et Vhalkir sur Lituania, où sa famille règne depuis des générations. Il gouverne une région où le culte du Feu est exclusif — et une autre où toutes les fois sont égales. Deux mondes, un seul homme.",
+    "details": [
+     {
+      "texte": "Il est le grand-père de Livai, Talia et Selina.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "La Table Ronde de Drémora",
+      "gid": "table-ronde",
+      "rang": "Siège des Humains",
+      "mj": false
+     }
+    ]
+   },
+   {
+    "id": "thorgan-brasefer",
+    "nom": "Thorgan Brasefer",
+    "titre": "Gouverneur des Nains de la Surface — Krath-Dun",
+    "origine": "Drémora",
+    "race": "Nain de la Surface",
+    "statut": "Vivant",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "krath-dun"
+    ],
+    "portrait": "images/pnj/thorgan-brasefer.jpg",
+    "description": "Descendant de bannis de Hautecime, comme tous les siens. Il n'a jamais vu les tréfonds.",
+    "details": [],
+    "galerie": [],
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "La Table Ronde de Drémora",
+      "gid": "table-ronde",
+      "rang": "Siège des Nains de la Surface",
+      "mj": false
+     }
+    ]
+   },
+   {
+    "id": "khal-ordrek",
+    "nom": "Khal Ordrek",
+    "titre": "Grand Khal des Garous — Crocs Gris & Mornhal",
+    "origine": "Drémora",
+    "race": "Garou",
+    "statut": "Vivant",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "khal-drotak",
+     "mornhal"
+    ],
+    "portrait": "images/pnj/khal-ordrek.jpg",
+    "description": "Contrairement aux autres gouverneurs, le Grand Khal n'hérite pas de son siège : il est élu par les centaines de Khals réunis à Khal Drotak. Il porte leur voix à la Table Ronde — mais son autorité s'arrête aux portes de chaque tribu.",
+    "details": [],
+    "galerie": [],
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "La Table Ronde de Drémora",
+      "gid": "table-ronde",
+      "rang": "Siège des Garous — Grand Khal",
+      "mj": false
+     }
+    ]
+   },
+   {
+    "id": "elsuve",
+    "nom": "Elsuve",
+    "titre": "Gouverneure des Vampires — Sombrelune & Pourpre-Rive",
+    "origine": "Drémora",
+    "race": "Vampire Originelle",
+    "statut": "Vivante",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "pourpre-rive",
+     "sombrelune"
+    ],
+    "portrait": "images/pnj/elsuve.jpg",
+    "description": "L'une des cinq Originelles. Elle gouverne les Vampires de tout l'Empire depuis son Domaine de Pourpre-Rive, et ne se déplace presque jamais — sa présence à la Table Ronde exige un long voyage.",
+    "details": [
+     {
+      "texte": "Pouvoir signature : la séduction — elle connaît et contrôle ce que sa cible désire le plus.",
+      "mj": true
+     },
+     {
+      "texte": "Samuel Witlock, l'autre Originel de l'Empire, dirige Sombrelune sur le terrain sans siège à la Table Ronde.",
+      "mj": false
+     }
+    ],
+    "galerie": [],
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "Les 5 Originaux",
+      "gid": "originaux",
+      "rang": "les Lèvres — séduction",
+      "mj": true
+     },
+     {
+      "groupe": "La Table Ronde de Drémora",
+      "gid": "table-ronde",
+      "rang": "Siège des Vampires",
+      "mj": false
+     }
+    ]
+   },
+   {
+    "id": "samuel-witlock",
+    "nom": "Samuel Witlock",
+    "titre": "Maître de Sombrelune — le Château Premier",
+    "origine": "Drémora",
+    "race": "Vampire Originel",
+    "statut": "Vivant",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "sombrelune"
+    ],
+    "portrait": "images/pnj/samuel-witlock.jpg",
+    "description": "Originel Vampire, il dirige Sombrelune depuis le Château Premier, entouré de sa famille de morsure — chez les Vampires, la famille n'est pas de sang, elle est de morsure. Sans siège à la Table Ronde.",
+    "details": [
+     {
+      "texte": "Pouvoir signature : un feu violet qui brûle, et dont la fumée trouble les sens.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "Les 5 Originaux",
+      "gid": "originaux",
+      "rang": "la Flamme — feu violet",
+      "mj": true
+     }
+    ]
+   },
+   {
+    "id": "ilvaren-aelthir",
+    "nom": "Ilvaren Aelthir",
+    "titre": "Gouverneur des Elfes — Aelriven",
+    "origine": "Drémora",
+    "race": "Elfe",
+    "statut": "Vivant",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "aelriven"
+    ],
+    "portrait": "images/pnj/ilvaren-aelthir.jpg",
+    "description": "Il représente 40 000 âmes — le siège le moins peuplé de la Table Ronde. Sa voix pèse pourtant autant que celle des autres. Les Elfes de Drémora ne se sont jamais remis de la Guerre des Races.",
+    "details": [],
+    "galerie": [],
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "La Table Ronde de Drémora",
+      "gid": "table-ronde",
+      "rang": "Siège des Elfes",
+      "mj": false
+     }
+    ]
+   },
+   {
+    "id": "ysoline",
+    "nom": "Ysoline",
+    "titre": "La Dame des Neuf — Val des Neuf Queues",
+    "origine": "Drémora",
+    "race": "Kitsune",
+    "statut": "Vivante",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "neuf-queues"
+    ],
+    "portrait": "images/pnj/ysoline.jpg",
+    "description": "Elle gouverne la seule région fermée de l'Empire et délivre les laissez-passer. Elle est aussi la gardienne du Seuil — l'entrée de la Forêt Infinie.",
+    "details": [],
+    "galerie": [],
+    "secrets": [],
+    "affiliations": [
+     {
+      "groupe": "La Table Ronde de Drémora",
+      "gid": "table-ronde",
+      "rang": "Siège des Kitsune — la Dame des Neuf",
+      "mj": false
+     }
+    ]
+   },
+   {
+    "id": "nym",
+    "nom": "Nym",
+    "titre": "Représentante des Minorités — la Table Ronde",
+    "origine": "Drémora",
+    "race": "Vélane",
+    "statut": "Vivante",
+    "naissance": "",
+    "religion": "",
+    "lieux": [
+     "dremora-cite"
+    ],
+    "portrait": "images/pnj/nym.jpg",
+    "description": "Elle ne gouverne aucun territoire. Elle porte la voix de toutes les races minoritaires de l'Empire — celles qui n'ont ni région, ni gouverneur, ni terre. Un seul siège pour des dizaines de peuples : le poste le plus ingrat de la Table Ronde. Elle vit à Drémora.",
+    "details": [
+     {
+      "texte": "Vélane, elle sait parfaitement ce qu'elle est — et l'assume. Une Vélane ne devrait pas siéger, elle devrait être seule. C'est peut-être pour ça qu'elle le fait si bien.",
+      "mj": true
+     }
+    ],
+    "galerie": [],
+    "secrets": [
+     {
+      "id": "sec-nym-lignee",
+      "titre": "L'aïeule à quelques pas",
+      "revele": false,
+      "texte": "Nym ignore totalement le lien cosmologique de sa race — Samaël → Mary → Morigane → Minvan → les Vélanes. Elle siège à quelques pas de l'aïeule de son propre peuple sans le savoir."
+     }
+    ],
+    "affiliations": [
+     {
+      "groupe": "La Table Ronde de Drémora",
+      "gid": "table-ronde",
+      "rang": "Siège des Minorités",
+      "mj": false
+     }
+    ]
    }
   ],
   "bestiaire": [
@@ -5404,27 +5693,34 @@
    },
    {
     "id": "lituania",
-    "nom": "La Fratrie de Lituania",
-    "icone": "🩸",
-    "resume": "Trois frère et sœurs de Lituania, croyants de l'Église du Feu. Livai, l'aîné, est le bras droit de Morigane cette saison.",
+    "nom": "La Lignée Vhalen de Lituania",
+    "icone": "🔥",
+    "resume": "La famille qui gouverne Vhalkir depuis des générations. Livai, Talia et Selina en sont les petits-enfants — croyants de l'Église du Feu.",
     "racine": {
-     "nom": "Fratrie de Lituania",
-     "note": "humains · Église du Feu",
+     "nom": "Aldric Vhalen",
+     "ref": "aldric-vhalen",
+     "note": "Gouverneur des Humains de l'Empire",
      "enfants": [
       {
-       "nom": "Livai",
-       "ref": "livai",
-       "note": "aîné · bras droit de Morigane · fragment du masque d'Akuma"
-      },
-      {
-       "nom": "Talia",
-       "ref": "talia",
-       "note": "cadette · extraction d'aiguilles"
-      },
-      {
-       "nom": "Selina",
-       "ref": "selina",
-       "note": "benjamine · mage de sang · Rituel du Phœnix · ✕ Sky"
+       "nom": "Son fils",
+       "note": "père de la fratrie",
+       "enfants": [
+        {
+         "nom": "Livai",
+         "ref": "livai",
+         "note": "aîné · bras droit de Morigane · fragment du masque d'Akuma"
+        },
+        {
+         "nom": "Talia",
+         "ref": "talia",
+         "note": "cadette · extraction d'aiguilles"
+        },
+        {
+         "nom": "Selina",
+         "ref": "selina",
+         "note": "benjamine · mage de sang · Rituel du Phœnix · ✕ Sky"
+        }
+       ]
       }
      ]
     }
@@ -5711,12 +6007,14 @@
       "rang": "le Loup — Hybride Vampire-Garou"
      },
      {
-      "nom": "Samuel",
-      "rang": "la Flamme — feu violet"
+      "nom": "Samuel Witlock",
+      "rang": "la Flamme — feu violet",
+      "ref": "samuel-witlock"
      },
      {
       "nom": "Elsuve",
-      "rang": "les Lèvres — séduction"
+      "rang": "les Lèvres — séduction",
+      "ref": "elsuve"
      },
      {
       "nom": "Alec",
@@ -5751,6 +6049,61 @@
       "rang": "benjamine"
      }
     ]
+   },
+   {
+    "id": "table-ronde",
+    "nom": "La Table Ronde de Drémora",
+    "icone": "🗳️",
+    "type": "Conseil impérial",
+    "resume": "Six gouverneurs, une représentante, une arbitre. Huit voix pour un empire. Chaque votant dépose sa pièce dans l'Urne aux Morts ; majorité à 4 voix sur 7. Mary tient l'urne, compte les voix, et n'en dépose jamais.",
+    "membres": [
+     {
+      "ref": "mary",
+      "nom": "Mary",
+      "rang": "Arbitre — ne vote jamais"
+     },
+     {
+      "ref": "elsuve",
+      "nom": "Elsuve",
+      "rang": "Siège des Vampires"
+     },
+     {
+      "ref": "aldric-vhalen",
+      "nom": "Aldric Vhalen",
+      "rang": "Siège des Humains"
+     },
+     {
+      "ref": "thorgan-brasefer",
+      "nom": "Thorgan Brasefer",
+      "rang": "Siège des Nains de la Surface"
+     },
+     {
+      "ref": "khal-ordrek",
+      "nom": "Khal Ordrek",
+      "rang": "Siège des Garous — Grand Khal"
+     },
+     {
+      "ref": "ilvaren-aelthir",
+      "nom": "Ilvaren Aelthir",
+      "rang": "Siège des Elfes"
+     },
+     {
+      "ref": "ysoline",
+      "nom": "Ysoline",
+      "rang": "Siège des Kitsune — la Dame des Neuf"
+     },
+     {
+      "ref": "nym",
+      "nom": "Nym",
+      "rang": "Siège des Minorités"
+     }
+    ],
+    "details": [
+     {
+      "texte": "Verser le sang en séance est puni de mort.",
+      "mj": false
+     }
+    ]
    }
   ],
   "pays_codex": [
@@ -5760,11 +6113,152 @@
     "embleme": "images/blasons/eglise.png",
     "blasonRoyaume": "images/blasons/royaume.png"
    }
-  ]
+  ],
+  "geographie": {
+   "intro": "À l'ouest, l'archipel des Îles Saintes. À l'est, le Continent — vaste, ancien, divisé entre royaumes de lumière et terres libres. Aucune hiérarchie entre les Églises : chacune est indépendante.",
+   "territoires": [
+    {
+     "nom": "Îles Saintes",
+     "ou": "Archipel océanique à l'ouest",
+     "icone": "✨",
+     "note": "Berceau de l'Église de la Vie · Union Blanche. Au nord : les Îles de Glace, mortelles.",
+     "pays": "iles-saintes"
+    },
+    {
+     "nom": "Empire de Drémora",
+     "ou": "Nord du Continent, immense",
+     "icone": "💀",
+     "note": "Table Ronde · Église de la Mort · toutes les magies libres. Avec l'île de Lituania au sud-ouest.",
+     "pays": "dremora"
+    },
+    {
+     "nom": "Désert Magistral",
+     "ou": "Extrême nord, sur des kilomètres",
+     "icone": "🏜️",
+     "note": "Église de l'Air (Shina, les Archanges, Luria). Indépendant."
+    },
+    {
+     "nom": "Avelorn",
+     "ou": "Nord-est",
+     "icone": "🌍",
+     "note": "Union Blanche. Pas une théocratie : Église de la Vie et Église de la Terre (Achaea, et Malia la Nature)."
+    },
+    {
+     "nom": "Ferelden",
+     "ou": "Sud-est, sous Avelorn",
+     "icone": "🏰",
+     "note": "Union Blanche."
+    },
+    {
+     "nom": "Cintra",
+     "ou": "Tout au sud",
+     "icone": "🏰",
+     "note": "Union Blanche."
+    },
+    {
+     "nom": "Harad",
+     "ou": "Ouest",
+     "icone": "🏰",
+     "note": "Union Blanche. Entoure Aloy sur trois côtés."
+    },
+    {
+     "nom": "Aloy",
+     "ou": "Ouest, enclavée dans Harad",
+     "icone": "🏰",
+     "note": "Union Blanche."
+    },
+    {
+     "nom": "Hautecime",
+     "ou": "Chaîne de montagnes",
+     "icone": "⛏️",
+     "note": "Empire nain souterrain — galeries et tréfonds. Les Nains de la Surface de Krath-Dun en sont des bannis. Culte des Hauts."
+    },
+    {
+     "nom": "La Forêt Infinie",
+     "ou": "Ouest du continent, jusque dans Drémora",
+     "icone": "🌳",
+     "note": "Un énorme arbre domine l'ensemble ; un labyrinthe dont les arbres bougent. Dryades, centaines de géants. L'Arbre de Vie des Elfes s'y trouve. On y entre, on n'en ressort pas toujours."
+    },
+    {
+     "nom": "Fenrir",
+     "ou": "Île au nord, au-delà du Désert",
+     "icone": "💧",
+     "note": "Siège de l'Église de l'Eau (Zireael). Maison Wine, fondée par Arthur Wine, Dieu du Savoir."
+    },
+    {
+     "nom": "Tortuga",
+     "ou": "Île au sud",
+     "icone": "🏴‍☠️",
+     "note": "L'Île aux Pirates, l'Île Libre : ni Union Blanche, ni Table Ronde, ni Église n'y a le moindre pouvoir."
+    },
+    {
+     "nom": "Île de Husky",
+     "ou": "Très loin au sud des Îles Saintes",
+     "icone": "🐾",
+     "note": ""
+    },
+    {
+     "nom": "Babel",
+     "ou": "Hors d'Asterre",
+     "icone": "👿",
+     "note": "Le monde des démons — carte séparée."
+    }
+   ],
+   "eglises": [
+    [
+     "Vie",
+     "Limehahu",
+     "Îles Saintes · Avelorn"
+    ],
+    [
+     "Mort",
+     "Zork",
+     "Drémora"
+    ],
+    [
+     "Terre",
+     "Achaea (+ Malia)",
+     "Avelorn"
+    ],
+    [
+     "Eau",
+     "Zireael",
+     "Fenrir"
+    ],
+    [
+     "Feu",
+     "Sylvanus",
+     "Île volcanique · Vhalkir"
+    ],
+    [
+     "Air",
+     "Shina · Archanges · Luria",
+     "Désert Magistral"
+    ],
+    [
+     "Les Hauts",
+     "Nains vénérables",
+     "Hautecime · Krath-Dun"
+    ],
+    [
+     "Arbre de la Nature",
+     "L'Arbre de Vie",
+     "Elfes · Forêt Infinie"
+    ]
+   ],
+   "secrets": [
+    {
+     "id": "geo-sec-harad",
+     "titre": "Harad",
+     "texte": "Ildris s'y camoufle, sous le nom de Veralion.",
+     "mj": true
+    }
+   ]
+  }
  },
  "suggestions": [],
  "notes": "Distances canoniques : la carte est stylisée, les durées de voyage se calculent sur les distances du graphe des routes, pas sur les pixels.",
- "version": "2.2",
+ "version": "2.3",
  "labels": [
   {
    "texte": "Le Passage du Silence",
