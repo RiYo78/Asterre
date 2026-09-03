@@ -1,7 +1,7 @@
 {
  "id": "dremora",
  "nom": "L'Empire de Drémora",
- "version": "1.0",
+ "version": "1.1",
  "reglages": {
   "volMaxTraiteKm": 300
  },
@@ -376,49 +376,49 @@
    "seed": 33,
    "labelPos": [
     720,
-    1250
+    1190
    ],
    "description": "Une île, trois peuples : Vhalkir (Humains), Mornhal (Garous), Pourpre-Rive (Vampires).",
    "forme": [
     [
-     540,
-     1260
-    ],
-    [
-     640,
+     480,
      1230
     ],
     [
+     600,
+     1195
+    ],
+    [
      760,
-     1240
-    ],
-    [
-     880,
-     1290
-    ],
-    [
-     940,
-     1370
+     1200
     ],
     [
      900,
-     1430
+     1240
     ],
     [
-     780,
+     980,
+     1320
+    ],
+    [
+     960,
+     1420
+    ],
+    [
+     860,
+     1470
+    ],
+    [
+     700,
+     1480
+    ],
+    [
+     560,
      1450
     ],
     [
-     660,
-     1440
-    ],
-    [
-     580,
-     1400
-    ],
-    [
-     540,
-     1330
+     470,
+     1370
     ]
    ],
    "zones": [
@@ -426,23 +426,45 @@
      "type": "foret",
      "poly": [
       [
-       560,
-       1260
-      ],
-      [
-       680,
+       490,
        1250
       ],
       [
-       680,
-       1340
+       640,
+       1230
       ],
       [
-       570,
-       1340
+       650,
+       1360
+      ],
+      [
+       500,
+       1370
       ]
      ],
-     "densite": 8
+     "densite": 10
+    },
+    {
+     "type": "colline",
+     "poly": [
+      [
+       820,
+       1250
+      ],
+      [
+       960,
+       1300
+      ],
+      [
+       940,
+       1420
+      ],
+      [
+       830,
+       1400
+      ]
+     ],
+     "densite": 6
     }
    ]
   },
@@ -453,34 +475,34 @@
    "population": "—",
    "seed": 40,
    "labelPos": [
-    560,
-    1495
+    425,
+    1500
    ],
    "description": "Réservée aux adeptes de l'Église du Feu.",
    "forme": [
     [
-     520,
-     1450
+     380,
+     1440
     ],
     [
-     560,
-     1435
+     420,
+     1425
     ],
     [
-     600,
-     1450
+     460,
+     1440
     ],
     [
-     610,
-     1480
+     470,
+     1470
     ],
     [
-     570,
-     1495
+     430,
+     1488
     ],
     [
-     525,
-     1485
+     385,
+     1478
     ]
    ],
    "zones": [
@@ -488,20 +510,20 @@
      "type": "montagne-neige",
      "poly": [
       [
-       540,
-       1445
+       400,
+       1435
       ],
       [
-       585,
-       1445
+       445,
+       1435
       ],
       [
-       590,
-       1480
+       450,
+       1470
       ],
       [
-       540,
-       1480
+       400,
+       1470
       ]
      ],
      "densite": 2
@@ -2286,22 +2308,52 @@
    "type": "ville",
    "ile": "lituania",
    "pos": [
-    760,
-    1340
+    700,
+    1300
    ],
-   "population": "~200 000 (région)",
+   "population": "~40 000",
    "climat": "",
    "dirigeant": "",
    "region": "Vhalkir — Humains",
-   "accroche": "La seule région de l'Empire où une religion est imposée : le Feu.",
-   "description": "Capitale de la région humaine de Lituania, gouvernée par la lignée Vhalen depuis des générations — Aldric Vhalen en est le gouverneur. Par dérogation votée à la Table Ronde, l'Église du Feu y règne en culte exclusif : Sylvanus, Luxuria, Gula (Déesse du Sang) et Duoror. Le culte de Gula explique pourquoi la Magie du Sang y est parfaitement légale. C'est la patrie de Livai, Talia et Selina — et l'endroit où Sky les rencontra.",
+   "accroche": "Ici, on ne prie que le Feu. Toute autre foi est interdite — et l'Église y veille.",
+   "description": "Grand port de l'île, cité gothique battue par les vents marins, siège du gouverneur. Toute la région est adepte du Feu — Sylvanus, Luxuria, Gula la Déesse du Sang, Duoror — par dérogation votée à la Table Ronde. Le culte de Gula explique pourquoi la Magie du Sang y est légale. La famille Vhalen gouverne depuis des générations ; c'est la patrie de Livai, Talia et Selina, et l'endroit où Sky les rencontra.",
    "histoire": "",
    "familles": [],
-   "lieuxNotables": [],
+   "lieuxNotables": [
+    {
+     "id": "grand-brasier",
+     "nom": "Le Grand Brasier",
+     "type": "temple",
+     "utilite": "Prière — Sylvanus",
+     "description": "Sanctuaire principal · un feu qui ne s'éteint jamais."
+    },
+    {
+     "id": "autel-gula-v",
+     "nom": "L'Autel de Gula",
+     "type": "temple",
+     "utilite": "Prière — Gula",
+     "description": "Culte du sang · pactes et liens."
+    },
+    {
+     "id": "chapelle-luxuria",
+     "nom": "La Chapelle de Luxuria",
+     "type": "temple",
+     "utilite": "Prière — Luxuria",
+     "description": "Renaissance et passion."
+    },
+    {
+     "id": "lames-duoror",
+     "nom": "Les Lames de Duoror",
+     "type": "temple",
+     "utilite": "Prière — Duoror",
+     "description": "Lieu du Rite de la Souffrance."
+    }
+   ],
    "personnages": [
     "livai",
     "talia",
-    "selina"
+    "selina",
+    "aldric-vhalen"
    ],
    "secrets": [],
    "tensions": [],
@@ -2315,15 +2367,15 @@
    "type": "port",
    "ile": "lituania",
    "pos": [
-    690,
-    1400
+    560,
+    1420
    ],
-   "population": "",
+   "population": "~22 000",
    "climat": "",
    "dirigeant": "",
    "region": "Vhalkir",
-   "accroche": "Le port d'où l'on embarque pour l'Île Volcanique.",
-   "description": "",
+   "accroche": "Le port le plus proche de l'île sacrée — point de départ des pèlerinages du Feu.",
+   "description": "De la Vue du Volcan, on aperçoit l'île de l'Église du Feu.",
    "histoire": "",
    "familles": [],
    "lieuxNotables": [],
@@ -2335,13 +2387,598 @@
    ]
   },
   {
+   "id": "hautmarche",
+   "nom": "Hautmarche",
+   "type": "ville",
+   "ile": "lituania",
+   "pos": [
+    760,
+    1360
+   ],
+   "population": "~16 000",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir",
+   "accroche": "Ville intérieure de marchés et d'artisanat.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/hautmarche/principale.jpg"
+   ]
+  },
+  {
+   "id": "les-filets",
+   "nom": "Les Filets",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    650,
+    1260
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir",
+   "accroche": "Pêche et séchage.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/les-filets/principale.jpg"
+   ]
+  },
+  {
+   "id": "terre-basse",
+   "nom": "Terre-Basse",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    720,
+    1245
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir",
+   "accroche": "Village agricole.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/terre-basse/principale.jpg"
+   ]
+  },
+  {
+   "id": "phare-vieux",
+   "nom": "Le Phare Vieux",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    600,
+    1350
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir",
+   "accroche": "Signalisation et pilotage maritime.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/phare-vieux/principale.jpg"
+   ]
+  },
+  {
+   "id": "croix-chemin",
+   "nom": "Croix-Chemin",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    770,
+    1300
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir",
+   "accroche": "Le relais entre les trois régions de l'île.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/croix-chemin/principale.jpg"
+   ]
+  },
+  {
+   "id": "cap-adieux",
+   "nom": "Le Cap des Adieux",
+   "type": "lieu-dit",
+   "ile": "lituania",
+   "pos": [
+    520,
+    1330
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir",
+   "accroche": "Une falaise face à la mer, où l'on salue les partants.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/cap-adieux/principale.jpg"
+   ]
+  },
+  {
+   "id": "cailloux-debout",
+   "nom": "Les Cailloux Debout",
+   "type": "lieu-dit",
+   "ile": "lituania",
+   "pos": [
+    690,
+    1390
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Vhalkir",
+   "accroche": "Un alignement de pierres d'origine inconnue.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/cailloux-debout/principale.jpg"
+   ]
+  },
+  {
+   "id": "mornhal",
+   "nom": "Mornhal",
+   "type": "ville",
+   "ile": "lituania",
+   "pos": [
+    560,
+    1270
+   ],
+   "population": "~25 000",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Mornhal — Garous",
+   "accroche": "Les forêts de l'île sont plus petites que celles du continent. Les meutes y sont plus soudées.",
+   "description": "Cité de bois et de pierre au cœur des bois, capitale des Garous de Lituania sous le Grand Khal Ordrek. Les tribus insulaires sont moins nombreuses mais plus soudées que celles du continent — les conflits y sont rares, et brutaux.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "bosquet-melia",
+     "nom": "Le Bosquet de Mélia",
+     "type": "temple",
+     "utilite": "Prière — Mélia",
+     "description": "Culte de la Nature."
+    },
+    {
+     "id": "ossuaire-anciens",
+     "nom": "L'Ossuaire des Anciens",
+     "type": "temple",
+     "utilite": "Prière — Zork",
+     "description": "Sépultures des chefs de clan."
+    },
+    {
+     "id": "pierre-serment",
+     "nom": "La Pierre du Serment",
+     "type": "lieu-dit",
+     "utilite": "Mémoire",
+     "description": "Où les clans de l'île ont fait la paix."
+    }
+   ],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/mornhal/principale.jpg"
+   ]
+  },
+  {
+   "id": "griffe-de-mer",
+   "nom": "Griffe-de-Mer",
+   "type": "ville",
+   "ile": "lituania",
+   "pos": [
+    500,
+    1300
+   ],
+   "population": "~15 000",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Mornhal",
+   "accroche": "Les Garous d'ici nagent aussi bien qu'ils courent.",
+   "description": "Ville côtière de chasse et de pêche.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/griffe-de-mer/principale.jpg"
+   ]
+  },
+  {
+   "id": "trois-meutes",
+   "nom": "Les Trois Meutes",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    540,
+    1240
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Mornhal",
+   "accroche": "Le rassemblement des clans de l'île — lieu neutre.",
+   "description": "Armes, combat et vol y sont interdits sous peine de mort.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/trois-meutes/principale.jpg"
+   ]
+  },
+  {
+   "id": "bois-salant",
+   "nom": "Bois-Salant",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    500,
+    1260
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Mornhal",
+   "accroche": "Une forêt en bord de mer au bois particulier.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/bois-salant/principale.jpg"
+   ]
+  },
+  {
+   "id": "sang-neuf",
+   "nom": "Sang-Neuf",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    600,
+    1230
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Mornhal",
+   "accroche": "Le village des jeunes transformés.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/sang-neuf/principale.jpg"
+   ]
+  },
+  {
+   "id": "le-passage",
+   "nom": "Le Passage",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    620,
+    1330
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Mornhal",
+   "accroche": "La frontière avec Pourpre-Rive.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/le-passage/principale.jpg"
+   ]
+  },
+  {
+   "id": "zone-morte",
+   "nom": "La Zone Morte",
+   "type": "lieu-dit",
+   "ile": "lituania",
+   "pos": [
+    470,
+    1350
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Mornhal",
+   "accroche": "Rien n'y pousse. Les Garous refusent d'y aller.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/zone-morte/principale.jpg"
+   ]
+  },
+  {
+   "id": "pourpre-rive",
+   "nom": "Pourpre-Rive",
+   "type": "ville",
+   "ile": "lituania",
+   "pos": [
+    880,
+    1390
+   ],
+   "population": "~30 000",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Pourpre-Rive — Vampires",
+   "accroche": "Elsuve gouverne les Vampires de tout l'Empire depuis cette île. Elle ne se déplace presque jamais.",
+   "description": "Cité bâtie à flanc de falaise au-dessus de la mer, dominée par le Domaine d'Elsuve — l'Originelle dont le pouvoir est la séduction : elle connaît et contrôle ce que sa cible désire le plus.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [
+    {
+     "id": "domaine-elsuve",
+     "nom": "Le Domaine d'Elsuve",
+     "type": "pouvoir",
+     "utilite": "Résidence de l'Originelle",
+     "description": "Surplombe la mer."
+    },
+    {
+     "id": "crypte-premiere",
+     "nom": "La Crypte Première",
+     "type": "lieu-dit",
+     "utilite": "Mémoire",
+     "description": "Où reposent les premiers Vampires de l'île."
+    },
+    {
+     "id": "autel-passage",
+     "nom": "L'Autel du Passage",
+     "type": "temple",
+     "utilite": "Prière — Zork",
+     "description": ""
+    },
+    {
+     "id": "chapelle-gula-pr",
+     "nom": "La Chapelle de Gula",
+     "type": "temple",
+     "utilite": "Prière — Gula (Sang)",
+     "description": "Culte du lien de sang."
+    },
+    {
+     "id": "sanctuaire-zireael",
+     "nom": "Le Sanctuaire de Zireael",
+     "type": "temple",
+     "utilite": "Prière — Zireael",
+     "description": "Sur la côte · fréquenté par les marins."
+    }
+   ],
+   "personnages": [
+    "elsuve"
+   ],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/pourpre-rive/principale.jpg"
+   ]
+  },
+  {
+   "id": "crique-sombre",
+   "nom": "Crique-Sombre",
+   "type": "port",
+   "ile": "lituania",
+   "pos": [
+    930,
+    1340
+   ],
+   "population": "~18 000",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Pourpre-Rive",
+   "accroche": "Port vampirique aux arrivées nocturnes.",
+   "description": "Commerce discret. Tout étranger débarquant doit se déclarer.",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/crique-sombre/principale.jpg"
+   ]
+  },
+  {
+   "id": "les-consentants",
+   "nom": "Les Consentants",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    850,
+    1420
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Pourpre-Rive",
+   "accroche": "Village humain de donneurs volontaires, sous protection du Domaine.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/les-consentants/principale.jpg"
+   ]
+  },
+  {
+   "id": "rocher-rouge",
+   "nom": "Rocher-Rouge",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    910,
+    1290
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Pourpre-Rive",
+   "accroche": "Carrière de pierre pourpre.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/rocher-rouge/principale.jpg"
+   ]
+  },
+  {
+   "id": "marnebasse",
+   "nom": "Marnebasse",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    820,
+    1350
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Pourpre-Rive",
+   "accroche": "Cultures qui nourrissent les humains.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/marnebasse/principale.jpg"
+   ]
+  },
+  {
+   "id": "guet-marin",
+   "nom": "Le Guet-Marin",
+   "type": "village",
+   "ile": "lituania",
+   "pos": [
+    950,
+    1400
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Pourpre-Rive",
+   "accroche": "Surveillance des côtes.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/guet-marin/principale.jpg"
+   ]
+  },
+  {
+   "id": "marches-brisees",
+   "nom": "Les Marches Brisées",
+   "type": "lieu-dit",
+   "ile": "lituania",
+   "pos": [
+    900,
+    1450
+   ],
+   "population": "",
+   "climat": "",
+   "dirigeant": "",
+   "region": "Pourpre-Rive",
+   "accroche": "Un escalier taillé dans la falaise, qui ne mène à rien.",
+   "description": "",
+   "histoire": "",
+   "familles": [],
+   "lieuxNotables": [],
+   "personnages": [],
+   "secrets": [],
+   "tensions": [],
+   "images": [
+    "images/lieux/marches-brisees/principale.jpg"
+   ]
+  },
+  {
    "id": "ile-volcanique",
    "nom": "L'Île Volcanique",
    "type": "lieu-dit",
    "ile": "ile-volcanique",
    "pos": [
-    560,
-    1465
+    425,
+    1455
    ],
    "population": "Aucune population civile",
    "climat": "",
@@ -2364,56 +3001,6 @@
    "tensions": [],
    "images": [
     "images/lieux/ile-volcanique/principale.jpg"
-   ]
-  },
-  {
-   "id": "mornhal",
-   "nom": "Mornhal",
-   "type": "ville",
-   "ile": "lituania",
-   "pos": [
-    600,
-    1290
-   ],
-   "population": "~100 000 (région)",
-   "climat": "",
-   "dirigeant": "",
-   "region": "Mornhal — Garous",
-   "accroche": "Les tribus garous de l'île, sous le Grand Khal Ordrek.",
-   "description": "Région garou de Lituania, dirigée par le même Grand Khal que les Crocs Gris.",
-   "histoire": "",
-   "familles": [],
-   "lieuxNotables": [],
-   "personnages": [],
-   "secrets": [],
-   "tensions": [],
-   "images": [
-    "images/lieux/mornhal/principale.jpg"
-   ]
-  },
-  {
-   "id": "pourpre-rive",
-   "nom": "Pourpre-Rive",
-   "type": "ville",
-   "ile": "lituania",
-   "pos": [
-    860,
-    1400
-   ],
-   "population": "~100 000 (région)",
-   "climat": "",
-   "dirigeant": "",
-   "region": "Pourpre-Rive — Vampires",
-   "accroche": "Le domaine d'Elsuve, l'Originelle qui ne quitte jamais son île.",
-   "description": "Région vampire de Lituania. Elsuve, l'une des cinq Originelles, y réside au Domaine et gouverne les Vampires de tout l'Empire depuis cette île sans presque jamais se déplacer. Son pouvoir signature : la séduction — elle connaît et contrôle ce que sa cible désire le plus.",
-   "histoire": "",
-   "familles": [],
-   "lieuxNotables": [],
-   "personnages": [],
-   "secrets": [],
-   "tensions": [],
-   "images": [
-    "images/lieux/pourpre-rive/principale.jpg"
    ]
   }
  ],
@@ -3285,16 +3872,16 @@
    "type": "route",
    "points": [
     [
-     760,
-     1340
+     700,
+     1300
     ],
     [
-     810,
-     1370
+     790,
+     1345
     ],
     [
-     860,
-     1400
+     880,
+     1390
     ]
    ]
   },
@@ -3305,16 +3892,16 @@
    "type": "route",
    "points": [
     [
-     760,
-     1340
+     700,
+     1300
     ],
     [
-     680,
-     1315
+     630,
+     1285
     ],
     [
-     600,
-     1290
+     560,
+     1270
     ]
    ]
   },
@@ -3325,35 +3912,235 @@
    "type": "route",
    "points": [
     [
-     600,
-     1290
+     560,
+     1270
     ],
     [
-     730,
-     1345
+     720,
+     1330
     ],
     [
-     860,
-     1400
+     880,
+     1390
     ]
    ]
   },
   {
    "de": "vhalkir",
    "a": "port-cendre",
-   "km": 20,
+   "km": 60,
+   "type": "route",
+   "points": [
+    [
+     700,
+     1300
+    ],
+    [
+     630,
+     1360
+    ],
+    [
+     560,
+     1420
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "hautmarche",
+   "km": 45,
+   "type": "route",
+   "points": [
+    [
+     700,
+     1300
+    ],
+    [
+     730,
+     1330
+    ],
+    [
+     760,
+     1360
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "les-filets",
+   "km": 15,
    "type": "piste",
    "points": [
     [
-     760,
+     700,
+     1300
+    ],
+    [
+     675,
+     1280
+    ],
+    [
+     650,
+     1260
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "terre-basse",
+   "km": 28,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1300
+    ],
+    [
+     710,
+     1272
+    ],
+    [
+     720,
+     1245
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "phare-vieux",
+   "km": 35,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1300
+    ],
+    [
+     650,
+     1325
+    ],
+    [
+     600,
+     1350
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "croix-chemin",
+   "km": 50,
+   "type": "route",
+   "points": [
+    [
+     700,
+     1300
+    ],
+    [
+     735,
+     1300
+    ],
+    [
+     770,
+     1300
+    ]
+   ]
+  },
+  {
+   "de": "pourpre-rive",
+   "a": "crique-sombre",
+   "km": 35,
+   "type": "route",
+   "points": [
+    [
+     880,
+     1390
+    ],
+    [
+     905,
+     1365
+    ],
+    [
+     930,
+     1340
+    ]
+   ]
+  },
+  {
+   "de": "pourpre-rive",
+   "a": "les-consentants",
+   "km": 10,
+   "type": "piste",
+   "points": [
+    [
+     880,
+     1390
+    ],
+    [
+     865,
+     1405
+    ],
+    [
+     850,
+     1420
+    ]
+   ]
+  },
+  {
+   "de": "pourpre-rive",
+   "a": "rocher-rouge",
+   "km": 22,
+   "type": "piste",
+   "points": [
+    [
+     880,
+     1390
+    ],
+    [
+     895,
      1340
     ],
     [
-     725,
+     910,
+     1290
+    ]
+   ]
+  },
+  {
+   "de": "pourpre-rive",
+   "a": "marnebasse",
+   "km": 28,
+   "type": "piste",
+   "points": [
+    [
+     880,
+     1390
+    ],
+    [
+     850,
      1370
     ],
     [
-     690,
+     820,
+     1350
+    ]
+   ]
+  },
+  {
+   "de": "pourpre-rive",
+   "a": "guet-marin",
+   "km": 40,
+   "type": "piste",
+   "points": [
+    [
+     880,
+     1390
+    ],
+    [
+     915,
+     1395
+    ],
+    [
+     950,
      1400
     ]
    ]
@@ -3369,16 +4156,16 @@
      1130
     ],
     [
-     830,
-     1230
+     820,
+     1200
     ],
     [
-     770,
-     1320
+     740,
+     1270
     ],
     [
-     760,
-     1340
+     700,
+     1300
     ]
    ]
   },
@@ -3389,16 +4176,620 @@
    "type": "cotier",
    "points": [
     [
-     690,
-     1400
+     560,
+     1420
+    ],
+    [
+     500,
+     1445
+    ],
+    [
+     425,
+     1455
+    ]
+   ]
+  },
+  {
+   "de": "mornhal",
+   "a": "griffe-de-mer",
+   "km": 40,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     1270
+    ],
+    [
+     530,
+     1285
+    ],
+    [
+     500,
+     1300
+    ]
+   ]
+  },
+  {
+   "de": "mornhal",
+   "a": "trois-meutes",
+   "km": 18,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     1270
+    ],
+    [
+     550,
+     1255
+    ],
+    [
+     540,
+     1240
+    ]
+   ]
+  },
+  {
+   "de": "mornhal",
+   "a": "bois-salant",
+   "km": 25,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     1270
+    ],
+    [
+     530,
+     1265
+    ],
+    [
+     500,
+     1260
+    ]
+   ]
+  },
+  {
+   "de": "mornhal",
+   "a": "sang-neuf",
+   "km": 22,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     1270
+    ],
+    [
+     580,
+     1250
+    ],
+    [
+     600,
+     1230
+    ]
+   ]
+  },
+  {
+   "de": "mornhal",
+   "a": "le-passage",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     1270
+    ],
+    [
+     590,
+     1300
     ],
     [
      620,
-     1435
+     1330
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "champ-des-mille",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1000
     ],
     [
+     670,
+     930
+    ],
+    [
+     640,
+     860
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "ruines-karn",
+   "km": 35,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     760,
+     1020
+    ],
+    [
+     820,
+     1040
+    ]
+   ]
+  },
+  {
+   "de": "valmorne",
+   "a": "bois-muet",
+   "km": 45,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1000
+    ],
+    [
+     610,
+     1005
+    ],
+    [
+     520,
+     1010
+    ]
+   ]
+  },
+  {
+   "de": "corneval",
+   "a": "pont-deux-voix",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     600,
+     940
+    ],
+    [
+     605,
+     860
+    ],
+    [
+     610,
+     780
+    ]
+   ]
+  },
+  {
+   "de": "khal-drotak",
+   "a": "fosse-silencieuse",
+   "km": 40,
+   "type": "piste",
+   "points": [
+    [
      560,
-     1465
+     660
+    ],
+    [
+     480,
+     660
+    ],
+    [
+     400,
+     660
+    ]
+   ]
+  },
+  {
+   "de": "rive-loup",
+   "a": "gue-deux-rives",
+   "km": 25,
+   "type": "piste",
+   "points": [
+    [
+     620,
+     720
+    ],
+    [
+     630,
+     740
+    ],
+    [
+     640,
+     760
+    ]
+   ]
+  },
+  {
+   "de": "hurlevent",
+   "a": "terres-kharzeth",
+   "km": 60,
+   "type": "piste",
+   "points": [
+    [
+     420,
+     560
+    ],
+    [
+     450,
+     515
+    ],
+    [
+     480,
+     470
+    ]
+   ]
+  },
+  {
+   "de": "sombrelune",
+   "a": "miroir-noir",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     780,
+     440
+    ],
+    [
+     750,
+     410
+    ],
+    [
+     720,
+     380
+    ]
+   ]
+  },
+  {
+   "de": "sombrelune",
+   "a": "tombes-ouvertes",
+   "km": 35,
+   "type": "piste",
+   "points": [
+    [
+     780,
+     440
+    ],
+    [
+     815,
+     430
+    ],
+    [
+     850,
+     420
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "grande-faille",
+   "km": 35,
+   "type": "piste",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1490,
+     380
+    ],
+    [
+     1560,
+     380
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "vieille-mine",
+   "km": 25,
+   "type": "piste",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1375,
+     360
+    ],
+    [
+     1330,
+     340
+    ]
+   ]
+  },
+  {
+   "de": "fer-profond",
+   "a": "statues-debout",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     1520,
+     300
+    ],
+    [
+     1560,
+     290
+    ],
+    [
+     1600,
+     280
+    ]
+   ]
+  },
+  {
+   "de": "krath-dun",
+   "a": "porte-scellee",
+   "km": 30,
+   "type": "montagne",
+   "points": [
+    [
+     1420,
+     380
+    ],
+    [
+     1445,
+     310
+    ],
+    [
+     1470,
+     240
+    ]
+   ]
+  },
+  {
+   "de": "aelriven",
+   "a": "pierres-chantees",
+   "km": 25,
+   "type": "piste",
+   "points": [
+    [
+     1450,
+     1140
+    ],
+    [
+     1485,
+     1150
+    ],
+    [
+     1520,
+     1160
+    ]
+   ]
+  },
+  {
+   "de": "silvebrume",
+   "a": "la-cloture",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     1560,
+     1210
+    ],
+    [
+     1575,
+     1145
+    ],
+    [
+     1590,
+     1080
+    ]
+   ]
+  },
+  {
+   "de": "neuf-queues",
+   "a": "le-seuil",
+   "km": 45,
+   "type": "piste",
+   "points": [
+    [
+     1680,
+     970
+    ],
+    [
+     1765,
+     965
+    ],
+    [
+     1850,
+     960
+    ]
+   ]
+  },
+  {
+   "de": "le-seuil",
+   "a": "arbre-roi",
+   "km": 25,
+   "type": "piste",
+   "points": [
+    [
+     1850,
+     960
+    ],
+    [
+     1875,
+     930
+    ],
+    [
+     1900,
+     900
+    ]
+   ]
+  },
+  {
+   "de": "neuf-queues",
+   "a": "bois-dryades",
+   "km": 35,
+   "type": "piste",
+   "points": [
+    [
+     1680,
+     970
+    ],
+    [
+     1735,
+     925
+    ],
+    [
+     1790,
+     880
+    ]
+   ]
+  },
+  {
+   "de": "renard-blanc",
+   "a": "pas-larges",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     1760,
+     1050
+    ],
+    [
+     1795,
+     1070
+    ],
+    [
+     1830,
+     1090
+    ]
+   ]
+  },
+  {
+   "de": "brume-basse",
+   "a": "chemin-revient",
+   "km": 35,
+   "type": "piste",
+   "points": [
+    [
+     1650,
+     1020
+    ],
+    [
+     1700,
+     1080
+    ],
+    [
+     1750,
+     1140
+    ]
+   ]
+  },
+  {
+   "de": "port-cendre",
+   "a": "cap-adieux",
+   "km": 25,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     1420
+    ],
+    [
+     540,
+     1375
+    ],
+    [
+     520,
+     1330
+    ]
+   ]
+  },
+  {
+   "de": "vhalkir",
+   "a": "cailloux-debout",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     700,
+     1300
+    ],
+    [
+     695,
+     1345
+    ],
+    [
+     690,
+     1390
+    ]
+   ]
+  },
+  {
+   "de": "pourpre-rive",
+   "a": "marches-brisees",
+   "km": 12,
+   "type": "piste",
+   "points": [
+    [
+     880,
+     1390
+    ],
+    [
+     890,
+     1420
+    ],
+    [
+     900,
+     1450
+    ]
+   ]
+  },
+  {
+   "de": "mornhal",
+   "a": "zone-morte",
+   "km": 30,
+   "type": "piste",
+   "points": [
+    [
+     560,
+     1270
+    ],
+    [
+     515,
+     1310
+    ],
+    [
+     470,
+     1350
+    ]
+   ]
+  },
+  {
+   "de": "port-lituania",
+   "a": "crique-sombre",
+   "km": 120,
+   "type": "maritime",
+   "points": [
+    [
+     880,
+     1130
+    ],
+    [
+     900,
+     1220
+    ],
+    [
+     920,
+     1300
+    ],
+    [
+     930,
+     1340
     ]
    ]
   }
