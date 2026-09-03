@@ -1295,7 +1295,7 @@ function importerFiche(pid) {
 
 /* ─────────────── Codex ─────────────── */
 const CHAPITRES = [
-  ["lois", "📜 Lois & Interdits"], ["religions", "⛪ Religions"], ["familles", "🛡 Familles & Blasons"],
+  ["geographie", "🌍 Géographie"], ["lois", "📜 Lois & Interdits"], ["religions", "⛪ Religions"], ["familles", "🛡 Familles & Blasons"],
   ["economie", "💰 Économie"], ["politique", "👑 Politique"], ["armees", "⚔ Armées"],
   ["chronologie", "📅 Chronologie"], ["personnages", "👤 Personnages"], ["races", "🧬 Races"], ["bestiaire", "🩸 Bestiaire"]
 ];
@@ -1325,6 +1325,22 @@ function renderChapitre(ch) {
       `<button class="pays-onglet ${p.id === pid ? "actif" : ""}" data-pays="${p.id}">
         <img src="${esc(ch === "familles" ? p.blasonRoyaume : p.embleme)}" alt="" onerror="this.style.display='none'"><span>${esc(p.nom)}</span></button>`).join("") + `</div>` : "";
     html = `<h2>${esc(CHAP_NAT[ch])}</h2><div class="filet"></div>${boutonsPays}<div id="chap-pays">${rendreChapPays(ch, pid)}</div>`;
+  } else if (ch === "geographie") {
+    const G = cx.geographie || { intro: "", territoires: [], eglises: [] };
+    html = `<h2>Géographie d'Asterre</h2><div class="filet"></div>
+      <p class="chap-intro">${esc(G.intro)}</p>
+      <div class="grille-terr">` + G.territoires.map((t, i) => {
+        const dispo = t.pays && S.paysData && S.paysData[t.pays];
+        return blocMJ(`geo-${i}`, true, `<div class="carte-terr ${dispo ? "terr-dispo" : ""}" ${dispo ? `data-allerpays="${esc(t.pays)}"` : ""}>
+          <div class="terr-t"><span class="terr-ico">${t.icone || "🗺"}</span><div><b>${esc(t.nom)}</b><small>${esc(t.ou)}</small></div></div>
+          ${t.note ? `<p>${esc(t.note)}</p>` : ""}${dispo ? `<span class="terr-lien">Voir la carte →</span>` : ""}
+        </div>`, "Territoire visible");
+      }).join("") + `</div>
+      <h4 class="chap-h4">Les Églises d'Asterre</h4>
+      <p class="fell" style="max-width:760px;margin-bottom:8px">Aucune hiérarchie entre elles : chacune est totalement indépendante.</p>
+      <table class="meta-large"><tr><td class="td-cle">Église</td><td>Divinité principale</td><td>Territoire</td></tr>` +
+      G.eglises.map(e => `<tr><td class="td-cle">${esc(e[0])}</td><td>${esc(e[1])}</td><td>${esc(e[2])}</td></tr>`).join("") + `</table>` +
+      secretsHTML((G.secrets || []).map(x => ({ ...x, revele: false })));
   } else if (ch === "chronologie") {
     const paysList = cx.pays_codex || [];
     const fPays = S._filtreChronoPays || "";
@@ -1402,6 +1418,7 @@ function renderChapitre(ch) {
   const fp = c.querySelector("#filtre-pays");
   if (fp) fp.addEventListener("change", () => { S._filtreChronoPays = fp.value; renderChapitre("chronologie"); });
   c.querySelectorAll("[data-pays]").forEach(b => b.addEventListener("click", () => { S._paysCodex = b.dataset.pays; renderChapitre(ch); }));
+  c.querySelectorAll("[data-allerpays]").forEach(b => b.addEventListener("click", () => chargerPays(b.dataset.allerpays)));
   c.querySelectorAll("[data-best]").forEach(b => b.addEventListener("click", () => { S._sousBest = b.dataset.best; renderChapitre("bestiaire"); }));
   c.querySelectorAll("[data-grp]").forEach(b => b.addEventListener("click", () => { montrerVue("lignees"); S.lignees.mode = "groupes"; renderLignees(); ouvrirGroupe(b.dataset.grp); }));
   c.querySelectorAll("[data-pnj]").forEach(k => {
