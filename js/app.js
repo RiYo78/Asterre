@@ -122,12 +122,13 @@ function polyLength(pts) { let L = 0; for (let i = 1; i < pts.length; i++) L += 
 /* ─────────────── Chargement ─────────────── */
 function initPays() {
   S.lieux = {}; S.sousLieux = {};
-  for (const l of S.pays.lieux) {
+  if (IS_BROWSER) document.body.classList.toggle("vue-monde", !!S.pays.estMonde);
+  for (const l of (S.pays.lieux || [])) {
     S.lieux[l.id] = l;
     for (const sl of (l.lieuxNotables || [])) S.sousLieux[sl.id] = { ...sl, parent: l.id };
   }
-  S.graphe = construireGraphe(S.pays.routes);
-  const refs = S.pays.routes.filter(r => r.type === "maritime");
+  S.graphe = construireGraphe(S.pays.routes || []);
+  const refs = (S.pays.routes || []).filter(r => r.type === "maritime");
   if (refs.length) S.kmParUnite = refs.reduce((s, r) => s + r.km / polyLength(r.points), 0) / refs.length;
   $("#sous-titre").textContent = S.pays.nom;
 }
@@ -167,7 +168,9 @@ async function boot() {
       }
       if (d.pays_codex_entry && !cx.pays_codex.find(x => x.id === d.pays_codex_entry.id)) cx.pays_codex.push(d.pays_codex_entry);
       d.codex = cx;
+      d.familles = d.familles || base.familles; d.blasonsInstitutions = d.blasonsInstitutions || base.blasonsInstitutions;
     }
+    // le codex reste toujours celui des Îles Saintes (fusionné)
     let choix = localStorage.getItem("asterre-pays");
     if (!choix || !S.paysData[choix]) choix = actifs[0].id;
     S.paysActifId = choix; S.pays = S.paysData[choix];
@@ -222,12 +225,13 @@ function renderCarte() {
   const RV = rng(777);
   for (let i = 0; i < 90; i++) {
     const x = M[0] + RV() * M[2], y = M[1] + RV() * M[3];
-    if (S.pays.iles.some(il => pointInPoly([x, y], il.forme))) continue;
+    if ((S.pays.iles || []).some(il => pointInPoly([x, y], il.forme))) continue;
     el("path", { d: `M${x},${y} q6,-4 12,0 q6,4 12,0` }, gV);
   }
 
   const gCotes = el("g", {}, svg);
   const gIles = el("g", {}, svg);
+  const gRegions = el("g", { id: "g-regions" }, svg);
   const gZones = el("g", {}, svg);
   const gFleuves = el("g", {}, svg);
   const gVoies = el("g", {}, svg);
@@ -236,7 +240,7 @@ function renderCarte() {
   const gTextes = el("g", {}, svg);
 
   // ── îles + anneaux côtiers
-  for (const ile of S.pays.iles) {
+  for (const ile of (S.pays.iles || [])) {
     const w = wobble(ile.forme, ile.seed, ile.type === "ilot" ? 4 : 10, 3);
     const d = catmullPath(w, true);
     for (const [larg, op] of [[30, .12], [18, .18], [9, .3]])
@@ -255,8 +259,32 @@ function renderCarte() {
       el("text", { x: ile.labelPos[0], y: ile.labelPos[1], "text-anchor": "middle", "font-size": ile.id === "limehahu" ? 40 : 30, class: "label-ile" }, gTextes).textContent = ile.nom;
   }
 
+  // ── régions (zones colorées lisibles)
+  const REGS = S.pays.regions_carte || (S.pays.estMonde ? S.pays.regions : null);
+  if (REGS) {
+    for (const rg of REGS) {
+      const cliq = rg.pays && S.paysData && S.paysData[rg.pays] && rg.pays !== S.paysActifId;
+      const attrs = { class: "region" + (cliq ? " region-cliq" : ""), "data-region": rg.id };
+      if (cliq) attrs["data-allerpays"] = rg.pays;
+      const g = el("g", attrs, gRegions);
+      for (const poly of rg.polys) {
+        const w = wobble(poly, (rg.id.length * 7) + 3, 9, 2);
+        const d = catmullPath(w, true);
+        el("path", { d, fill: rg.couleur, opacity: .55, stroke: "none" }, g);
+        el("path", { d, fill: "none", stroke: "#5c4b34", "stroke-width": 1.8, "stroke-dasharray": "9 5", opacity: .65 }, g);
+      }
+      if (rg.label) {
+        const la = { x: rg.label[0], y: rg.label[1], "text-anchor": "middle", "font-size": rg.taille || 22, class: "label-region" };
+        if (rg.angle) la.transform = `rotate(${rg.angle} ${rg.label[0]} ${rg.label[1]})`;
+        const t = el("text", la, gTextes);
+        t.textContent = rg.nom;
+        if (rg.note) el("title", {}, t).textContent = rg.note;
+      }
+    }
+  }
+
   // ── routes & voies maritimes
-  for (const r of S.pays.routes) {
+  for (const r of (S.pays.routes || [])) {
     const d = catmullPath(r.points, false);
     let attrs;
     if (r.type === "route") attrs = { stroke: "#5a4326", "stroke-width": 3.2, "stroke-dasharray": "12 7" };
@@ -287,7 +315,7 @@ function renderCarte() {
   dessinerEchelle(gTextes, 830, 1442);
 
   // ── marqueurs & noms de lieux
-  for (const l of S.pays.lieux) {
+  for (const l of (S.pays.lieux || [])) {
     if (!S.mj && !visib("lieu-" + l.id, true)) continue;
     const g = el("g", { class: "marqueur", "data-id": l.id, tabindex: 0, role: "button", "aria-label": l.nom }, gMarqueurs);
     dessinerMarqueur(g, l);
@@ -513,7 +541,7 @@ function fmtJours(j) {
 function eucKm(a, b) { return Math.hypot(a[0] - b[0], a[1] - b[1]) * S.kmParUnite; }
 function posEtape(et) { return et.type === "lieu" ? S.lieux[et.id].pos : et.pos; }
 function nomEtape(et, i) { return et.type === "lieu" ? S.lieux[et.id].nom : `Point libre ${et.no || i + 1}`; }
-function surIle(p) { for (const ile of S.pays.iles) { if (pointInPoly(p, ile.forme)) return ile.id; } return null; }
+function surIle(p) { for (const ile of (S.pays.iles || [])) { if (pointInPoly(p, ile.forme)) return ile.id; } return null; }
 function analyseLigne(a, b) {
   const L = Math.hypot(b[0] - a[0], b[1] - a[1]), n = Math.max(3, Math.ceil(L / 10));
   const pasKm = (L / n) * S.kmParUnite;
@@ -1718,7 +1746,7 @@ function renderSeance() {
   });
   c.querySelector("#aj-lieu-s").addEventListener("change", e => {
     const v = e.target.value.trim().toLowerCase();
-    const l = S.pays.lieux.find(x => x.nom.toLowerCase() === v) || S.pays.lieux.find(x => x.nom.toLowerCase().includes(v));
+    const l = (S.pays.lieux || []).find(x => x.nom.toLowerCase() === v) || (S.pays.lieux || []).find(x => x.nom.toLowerCase().includes(v));
     if (!l) return toast("Lieu introuvable.");
     S.seance.lieu = l.id; majHashSeance(); renderSeance();
   });
@@ -1798,10 +1826,10 @@ function toggleMJ() {
   if (S.vue === "codex") renderChapitre(document.querySelector("#codex-nav a.actif").dataset.ch);
 }
 function remplirRecherche() {
-  $("#lieux-datalist").innerHTML = S.pays.lieux.filter(l => S.mj || visib("lieu-" + l.id, true)).map(l => `<option value="${esc(l.nom)}">`).join("");
+  $("#lieux-datalist").innerHTML = (S.pays.lieux || []).filter(l => S.mj || visib("lieu-" + l.id, true)).map(l => `<option value="${esc(l.nom)}">`).join("");
   $("#recherche").addEventListener("change", () => {
     const v = $("#recherche").value.trim().toLowerCase();
-    const l = S.pays.lieux.find(x => x.nom.toLowerCase() === v) || S.pays.lieux.find(x => x.nom.toLowerCase().includes(v));
+    const l = (S.pays.lieux || []).find(x => x.nom.toLowerCase() === v) || (S.pays.lieux || []).find(x => x.nom.toLowerCase().includes(v));
     if (!l) return toast("Aucun lieu de ce nom sur la carte.");
     montrerVue("carte"); clicLieu(l.id); $("#recherche").value = "";
   });
@@ -1835,6 +1863,16 @@ function brancherUI() {
   });
   svg.addEventListener("pointerup", () => { S._dragBouge = drag && drag.bouge; drag = null; svg.classList.remove("drag"); });
   svg.addEventListener("click", e => {
+    if (!S._dragBouge && !S.voyage.actif && e.target.closest) {
+      const rc = e.target.closest(".region-cliq");
+      if (rc) { chargerPays(rc.dataset.allerpays); return; }
+      const rz = e.target.closest(".region");
+      if (rz) {
+        const liste = S.pays.regions_carte || S.pays.regions || [];
+        const d = liste.find(x => x.id === rz.dataset.region);
+        if (d) { toast(d.nom + (d.note ? " — " + d.note : "")); return; }
+      }
+    }
     if (!S.voyage.actif || S._dragBouge) return;
     clicLibre(coordsSouris(e));
   });
