@@ -157,8 +157,9 @@ async function boot() {
     const actifs = S.monde.pays.filter(p => p.actif && p.fichier);
     S.paysData = {};
     for (const p of actifs) S.paysData[p.id] = await (await fetch(p.fichier)).json();
-    const base = S.paysData[actifs[0].id];
-    const cx = base.codex; cx.pays_codex = cx.pays_codex || [];
+    const base = S.paysData["iles-saintes"] || Object.values(S.paysData).find(d => d.codex);
+    const cx = (base && base.codex) || {};
+    cx.pays_codex = cx.pays_codex || [];
     for (const p of actifs) {
       const d = S.paysData[p.id]; if (d === base) continue;
       d.transports = d.transports || base.transports;
@@ -168,11 +169,11 @@ async function boot() {
       }
       if (d.pays_codex_entry && !cx.pays_codex.find(x => x.id === d.pays_codex_entry.id)) cx.pays_codex.push(d.pays_codex_entry);
       d.codex = cx;
-      d.familles = d.familles || base.familles; d.blasonsInstitutions = d.blasonsInstitutions || base.blasonsInstitutions;
+      d.familles = d.familles || (base && base.familles); d.blasonsInstitutions = d.blasonsInstitutions || (base && base.blasonsInstitutions);
     }
     // le codex reste toujours celui des Îles Saintes (fusionné)
     let choix = localStorage.getItem("asterre-pays");
-    if (!choix || !S.paysData[choix]) choix = actifs[0].id;
+    if (!choix || !S.paysData[choix]) choix = S.paysData["asterre"] ? "asterre" : actifs[0].id;
     S.paysActifId = choix; S.pays = S.paysData[choix];
   } catch (e) {
     $("#chargement").innerHTML = "Impossible de lire les données.<br><small style='font-size:14px'>Si vous avez ouvert le fichier en double-cliquant (file://), lancez plutôt un petit serveur local — voir le README — ou déployez sur GitHub Pages.</small>";
