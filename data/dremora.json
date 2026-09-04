@@ -1,7 +1,7 @@
 {
  "id": "dremora",
  "nom": "L'Empire de Drémora",
- "version": "1.1",
+ "version": "1.2",
  "reglages": {
   "volMaxTraiteKm": 300
  },
@@ -187,18 +187,106 @@
    ],
    "zones": [
     {
+     "type": "foret",
+     "poly": [
+      [
+       380,
+       470
+      ],
+      [
+       690,
+       470
+      ],
+      [
+       700,
+       750
+      ],
+      [
+       400,
+       760
+      ]
+     ],
+     "densite": 22
+    },
+    {
+     "type": "montagne-neige",
+     "poly": [
+      [
+       1260,
+       200
+      ],
+      [
+       1650,
+       200
+      ],
+      [
+       1670,
+       450
+      ],
+      [
+       1300,
+       470
+      ]
+     ],
+     "densite": 15
+    },
+    {
+     "type": "foret",
+     "poly": [
+      [
+       1320,
+       1040
+      ],
+      [
+       1600,
+       1040
+      ],
+      [
+       1610,
+       1230
+      ],
+      [
+       1340,
+       1235
+      ]
+     ],
+     "densite": 18
+    },
+    {
+     "type": "foret",
+     "poly": [
+      [
+       1850,
+       320
+      ],
+      [
+       1955,
+       320
+      ],
+      [
+       1955,
+       1050
+      ],
+      [
+       1860,
+       1090
+      ]
+     ],
+     "densite": 34
+    },
+    {
      "type": "prairie",
      "poly": [
       [
-       520,
-       860
+       500,
+       870
       ],
       [
-       900,
-       860
+       880,
+       870
       ],
       [
-       920,
+       890,
        1120
       ],
       [
@@ -206,165 +294,51 @@
        1140
       ]
      ],
-     "densite": 10
-    },
-    {
-     "type": "foret",
-     "poly": [
-      [
-       360,
-       420
-      ],
-      [
-       700,
-       420
-      ],
-      [
-       720,
-       840
-      ],
-      [
-       380,
-       860
-      ]
-     ],
-     "densite": 26
+     "densite": 9
     },
     {
      "type": "colline",
      "poly": [
       [
        640,
-       260
+       250
       ],
       [
-       980,
-       260
+       960,
+       250
       ],
       [
-       980,
-       560
+       970,
+       500
       ],
       [
        650,
-       560
+       510
       ]
      ],
-     "densite": 10
-    },
-    {
-     "type": "foret",
-     "poly": [
-      [
-       660,
-       300
-      ],
-      [
-       940,
-       300
-      ],
-      [
-       920,
-       520
-      ],
-      [
-       680,
-       520
-      ]
-     ],
-     "densite": 10
-    },
-    {
-     "type": "montagne-neige",
-     "poly": [
-      [
-       1240,
-       180
-      ],
-      [
-       1660,
-       180
-      ],
-      [
-       1720,
-       480
-      ],
-      [
-       1300,
-       500
-      ]
-     ],
-     "densite": 16
-    },
-    {
-     "type": "foret",
-     "poly": [
-      [
-       1300,
-       1020
-      ],
-      [
-       1620,
-       1020
-      ],
-      [
-       1640,
-       1230
-      ],
-      [
-       1320,
-       1230
-      ]
-     ],
-     "densite": 22
+     "densite": 9
     },
     {
      "type": "colline",
      "poly": [
       [
        1600,
-       860
+       820
       ],
       [
-       1800,
-       860
+       1820,
+       820
       ],
       [
-       1840,
-       1120
+       1830,
+       1060
       ],
       [
        1620,
-       1140
+       1080
       ]
      ],
-     "densite": 10
-    },
-    {
-     "type": "foret",
-     "poly": [
-      [
-       1780,
-       300
-      ],
-      [
-       1950,
-       300
-      ],
-      [
-       1950,
-       1040
-      ],
-      [
-       1760,
-       1120
-      ],
-      [
-       1800,
-       860
-      ]
-     ],
-     "densite": 30
+     "densite": 8
     }
    ]
   },
@@ -2011,8 +1985,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1680,
-    970
+    1690,
+    930
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2058,8 +2032,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1810,
-    1010
+    1790,
+    1000
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2083,8 +2057,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1700,
-    930
+    1660,
+    870
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2108,8 +2082,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1760,
-    1050
+    1750,
+    1030
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2133,8 +2107,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1650,
-    1020
+    1630,
+    970
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2158,8 +2132,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1850,
-    960
+    1845,
+    930
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2184,7 +2158,7 @@
    "ile": "dremora",
    "pos": [
     1900,
-    900
+    850
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2208,8 +2182,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1790,
-    880
+    1800,
+    860
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2233,8 +2207,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1830,
-    1090
+    1810,
+    1060
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2258,8 +2232,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1750,
-    1140
+    1720,
+    1080
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -3136,12 +3110,12 @@
      800
     ],
     [
-     1340,
-     885
+     1345,
+     865
     ],
     [
-     1680,
-     970
+     1690,
+     930
     ]
    ]
   },
@@ -3792,16 +3766,16 @@
    "type": "piste",
    "points": [
     [
-     1680,
-     970
+     1690,
+     930
     ],
     [
-     1745,
-     990
+     1740,
+     965
     ],
     [
-     1810,
-     1010
+     1790,
+     1000
     ]
    ]
   },
@@ -3812,16 +3786,16 @@
    "type": "piste",
    "points": [
     [
-     1680,
-     970
-    ],
-    [
      1690,
-     950
+     930
     ],
     [
-     1700,
-     930
+     1675,
+     900
+    ],
+    [
+     1660,
+     870
     ]
    ]
   },
@@ -3832,16 +3806,16 @@
    "type": "piste",
    "points": [
     [
-     1680,
-     970
+     1690,
+     930
     ],
     [
      1720,
-     1010
+     980
     ],
     [
-     1760,
-     1050
+     1750,
+     1030
     ]
    ]
   },
@@ -3852,16 +3826,16 @@
    "type": "piste",
    "points": [
     [
-     1680,
+     1690,
+     930
+    ],
+    [
+     1660,
+     950
+    ],
+    [
+     1630,
      970
-    ],
-    [
-     1665,
-     995
-    ],
-    [
-     1650,
-     1020
     ]
    ]
   },
@@ -4596,16 +4570,16 @@
    "type": "piste",
    "points": [
     [
-     1680,
-     970
+     1690,
+     930
     ],
     [
-     1765,
-     965
+     1767,
+     930
     ],
     [
-     1850,
-     960
+     1845,
+     930
     ]
    ]
   },
@@ -4616,16 +4590,16 @@
    "type": "piste",
    "points": [
     [
-     1850,
-     960
-    ],
-    [
-     1875,
+     1845,
      930
     ],
     [
+     1872,
+     890
+    ],
+    [
      1900,
-     900
+     850
     ]
    ]
   },
@@ -4636,16 +4610,16 @@
    "type": "piste",
    "points": [
     [
-     1680,
-     970
+     1690,
+     930
     ],
     [
-     1735,
-     925
+     1745,
+     895
     ],
     [
-     1790,
-     880
+     1800,
+     860
     ]
    ]
   },
@@ -4656,16 +4630,16 @@
    "type": "piste",
    "points": [
     [
-     1760,
-     1050
+     1750,
+     1030
     ],
     [
-     1795,
-     1070
+     1780,
+     1045
     ],
     [
-     1830,
-     1090
+     1810,
+     1060
     ]
    ]
   },
@@ -4676,16 +4650,16 @@
    "type": "piste",
    "points": [
     [
-     1650,
-     1020
+     1630,
+     970
     ],
     [
-     1700,
+     1675,
+     1025
+    ],
+    [
+     1720,
      1080
-    ],
-    [
-     1750,
-     1140
     ]
    ]
   },
@@ -4795,15 +4769,6 @@
   }
  ],
  "labels": [
-  {
-   "texte": "La Forêt Infinie",
-   "pos": [
-    1880,
-    640
-   ],
-   "taille": 18,
-   "angle": -90
-  },
   {
    "texte": "La Route Pâle",
    "pos": [
@@ -5373,5 +5338,372 @@
   "nom": "Drémora",
   "embleme": "images/blasons/eglise-mort.png",
   "blasonRoyaume": "images/blasons/dremora.png"
- }
+ },
+ "regions_carte": [
+  {
+   "id": "cite",
+   "nom": "Drémora — la Cité",
+   "couleur": "#d9c9a8",
+   "label": [
+    1000,
+    880
+   ],
+   "taille": 20,
+   "note": "Cité-Région neutre · siège de la Table Ronde",
+   "polys": [
+    [
+     [
+      900,
+      700
+     ],
+     [
+      1105,
+      700
+     ],
+     [
+      1140,
+      830
+     ],
+     [
+      1080,
+      930
+     ],
+     [
+      940,
+      930
+     ],
+     [
+      880,
+      830
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "valmorne",
+   "nom": "Valmorne",
+   "couleur": "#c8b98e",
+   "label": [
+    680,
+    1040
+   ],
+   "taille": 22,
+   "note": "Humains · plaines et cités gothiques",
+   "polys": [
+    [
+     [
+      500,
+      850
+     ],
+     [
+      700,
+      810
+     ],
+     [
+      870,
+      860
+     ],
+     [
+      900,
+      990
+     ],
+     [
+      820,
+      1120
+     ],
+     [
+      640,
+      1170
+     ],
+     [
+      490,
+      1110
+     ],
+     [
+      440,
+      970
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "crocs-gris",
+   "nom": "Les Crocs Gris",
+   "couleur": "#8fa876",
+   "label": [
+    500,
+    640
+   ],
+   "taille": 22,
+   "note": "Garous · forêts profondes",
+   "polys": [
+    [
+     [
+      350,
+      450
+     ],
+     [
+      560,
+      410
+     ],
+     [
+      700,
+      470
+     ],
+     [
+      720,
+      620
+     ],
+     [
+      660,
+      760
+     ],
+     [
+      500,
+      810
+     ],
+     [
+      380,
+      760
+     ],
+     [
+      330,
+      610
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "sombrelune",
+   "nom": "Sombrelune",
+   "couleur": "#a9a0b4",
+   "label": [
+    800,
+    330
+   ],
+   "taille": 22,
+   "note": "Vampires · vallées brumeuses",
+   "polys": [
+    [
+     [
+      640,
+      230
+     ],
+     [
+      840,
+      190
+     ],
+     [
+      970,
+      240
+     ],
+     [
+      990,
+      390
+     ],
+     [
+      900,
+      510
+     ],
+     [
+      740,
+      540
+     ],
+     [
+      640,
+      450
+     ],
+     [
+      610,
+      330
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "krath-dun",
+   "nom": "Krath-Dun",
+   "couleur": "#b3aa98",
+   "label": [
+    1430,
+    300
+   ],
+   "taille": 22,
+   "note": "Nains de la Surface · montagnes",
+   "polys": [
+    [
+     [
+      1230,
+      190
+     ],
+     [
+      1450,
+      150
+     ],
+     [
+      1640,
+      190
+     ],
+     [
+      1690,
+      330
+     ],
+     [
+      1620,
+      450
+     ],
+     [
+      1440,
+      490
+     ],
+     [
+      1290,
+      430
+     ],
+     [
+      1230,
+      300
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "aelriven",
+   "nom": "Aelriven",
+   "couleur": "#9dbb7f",
+   "label": [
+    1450,
+    1210
+   ],
+   "taille": 22,
+   "note": "Elfes · forêts anciennes",
+   "polys": [
+    [
+     [
+      1310,
+      1020
+     ],
+     [
+      1490,
+      990
+     ],
+     [
+      1620,
+      1050
+     ],
+     [
+      1640,
+      1170
+     ],
+     [
+      1540,
+      1250
+     ],
+     [
+      1390,
+      1250
+     ],
+     [
+      1300,
+      1160
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "neuf-queues",
+   "nom": "Val des Neuf Queues",
+   "couleur": "#c8a8a0",
+   "label": [
+    1700,
+    940
+   ],
+   "taille": 19,
+   "note": "Kitsune · gardiens du Seuil de la Forêt Infinie",
+   "polys": [
+    [
+     [
+      1600,
+      800
+     ],
+     [
+      1760,
+      780
+     ],
+     [
+      1830,
+      860
+     ],
+     [
+      1840,
+      1010
+     ],
+     [
+      1760,
+      1100
+     ],
+     [
+      1640,
+      1090
+     ],
+     [
+      1580,
+      980
+     ],
+     [
+      1580,
+      880
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "foret-infinie",
+   "nom": "La Forêt Infinie",
+   "couleur": "#4f6b3d",
+   "label": [
+    1910,
+    760
+   ],
+   "taille": 20,
+   "angle": -90,
+   "note": "Elle s'étend au-delà de l'Empire. Les Kitsune en gardent le seuil.",
+   "polys": [
+    [
+     [
+      1845,
+      300
+     ],
+     [
+      1950,
+      290
+     ],
+     [
+      1965,
+      1060
+     ],
+     [
+      1870,
+      1120
+     ],
+     [
+      1840,
+      1010
+     ],
+     [
+      1830,
+      860
+     ],
+     [
+      1855,
+      700
+     ],
+     [
+      1840,
+      500
+     ]
+    ]
+   ]
+  }
+ ]
 }
