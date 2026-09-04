@@ -670,3 +670,9 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 .carte-terr small { color: var(--encre-2); font-style: italic; }
 .carte-terr p { font-size: 13px; color: var(--encre-2); }
 .terr-lien { display: inline-block; margin-top: 6px; font-family: "Cinzel", serif; font-size: 11.5px; color: var(--sang); }
+.label-region { font-family: "Cinzel", serif; font-weight: 600; fill: #3d3122; letter-spacing: .06em;
+  paint-order: stroke; stroke: rgba(255,252,240,.85); stroke-width: 5px; stroke-linejoin: round; pointer-events: none; }
+.region-cliq { cursor: pointer; }
+.region-cliq:hover path:first-child { opacity: .78; }
+.label-ile.mer, text.mer { fill: #cfe4e6; opacity: .55; }
+body.vue-monde #btn-voyage, body.vue-monde #recherche { display: none; }
