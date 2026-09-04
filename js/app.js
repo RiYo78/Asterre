@@ -153,12 +153,19 @@ function chargerPays(id) {
 }
 async function boot() {
   try {
-    S.monde = await (await fetch("data/monde.json")).json();
+    S.monde = await (await fetch("data/monde.json?v=6")).json();
     const actifs = S.monde.pays.filter(p => p.actif && p.fichier);
     S.paysData = {};
-    for (const p of actifs) S.paysData[p.id] = await (await fetch(p.fichier)).json();
-    const base = S.paysData["iles-saintes"] || Object.values(S.paysData).find(d => d.codex);
-    const cx = (base && base.codex) || {};
+    for (const p of actifs) {
+      try {
+        const rep = await fetch(p.fichier + "?v=6");
+        if (!rep.ok) throw new Error(rep.status + " " + p.fichier);
+        S.paysData[p.id] = await rep.json();
+      } catch (err) { console.warn("Pays ignoré :", p.id, err); }
+    }
+    const base = S.paysData["iles-saintes"] || Object.values(S.paysData).find(d => d && d.codex);
+    if (!base) throw new Error("aucun pays lisible");
+    const cx = base.codex || (base.codex = {});
     cx.pays_codex = cx.pays_codex || [];
     for (const p of actifs) {
       const d = S.paysData[p.id]; if (d === base) continue;
@@ -173,10 +180,11 @@ async function boot() {
     }
     // le codex reste toujours celui des Îles Saintes (fusionné)
     let choix = localStorage.getItem("asterre-pays");
-    if (!choix || !S.paysData[choix]) choix = S.paysData["asterre"] ? "asterre" : actifs[0].id;
+    if (!choix || !S.paysData[choix]) choix = S.paysData["asterre"] ? "asterre" : Object.keys(S.paysData)[0];
     S.paysActifId = choix; S.pays = S.paysData[choix];
   } catch (e) {
-    $("#chargement").innerHTML = "Impossible de lire les données.<br><small style='font-size:14px'>Si vous avez ouvert le fichier en double-cliquant (file://), lancez plutôt un petit serveur local — voir le README — ou déployez sur GitHub Pages.</small>";
+    console.error("Boot Asterre :", e);
+    $("#chargement").innerHTML = "Impossible de lire les données.<br><small style='font-size:14px'>Détail : " + esc(String(e && e.message || e)) + "<br>Essayez un rechargement forcé (Ctrl+F5).</small>";
     return;
   }
   initPays();
