@@ -1,6 +1,6 @@
 {
   "monde": "Asterre",
-  "version": "1.1",
+  "version": "1.2",
   "vueMonde": {
     "viewBox": [
       0,
@@ -13,6 +13,12 @@
     "phrase": "lumiere7"
   },
   "pays": [
+    {
+      "id": "asterre",
+      "nom": "Asterre — le monde",
+      "fichier": "data/asterre-monde.json",
+      "actif": true
+    },
     {
       "id": "iles-saintes",
       "fichier": "data/iles-saintes.json",
