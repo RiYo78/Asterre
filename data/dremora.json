@@ -1,7 +1,7 @@
 {
  "id": "dremora",
  "nom": "L'Empire de Drémora",
- "version": "1.2",
+ "version": "1.3",
  "reglages": {
   "volMaxTraiteKm": 300
  },
@@ -21,166 +21,116 @@
    "description": "Le nord du Continent : sept régions, chacune à une race, autour d'une capitale mixte.",
    "forme": [
     [
-     340,
+     430,
      300
     ],
     [
-     420,
-     220
-    ],
-    [
      560,
-     180
+     215
     ],
     [
-     720,
-     150
+     760,
+     175
     ],
     [
-     900,
-     170
+     990,
+     160
     ],
     [
-     1080,
-     150
+     1210,
+     185
     ],
     [
-     1250,
-     120
+     1380,
+     255
     ],
     [
-     1420,
-     150
+     1480,
+     370
     ],
     [
-     1600,
-     180
-    ],
-    [
-     1780,
-     240
-    ],
-    [
-     1920,
-     340
-    ],
-    [
-     1960,
+     1510,
      520
     ],
     [
-     1940,
-     700
+     1495,
+     690
     ],
     [
-     1960,
-     880
+     1470,
+     860
     ],
     [
-     1900,
-     1040
-    ],
-    [
-     1760,
-     1140
-    ],
-    [
-     1600,
-     1230
-    ],
-    [
-     1420,
-     1240
+     1385,
+     1010
     ],
     [
      1250,
-     1200
+     1105
     ],
     [
-     1100,
-     1180
-    ],
-    [
-     980,
+     1060,
      1160
     ],
     [
-     900,
-     1150
+     860,
+     1155
     ],
     [
-     820,
-     1170
+     680,
+     1105
     ],
     [
-     700,
-     1200
+     545,
+     1000
     ],
     [
-     580,
-     1170
+     455,
+     855
     ],
     [
-     470,
-     1080
+     410,
+     680
     ],
     [
-     380,
-     940
-    ],
-    [
-     330,
-     760
-    ],
-    [
-     300,
-     580
-    ],
-    [
-     320,
-     420
+     400,
+     470
     ]
    ],
    "fleuves": [
     {
-     "nom": "",
      "points": [
       [
-       760,
-       1080
+       900,
+       470
       ],
       [
-       720,
-       900
+       880,
+       620
       ],
       [
-       650,
-       760
+       830,
+       780
       ],
       [
-       600,
-       650
+       790,
+       930
       ]
      ]
     },
     {
-     "nom": "",
      "points": [
       [
-       780,
-       440
+       1300,
+       560
       ],
       [
-       850,
-       600
-      ],
-      [
-       950,
+       1330,
        720
       ],
       [
-       1000,
-       790
+       1300,
+       880
       ]
      ]
     }
@@ -190,108 +140,108 @@
      "type": "foret",
      "poly": [
       [
-       380,
-       470
+       440,
+       330
       ],
       [
-       690,
-       470
+       660,
+       300
       ],
       [
-       700,
-       750
+       680,
+       660
       ],
       [
-       400,
-       760
+       470,
+       700
       ]
      ],
-     "densite": 22
+     "densite": 20
     },
     {
      "type": "montagne-neige",
      "poly": [
       [
-       1260,
-       200
+       1100,
+       240
       ],
       [
-       1650,
-       200
+       1400,
+       270
       ],
       [
-       1670,
+       1450,
+       480
+      ],
+      [
+       1130,
        450
-      ],
-      [
-       1300,
-       470
       ]
      ],
-     "densite": 15
+     "densite": 16
     },
     {
      "type": "foret",
      "poly": [
       [
-       1320,
-       1040
+       1140,
+       560
       ],
       [
-       1600,
-       1040
+       1470,
+       560
       ],
       [
-       1610,
-       1230
+       1450,
+       900
       ],
       [
-       1340,
-       1235
+       1180,
+       830
+      ]
+     ],
+     "densite": 36
+    },
+    {
+     "type": "foret",
+     "poly": [
+      [
+       960,
+       830
+      ],
+      [
+       1240,
+       810
+      ],
+      [
+       1230,
+       1110
+      ],
+      [
+       930,
+       1120
       ]
      ],
      "densite": 18
     },
     {
-     "type": "foret",
-     "poly": [
-      [
-       1850,
-       320
-      ],
-      [
-       1955,
-       320
-      ],
-      [
-       1955,
-       1050
-      ],
-      [
-       1860,
-       1090
-      ]
-     ],
-     "densite": 34
-    },
-    {
      "type": "prairie",
      "poly": [
       [
-       500,
-       870
+       580,
+       790
       ],
       [
-       880,
-       870
+       900,
+       760
       ],
       [
        890,
-       1120
+       1060
       ],
       [
-       520,
-       1140
+       590,
+       1070
       ]
      ],
      "densite": 9
@@ -304,38 +254,16 @@
        250
       ],
       [
-       960,
-       250
+       1000,
+       220
       ],
       [
-       970,
-       500
+       1010,
+       440
       ],
       [
-       650,
-       510
-      ]
-     ],
-     "densite": 9
-    },
-    {
-     "type": "colline",
-     "poly": [
-      [
-       1600,
-       820
-      ],
-      [
-       1820,
-       820
-      ],
-      [
-       1830,
-       1060
-      ],
-      [
-       1620,
-       1080
+       660,
+       450
       ]
      ],
      "densite": 8
@@ -349,50 +277,46 @@
    "population": "≈ 400 000",
    "seed": 33,
    "labelPos": [
-    720,
-    1190
+    1750,
+    1075
    ],
    "description": "Une île, trois peuples : Vhalkir (Humains), Mornhal (Garous), Pourpre-Rive (Vampires).",
    "forme": [
     [
-     480,
-     1230
+     1615,
+     1120
     ],
     [
-     600,
-     1195
+     1720,
+     1085
     ],
     [
-     760,
-     1200
+     1840,
+     1105
     ],
     [
-     900,
-     1240
+     1905,
+     1180
     ],
     [
-     980,
-     1320
+     1900,
+     1290
     ],
     [
-     960,
-     1420
+     1810,
+     1355
     ],
     [
-     860,
-     1470
+     1680,
+     1345
     ],
     [
-     700,
-     1480
+     1605,
+     1265
     ],
     [
-     560,
-     1450
-    ],
-    [
-     470,
-     1370
+     1590,
+     1185
     ]
    ],
    "zones": [
@@ -400,45 +324,23 @@
      "type": "foret",
      "poly": [
       [
-       490,
+       1610,
+       1120
+      ],
+      [
+       1720,
+       1100
+      ],
+      [
+       1730,
        1250
       ],
       [
-       640,
-       1230
-      ],
-      [
-       650,
-       1360
-      ],
-      [
-       500,
-       1370
+       1615,
+       1255
       ]
      ],
-     "densite": 10
-    },
-    {
-     "type": "colline",
-     "poly": [
-      [
-       820,
-       1250
-      ],
-      [
-       960,
-       1300
-      ],
-      [
-       940,
-       1420
-      ],
-      [
-       830,
-       1400
-      ]
-     ],
-     "densite": 6
+     "densite": 8
     }
    ]
   },
@@ -449,34 +351,34 @@
    "population": "—",
    "seed": 40,
    "labelPos": [
-    425,
-    1500
+    1508,
+    1310
    ],
    "description": "Réservée aux adeptes de l'Église du Feu.",
    "forme": [
     [
-     380,
-     1440
+     1470,
+     1330
     ],
     [
-     420,
-     1425
+     1520,
+     1315
     ],
     [
-     460,
-     1440
+     1560,
+     1345
     ],
     [
-     470,
-     1470
+     1545,
+     1395
     ],
     [
-     430,
-     1488
+     1490,
+     1400
     ],
     [
-     385,
-     1478
+     1455,
+     1370
     ]
    ],
    "zones": [
@@ -484,20 +386,20 @@
      "type": "montagne-neige",
      "poly": [
       [
-       400,
-       1435
+       1465,
+       1330
       ],
       [
-       445,
-       1435
+       1550,
+       1330
       ],
       [
-       450,
-       1470
+       1550,
+       1390
       ],
       [
-       400,
-       1470
+       1465,
+       1390
       ]
      ],
      "densite": 2
@@ -512,8 +414,8 @@
    "type": "capitale",
    "ile": "dremora",
    "pos": [
-    1000,
-    800
+    891,
+    577
    ],
    "population": "~80 000 (très dense)",
    "climat": "Plaine centrale",
@@ -633,8 +535,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    700,
-    1000
+    717,
+    865
    ],
    "population": "~45 000",
    "climat": "Plaines · collines · rivières",
@@ -687,8 +589,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    850,
-    900
+    795,
+    911
    ],
    "population": "~20 000",
    "climat": "Plaines · collines · rivières",
@@ -712,8 +614,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    560,
-    1120
+    740,
+    911
    ],
    "population": "~15 000",
    "climat": "Plaines · collines · rivières",
@@ -737,8 +639,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    660,
-    1060
+    701,
+    945
    ],
    "population": "",
    "climat": "Plaines · collines · rivières",
@@ -762,8 +664,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    760,
-    1080
+    678,
+    902
    ],
    "population": "",
    "climat": "Plaines · collines · rivières",
@@ -787,8 +689,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    600,
-    940
+    626,
+    886
    ],
    "population": "",
    "climat": "Plaines · collines · rivières",
@@ -812,8 +714,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    740,
-    940
+    661,
+    849
    ],
    "population": "",
    "climat": "Plaines · collines · rivières",
@@ -837,8 +739,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    640,
-    860
+    657,
+    802
    ],
    "population": "",
    "climat": "Plaines · collines · rivières",
@@ -862,8 +764,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    610,
-    780
+    711,
+    815
    ],
    "population": "",
    "climat": "Plaines · collines · rivières",
@@ -887,8 +789,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    820,
-    1040
+    759,
+    792
    ],
    "population": "",
    "climat": "Plaines · collines · rivières",
@@ -912,8 +814,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    520,
-    1010
+    767,
+    839
    ],
    "population": "",
    "climat": "Plaines · collines · rivières",
@@ -937,8 +839,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    560,
-    660
+    558,
+    486
    ],
    "population": "~35 000",
    "climat": "Forêts profondes · clairières · rivières",
@@ -991,8 +893,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    420,
-    560
+    632,
+    530
    ],
    "population": "~20 000",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1016,8 +918,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    470,
-    790
+    573,
+    532
    ],
    "population": "~15 000",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1041,8 +943,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    600,
-    620
+    521,
+    557
    ],
    "population": "",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1066,8 +968,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    500,
-    700
+    507,
+    507
    ],
    "population": "",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1091,8 +993,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    460,
-    620
+    471,
+    467
    ],
    "population": "",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1116,8 +1018,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    620,
-    720
+    525,
+    447
    ],
    "population": "",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1141,8 +1043,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    400,
-    660
+    565,
+    409
    ],
    "population": "",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1166,8 +1068,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    640,
-    760
+    597,
+    452
    ],
    "population": "",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1191,8 +1093,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    480,
-    470
+    647,
+    479
    ],
    "population": "Abandonné",
    "climat": "Forêts profondes · clairières · rivières",
@@ -1216,8 +1118,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    780,
-    440
+    825,
+    314
    ],
    "population": "~28 000",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1270,8 +1172,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    900,
-    370
+    909,
+    363
    ],
    "population": "~18 000",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1295,8 +1197,8 @@
    "type": "caserne",
    "ile": "dremora",
    "pos": [
-    700,
-    300
+    837,
+    367
    ],
    "population": "~14 000",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1320,8 +1222,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    800,
-    480
+    768,
+    386
    ],
    "population": "",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1345,8 +1247,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    820,
-    510
+    763,
+    324
    ],
    "population": "",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1370,8 +1272,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    880,
-    470
+    741,
+    264
    ],
    "population": "",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1395,8 +1297,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    660,
-    540
+    813,
+    261
    ],
    "population": "",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1420,8 +1322,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    720,
-    380
+    882,
+    242
    ],
    "population": "",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1445,8 +1347,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    850,
-    420
+    887,
+    304
    ],
    "population": "",
    "climat": "Vallées brumeuses · falaises · forêts sombres",
@@ -1470,8 +1372,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1420,
-    380
+    1269,
+    381
    ],
    "population": "~30 000",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1531,8 +1433,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1520,
-    300
+    1350,
+    428
    ],
    "population": "~18 000",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1556,8 +1458,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1300,
-    270
+    1289,
+    430
    ],
    "population": "~12 000",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1581,8 +1483,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1360,
-    440
+    1241,
+    462
    ],
    "population": "",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1606,8 +1508,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1480,
-    440
+    1220,
+    413
    ],
    "population": "",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1631,8 +1533,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1440,
-    340
+    1170,
+    383
    ],
    "population": "",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1656,8 +1558,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1400,
-    400
+    1218,
+    351
    ],
    "population": "",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1681,8 +1583,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1560,
-    380
+    1236,
+    301
    ],
    "population": "",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1706,8 +1608,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1330,
-    340
+    1286,
+    330
    ],
    "population": "",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1731,8 +1633,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1600,
-    280
+    1347,
+    329
    ],
    "population": "",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1756,8 +1658,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1470,
-    240
+    1330,
+    379
    ],
    "population": "",
    "climat": "Montagnes · contreforts · vallées minérales",
@@ -1781,8 +1683,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1450,
-    1140
+    1072,
+    974
    ],
    "population": "~15 000",
    "climat": "Forêts anciennes · clairières sacrées",
@@ -1835,8 +1737,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1560,
-    1210
+    1166,
+    1029
    ],
    "population": "~9 000",
    "climat": "Forêts anciennes · clairières sacrées",
@@ -1860,8 +1762,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1400,
-    1090
+    1067,
+    1034
    ],
    "population": "",
    "climat": "Forêts anciennes · clairières sacrées",
@@ -1885,8 +1787,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1370,
-    1180
+    971,
+    1016
    ],
    "population": "",
    "climat": "Forêts anciennes · clairières sacrées",
@@ -1910,8 +1812,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1500,
-    1090
+    1015,
+    940
    ],
    "population": "",
    "climat": "Forêts anciennes · clairières sacrées",
@@ -1935,8 +1837,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1520,
-    1160
+    1081,
+    877
    ],
    "population": "",
    "climat": "Forêts anciennes · clairières sacrées",
@@ -1960,8 +1862,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1590,
-    1080
+    1136,
+    948
    ],
    "population": "",
    "climat": "Forêts anciennes · clairières sacrées",
@@ -1985,8 +1887,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1690,
-    930
+    1299,
+    728
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2032,8 +1934,8 @@
    "type": "ville",
    "ile": "dremora",
    "pos": [
-    1790,
-    1000
+    1350,
+    758
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2057,8 +1959,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1660,
-    870
+    1309,
+    760
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2082,8 +1984,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1750,
-    1030
+    1274,
+    776
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2107,8 +2009,8 @@
    "type": "village",
    "ile": "dremora",
    "pos": [
-    1630,
-    970
+    1265,
+    742
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2132,8 +2034,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1845,
-    930
+    1239,
+    715
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2157,8 +2059,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1900,
-    850
+    1277,
+    701
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2182,8 +2084,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1800,
-    860
+    1304,
+    675
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2207,8 +2109,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1810,
-    1060
+    1326,
+    705
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2232,8 +2134,8 @@
    "type": "lieu-dit",
    "ile": "dremora",
    "pos": [
-    1720,
-    1080
+    1360,
+    723
    ],
    "population": "",
    "climat": "Vallées · collines boisées · frontière de la Forêt Infinie",
@@ -2257,8 +2159,8 @@
    "type": "port",
    "ile": "dremora",
    "pos": [
-    880,
-    1130
+    900,
+    1120
    ],
    "population": "",
    "climat": "",
@@ -2282,8 +2184,8 @@
    "type": "ville",
    "ile": "lituania",
    "pos": [
-    700,
-    1300
+    1797,
+    1160
    ],
    "population": "~40 000",
    "climat": "",
@@ -2341,8 +2243,8 @@
    "type": "port",
    "ile": "lituania",
    "pos": [
-    560,
-    1420
+    1827,
+    1178
    ],
    "population": "~22 000",
    "climat": "",
@@ -2366,8 +2268,8 @@
    "type": "ville",
    "ile": "lituania",
    "pos": [
-    760,
-    1360
+    1801,
+    1179
    ],
    "population": "~16 000",
    "climat": "",
@@ -2391,8 +2293,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    650,
-    1260
+    1776,
+    1186
    ],
    "population": "",
    "climat": "",
@@ -2416,8 +2318,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    720,
-    1245
+    1775,
+    1164
    ],
    "population": "",
    "climat": "",
@@ -2441,8 +2343,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    600,
-    1350
+    1767,
+    1142
    ],
    "population": "",
    "climat": "",
@@ -2466,8 +2368,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    770,
-    1300
+    1793,
+    1141
    ],
    "population": "",
    "climat": "",
@@ -2491,8 +2393,8 @@
    "type": "lieu-dit",
    "ile": "lituania",
    "pos": [
-    520,
-    1330
+    1818,
+    1134
    ],
    "population": "",
    "climat": "",
@@ -2516,8 +2418,8 @@
    "type": "lieu-dit",
    "ile": "lituania",
    "pos": [
-    690,
-    1390
+    1819,
+    1156
    ],
    "population": "",
    "climat": "",
@@ -2541,8 +2443,8 @@
    "type": "ville",
    "ile": "lituania",
    "pos": [
-    560,
-    1270
+    1664,
+    1183
    ],
    "population": "~25 000",
    "climat": "",
@@ -2588,8 +2490,8 @@
    "type": "ville",
    "ile": "lituania",
    "pos": [
-    500,
-    1300
+    1705,
+    1207
    ],
    "population": "~15 000",
    "climat": "",
@@ -2613,8 +2515,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    540,
-    1240
+    1662,
+    1209
    ],
    "population": "",
    "climat": "",
@@ -2638,8 +2540,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    500,
-    1260
+    1620,
+    1202
    ],
    "population": "",
    "climat": "",
@@ -2663,8 +2565,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    600,
-    1230
+    1639,
+    1169
    ],
    "population": "",
    "climat": "",
@@ -2688,8 +2590,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    620,
-    1330
+    1668,
+    1141
    ],
    "population": "",
    "climat": "",
@@ -2713,8 +2615,8 @@
    "type": "lieu-dit",
    "ile": "lituania",
    "pos": [
-    470,
-    1350
+    1692,
+    1172
    ],
    "population": "",
    "climat": "",
@@ -2738,8 +2640,8 @@
    "type": "ville",
    "ile": "lituania",
    "pos": [
-    880,
-    1390
+    1802,
+    1256
    ],
    "population": "~30 000",
    "climat": "",
@@ -2801,8 +2703,8 @@
    "type": "port",
    "ile": "lituania",
    "pos": [
-    930,
-    1340
+    1808,
+    1259
    ],
    "population": "~18 000",
    "climat": "",
@@ -2826,8 +2728,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    850,
-    1420
+    1802,
+    1259
    ],
    "population": "",
    "climat": "",
@@ -2851,8 +2753,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    910,
-    1290
+    1796,
+    1258
    ],
    "population": "",
    "climat": "",
@@ -2876,8 +2778,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    820,
-    1350
+    1799,
+    1253
    ],
    "population": "",
    "climat": "",
@@ -2901,8 +2803,8 @@
    "type": "village",
    "ile": "lituania",
    "pos": [
-    950,
-    1400
+    1803,
+    1249
    ],
    "population": "",
    "climat": "",
@@ -2926,8 +2828,8 @@
    "type": "lieu-dit",
    "ile": "lituania",
    "pos": [
-    900,
-    1450
+    1807,
+    1254
    ],
    "population": "",
    "climat": "",
@@ -2951,8 +2853,8 @@
    "type": "lieu-dit",
    "ile": "ile-volcanique",
    "pos": [
-    425,
-    1455
+    1507,
+    1359
    ],
    "population": "Aucune population civile",
    "climat": "",
@@ -2986,16 +2888,16 @@
    "type": "route",
    "points": [
     [
-     1000,
-     800
+     891,
+     577
     ],
     [
-     925,
-     850
+     823,
+     738
     ],
     [
-     850,
-     900
+     795,
+     911
     ]
    ]
   },
@@ -3006,16 +2908,16 @@
    "type": "route",
    "points": [
     [
-     850,
-     900
+     795,
+     911
     ],
     [
-     775,
-     950
+     759,
+     883
     ],
     [
-     700,
-     1000
+     717,
+     865
     ]
    ]
   },
@@ -3026,16 +2928,16 @@
    "type": "route",
    "points": [
     [
-     1000,
-     800
+     891,
+     577
     ],
     [
-     780,
-     730
+     730,
+     512
     ],
     [
-     560,
-     660
+     558,
+     486
     ]
    ]
   },
@@ -3046,16 +2948,16 @@
    "type": "route",
    "points": [
     [
-     1000,
-     800
+     891,
+     577
     ],
     [
-     890,
-     620
+     874,
+     442
     ],
     [
-     780,
-     440
+     825,
+     314
     ]
    ]
   },
@@ -3066,16 +2968,16 @@
    "type": "montagne",
    "points": [
     [
-     1000,
-     800
+     891,
+     577
     ],
     [
-     1210,
-     590
+     1092,
+     502
     ],
     [
-     1420,
-     380
+     1269,
+     381
     ]
    ]
   },
@@ -3086,16 +2988,16 @@
    "type": "route",
    "points": [
     [
-     1000,
-     800
+     891,
+     577
     ],
     [
-     1225,
-     970
+     958,
+     786
     ],
     [
-     1450,
-     1140
+     1072,
+     974
     ]
    ]
   },
@@ -3106,16 +3008,16 @@
    "type": "route",
    "points": [
     [
-     1000,
-     800
+     891,
+     577
     ],
     [
-     1345,
-     865
+     1086,
+     677
     ],
     [
-     1690,
-     930
+     1299,
+     728
     ]
    ]
   },
@@ -3126,16 +3028,16 @@
    "type": "route",
    "points": [
     [
-     1000,
-     800
+     891,
+     577
     ],
     [
-     940,
-     965
+     863,
+     849
     ],
     [
-     880,
-     1130
+     900,
+     1120
     ]
    ]
   },
@@ -3146,16 +3048,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     630,
-     830
+     660,
+     666
     ],
     [
-     560,
-     660
+     558,
+     486
     ]
    ]
   },
@@ -3166,16 +3068,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     740,
-     720
+     804,
+     596
     ],
     [
-     780,
-     440
+     825,
+     314
     ]
    ]
   },
@@ -3186,16 +3088,16 @@
    "type": "route",
    "points": [
     [
-     560,
-     660
+     558,
+     486
     ],
     [
-     670,
-     550
+     702,
+     416
     ],
     [
-     780,
-     440
+     825,
+     314
     ]
    ]
   },
@@ -3206,16 +3108,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     775,
-     950
+     753,
+     893
     ],
     [
-     850,
-     900
+     795,
+     911
     ]
    ]
   },
@@ -3226,16 +3128,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     630,
-     1060
+     726,
+     889
     ],
     [
-     560,
-     1120
+     740,
+     911
     ]
    ]
   },
@@ -3246,16 +3148,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     680,
-     1030
+     704,
+     904
     ],
     [
-     660,
-     1060
+     701,
+     945
     ]
    ]
   },
@@ -3266,16 +3168,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     730,
-     1040
+     695,
+     881
     ],
     [
-     760,
-     1080
+     678,
+     902
     ]
    ]
   },
@@ -3286,16 +3188,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     650,
-     970
+     670,
+     870
     ],
     [
-     600,
-     940
+     626,
+     886
     ]
    ]
   },
@@ -3306,16 +3208,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     720,
-     970
+     690,
+     854
     ],
     [
-     740,
-     940
+     661,
+     849
     ]
    ]
   },
@@ -3326,16 +3228,16 @@
    "type": "route",
    "points": [
     [
-     560,
-     660
+     558,
+     486
     ],
     [
-     490,
-     610
+     592,
+     512
     ],
     [
-     420,
-     560
+     632,
+     530
     ]
    ]
   },
@@ -3346,16 +3248,16 @@
    "type": "route",
    "points": [
     [
-     560,
-     660
+     558,
+     486
     ],
     [
-     515,
-     725
+     563,
+     510
     ],
     [
-     470,
-     790
+     573,
+     532
     ]
    ]
   },
@@ -3366,16 +3268,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     660
+     558,
+     486
     ],
     [
-     580,
-     640
+     535,
+     519
     ],
     [
-     600,
-     620
+     521,
+     557
     ]
    ]
   },
@@ -3386,16 +3288,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     660
+     558,
+     486
     ],
     [
-     530,
-     680
+     531,
+     493
     ],
     [
-     500,
-     700
+     507,
+     507
     ]
    ]
   },
@@ -3406,16 +3308,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     660
+     558,
+     486
     ],
     [
-     510,
-     640
+     516,
+     471
     ],
     [
-     460,
-     620
+     471,
+     467
     ]
    ]
   },
@@ -3426,16 +3328,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     660
+     558,
+     486
     ],
     [
-     590,
-     690
+     544,
+     465
     ],
     [
-     620,
-     720
+     525,
+     447
     ]
    ]
   },
@@ -3446,16 +3348,16 @@
    "type": "route",
    "points": [
     [
-     780,
-     440
+     825,
+     314
     ],
     [
-     840,
-     405
+     864,
+     344
     ],
     [
-     900,
-     370
+     909,
+     363
     ]
    ]
   },
@@ -3466,16 +3368,16 @@
    "type": "route",
    "points": [
     [
-     780,
-     440
+     825,
+     314
     ],
     [
-     740,
-     370
+     828,
+     341
     ],
     [
-     700,
-     300
+     837,
+     367
     ]
    ]
   },
@@ -3486,16 +3388,16 @@
    "type": "piste",
    "points": [
     [
-     780,
-     440
+     825,
+     314
     ],
     [
-     790,
-     460
+     792,
+     347
     ],
     [
-     800,
-     480
+     768,
+     386
     ]
    ]
   },
@@ -3506,16 +3408,16 @@
    "type": "piste",
    "points": [
     [
-     780,
-     440
+     825,
+     314
     ],
     [
-     800,
-     475
+     793,
+     315
     ],
     [
-     820,
-     510
+     763,
+     324
     ]
    ]
   },
@@ -3526,16 +3428,16 @@
    "type": "piste",
    "points": [
     [
-     780,
-     440
+     825,
+     314
     ],
     [
-     830,
-     455
+     786,
+     284
     ],
     [
-     880,
-     470
+     741,
+     264
     ]
    ]
   },
@@ -3546,16 +3448,16 @@
    "type": "route",
    "points": [
     [
-     780,
-     440
+     825,
+     314
     ],
     [
-     720,
-     490
+     822,
+     287
     ],
     [
-     660,
-     540
+     813,
+     261
     ]
    ]
   },
@@ -3566,16 +3468,16 @@
    "type": "montagne",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1470,
-     340
+     1307,
+     409
     ],
     [
-     1520,
-     300
+     1350,
+     428
     ]
    ]
   },
@@ -3586,16 +3488,16 @@
    "type": "route",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1360,
-     325
+     1276,
+     407
     ],
     [
-     1300,
-     270
+     1289,
+     430
     ]
    ]
   },
@@ -3606,16 +3508,16 @@
    "type": "montagne",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1390,
-     410
+     1250,
+     420
     ],
     [
-     1360,
-     440
+     1241,
+     462
     ]
    ]
   },
@@ -3626,16 +3528,16 @@
    "type": "piste",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1450,
-     410
+     1243,
+     394
     ],
     [
-     1480,
-     440
+     1220,
+     413
     ]
    ]
   },
@@ -3646,16 +3548,16 @@
    "type": "piste",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1430,
-     360
+     1219,
+     376
     ],
     [
-     1440,
-     340
+     1170,
+     383
     ]
    ]
   },
@@ -3666,16 +3568,16 @@
    "type": "piste",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1410,
-     390
+     1245,
+     363
     ],
     [
-     1400,
-     400
+     1218,
+     351
     ]
    ]
   },
@@ -3686,16 +3588,16 @@
    "type": "piste",
    "points": [
     [
-     1450,
-     1140
+     1072,
+     974
     ],
     [
-     1505,
-     1175
+     1116,
+     1007
     ],
     [
-     1560,
-     1210
+     1166,
+     1029
     ]
    ]
   },
@@ -3706,16 +3608,16 @@
    "type": "piste",
    "points": [
     [
-     1450,
-     1140
+     1072,
+     974
     ],
     [
-     1425,
-     1115
+     1066,
+     1004
     ],
     [
-     1400,
-     1090
+     1067,
+     1034
     ]
    ]
   },
@@ -3726,16 +3628,16 @@
    "type": "piste",
    "points": [
     [
-     1450,
-     1140
+     1072,
+     974
     ],
     [
-     1410,
-     1160
+     1019,
+     989
     ],
     [
-     1370,
-     1180
+     971,
+     1016
     ]
    ]
   },
@@ -3746,16 +3648,16 @@
    "type": "piste",
    "points": [
     [
-     1450,
-     1140
+     1072,
+     974
     ],
     [
-     1475,
-     1115
+     1046,
+     954
     ],
     [
-     1500,
-     1090
+     1015,
+     940
     ]
    ]
   },
@@ -3766,16 +3668,16 @@
    "type": "piste",
    "points": [
     [
-     1690,
-     930
+     1299,
+     728
     ],
     [
-     1740,
-     965
+     1323,
+     746
     ],
     [
-     1790,
-     1000
+     1350,
+     758
     ]
    ]
   },
@@ -3786,16 +3688,16 @@
    "type": "piste",
    "points": [
     [
-     1690,
-     930
+     1299,
+     728
     ],
     [
-     1675,
-     900
+     1302,
+     745
     ],
     [
-     1660,
-     870
+     1309,
+     760
     ]
    ]
   },
@@ -3806,16 +3708,16 @@
    "type": "piste",
    "points": [
     [
-     1690,
-     930
+     1299,
+     728
     ],
     [
-     1720,
-     980
+     1284,
+     750
     ],
     [
-     1750,
-     1030
+     1274,
+     776
     ]
    ]
   },
@@ -3826,16 +3728,16 @@
    "type": "piste",
    "points": [
     [
-     1690,
-     930
+     1299,
+     728
     ],
     [
-     1660,
-     950
+     1281,
+     733
     ],
     [
-     1630,
-     970
+     1265,
+     742
     ]
    ]
   },
@@ -3846,16 +3748,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     790,
-     1345
+     1794,
+     1208
     ],
     [
-     880,
-     1390
+     1802,
+     1256
     ]
    ]
   },
@@ -3866,16 +3768,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     630,
-     1285
+     1729,
+     1164
     ],
     [
-     560,
-     1270
+     1664,
+     1183
     ]
    ]
   },
@@ -3886,16 +3788,16 @@
    "type": "route",
    "points": [
     [
-     560,
-     1270
+     1664,
+     1183
     ],
     [
-     720,
-     1330
+     1729,
+     1228
     ],
     [
-     880,
-     1390
+     1802,
+     1256
     ]
    ]
   },
@@ -3906,16 +3808,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     630,
-     1360
+     1811,
+     1171
     ],
     [
-     560,
-     1420
+     1827,
+     1178
     ]
    ]
   },
@@ -3926,16 +3828,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     730,
-     1330
+     1798,
+     1170
     ],
     [
-     760,
-     1360
+     1801,
+     1179
     ]
    ]
   },
@@ -3946,16 +3848,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     675,
-     1280
+     1785,
+     1172
     ],
     [
-     650,
-     1260
+     1776,
+     1186
     ]
    ]
   },
@@ -3966,16 +3868,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     710,
-     1272
+     1786,
+     1161
     ],
     [
-     720,
-     1245
+     1775,
+     1164
     ]
    ]
   },
@@ -3986,16 +3888,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     650,
-     1325
+     1783,
+     1149
     ],
     [
-     600,
-     1350
+     1767,
+     1142
     ]
    ]
   },
@@ -4006,16 +3908,16 @@
    "type": "route",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     735,
-     1300
+     1796,
+     1150
     ],
     [
-     770,
-     1300
+     1793,
+     1141
     ]
    ]
   },
@@ -4026,16 +3928,16 @@
    "type": "route",
    "points": [
     [
-     880,
-     1390
+     1802,
+     1256
     ],
     [
-     905,
-     1365
+     1805,
+     1258
     ],
     [
-     930,
-     1340
+     1808,
+     1259
     ]
    ]
   },
@@ -4046,16 +3948,16 @@
    "type": "piste",
    "points": [
     [
-     880,
-     1390
+     1802,
+     1256
     ],
     [
-     865,
-     1405
+     1802,
+     1258
     ],
     [
-     850,
-     1420
+     1802,
+     1259
     ]
    ]
   },
@@ -4066,16 +3968,16 @@
    "type": "piste",
    "points": [
     [
-     880,
-     1390
+     1802,
+     1256
     ],
     [
-     895,
-     1340
+     1799,
+     1257
     ],
     [
-     910,
-     1290
+     1796,
+     1258
     ]
    ]
   },
@@ -4086,16 +3988,16 @@
    "type": "piste",
    "points": [
     [
-     880,
-     1390
+     1802,
+     1256
     ],
     [
-     850,
-     1370
+     1801,
+     1254
     ],
     [
-     820,
-     1350
+     1799,
+     1253
     ]
    ]
   },
@@ -4106,16 +4008,16 @@
    "type": "piste",
    "points": [
     [
-     880,
-     1390
+     1802,
+     1256
     ],
     [
-     915,
-     1395
+     1803,
+     1253
     ],
     [
-     950,
-     1400
+     1803,
+     1249
     ]
    ]
   },
@@ -4126,20 +4028,20 @@
    "type": "maritime",
    "points": [
     [
-     880,
-     1130
+     900,
+     1120
     ],
     [
-     820,
-     1200
+     1250,
+     1230
     ],
     [
-     740,
-     1270
+     1500,
+     1230
     ],
     [
-     700,
-     1300
+     1797,
+     1160
     ]
    ]
   },
@@ -4150,16 +4052,16 @@
    "type": "cotier",
    "points": [
     [
-     560,
-     1420
+     1827,
+     1178
     ],
     [
-     500,
-     1445
+     1580,
+     1330
     ],
     [
-     425,
-     1455
+     1507,
+     1359
     ]
    ]
   },
@@ -4170,16 +4072,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     1270
+     1664,
+     1183
     ],
     [
-     530,
-     1285
+     1683,
+     1197
     ],
     [
-     500,
-     1300
+     1705,
+     1207
     ]
    ]
   },
@@ -4190,16 +4092,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     1270
+     1664,
+     1183
     ],
     [
-     550,
-     1255
+     1661,
+     1196
     ],
     [
-     540,
-     1240
+     1662,
+     1209
     ]
    ]
   },
@@ -4210,16 +4112,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     1270
+     1664,
+     1183
     ],
     [
-     530,
-     1265
+     1641,
+     1190
     ],
     [
-     500,
-     1260
+     1620,
+     1202
     ]
    ]
   },
@@ -4230,16 +4132,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     1270
+     1664,
+     1183
     ],
     [
-     580,
-     1250
+     1652,
+     1174
     ],
     [
-     600,
-     1230
+     1639,
+     1169
     ]
    ]
   },
@@ -4250,16 +4152,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     1270
+     1664,
+     1183
     ],
     [
-     590,
-     1300
+     1669,
+     1162
     ],
     [
-     620,
-     1330
+     1668,
+     1141
     ]
    ]
   },
@@ -4270,16 +4172,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     670,
-     930
+     691,
+     830
     ],
     [
-     640,
-     860
+     657,
+     802
     ]
    ]
   },
@@ -4290,16 +4192,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     760,
-     1020
+     742,
+     831
     ],
     [
-     820,
-     1040
+     759,
+     792
     ]
    ]
   },
@@ -4310,16 +4212,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1000
+     717,
+     865
     ],
     [
-     610,
-     1005
+     744,
+     855
     ],
     [
-     520,
-     1010
+     767,
+     839
     ]
    ]
   },
@@ -4330,16 +4232,16 @@
    "type": "piste",
    "points": [
     [
-     600,
-     940
+     626,
+     886
     ],
     [
-     605,
-     860
+     673,
+     856
     ],
     [
-     610,
-     780
+     711,
+     815
     ]
    ]
   },
@@ -4350,16 +4252,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     660
+     558,
+     486
     ],
     [
-     480,
-     660
+     566,
+     448
     ],
     [
-     400,
-     660
+     565,
+     409
     ]
    ]
   },
@@ -4370,16 +4272,16 @@
    "type": "piste",
    "points": [
     [
-     620,
-     720
+     525,
+     447
     ],
     [
-     630,
-     740
+     561,
+     454
     ],
     [
-     640,
-     760
+     597,
+     452
     ]
    ]
   },
@@ -4390,16 +4292,16 @@
    "type": "piste",
    "points": [
     [
-     420,
-     560
+     632,
+     530
     ],
     [
-     450,
-     515
+     643,
+     505
     ],
     [
-     480,
-     470
+     647,
+     479
     ]
    ]
   },
@@ -4410,16 +4312,16 @@
    "type": "piste",
    "points": [
     [
-     780,
-     440
+     825,
+     314
     ],
     [
-     750,
-     410
+     858,
+     281
     ],
     [
-     720,
-     380
+     882,
+     242
     ]
    ]
   },
@@ -4430,16 +4332,16 @@
    "type": "piste",
    "points": [
     [
-     780,
-     440
+     825,
+     314
     ],
     [
-     815,
-     430
+     857,
+     313
     ],
     [
-     850,
-     420
+     887,
+     304
     ]
    ]
   },
@@ -4450,16 +4352,16 @@
    "type": "piste",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1490,
-     380
+     1257,
+     339
     ],
     [
-     1560,
-     380
+     1236,
+     301
     ]
    ]
   },
@@ -4470,16 +4372,16 @@
    "type": "piste",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1375,
-     360
+     1281,
+     357
     ],
     [
-     1330,
-     340
+     1286,
+     330
     ]
    ]
   },
@@ -4490,16 +4392,16 @@
    "type": "piste",
    "points": [
     [
-     1520,
-     300
+     1350,
+     428
     ],
     [
-     1560,
-     290
+     1354,
+     378
     ],
     [
-     1600,
-     280
+     1347,
+     329
     ]
    ]
   },
@@ -4510,16 +4412,16 @@
    "type": "montagne",
    "points": [
     [
-     1420,
-     380
+     1269,
+     381
     ],
     [
-     1445,
-     310
+     1300,
+     384
     ],
     [
-     1470,
-     240
+     1330,
+     379
     ]
    ]
   },
@@ -4530,16 +4432,16 @@
    "type": "piste",
    "points": [
     [
-     1450,
-     1140
+     1072,
+     974
     ],
     [
-     1485,
-     1150
+     1082,
+     926
     ],
     [
-     1520,
-     1160
+     1081,
+     877
     ]
    ]
   },
@@ -4550,16 +4452,16 @@
    "type": "piste",
    "points": [
     [
-     1560,
-     1210
+     1166,
+     1029
     ],
     [
-     1575,
-     1145
+     1156,
+     987
     ],
     [
-     1590,
-     1080
+     1136,
+     948
     ]
    ]
   },
@@ -4570,16 +4472,16 @@
    "type": "piste",
    "points": [
     [
-     1690,
-     930
+     1299,
+     728
     ],
     [
-     1767,
-     930
+     1270,
+     718
     ],
     [
-     1845,
-     930
+     1239,
+     715
     ]
    ]
   },
@@ -4590,16 +4492,16 @@
    "type": "piste",
    "points": [
     [
-     1845,
-     930
+     1239,
+     715
     ],
     [
-     1872,
-     890
+     1259,
+     710
     ],
     [
-     1900,
-     850
+     1277,
+     701
     ]
    ]
   },
@@ -4610,16 +4512,16 @@
    "type": "piste",
    "points": [
     [
-     1690,
-     930
+     1299,
+     728
     ],
     [
-     1745,
-     895
+     1305,
+     702
     ],
     [
-     1800,
-     860
+     1304,
+     675
     ]
    ]
   },
@@ -4630,16 +4532,16 @@
    "type": "piste",
    "points": [
     [
-     1750,
-     1030
+     1274,
+     776
     ],
     [
-     1780,
-     1045
+     1304,
+     744
     ],
     [
-     1810,
-     1060
+     1326,
+     705
     ]
    ]
   },
@@ -4650,16 +4552,16 @@
    "type": "piste",
    "points": [
     [
-     1630,
-     970
+     1265,
+     742
     ],
     [
-     1675,
-     1025
+     1314,
+     738
     ],
     [
-     1720,
-     1080
+     1360,
+     723
     ]
    ]
   },
@@ -4670,16 +4572,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     1420
+     1827,
+     1178
     ],
     [
-     540,
-     1375
+     1825,
+     1155
     ],
     [
-     520,
-     1330
+     1818,
+     1134
     ]
    ]
   },
@@ -4690,16 +4592,16 @@
    "type": "piste",
    "points": [
     [
-     700,
-     1300
+     1797,
+     1160
     ],
     [
-     695,
-     1345
+     1808,
+     1159
     ],
     [
-     690,
-     1390
+     1819,
+     1156
     ]
    ]
   },
@@ -4710,16 +4612,16 @@
    "type": "piste",
    "points": [
     [
-     880,
-     1390
+     1802,
+     1256
     ],
     [
-     890,
-     1420
+     1805,
+     1255
     ],
     [
-     900,
-     1450
+     1807,
+     1254
     ]
    ]
   },
@@ -4730,16 +4632,16 @@
    "type": "piste",
    "points": [
     [
-     560,
-     1270
+     1664,
+     1183
     ],
     [
-     515,
-     1310
+     1679,
+     1179
     ],
     [
-     470,
-     1350
+     1692,
+     1172
     ]
    ]
   },
@@ -4750,33 +4652,43 @@
    "type": "maritime",
    "points": [
     [
-     880,
-     1130
-    ],
-    [
      900,
-     1220
+     1120
     ],
     [
-     920,
-     1300
+     1300,
+     1290
     ],
     [
-     930,
-     1340
+     1560,
+     1310
+    ],
+    [
+     1808,
+     1259
     ]
    ]
   }
  ],
  "labels": [
   {
-   "texte": "La Route Pâle",
+   "texte": "La Forêt Infinie",
    "pos": [
-    890,
-    600
+    1420,
+    760
    ],
-   "taille": 13,
-   "angle": 58
+   "taille": 15,
+   "angle": -74
+  },
+  {
+   "texte": "Mer de Myrn",
+   "pos": [
+    1650,
+    1440
+   ],
+   "taille": 16,
+   "angle": 0,
+   "class": "mer"
   }
  ],
  "regions": [
@@ -5341,367 +5253,507 @@
  },
  "regions_carte": [
   {
-   "id": "cite",
-   "nom": "Drémora — la Cité",
-   "couleur": "#d9c9a8",
-   "label": [
-    1000,
-    880
-   ],
-   "taille": 20,
-   "note": "Cité-Région neutre · siège de la Table Ronde",
-   "polys": [
-    [
-     [
-      900,
-      700
-     ],
-     [
-      1105,
-      700
-     ],
-     [
-      1140,
-      830
-     ],
-     [
-      1080,
-      930
-     ],
-     [
-      940,
-      930
-     ],
-     [
-      880,
-      830
-     ]
-    ]
-   ]
-  },
-  {
-   "id": "valmorne",
-   "nom": "Valmorne",
-   "couleur": "#c8b98e",
-   "label": [
-    680,
-    1040
-   ],
-   "taille": 22,
-   "note": "Humains · plaines et cités gothiques",
-   "polys": [
-    [
-     [
-      500,
-      850
-     ],
-     [
-      700,
-      810
-     ],
-     [
-      870,
-      860
-     ],
-     [
-      900,
-      990
-     ],
-     [
-      820,
-      1120
-     ],
-     [
-      640,
-      1170
-     ],
-     [
-      490,
-      1110
-     ],
-     [
-      440,
-      970
-     ]
-    ]
-   ]
-  },
-  {
-   "id": "crocs-gris",
-   "nom": "Les Crocs Gris",
-   "couleur": "#8fa876",
-   "label": [
-    500,
-    640
-   ],
-   "taille": 22,
-   "note": "Garous · forêts profondes",
-   "polys": [
-    [
-     [
-      350,
-      450
-     ],
-     [
-      560,
-      410
-     ],
-     [
-      700,
-      470
-     ],
-     [
-      720,
-      620
-     ],
-     [
-      660,
-      760
-     ],
-     [
-      500,
-      810
-     ],
-     [
-      380,
-      760
-     ],
-     [
-      330,
-      610
-     ]
-    ]
-   ]
-  },
-  {
    "id": "sombrelune",
    "nom": "Sombrelune",
-   "couleur": "#a9a0b4",
+   "race": "Vampires",
+   "couleur": "#a99cb8",
+   "bord": "#6d5f80",
    "label": [
-    800,
-    330
+    830,
+    300
    ],
-   "taille": 22,
-   "note": "Vampires · vallées brumeuses",
-   "polys": [
+   "taille": 21,
+   "note": "Vampires · vallées brumeuses · le Château Premier",
+   "poly": [
     [
-     [
-      640,
-      230
-     ],
-     [
-      840,
-      190
-     ],
-     [
-      970,
-      240
-     ],
-     [
-      990,
-      390
-     ],
-     [
-      900,
-      510
-     ],
-     [
-      740,
-      540
-     ],
-     [
-      640,
-      450
-     ],
-     [
-      610,
-      330
-     ]
+     590,
+     225
+    ],
+    [
+     760,
+     175
+    ],
+    [
+     990,
+     160
+    ],
+    [
+     1075,
+     265
+    ],
+    [
+     1035,
+     420
+    ],
+    [
+     860,
+     470
+    ],
+    [
+     690,
+     455
+    ],
+    [
+     600,
+     340
     ]
    ]
   },
   {
    "id": "krath-dun",
    "nom": "Krath-Dun",
-   "couleur": "#b3aa98",
+   "race": "Nains de la Surface",
+   "couleur": "#b5ac99",
+   "bord": "#7d7462",
    "label": [
-    1430,
-    300
+    1275,
+    330
    ],
-   "taille": 22,
-   "note": "Nains de la Surface · montagnes",
-   "polys": [
+   "taille": 21,
+   "note": "Nains bannis de Hautecime · montagnes et forges",
+   "poly": [
     [
-     [
-      1230,
-      190
-     ],
-     [
-      1450,
-      150
-     ],
-     [
-      1640,
-      190
-     ],
-     [
-      1690,
-      330
-     ],
-     [
-      1620,
-      450
-     ],
-     [
-      1440,
-      490
-     ],
-     [
-      1290,
-      430
-     ],
-     [
-      1230,
-      300
-     ]
+     1075,
+     265
+    ],
+    [
+     1210,
+     185
+    ],
+    [
+     1380,
+     255
+    ],
+    [
+     1480,
+     370
+    ],
+    [
+     1490,
+     520
+    ],
+    [
+     1330,
+     560
+    ],
+    [
+     1150,
+     470
+    ],
+    [
+     1035,
+     420
+    ]
+   ]
+  },
+  {
+   "id": "crocs-gris",
+   "nom": "Les Crocs Gris",
+   "race": "Garous",
+   "couleur": "#8fa876",
+   "bord": "#5c7048",
+   "label": [
+    540,
+    620
+   ],
+   "taille": 21,
+   "note": "Garous · forêts profondes · Khal Drotak, la clairière neutre",
+   "poly": [
+    [
+     430,
+     300
+    ],
+    [
+     560,
+     215
+    ],
+    [
+     590,
+     225
+    ],
+    [
+     600,
+     340
+    ],
+    [
+     690,
+     455
+    ],
+    [
+     680,
+     660
+    ],
+    [
+     590,
+     800
+    ],
+    [
+     470,
+     780
+    ],
+    [
+     410,
+     600
+    ]
+   ]
+  },
+  {
+   "id": "cite",
+   "nom": "Drémora",
+   "race": "Cité-Région",
+   "couleur": "#e0cfa8",
+   "bord": "#a08b52",
+   "label": [
+    880,
+    590
+   ],
+   "taille": 23,
+   "note": "La capitale mixte · siège de la Table Ronde",
+   "poly": [
+    [
+     690,
+     455
+    ],
+    [
+     860,
+     470
+    ],
+    [
+     1035,
+     420
+    ],
+    [
+     1120,
+     530
+    ],
+    [
+     1080,
+     660
+    ],
+    [
+     900,
+     720
+    ],
+    [
+     760,
+     700
+    ],
+    [
+     680,
+     660
+    ]
+   ]
+  },
+  {
+   "id": "valmorne",
+   "nom": "Valmorne",
+   "race": "Humains",
+   "couleur": "#c9ba8c",
+   "bord": "#8f8259",
+   "label": [
+    730,
+    940
+   ],
+   "taille": 21,
+   "note": "Humains · plaines et cités de pierre noire",
+   "poly": [
+    [
+     590,
+     800
+    ],
+    [
+     680,
+     660
+    ],
+    [
+     760,
+     700
+    ],
+    [
+     900,
+     720
+    ],
+    [
+     930,
+     880
+    ],
+    [
+     860,
+     1040
+    ],
+    [
+     680,
+     1105
+    ],
+    [
+     545,
+     1000
+    ],
+    [
+     510,
+     880
     ]
    ]
   },
   {
    "id": "aelriven",
    "nom": "Aelriven",
+   "race": "Elfes",
    "couleur": "#9dbb7f",
+   "bord": "#5f7d49",
    "label": [
-    1450,
-    1210
+    1120,
+    970
    ],
-   "taille": 22,
-   "note": "Elfes · forêts anciennes",
-   "polys": [
+   "taille": 21,
+   "note": "Elfes · forêts anciennes · ils prient vers la Forêt Infinie",
+   "poly": [
     [
-     [
-      1310,
-      1020
-     ],
-     [
-      1490,
-      990
-     ],
-     [
-      1620,
-      1050
-     ],
-     [
-      1640,
-      1170
-     ],
-     [
-      1540,
-      1250
-     ],
-     [
-      1390,
-      1250
-     ],
-     [
-      1300,
-      1160
-     ]
+     930,
+     880
+    ],
+    [
+     1080,
+     760
+    ],
+    [
+     1230,
+     790
+    ],
+    [
+     1310,
+     900
+    ],
+    [
+     1250,
+     1105
+    ],
+    [
+     1060,
+     1160
+    ],
+    [
+     860,
+     1155
+    ],
+    [
+     860,
+     1040
     ]
    ]
   },
   {
    "id": "neuf-queues",
    "nom": "Val des Neuf Queues",
-   "couleur": "#c8a8a0",
+   "race": "Kitsune",
+   "couleur": "#4f6b3d",
+   "bord": "#33482a",
    "label": [
-    1700,
-    940
+    1330,
+    700
    ],
-   "taille": 19,
-   "note": "Kitsune · gardiens du Seuil de la Forêt Infinie",
-   "polys": [
+   "taille": 20,
+   "note": "Kitsune · leur territoire EST la Forêt Infinie · Dryades et géants",
+   "poly": [
     [
-     [
-      1600,
-      800
-     ],
-     [
-      1760,
-      780
-     ],
-     [
-      1830,
-      860
-     ],
-     [
-      1840,
-      1010
-     ],
-     [
-      1760,
-      1100
-     ],
-     [
-      1640,
-      1090
-     ],
-     [
-      1580,
-      980
-     ],
-     [
-      1580,
-      880
-     ]
+     1120,
+     530
+    ],
+    [
+     1330,
+     560
+    ],
+    [
+     1490,
+     520
+    ],
+    [
+     1495,
+     690
+    ],
+    [
+     1470,
+     860
+    ],
+    [
+     1385,
+     1010
+    ],
+    [
+     1310,
+     900
+    ],
+    [
+     1230,
+     790
+    ],
+    [
+     1080,
+     760
+    ],
+    [
+     1080,
+     660
     ]
    ]
   },
   {
-   "id": "foret-infinie",
-   "nom": "La Forêt Infinie",
-   "couleur": "#4f6b3d",
+   "id": "mornhal",
+   "nom": "Mornhal",
+   "race": "Garous",
+   "couleur": "#8fa876",
+   "bord": "#5c7048",
    "label": [
-    1910,
-    760
+    1665,
+    1170
    ],
-   "taille": 20,
-   "angle": -90,
-   "note": "Elle s'étend au-delà de l'Empire. Les Kitsune en gardent le seuil.",
-   "polys": [
+   "taille": 15,
+   "note": "Garous de l'île · les Trois Meutes",
+   "poly": [
     [
-     [
-      1845,
-      300
-     ],
-     [
-      1950,
-      290
-     ],
-     [
-      1965,
-      1060
-     ],
-     [
-      1870,
-      1120
-     ],
-     [
-      1840,
-      1010
-     ],
-     [
-      1830,
-      860
-     ],
-     [
-      1855,
-      700
-     ],
-     [
-      1840,
-      500
-     ]
+     1615,
+     1120
+    ],
+    [
+     1720,
+     1085
+    ],
+    [
+     1745,
+     1180
+    ],
+    [
+     1700,
+     1265
+    ],
+    [
+     1615,
+     1265
+    ],
+    [
+     1590,
+     1185
+    ]
+   ]
+  },
+  {
+   "id": "vhalkir",
+   "nom": "Vhalkir",
+   "race": "Humains",
+   "couleur": "#d9b48c",
+   "bord": "#a07a4e",
+   "label": [
+    1775,
+    1155
+   ],
+   "taille": 15,
+   "note": "Culte exclusif du Feu · Magie du Sang légale",
+   "poly": [
+    [
+     1720,
+     1085
+    ],
+    [
+     1840,
+     1105
+    ],
+    [
+     1875,
+     1185
+    ],
+    [
+     1805,
+     1245
+    ],
+    [
+     1745,
+     1180
+    ]
+   ]
+  },
+  {
+   "id": "pourpre-rive",
+   "nom": "Pourpre-Rive",
+   "race": "Vampires",
+   "couleur": "#a99cb8",
+   "bord": "#6d5f80",
+   "label": [
+    1790,
+    1300
+   ],
+   "taille": 15,
+   "note": "Le Domaine d'Elsuve",
+   "poly": [
+    [
+     1745,
+     1180
+    ],
+    [
+     1805,
+     1245
+    ],
+    [
+     1875,
+     1185
+    ],
+    [
+     1905,
+     1180
+    ],
+    [
+     1900,
+     1290
+    ],
+    [
+     1810,
+     1355
+    ],
+    [
+     1680,
+     1345
+    ],
+    [
+     1700,
+     1265
+    ]
+   ]
+  },
+  {
+   "id": "ile-volcanique",
+   "nom": "Île Volcanique",
+   "race": "Église du Feu",
+   "couleur": "#c07a5a",
+   "bord": "#8a4a30",
+   "label": [
+    1508,
+    1425
+   ],
+   "taille": 12,
+   "note": "Réservée aux adeptes de l'Église du Feu",
+   "poly": [
+    [
+     1470,
+     1330
+    ],
+    [
+     1520,
+     1315
+    ],
+    [
+     1560,
+     1345
+    ],
+    [
+     1545,
+     1395
+    ],
+    [
+     1490,
+     1400
+    ],
+    [
+     1455,
+     1370
     ]
    ]
   }
