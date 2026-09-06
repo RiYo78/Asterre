@@ -676,3 +676,5 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 .region-cliq:hover path:first-child { opacity: .78; }
 .label-ile.mer, text.mer { fill: #cfe4e6; opacity: .55; }
 body.vue-monde #btn-voyage, body.vue-monde #recherche { display: none; }
+.label-region-sous { font-family: "EB Garamond", serif; font-style: italic; fill: #5c4b34; opacity: .85;
+  paint-order: stroke; stroke: rgba(255,252,240,.8); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
