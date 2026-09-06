@@ -153,12 +153,12 @@ function chargerPays(id) {
 }
 async function boot() {
   try {
-    S.monde = await (await fetch("data/monde.json?v=6")).json();
+    S.monde = await (await fetch("data/monde.json?v=7")).json();
     const actifs = S.monde.pays.filter(p => p.actif && p.fichier);
     S.paysData = {};
     for (const p of actifs) {
       try {
-        const rep = await fetch(p.fichier + "?v=6");
+        const rep = await fetch(p.fichier + "?v=7");
         if (!rep.ok) throw new Error(rep.status + " " + p.fichier);
         S.paysData[p.id] = await rep.json();
       } catch (err) { console.warn("Pays ignoré :", p.id, err); }
@@ -276,11 +276,13 @@ function renderCarte() {
       const attrs = { class: "region" + (cliq ? " region-cliq" : ""), "data-region": rg.id };
       if (cliq) attrs["data-allerpays"] = rg.pays;
       const g = el("g", attrs, gRegions);
-      for (const poly of rg.polys) {
-        const w = wobble(poly, (rg.id.length * 7) + 3, 9, 2);
+      const polys = rg.polys || (rg.poly ? [rg.poly] : []);
+      for (const poly of polys) {
+        const w = wobble(poly, (rg.id.length * 7) + 3, 7, 2);
         const d = catmullPath(w, true);
-        el("path", { d, fill: rg.couleur, opacity: .55, stroke: "none" }, g);
-        el("path", { d, fill: "none", stroke: "#5c4b34", "stroke-width": 1.8, "stroke-dasharray": "9 5", opacity: .65 }, g);
+        el("path", { d, fill: rg.couleur, opacity: .5, stroke: "none" }, g);
+        el("path", { d, fill: "none", stroke: rg.bord || "#5c4b34", "stroke-width": 3.2, opacity: .55, "stroke-linejoin": "round" }, g);
+        el("path", { d, fill: "none", stroke: rg.bord || "#5c4b34", "stroke-width": 1.4, "stroke-dasharray": "10 6", opacity: .9, "stroke-linejoin": "round" }, g);
       }
       if (rg.label) {
         const la = { x: rg.label[0], y: rg.label[1], "text-anchor": "middle", "font-size": rg.taille || 22, class: "label-region" };
@@ -288,6 +290,12 @@ function renderCarte() {
         const t = el("text", la, gTextes);
         t.textContent = rg.nom;
         if (rg.note) el("title", {}, t).textContent = rg.note;
+        if (rg.race) {
+          const sa = { x: rg.label[0], y: rg.label[1] + (rg.taille || 22) * 0.78, "text-anchor": "middle",
+            "font-size": Math.max(10, (rg.taille || 22) * 0.46), class: "label-region-sous" };
+          if (rg.angle) sa.transform = `rotate(${rg.angle} ${rg.label[0]} ${rg.label[1]})`;
+          el("text", sa, gTextes).textContent = rg.race;
+        }
       }
     }
   }
