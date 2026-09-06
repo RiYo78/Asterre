@@ -655,7 +655,7 @@
    "id": "iles-saintes",
    "nom": "Les Îles Saintes",
    "pays": "iles-saintes",
-   "couleur": "#e8dcc0",
+   "couleur": "#efe4c6",
    "label": [
     195,
     300
@@ -749,7 +749,9 @@
       445
      ]
     ]
-   ]
+   ],
+   "bord": "#a08b52",
+   "race": "Union Blanche"
   },
   {
    "id": "iles-glace",
@@ -788,7 +790,9 @@
       105
      ]
     ]
-   ]
+   ],
+   "bord": "#7d94a0",
+   "race": "Mortelles"
   },
   {
    "id": "avelorn",
@@ -843,7 +847,9 @@
       190
      ]
     ]
-   ]
+   ],
+   "bord": "#5f7d49",
+   "race": "Union Blanche"
   },
   {
    "id": "ferelden",
@@ -902,7 +908,9 @@
       410
      ]
     ]
-   ]
+   ],
+   "bord": "#5f7d49",
+   "race": "Union Blanche"
   },
   {
    "id": "andorr",
@@ -940,7 +948,8 @@
       300
      ]
     ]
-   ]
+   ],
+   "bord": "#6d8455"
   },
   {
    "id": "cintra",
@@ -987,12 +996,14 @@
       760
      ]
     ]
-   ]
+   ],
+   "bord": "#4f6b3d",
+   "race": "Union Blanche"
   },
   {
    "id": "foret-infinie",
    "nom": "La Forêt Infinie",
-   "couleur": "#5f7d49",
+   "couleur": "#4f6b3d",
    "label": [
     1120,
     530
@@ -1038,7 +1049,9 @@
       500
      ]
     ]
-   ]
+   ],
+   "bord": "#33482a",
+   "race": "Dryades · géants"
   },
   {
    "id": "harad",
@@ -1085,12 +1098,14 @@
       830
      ]
     ]
-   ]
+   ],
+   "bord": "#8f8259",
+   "race": "Union Blanche"
   },
   {
    "id": "aloy",
    "nom": "Aloy",
-   "couleur": "#e0d3a5",
+   "couleur": "#e6dab0",
    "label": [
     1180,
     835
@@ -1120,12 +1135,14 @@
       860
      ]
     ]
-   ]
+   ],
+   "bord": "#8f8259",
+   "race": "Union Blanche"
   },
   {
    "id": "desert",
    "nom": "Le Désert Magistral",
-   "couleur": "#e6d5a1",
+   "couleur": "#e9d9a6",
    "label": [
     1690,
     480
@@ -1179,7 +1196,9 @@
       470
      ]
     ]
-   ]
+   ],
+   "bord": "#b09a5e",
+   "race": "Église de l'Air"
   },
   {
    "id": "dremora",
@@ -1235,7 +1254,9 @@
       920
      ]
     ]
-   ]
+   ],
+   "bord": "#6d5f80",
+   "race": "L'Empire"
   },
   {
    "id": "hautecime",
@@ -1282,7 +1303,9 @@
       1070
      ]
     ]
-   ]
+   ],
+   "bord": "#7d7462",
+   "race": "Nains"
   },
   {
    "id": "lituania",
@@ -1330,7 +1353,9 @@
       1180
      ]
     ]
-   ]
+   ],
+   "bord": "#6d5f80",
+   "race": "Drémora"
   },
   {
    "id": "tortuga",
@@ -1369,7 +1394,9 @@
       255
      ]
     ]
-   ]
+   ],
+   "bord": "#9a7f4e",
+   "race": "Île Libre"
   },
   {
    "id": "fenrir",
@@ -1408,7 +1435,9 @@
       125
      ]
     ]
-   ]
+   ],
+   "bord": "#6d8c96",
+   "race": "Église de l'Eau"
   },
   {
    "id": "huski",
@@ -1446,7 +1475,8 @@
       1330
      ]
     ]
-   ]
+   ],
+   "bord": "#8f8259"
   },
   {
    "id": "babel",
@@ -1485,7 +1515,9 @@
       1405
      ]
     ]
-   ]
+   ],
+   "bord": "#5a3038",
+   "race": "Démons"
   }
  ],
  "labels": [
