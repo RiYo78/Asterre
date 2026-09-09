@@ -678,3 +678,7 @@ select.filtre { font-family: "EB Garamond", serif; font-size: 15px; background: 
 body.vue-monde #btn-voyage, body.vue-monde #recherche { display: none; }
 .label-region-sous { font-family: "EB Garamond", serif; font-style: italic; fill: #5c4b34; opacity: .85;
   paint-order: stroke; stroke: rgba(255,252,240,.8); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+.label-voisin { font-family: "Cinzel", serif; fill: #6b5b44; opacity: .75; letter-spacing: .1em;
+  paint-order: stroke; stroke: rgba(255,252,240,.7); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+.label-voisin-sous { font-family: "EB Garamond", serif; font-style: italic; fill: #6b5b44; opacity: .6;
+  paint-order: stroke; stroke: rgba(255,252,240,.6); stroke-width: 3px; pointer-events: none; }
