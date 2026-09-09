@@ -1,7 +1,7 @@
 {
  "id": "dremora",
  "nom": "L'Empire de Drémora",
- "version": "1.4",
+ "version": "1.6",
  "reglages": {
   "volMaxTraiteKm": 300
  },
@@ -5242,8 +5242,8 @@
    "couleur": "#4f6b3d",
    "bord": "#33482a",
    "label": [
-    600,
-    330
+    615,
+    234
    ],
    "taille": 19,
    "note": "Kitsune · à la frontière de la Forêt Infinie, qui s'étend au-delà · Dryades et géants",
@@ -5289,8 +5289,8 @@
    "couleur": "#b5ac99",
    "bord": "#7d7462",
    "label": [
-    1180,
-    300
+    1222,
+    232
    ],
    "taille": 20,
    "note": "Nains bannis de Hautecime · montagnes et forges",
@@ -5336,8 +5336,8 @@
    "couleur": "#a99cb8",
    "bord": "#6d5f80",
    "label": [
-    905,
-    300
+    901,
+    236
    ],
    "taille": 19,
    "note": "Vampires · vallées brumeuses · le Château Premier",
@@ -5383,8 +5383,8 @@
    "couleur": "#8fa876",
    "bord": "#5c7048",
    "label": [
-    540,
-    640
+    541,
+    492
    ],
    "taille": 20,
    "note": "Garous · forêts profondes · Khal Drotak, la clairière neutre",
@@ -5430,8 +5430,8 @@
    "couleur": "#e0cfa8",
    "bord": "#a08b52",
    "label": [
-    920,
-    640
+    888,
+    566
    ],
    "taille": 22,
    "note": "La capitale mixte · siège de la Table Ronde",
@@ -5477,8 +5477,8 @@
    "couleur": "#9dbb7f",
    "bord": "#5f7d49",
    "label": [
-    1270,
-    700
+    1288,
+    576
    ],
    "taille": 20,
    "note": "Elfes · forêts anciennes · ils prient vers la Forêt Infinie",
@@ -5524,8 +5524,8 @@
    "couleur": "#c9ba8c",
    "bord": "#8f8259",
    "label": [
-    900,
-    990
+    902,
+    840
    ],
    "taille": 20,
    "note": "Humains · plaines et cités de pierre noire",
@@ -5583,8 +5583,8 @@
    "couleur": "#8fa876",
    "bord": "#5c7048",
    "label": [
-    1665,
-    1170
+    1664,
+    1121
    ],
    "taille": 15,
    "note": "Garous de l'île · les Trois Meutes",
@@ -5622,8 +5622,8 @@
    "couleur": "#d9b48c",
    "bord": "#a07a4e",
    "label": [
-    1775,
-    1155
+    1797,
+    1117
    ],
    "taille": 15,
    "note": "Culte exclusif du Feu · Magie du Sang légale",
@@ -5657,8 +5657,8 @@
    "couleur": "#a99cb8",
    "bord": "#6d5f80",
    "label": [
-    1790,
-    1300
+    1762,
+    1215
    ],
    "taille": 15,
    "note": "Le Domaine d'Elsuve",
@@ -5704,8 +5704,8 @@
    "couleur": "#c07a5a",
    "bord": "#8a4a30",
    "label": [
-    1508,
-    1425
+    1507,
+    1332
    ],
    "taille": 12,
    "note": "Réservée aux adeptes de l'Église du Feu",
