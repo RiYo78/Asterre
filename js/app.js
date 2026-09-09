@@ -153,12 +153,12 @@ function chargerPays(id) {
 }
 async function boot() {
   try {
-    S.monde = await (await fetch("data/monde.json?v=8")).json();
+    S.monde = await (await fetch("data/monde.json?v=9")).json();
     const actifs = S.monde.pays.filter(p => p.actif && p.fichier);
     S.paysData = {};
     for (const p of actifs) {
       try {
-        const rep = await fetch(p.fichier + "?v=8");
+        const rep = await fetch(p.fichier + "?v=9");
         if (!rep.ok) throw new Error(rep.status + " " + p.fichier);
         S.paysData[p.id] = await rep.json();
       } catch (err) { console.warn("Pays ignoré :", p.id, err); }
@@ -241,6 +241,7 @@ function renderCarte() {
   const gCotes = el("g", {}, svg);
   const gIles = el("g", {}, svg);
   const gRegions = el("g", { id: "g-regions" }, svg);
+  const gRegTextes = el("g", { id: "g-reg-textes" }, svg);
   const gZones = el("g", {}, svg);
   const gFleuves = el("g", {}, svg);
   const gVoies = el("g", {}, svg);
@@ -278,12 +279,12 @@ function renderCarte() {
     if (v.label) {
       const la = { x: v.label[0], y: v.label[1], "text-anchor": "middle", "font-size": v.taille || 16, class: "label-voisin" };
       if (v.angle) la.transform = `rotate(${v.angle} ${v.label[0]} ${v.label[1]})`;
-      el("text", la, gTextes).textContent = v.nom;
+      el("text", la, gRegTextes).textContent = v.nom;
       if (v.sous) {
         const sa = { x: v.label[0], y: v.label[1] + (v.taille || 16) * 0.85, "text-anchor": "middle",
           "font-size": Math.max(9, (v.taille || 16) * 0.5), class: "label-voisin-sous" };
         if (v.angle) sa.transform = `rotate(${v.angle} ${v.label[0]} ${v.label[1]})`;
-        el("text", sa, gTextes).textContent = v.sous;
+        el("text", sa, gRegTextes).textContent = v.sous;
       }
     }
   }
@@ -307,14 +308,14 @@ function renderCarte() {
       if (rg.label) {
         const la = { x: rg.label[0], y: rg.label[1], "text-anchor": "middle", "font-size": rg.taille || 22, class: "label-region" };
         if (rg.angle) la.transform = `rotate(${rg.angle} ${rg.label[0]} ${rg.label[1]})`;
-        const t = el("text", la, gTextes);
+        const t = el("text", la, gRegTextes);
         t.textContent = rg.nom;
         if (rg.note) el("title", {}, t).textContent = rg.note;
         if (rg.race) {
           const sa = { x: rg.label[0], y: rg.label[1] + (rg.taille || 22) * 0.78, "text-anchor": "middle",
             "font-size": Math.max(10, (rg.taille || 22) * 0.46), class: "label-region-sous" };
           if (rg.angle) sa.transform = `rotate(${rg.angle} ${rg.label[0]} ${rg.label[1]})`;
-          el("text", sa, gTextes).textContent = rg.race;
+          el("text", sa, gRegTextes).textContent = rg.race;
         }
       }
     }
