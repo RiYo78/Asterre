@@ -153,12 +153,12 @@ function chargerPays(id) {
 }
 async function boot() {
   try {
-    S.monde = await (await fetch("data/monde.json?v=7")).json();
+    S.monde = await (await fetch("data/monde.json?v=8")).json();
     const actifs = S.monde.pays.filter(p => p.actif && p.fichier);
     S.paysData = {};
     for (const p of actifs) {
       try {
-        const rep = await fetch(p.fichier + "?v=7");
+        const rep = await fetch(p.fichier + "?v=8");
         if (!rep.ok) throw new Error(rep.status + " " + p.fichier);
         S.paysData[p.id] = await rep.json();
       } catch (err) { console.warn("Pays ignoré :", p.id, err); }
@@ -266,6 +266,26 @@ function renderCarte() {
     }
     if (ile.nom && ile.labelPos)
       el("text", { x: ile.labelPos[0], y: ile.labelPos[1], "text-anchor": "middle", "font-size": ile.id === "limehahu" ? 40 : 30, class: "label-ile" }, gTextes).textContent = ile.nom;
+  }
+
+  // ── voisins hors-cadre (le pays n'est pas une île perdue)
+  for (const v of (S.pays.voisins || [])) {
+    const g = el("g", { class: "voisin" }, gRegions);
+    const d = catmullPath(wobble(v.poly, 41, 8, 2), true);
+    el("path", { d, fill: v.couleur, opacity: .3, stroke: "none" }, g);
+    el("path", { d, fill: "none", stroke: "#5c4b34", "stroke-width": 2.4, "stroke-dasharray": "3 9",
+      "stroke-linecap": "round", opacity: .6 }, g);
+    if (v.label) {
+      const la = { x: v.label[0], y: v.label[1], "text-anchor": "middle", "font-size": v.taille || 16, class: "label-voisin" };
+      if (v.angle) la.transform = `rotate(${v.angle} ${v.label[0]} ${v.label[1]})`;
+      el("text", la, gTextes).textContent = v.nom;
+      if (v.sous) {
+        const sa = { x: v.label[0], y: v.label[1] + (v.taille || 16) * 0.85, "text-anchor": "middle",
+          "font-size": Math.max(9, (v.taille || 16) * 0.5), class: "label-voisin-sous" };
+        if (v.angle) sa.transform = `rotate(${v.angle} ${v.label[0]} ${v.label[1]})`;
+        el("text", sa, gTextes).textContent = v.sous;
+      }
+    }
   }
 
   // ── régions (zones colorées lisibles)
