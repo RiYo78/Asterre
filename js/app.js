@@ -151,7 +151,7 @@ function chargerPays(id) {
   montrerVue("carte");
   toast("🗺 " + S.pays.nom);
 }
-const VERSION = "12"; // à incrémenter à chaque publication (anti-cache)
+const VERSION = "13"; // à incrémenter à chaque publication (anti-cache)
 /* Données brutes telles que publiées : version publique, ou complète une fois le mode MJ déverrouillé. */
 S.brut = {};
 function assembler() {
