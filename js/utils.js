@@ -1,5 +1,5 @@
 /* ASTERRE — utils.js · Petits utilitaires DOM/SVG : sélecteur, échappement HTML, création SVG, aléatoire déterministe, toast, cadre d'image. */
-import { SVGNS } from "./etat.js?v=14";
+import { SVGNS } from "./etat.js?v=15";
 
 /* ─────────────── Utilitaires ─────────────── */
 export const $ = s => document.querySelector(s);

@@ -1,10 +1,10 @@
 /* ASTERRE — voyage/ui.js · Interface du calcul de voyage : étapes, tableau des résultats, trajet mixte, avertissements, tracé. */
-import { catmullPath } from "../carte/geometrie.js?v=14";
-import { zoomVers } from "../carte/vue.js?v=14";
-import { S } from "../etat.js?v=14";
-import { fermerPanneau, ouvrirLieu } from "../panneaux.js?v=14";
-import { $, el, esc, toast } from "../utils.js?v=14";
-import { arrondiVoyageur, calcSegment, capVol, fmtJours, nomEtape, raisonSegment } from "./moteur.js?v=14";
+import { catmullPath } from "../carte/geometrie.js?v=15";
+import { zoomVers } from "../carte/vue.js?v=15";
+import { S } from "../etat.js?v=15";
+import { fermerPanneau, ouvrirLieu } from "../panneaux.js?v=15";
+import { $, el, esc, toast } from "../utils.js?v=15";
+import { MOYENS_AVEC_REPOS, arrondiVoyageur, calcSegment, capVol, dureeTotale, fmtJours, joursRepos, nomEtape, raisonSegment, reglagesNage } from "./moteur.js?v=15";
 
 /* ── Interface voyage ── */
 export function toggleVoyage(on) {
@@ -53,7 +53,12 @@ export function majVoyage() {
   html += `<details id="modifs" ${S.voyage.modifs.size ? "open" : ""}><summary>⚙ Modificateurs (MJ) ${S.voyage.modifs.size ? "· " + S.voyage.modifs.size + " actif(s)" : ""}</summary>` +
     defs.map(m => `<label><input type="checkbox" data-m="${m.id}" ${S.voyage.modifs.has(m.id) ? "checked" : ""}> ${esc(m.nom)}
       <span class="pct">${m.bloqueMer ? "mer ✕" : (m.effet > 0 ? "+" : "") + Math.round(m.effet * 100) + " %"}</span></label>`).join("") +
-    `<label style="margin-top:6px"><span>🦅 Vol max d'une traite (mer)</span><span class="pct">${capVol()} km</span></label></details>`;
+    `<label style="margin-top:6px"><input type="checkbox" data-reglage="repos" ${avecRepos() ? "checked" : ""}> Avec repos <span class="pct">1 j / 3 j</span></label>` +
+    `<label style="margin-top:6px"><span>🦅 Vol max d'une traite (mer)</span><span class="pct">${capVol()} km</span></label>` +
+    `<div class="reglages-nage"><b>🏊 Nage</b>
+      <label>Vitesse <input type="number" min="0" step="1" data-reglage="nage-vitesse" value="${reglagesNage().vitesse || ""}" placeholder="?"> km/j</label>
+      <label>Max sans respirer sous l'eau <input type="number" min="0" step="1" data-reglage="nage-apnee" value="${reglagesNage().apnee || ""}" placeholder="0"> km</label>
+      <label><input type="checkbox" data-reglage="nage-respire" ${reglagesNage().respire ? "checked" : ""}> Respire sous l'eau</label></div></details>`;
 
   html += `<div class="mini-btns">
     <button class="btn" id="v-recommencer">Recommencer</button>
@@ -61,7 +66,13 @@ export function majVoyage() {
 
   box.innerHTML = html;
   box.querySelectorAll(".sup").forEach(b => b.addEventListener("click", () => retirerEtape(+b.dataset.i)));
-  box.querySelectorAll("#modifs input").forEach(c => c.addEventListener("change", () => {
+  box.querySelectorAll("#modifs [data-reglage]").forEach(c => c.addEventListener("change", () => {
+    const k = c.dataset.reglage, N = { ...reglagesNage() };
+    if (k === "repos") S.voyage.repos = c.checked;
+    else { if (k === "nage-vitesse") N.vitesse = Math.max(0, +c.value || 0); if (k === "nage-apnee") N.apnee = Math.max(0, +c.value || 0); if (k === "nage-respire") N.respire = c.checked; S.voyage.nage = N; }
+    sauveReglagesVoyage(); S.voyage.choix = {}; majVoyage();
+  }));
+  box.querySelectorAll("#modifs input[data-m]").forEach(c => c.addEventListener("change", () => {
     c.checked ? S.voyage.modifs.add(c.dataset.m) : S.voyage.modifs.delete(c.dataset.m);
     S.voyage.choix = {}; majVoyage();
   }));
@@ -79,15 +90,11 @@ export function htmlResultats() {
   let html = `<h3 style="margin-top:14px">Durée totale par moyen</h3><table class="resultats"><tr><th></th><th>Moyen</th><th>Dist.</th><th>Durée</th></tr>`;
   const totaux = {};
   for (const t of S.pays.transports) {
-    let km = 0, jours = 0, ok = true, raison = "", direct = false;
-    for (let i = 0; i < et.length - 1; i++) {
-      const r = calcSegment(et[i], et[i + 1], t, opts);
-      if (!r) { ok = false; raison = raisonSegment(t, et[i], et[i + 1], S.voyage.modifs, defs); break; }
-      km += r.km; jours += arrondiVoyageur(t, r); if (r.mode === "direct") direct = true;
-    }
+    const D = dureeTotale(et, t, opts, avecRepos());
+    const { ok, km, jours, repos, direct, raison } = D;
     totaux[t.id] = ok ? { km, jours } : null;
     html += ok
-      ? `<tr><td>${t.icone}</td><td>${esc(t.nom)}${direct ? " <small title=\"comprend un tronçon en ligne directe\">➤</small>" : ""}</td><td>${km} km</td><td class="duree">${fmtJours(jours)}</td></tr>`
+      ? `<tr><td>${t.icone}</td><td>${esc(t.nom)}${direct ? " <small title=\"comprend un tronçon en ligne directe\">➤</small>" : ""}</td><td>${km} km</td><td class="duree">${fmtJours(jours)}${repos ? `<br><small class="repos">dont ${repos} j de repos</small>` : ""}</td></tr>`
       : `<tr class="impossible"><td>${t.icone}</td><td>${esc(t.nom)}</td><td colspan="2">❌ ${esc(raison)}</td></tr>`;
   }
   html += `</table>`;
@@ -104,7 +111,7 @@ export function htmlResultats() {
   }
 
   html += `<h3>Trajet mixte — choisir par segment</h3>`;
-  let totalMixte = 0, mixteOK = true;
+  let totalMixte = 0, mixteOK = true, joursFatigants = 0;
   for (let i = 0; i < et.length - 1; i++) {
     const faisables = S.pays.transports
       .map(t => ({ t, r: calcSegment(et[i], et[i + 1], t, opts) }))
@@ -117,12 +124,17 @@ export function htmlResultats() {
     S.voyage.choix[i] = choisi;
     const xC = faisables.find(x => x.t.id === choisi);
     totalMixte += xC.jA;
+    if (MOYENS_AVEC_REPOS.has(xC.t.id)) joursFatigants += xC.jA;
     html += `<div class="segment"><span class="titre-seg">${titre} · ${xC.r.km} km${xC.r.mode === "direct" ? " ➤" : ""}</span>
       <select data-seg="${i}" aria-label="Moyen du segment ${i + 1}">` +
       faisables.map(x => `<option value="${x.t.id}" ${x.t.id === choisi ? "selected" : ""}>${x.t.icone} ${esc(x.t.nom)} — ${fmtJours(x.jA)}${x.r.mode === "direct" ? " ➤" : ""}</option>`).join("") +
       `</select></div>`;
   }
-  if (mixteOK && et.length >= 2) html += `<div class="total-voyage">Total du trajet mixte : ${fmtJours(totalMixte)}</div>`;
+  if (mixteOK && et.length >= 2) {
+    const repos = avecRepos() ? joursRepos(joursFatigants) : 0;
+    html += `<div class="total-voyage">Total du trajet mixte : ${fmtJours(totalMixte + repos)}${repos ? ` <small>(dont ${repos} j de repos)</small>` : ""}</div>`;
+  }
+  if (!avecRepos()) html += `<div class="avert">🥵 Sans repos : marche forcée — le MJ peut appliquer de la fatigue.</div>`;
 
   html += htmlAvertissements();
   return html;
@@ -136,6 +148,7 @@ export function htmlAvertissements() {
   if (edges.some(e => e.type === "montagne")) out += `<div class="avert">⛰ Passage en montagne : calèche impossible, progression ralentie.</div>`;
   if (edges.some(e => e.terrain === "difficile")) out += `<div class="avert">🥾 Terrain difficile sur une partie du trajet (−30 % à pied).</div>`;
   if (edges.some(e => e.type === "maritime" || e.type === "cotier")) out += `<div class="avert" style="border-color:var(--mer)">⚓ Ce trajet comporte une traversée : une embarcation est nécessaire sur ces segments.</div>`;
+  if (edges.some(e => e.type === "nage")) out += `<div class="avert" style="border-color:var(--mer)">🏊 Traversée à la nage : l'eau à la vitesse de nage, la terre à pied.</div>`;
   if (edges.some(e => e.direct)) out += `<div class="avert" style="border-color:var(--or)">➤ Tronçon hors des routes : progression à travers la campagne, en ligne directe.</div>`;
   return out;
 }
@@ -178,4 +191,13 @@ export function dessinerTrajet() {
     el("circle", { cx: e.pos[0], cy: e.pos[1], r: 8, fill: cl, stroke: "#2e2314", "stroke-width": 2 }, g);
     el("circle", { cx: e.pos[0], cy: e.pos[1], r: 2.6, fill: "#f3e9ce" }, g);
   });
+}
+
+/* Réglages du voyage gardés sur cet appareil : repos, paramètres de nage */
+export function avecRepos() { return S.voyage.repos !== false; }
+export function sauveReglagesVoyage() {
+  try { localStorage.setItem("asterre-voyage-reglages", JSON.stringify({ repos: avecRepos(), nage: reglagesNage() })); } catch (e) {}
+}
+export function chargeReglagesVoyage() {
+  try { const r = JSON.parse(localStorage.getItem("asterre-voyage-reglages") || "{}"); if (r.repos === false) S.voyage.repos = false; if (r.nage) S.voyage.nage = r.nage; } catch (e) {}
 }

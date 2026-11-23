@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asterre — tests du moteur de voyage</title>
+<style>
+  :root { --ok: #2f6b3a; --ko: #a52a2a; --info: #6b5a2f; --fond: #f6f0e1; --encre: #2e2314; }
+  @media (prefers-color-scheme: dark) { :root { --fond: #1d1a14; --encre: #eadfc6; --ok: #7fc28a; --ko: #e07a6e; --info: #d6bf84; } }
+  body { background: var(--fond); color: var(--encre); font: 15px/1.45 Georgia, serif; margin: 0; padding: 16px; }
+  h1 { font-size: 20px; margin: 0 0 4px; } h2 { font-size: 16px; margin: 22px 0 6px; }
+  table { border-collapse: collapse; width: 100%; max-width: 980px; }
+  td, th { border-bottom: 1px solid color-mix(in srgb, var(--encre) 20%, transparent); padding: 4px 6px; text-align: left; vertical-align: top; }
+  .ok { color: var(--ok); } .ko { color: var(--ko); font-weight: bold; } .info { color: var(--info); }
+  #bilan { font-size: 17px; margin: 8px 0 14px; }
+</style>
+</head>
+<body>
+<h1>Moteur de voyage — tests</h1>
+<p>Compare le moteur aux tables de la fiche Notion « 🏰 Le Royaume des Îles Saintes » et vérifie les règles de blocage et de repos.
+« Écart » = le moteur ne donne pas la valeur Notion (souvent à cause de l'échelle de la carte en ligne droite).</p>
+<div id="bilan">Calcul…</div>
+<div id="sortie"></div>
+<script type="module">
+import { S } from "./js/etat.js?v=15";
+import { construireGraphe, dureeTotale, joursRepos, fmtJours } from "./js/voyage/moteur.js?v=15";
+
+const d = await (await fetch("data/iles-saintes.json?v=" + Date.now())).json();
+S.pays = d; S.lieux = {}; d.lieux.forEach(l => S.lieux[l.id] = l);
+S.graphe = construireGraphe(d.routes);
+const mar = d.routes.filter(r => r.type === "maritime");
+const len = p => p.slice(1).reduce((s, q, i) => s + Math.hypot(q[0] - p[i][0], q[1] - p[i][1]), 0);
+S.kmParUnite = mar.reduce((s, r) => s + r.km / len(r.points), 0) / mar.length;
+const T = Object.fromEntries(d.transports.map(t => [t.id, t]));
+const opts = (modifs = [], routesSeules = false) => ({ modifs: new Set(modifs), defsModifs: d.modificateurs, routesSeules });
+const L = (...ids) => ids.map(id => ({ type: "lieu", id }));
+let ok = 0, ko = 0, ecarts = 0;
+const lignes = {};
+function note(section, nom, attendu, obtenu, strict) {
+  const bon = attendu === obtenu;
+  if (bon) ok++; else if (strict) ko++; else ecarts++;
+  (lignes[section] = lignes[section] || []).push(`<tr><td>${nom}</td><td>${attendu}</td><td>${obtenu}</td><td class="${bon ? "ok" : strict ? "ko" : "info"}">${bon ? "✔" : strict ? "✘ ÉCHEC" : "≠ écart"}</td></tr>`);
+}
+const duree = (et, t, repos, m, routes = false) => { const r = dureeTotale(L(...et), T[t], opts(m, routes), repos); return r.ok ? fmtJours(r.jours) : "✕"; };
+
+// 1. Tables Notion — sur Limehahu, PAR LES ROUTES. Notion compte le pied et la calèche sans repos, le cheval avec.
+const terre = [
+  [["roche-sainte", "blanchefleure"], "4 j", "2 j", "2½ j", "½ j"],
+  [["blanchefleure", "roncedroite"], "6 j", "3 j", "3½ j", "¾ j"],
+  [["roncedroite", "academie"], "3 j", "2 j", "✕", "¼ j"],
+  [["roche-sainte", "noir-marais"], "3 j", "1½ j", "2 j", "⅓ j"],
+  [["roche-sainte", "academie"], "12 j", "7 j", "✕", "1½ j"],
+];
+for (const [et, pied, cheval, caleche, vol] of terre) {
+  const n = et.join(" → ");
+  note("Tables Notion — Limehahu (par les routes)", n + " · 🚶 sans repos", pied, duree(et, "pied", false, [], true), true);
+  note("Tables Notion — Limehahu (par les routes)", n + " · 🐎 avec repos", cheval, duree(et, "cheval", true, [], true), true);
+  note("Tables Notion — Limehahu (par les routes)", n + " · 🛞 sans repos", caleche, duree(et, "caleche", false, [], true), true);
+  note("Déplacement libre (ligne directe à travers la campagne)", n + " · 🚶 sans repos", pied, duree(et, "pied", false), false);
+  note("Déplacement libre (ligne directe à travers la campagne)", n + " · 🦅", vol, duree(et, "vol", true), false);
+}
+// 2. Tables Notion — entre les îles
+const mer = [
+  [["roche-sainte", "vanhille"], "2 j", "1 j"], [["roche-sainte", "prefet"], "2½ j", "1½ j"],
+  [["vanhille", "fer-blanc"], "1½ j", "¾ j"], [["roche-sainte", "iles-glace-lieu"], "3 j", "1½ j"],
+];
+for (const [et, navire, vol] of mer) {
+  const n = et.join(" → ");
+  note("Tables Notion — entre les îles", n + " · 🚢", navire, duree(et, "navire", true), n.includes("glace") ? false : true);
+  note("Déplacement libre (ligne directe à travers la campagne)", n + " · 🦅", vol, duree(et, "vol", true), false);
+}
+// 3. Règles de blocage
+const R = "Règles de blocage";
+note(R, "La mer bloque le pied (Roche-Sainte → Vanhille)", "✕", duree(["roche-sainte", "vanhille"], "pied", true), true);
+note(R, "La mer bloque le cheval", "✕", duree(["roche-sainte", "vanhille"], "cheval", true), true);
+note(R, "La mer bloque la calèche", "✕", duree(["roche-sainte", "vanhille"], "caleche", true), true);
+note(R, "La montagne bloque la calèche (Roncedroite → Académie)", "✕", duree(["roncedroite", "academie"], "caleche", true), true);
+note(R, "Tempête : navire impossible", "✕", duree(["roche-sainte", "vanhille"], "navire", true, ["tempete"]), true);
+note(R, "Tempête : le vol passe", "✓", duree(["roche-sainte", "vanhille"], "vol", true, ["tempete"]) !== "✕" ? "✓" : "✕", true);
+note(R, "Vol : jamais par les routes (aucun nœud intermédiaire)", "direct",
+  dureeTotale(L("roche-sainte", "academie"), T.vol, opts(), true).direct ? "direct" : "routes", true);
+S.voyage.nage = { vitesse: 0, apnee: 0, respire: false };
+note(R, "Nage sans vitesse définie : impossible", "✕", duree(["roche-sainte", "vanhille"], "nage", true), true);
+S.voyage.nage = { vitesse: 30, apnee: 5, respire: false };
+note(R, "Nage, 30 km/j, apnée 5 km, sans respirer sous l'eau : impossible en haute mer", "✕", duree(["roche-sainte", "vanhille"], "nage", true), true);
+S.voyage.nage = { vitesse: 30, apnee: 5, respire: true };
+note(R, "Nage, respire sous l'eau : possible", "✓", duree(["roche-sainte", "vanhille"], "nage", true) !== "✕" ? "✓" : "✕", true);
+// 4. Repos
+const P = "Repos — 1 jour tous les 3 jours, sur tout le trajet";
+for (const [n, r] of [[3, 0], [3.5, 1], [6, 1], [6.5, 2], [9, 2], [12, 3]]) note(P, `${n} j de route → jours de repos`, String(r), String(joursRepos(n)), true);
+note(P, "Pas de repos en navire : même durée avec ou sans repos", duree(["roche-sainte", "prefet"], "navire", false), duree(["roche-sainte", "prefet"], "navire", true), true);
+note(P, "🚶 Roche-Sainte → Académie par les routes AVEC repos (12 j + 3)", "15 j", duree(["roche-sainte", "academie"], "pied", true, [], true), true);
+note(P, "🐎 Roche-Sainte → Académie par les routes SANS repos", "6 j", duree(["roche-sainte", "academie"], "cheval", false, [], true), true);
+note(P, "🛞 BlancheFleure → Roncedroite AVEC repos (3½ j + 1)", "4½ j", duree(["blanchefleure", "roncedroite"], "caleche", true, [], true), true);
+note(P, "Repos compté sur l'ensemble, pas par étape : 🚶 Roche-Sainte → Noir Marais → BlancheFleure", "7 j", duree(["roche-sainte", "noir-marais", "blanchefleure"], "pied", true), true);
+
+document.querySelector("#sortie").innerHTML = Object.entries(lignes).map(([s, ls]) =>
+  `<h2>${s}</h2><table><tr><th>Cas</th><th>Attendu</th><th>Moteur</th><th></th></tr>${ls.join("")}</table>`).join("");
+document.querySelector("#bilan").innerHTML = `<b class="${ko ? "ko" : "ok"}">${ok} réussis · ${ko} échecs</b> · <span class="info">${ecarts} écarts signalés (déplacement libre : l'échelle de la carte ne colle pas encore aux distances canon)</span>`;
+window.__resultat = { ok, ko, ecarts };
+</script>
+</body>
+</html>

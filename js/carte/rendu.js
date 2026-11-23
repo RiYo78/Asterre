@@ -1,10 +1,10 @@
 /* ASTERRE — carte/rendu.js · Dessin SVG de la carte : mer, îles, régions, voisins, routes, portails, marqueurs, rose des vents, échelle, légende. */
-import { catmullPath, pointInPoly, scatterInPoly, wobble } from "./geometrie.js?v=14";
-import { appliquerVB } from "./vue.js?v=14";
-import { S } from "../etat.js?v=14";
-import { $, el, rng } from "../utils.js?v=14";
-import { visib } from "../visibilite.js?v=14";
-import { clicLieu } from "../voyage/ui.js?v=14";
+import { catmullPath, pointInPoly, scatterInPoly, wobble } from "./geometrie.js?v=15";
+import { appliquerVB } from "./vue.js?v=15";
+import { S } from "../etat.js?v=15";
+import { $, el, rng } from "../utils.js?v=15";
+import { visib } from "../visibilite.js?v=15";
+import { clicLieu } from "../voyage/ui.js?v=15";
 
 /* ─────────────── Rendu de la carte ─────────────── */
 export const COULEURS = {

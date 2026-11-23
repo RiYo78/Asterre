@@ -1,11 +1,11 @@
 /* ASTERRE — codex.js · Onglet Codex : chapitres (géographie, lois, religions, chronologie, personnages, races, bestiaire…). */
-import { chargerPays } from "./donnees.js?v=14";
-import { S } from "./etat.js?v=14";
-import { ouvrirGroupe, renderLignees } from "./lignees.js?v=14";
-import { famille, ouvrirPnj, pnj } from "./panneaux.js?v=14";
-import { montrerVue } from "./ui.js?v=14";
-import { $, esc } from "./utils.js?v=14";
-import { blocMJ, cocheMJ, detailsHTML, secretsHTML, visib } from "./visibilite.js?v=14";
+import { chargerPays } from "./donnees.js?v=15";
+import { S } from "./etat.js?v=15";
+import { ouvrirGroupe, renderLignees } from "./lignees.js?v=15";
+import { famille, ouvrirPnj, pnj } from "./panneaux.js?v=15";
+import { montrerVue } from "./ui.js?v=15";
+import { $, esc } from "./utils.js?v=15";
+import { blocMJ, cocheMJ, detailsHTML, secretsHTML, visib } from "./visibilite.js?v=15";
 
 /* ─────────────── Codex ─────────────── */
 export const CHAPITRES = [
@@ -15,7 +15,7 @@ export const CHAPITRES = [
 ];
 export function construireCodex() {
   const nav = $("#codex-nav");
-  nav.innerHTML = CHAPITRES.map(([id, nom], i) => `<a data-ch="${id}" class="${i === 0 ? "actif" : ""}" tabindex="0">${nom}</a>`).join("");
+  nav.innerHTML = CHAPITRES.map(([id, nom], i) => `<a data-ch="${id}" class="${id === "lois" ? "actif" : ""}" tabindex="0">${nom}</a>`).join("");
   nav.querySelectorAll("a").forEach(a => {
     const go = () => { nav.querySelectorAll("a").forEach(x => x.classList.remove("actif")); a.classList.add("actif"); renderChapitre(a.dataset.ch); };
     a.addEventListener("click", go);

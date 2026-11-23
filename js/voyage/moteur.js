@@ -1,6 +1,6 @@
 /* ASTERRE — voyage/moteur.js · Moteur de voyage : graphe des routes, plus court chemin, vitesses, arrondi du voyageur, trajets en ligne directe. */
-import { pointInPoly } from "../carte/geometrie.js?v=14";
-import { S } from "../etat.js?v=14";
+import { pointInPoly } from "../carte/geometrie.js?v=15";
+import { S } from "../etat.js?v=15";
 
 /* ─────────────── Graphe & voyage ─────────────── */
 export function construireGraphe(routes) {
@@ -66,16 +66,23 @@ export function raisonImpossible(transport, de, a, modifs, defsModifs) {
   return "Impossible avec ce moyen de transport.";
 }
 /* Arrondi « du voyageur » — calibré sur les tables de la fiche du Royaume :
-   à pied on compte en journées pleines ; le cheval exige un repos par 3 jours
-   et arrondit à la journée en montagne ; mer et calèche à la demi-journée ;
-   le vol au quart de journée. */
+   à pied on compte en journées pleines ; le cheval arrondit à la journée en montagne ;
+   mer et calèche à la demi-journée ; le vol au quart de journée.
+   Le repos n'est PAS compté ici : voir joursRepos(), appliqué sur l'ensemble du trajet. */
 export function arrondiVoyageur(t, r) {
   const mont = r.edges.some(e => e.type === "montagne");
-  let j = r.jours;
-  if (t.id === "cheval" && j >= 3) j += Math.floor(j / 3);
+  const j = r.jours;
   if (t.id === "pied" || (t.id === "cheval" && mont)) return Math.max(1, Math.ceil(j));
   if (t.id === "vol") return Math.max(.25, Math.ceil(j * 4) / 4);
   return Math.max(.5, Math.ceil(j * 2) / 2);
+}
+/* Repos (règle du MJ, 2026-11) : 1 jour de repos tous les 3 jours de voyage, compté sur
+   l'ensemble du trajet, pour les moyens qui fatiguent le voyageur ou sa monture.
+   Les embarcations (bateau côtier, navire) ne comptent pas : on dort à bord. */
+export const MOYENS_AVEC_REPOS = new Set(["pied", "cheval", "caleche", "vol", "nage"]);
+export function joursRepos(joursDeVoyage) {
+  // 3 jours de route puis 1 jour de repos : 3 j → 0 repos, 3,5 j → 1, 6 j → 1, 6,5 j → 2
+  return joursDeVoyage > 3 ? Math.ceil(joursDeVoyage / 3) - 1 : 0;
 }
 export function fmtJours(j) {
   const q = Math.max(.25, Math.round(j * 4) / 4);
@@ -108,25 +115,42 @@ export function analyseLigne(a, b) {
     }
   }
   if (eauCour > eauMax) eauMax = eauCour;
-  return { kmTotal: L * S.kmParUnite, traverseMer: eau > 0, eauMaxKm: eauMax,
+  return { kmTotal: L * S.kmParUnite, traverseMer: eau > 0, eauMaxKm: eauMax, eauKm: Math.min(L * S.kmParUnite, eau * pasKm),
            fracMont: mont / (n + 1), fracMarais: marais / (n + 1) };
 }
 export function capVol() { return (S.pays.reglages && S.pays.reglages.volMaxTraiteKm) || 300; }
-/* Calcule le meilleur trajet A→B pour un transport : par les routes (si deux lieux)
-   et/ou en ligne directe (pied, cheval, vol). Renvoie null si impossible. */
+/* Paramètres de nage fixés par le MJ (aucune valeur dans le lore pour l'instant) */
+export function reglagesNage() { return S.voyage.nage || { vitesse: 0, apnee: 0, respire: false }; }
+
+/* Calcule le meilleur trajet A→B pour un transport. Renvoie null si impossible.
+   - Pied, cheval : par les routes (si deux lieux) ou en ligne directe, la meilleure des deux.
+   - Calèche, bateaux : uniquement par les routes / lignes maritimes.
+   - Vol : toujours en ligne droite — un oiseau ne suit pas les routes.
+   - Nage : en ligne droite ; l'eau à la vitesse de nage, la terre à pied. */
 export function calcSegment(A, B, t, opts) {
   let meilleur = null;
-  if (A.type === "lieu" && B.type === "lieu") {
+  if (A.type === "lieu" && B.type === "lieu" && t.id !== "vol" && t.id !== "nage") {
     const r = dijkstra(S.graphe, A.id, B.id, t, opts);
     if (r) meilleur = { ...r, mode: "routes" };
   }
-  if (["pied", "cheval", "vol"].includes(t.id)) {
+  if (["pied", "cheval", "vol", "nage"].includes(t.id) && !(opts.routesSeules && t.id !== "vol" && meilleur)) {
     const a = posEtape(A), b = posEtape(B), an = analyseLigne(a, b);
+    if (an.kmTotal <= 0.5) return meilleur;
+    const base = vitesseGlobale(t, opts.modifs, opts.defsModifs);
+    if (t.id === "nage") {
+      const N = reglagesNage();
+      if (!(N.vitesse > 0) || !an.traverseMer) return meilleur;
+      if (!N.respire && an.eauMaxKm > (N.apnee || 0)) return meilleur;
+      const vNage = vitesseGlobale({ kmJour: N.vitesse }, opts.modifs, opts.defsModifs);
+      const vPied = vitesseGlobale({ kmJour: 25 }, opts.modifs, opts.defsModifs);
+      const jours = an.eauKm / vNage + (an.kmTotal - an.eauKm) / vPied;
+      return { jours, km: Math.round(an.kmTotal), noeuds: [], mode: "direct",
+        edges: [{ type: "nage", km: Math.round(an.kmTotal), points: [a, b], direct: true }] };
+    }
     let ok = true;
     if (t.id !== "vol" && an.traverseMer) ok = false;
     if (t.id === "vol" && an.eauMaxKm > capVol()) ok = false;
-    if (ok && an.kmTotal > 0.5) {
-      const base = vitesseGlobale(t, opts.modifs, opts.defsModifs);
+    if (ok) {
       let pen = 1, type = "direct", terrain;
       if (t.id !== "vol" && an.fracMont > 0.25) { pen = t.id === "pied" ? .7 : .6; type = "montagne"; }
       else if (t.id !== "vol" && an.fracMarais > 0.2) { pen = .7; type = "piste"; terrain = "difficile"; }
@@ -139,21 +163,33 @@ export function calcSegment(A, B, t, opts) {
   return meilleur;
 }
 export function raisonSegment(t, A, B, modifs, defs) {
-  if (A.type === "lieu" && B.type === "lieu") {
-    const opts = { modifs, defsModifs: defs };
-    if (["pied", "cheval", "vol"].includes(t.id)) {
-      const an = analyseLigne(posEtape(A), posEtape(B));
-      if (t.id === "vol" && an.eauMaxKm > capVol())
-        return `Trop loin pour voler d'une traite au-dessus de la mer (max ${capVol()} km) — prévoyez une halte.`;
-    }
-    return raisonImpossible(t, A.id, B.id, modifs, defs);
-  }
   const an = analyseLigne(posEtape(A), posEtape(B));
-  if (modifs.has("tempete") && (t.id === "navire" || t.id === "cotier")) return "Tempête — navigation impossible.";
   if (t.id === "vol" && an.eauMaxKm > capVol())
     return `Trop loin pour voler d'une traite au-dessus de la mer (max ${capVol()} km) — prévoyez une halte.`;
+  if (t.id === "nage") {
+    const N = reglagesNage();
+    if (!(N.vitesse > 0)) return "Vitesse de nage à définir (⚙ Modificateurs).";
+    if (!an.traverseMer) return "Aucune étendue d'eau à traverser — allez-y à pied.";
+    if (!N.respire && an.eauMaxKm > (N.apnee || 0))
+      return `Impossible sans respirer sous l'eau — ${Math.round(an.eauMaxKm)} km d'eau d'un seul tenant (max ${N.apnee || 0} km).`;
+  }
+  if (A.type === "lieu" && B.type === "lieu" && t.id !== "vol" && t.id !== "nage") return raisonImpossible(t, A.id, B.id, modifs, defs);
+  if (modifs.has("tempete") && (t.id === "navire" || t.id === "cotier")) return "Tempête — navigation impossible.";
   if ((t.id === "pied" || t.id === "cheval") && an.traverseMer) return "Impossible — la mer vous barre la route.";
   if (t.id === "caleche") return "Routes uniquement — la calèche ne quitte pas les routes tracées.";
   if (t.id === "cotier" || t.id === "navire") return "Les embarcations suivent les lignes portuaires — choisissez deux lieux reliés par la mer.";
   return "Impossible avec ce moyen de transport.";
+}
+
+/* Durée totale d'un trajet (liste d'étapes) avec un seul moyen de transport.
+   Renvoie { ok, km, jours, repos, direct } ou { ok:false, raison }. Utilisé par l'interface et les tests. */
+export function dureeTotale(etapes, t, opts, avecRepos = true) {
+  let km = 0, jours = 0, direct = false;
+  for (let i = 0; i < etapes.length - 1; i++) {
+    const r = calcSegment(etapes[i], etapes[i + 1], t, opts);
+    if (!r) return { ok: false, raison: raisonSegment(t, etapes[i], etapes[i + 1], opts.modifs, opts.defsModifs) };
+    km += r.km; jours += arrondiVoyageur(t, r); if (r.mode === "direct") direct = true;
+  }
+  const repos = avecRepos && MOYENS_AVEC_REPOS.has(t.id) ? joursRepos(jours) : 0;
+  return { ok: true, km, jours: jours + repos, repos, direct };
 }

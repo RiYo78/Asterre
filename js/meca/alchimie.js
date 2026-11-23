@@ -1,6 +1,6 @@
 /* ASTERRE — meca/alchimie.js · Onglet Mécaniques : fiche Alchimie (table des jets, sigils, rites, simulateur). */
-import { S } from "../etat.js?v=14";
-import { $, esc } from "../utils.js?v=14";
+import { S } from "../etat.js?v=15";
+import { $, esc } from "../utils.js?v=15";
 
 /* ═══════════════ MÉCANIQUES ═══════════════ */
 export const CAT_SIGIL = { Cosmique: "#7d5fbf", "Élément": "#d9601f", "État": "#3f7bbf", "Matériau": "#806040", Race: "#3f9d5f" };

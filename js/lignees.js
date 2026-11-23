@@ -1,9 +1,9 @@
 /* ASTERRE — lignees.js · Onglet Lignées : arbres généalogiques et groupes (trombinoscopes). */
-import { S } from "./etat.js?v=14";
-import { fermerPanneau, ouvrirPnj, pnj } from "./panneaux.js?v=14";
-import { imagesDe } from "./seance.js?v=14";
-import { $, esc } from "./utils.js?v=14";
-import { cocheMJ, detailsHTML, estRevele, visib } from "./visibilite.js?v=14";
+import { S } from "./etat.js?v=15";
+import { fermerPanneau, ouvrirPnj, pnj } from "./panneaux.js?v=15";
+import { imagesDe } from "./seance.js?v=15";
+import { $, esc } from "./utils.js?v=15";
+import { cocheMJ, detailsHTML, estRevele, visib } from "./visibilite.js?v=15";
 
 /* ═══════════════ LIGNÉES & GROUPES ═══════════════ */
 export function renderLignees() {

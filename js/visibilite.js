@@ -1,6 +1,6 @@
 /* ASTERRE — visibilite.js · Règles de visibilité joueur / MJ : révélations et masquages locaux, blocs MJ, secrets, détails, bouton de publication. */
-import { IS_BROWSER, S } from "./etat.js?v=14";
-import { $, esc, toast } from "./utils.js?v=14";
+import { IS_BROWSER, S } from "./etat.js?v=15";
+import { $, esc, toast } from "./utils.js?v=15";
 
 export function estRevele(id) { return S.reveals.has(id); }
 export function visib(id, def) { if (S.masques.has(id)) return false; if (S.reveals.has(id)) return true; return def; }

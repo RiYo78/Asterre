@@ -1,6 +1,6 @@
 /* ASTERRE — carte/vue.js · Vue de la carte : viewBox, zoom, animation, coordonnées souris. */
-import { S } from "../etat.js?v=14";
-import { $ } from "../utils.js?v=14";
+import { S } from "../etat.js?v=15";
+import { $ } from "../utils.js?v=15";
 
 /* ─────────────── Vue / pan / zoom ─────────────── */
 export function appliquerVB() { $("#carte").setAttribute("viewBox", `${S.vb.x} ${S.vb.y} ${S.vb.w} ${S.vb.h}`); }

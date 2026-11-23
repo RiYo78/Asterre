@@ -1,12 +1,12 @@
 /* ASTERRE — donnees.js · Chargement et fusion des pays, changement de pays, déchiffrement des copies MJ. */
-import { polyLength } from "./carte/geometrie.js?v=14";
-import { renderCarte, renderLegende } from "./carte/rendu.js?v=14";
-import { IS_BROWSER, S } from "./etat.js?v=14";
-import { fermerPanneau } from "./panneaux.js?v=14";
-import { montrerVue, remplirRecherche } from "./ui.js?v=14";
-import { $, esc, toast } from "./utils.js?v=14";
-import { construireGraphe } from "./voyage/moteur.js?v=14";
-import { toggleVoyage } from "./voyage/ui.js?v=14";
+import { polyLength } from "./carte/geometrie.js?v=15";
+import { renderCarte, renderLegende } from "./carte/rendu.js?v=15";
+import { IS_BROWSER, S } from "./etat.js?v=15";
+import { fermerPanneau } from "./panneaux.js?v=15";
+import { montrerVue, remplirRecherche } from "./ui.js?v=15";
+import { $, esc, toast } from "./utils.js?v=15";
+import { construireGraphe } from "./voyage/moteur.js?v=15";
+import { toggleVoyage } from "./voyage/ui.js?v=15";
 
 /* ─────────────── Chargement ─────────────── */
 export function initPays() {
@@ -17,6 +17,8 @@ export function initPays() {
     for (const sl of (l.lieuxNotables || [])) S.sousLieux[sl.id] = { ...sl, parent: l.id };
   }
   S.graphe = construireGraphe(S.pays.routes || []);
+  // Échelle : déduite des lignes maritimes ; sinon valeur du pays ou défaut (évite de garder celle du pays précédent)
+  S.kmParUnite = (S.pays.reglages && S.pays.reglages.kmParUnite) || 0.22;
   const refs = (S.pays.routes || []).filter(r => r.type === "maritime");
   if (refs.length) S.kmParUnite = refs.reduce((s, r) => s + r.km / polyLength(r.points), 0) / refs.length;
   $("#sous-titre").textContent = S.pays.nom;
@@ -32,15 +34,17 @@ export function remplirChoixPays() {
 export function chargerPays(id) {
   if (!S.paysData[id] || id === S.paysActifId) return;
   fermerPanneau(); toggleVoyage(false);
+  S.voyage.etapes = []; S.voyage.choix = {}; // les étapes appartiennent à l'ancien pays
   S.paysActifId = id; S.pays = S.paysData[id];
   try { localStorage.setItem("asterre-pays", id); } catch (e) {}
   initPays();
   S.vb = { ...S.vb0 };
   renderCarte(); renderLegende(); remplirRecherche();
+  const sel = $("#choix-pays"); if (sel) sel.value = id; // le menu suit aussi les clics sur la carte
   montrerVue("carte");
   toast("🗺 " + S.pays.nom);
 }
-export const VERSION = "14"; // à incrémenter à chaque publication (anti-cache)
+export const VERSION = "15"; // à incrémenter à chaque publication (anti-cache)
 /* Données brutes telles que publiées : version publique, ou complète une fois le mode MJ déverrouillé. */
 S.brut = {};
 export function assembler() {

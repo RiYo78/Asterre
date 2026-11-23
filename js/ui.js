@@ -1,17 +1,17 @@
 /* ASTERRE — ui.js · Interface générale : navigation entre onglets, mode MJ, recherche, branchement des contrôles. */
-import { renderCarte } from "./carte/rendu.js?v=14";
-import { animerVB, appliquerVB, coordsSouris, zoomer } from "./carte/vue.js?v=14";
-import { renderChapitre } from "./codex.js?v=14";
-import { chargerPays, deverrouillerMJ } from "./donnees.js?v=14";
-import { S } from "./etat.js?v=14";
-import { renderJoueur } from "./joueur.js?v=14";
-import { renderLignees } from "./lignees.js?v=14";
-import { renderMeca } from "./meca/alchimie.js?v=14";
-import { fermerPanneau } from "./panneaux.js?v=14";
-import { renderSeance } from "./seance.js?v=14";
-import { $, esc, toast } from "./utils.js?v=14";
-import { majBoutonMJ, visib } from "./visibilite.js?v=14";
-import { clicLibre, clicLieu, toggleVoyage } from "./voyage/ui.js?v=14";
+import { renderCarte } from "./carte/rendu.js?v=15";
+import { animerVB, appliquerVB, coordsSouris, zoomer } from "./carte/vue.js?v=15";
+import { renderChapitre } from "./codex.js?v=15";
+import { chargerPays, deverrouillerMJ } from "./donnees.js?v=15";
+import { S } from "./etat.js?v=15";
+import { renderJoueur } from "./joueur.js?v=15";
+import { renderLignees } from "./lignees.js?v=15";
+import { renderMeca } from "./meca/alchimie.js?v=15";
+import { fermerPanneau } from "./panneaux.js?v=15";
+import { renderSeance } from "./seance.js?v=15";
+import { $, esc, toast } from "./utils.js?v=15";
+import { majBoutonMJ, visib } from "./visibilite.js?v=15";
+import { clicLibre, clicLieu, toggleVoyage } from "./voyage/ui.js?v=15";
 
 /* ─────────────── UI générale ─────────────── */
 export function montrerVue(v) {

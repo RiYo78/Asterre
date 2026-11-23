@@ -2122,14 +2122,16 @@
    "nom": "Vol d'oiseau",
    "icone": "🦅",
    "kmJour": 200,
-   "autorise": [
-    "route",
-    "piste",
-    "montagne",
-    "cotier",
-    "maritime"
-   ],
-   "note": "Messagers · familiers · Animagus"
+   "autorise": [],
+   "note": "Ligne droite · messagers · familiers · Animagus volants"
+  },
+  {
+   "id": "nage",
+   "nom": "Nage",
+   "icone": "🏊",
+   "kmJour": null,
+   "autorise": [],
+   "note": "Ligne droite · vitesse fixée par le MJ · Animagus aquatiques"
   }
  ],
  "modificateurs": [
