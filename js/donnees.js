@@ -1,12 +1,12 @@
 /* ASTERRE — donnees.js · Chargement et fusion des pays, changement de pays, déchiffrement des copies MJ. */
-import { polyLength } from "./carte/geometrie.js?v=15";
-import { renderCarte, renderLegende } from "./carte/rendu.js?v=15";
-import { IS_BROWSER, S } from "./etat.js?v=15";
-import { fermerPanneau } from "./panneaux.js?v=15";
-import { montrerVue, remplirRecherche } from "./ui.js?v=15";
-import { $, esc, toast } from "./utils.js?v=15";
-import { construireGraphe } from "./voyage/moteur.js?v=15";
-import { toggleVoyage } from "./voyage/ui.js?v=15";
+import { polyLength } from "./carte/geometrie.js?v=16";
+import { renderCarte, renderLegende } from "./carte/rendu.js?v=16";
+import { IS_BROWSER, S } from "./etat.js?v=16";
+import { fermerPanneau } from "./panneaux.js?v=16";
+import { montrerVue, remplirRecherche } from "./ui.js?v=16";
+import { $, esc, toast } from "./utils.js?v=16";
+import { construireGraphe } from "./voyage/moteur.js?v=16";
+import { toggleVoyage } from "./voyage/ui.js?v=16";
 
 /* ─────────────── Chargement ─────────────── */
 export function initPays() {
@@ -44,7 +44,7 @@ export function chargerPays(id) {
   montrerVue("carte");
   toast("🗺 " + S.pays.nom);
 }
-export const VERSION = "15"; // à incrémenter à chaque publication (anti-cache)
+export const VERSION = "16"; // à incrémenter à chaque publication (anti-cache)
 /* Données brutes telles que publiées : version publique, ou complète une fois le mode MJ déverrouillé. */
 S.brut = {};
 export function assembler() {

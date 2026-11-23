@@ -1,5 +1,5 @@
 /* ASTERRE — carte/geometrie.js · Géométrie pure : courbes, contours ondulés, point dans polygone, semis aléatoire. */
-import { rng } from "../utils.js?v=15";
+import { rng } from "../utils.js?v=16";
 
 /* ─────────────── Géométrie ─────────────── */
 export function catmullPath(pts, closed) {

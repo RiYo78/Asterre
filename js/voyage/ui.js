@@ -1,10 +1,10 @@
 /* ASTERRE — voyage/ui.js · Interface du calcul de voyage : étapes, tableau des résultats, trajet mixte, avertissements, tracé. */
-import { catmullPath } from "../carte/geometrie.js?v=15";
-import { zoomVers } from "../carte/vue.js?v=15";
-import { S } from "../etat.js?v=15";
-import { fermerPanneau, ouvrirLieu } from "../panneaux.js?v=15";
-import { $, el, esc, toast } from "../utils.js?v=15";
-import { MOYENS_AVEC_REPOS, arrondiVoyageur, calcSegment, capVol, dureeTotale, fmtJours, joursRepos, nomEtape, raisonSegment, reglagesNage } from "./moteur.js?v=15";
+import { catmullPath } from "../carte/geometrie.js?v=16";
+import { zoomVers } from "../carte/vue.js?v=16";
+import { S } from "../etat.js?v=16";
+import { fermerPanneau, ouvrirLieu } from "../panneaux.js?v=16";
+import { $, el, esc, toast } from "../utils.js?v=16";
+import { MOYENS_AVEC_REPOS, arrondiVoyageur, calcSegment, capVol, dureeTotale, fmtJours, joursRepos, nomEtape, raisonSegment, reglagesNage } from "./moteur.js?v=16";
 
 /* ── Interface voyage ── */
 export function toggleVoyage(on) {

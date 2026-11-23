@@ -1,11 +1,11 @@
 /* ASTERRE — codex.js · Onglet Codex : chapitres (géographie, lois, religions, chronologie, personnages, races, bestiaire…). */
-import { chargerPays } from "./donnees.js?v=15";
-import { S } from "./etat.js?v=15";
-import { ouvrirGroupe, renderLignees } from "./lignees.js?v=15";
-import { famille, ouvrirPnj, pnj } from "./panneaux.js?v=15";
-import { montrerVue } from "./ui.js?v=15";
-import { $, esc } from "./utils.js?v=15";
-import { blocMJ, cocheMJ, detailsHTML, secretsHTML, visib } from "./visibilite.js?v=15";
+import { chargerPays } from "./donnees.js?v=16";
+import { S } from "./etat.js?v=16";
+import { ouvrirGroupe, renderLignees } from "./lignees.js?v=16";
+import { famille, ouvrirPnj, pnj } from "./panneaux.js?v=16";
+import { montrerVue } from "./ui.js?v=16";
+import { $, esc } from "./utils.js?v=16";
+import { blocMJ, cocheMJ, detailsHTML, secretsHTML, visib } from "./visibilite.js?v=16";
 
 /* ─────────────── Codex ─────────────── */
 export const CHAPITRES = [

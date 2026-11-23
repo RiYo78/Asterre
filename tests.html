@@ -22,8 +22,8 @@
 <div id="bilan">Calcul…</div>
 <div id="sortie"></div>
 <script type="module">
-import { S } from "./js/etat.js?v=15";
-import { construireGraphe, dureeTotale, joursRepos, fmtJours } from "./js/voyage/moteur.js?v=15";
+import { S } from "./js/etat.js?v=16";
+import { construireGraphe, dureeTotale, joursRepos, fmtJours } from "./js/voyage/moteur.js?v=16";
 
 const d = await (await fetch("data/iles-saintes.json?v=" + Date.now())).json();
 S.pays = d; S.lieux = {}; d.lieux.forEach(l => S.lieux[l.id] = l);
@@ -92,7 +92,7 @@ note(P, "Pas de repos en navire : même durée avec ou sans repos", duree(["roch
 note(P, "🚶 Roche-Sainte → Académie par les routes AVEC repos (12 j + 3)", "15 j", duree(["roche-sainte", "academie"], "pied", true, [], true), true);
 note(P, "🐎 Roche-Sainte → Académie par les routes SANS repos", "6 j", duree(["roche-sainte", "academie"], "cheval", false, [], true), true);
 note(P, "🛞 BlancheFleure → Roncedroite AVEC repos (3½ j + 1)", "4½ j", duree(["blanchefleure", "roncedroite"], "caleche", true, [], true), true);
-note(P, "Repos compté sur l'ensemble, pas par étape : 🚶 Roche-Sainte → Noir Marais → BlancheFleure", "7 j", duree(["roche-sainte", "noir-marais", "blanchefleure"], "pied", true), true);
+note(P, "Repos compté sur l'ensemble, pas par étape : 🚶 Roche-Sainte → Noir Marais (3 j) → BlancheFleure (3 j, terrain difficile), par les routes : 6 j + 1 repos", "7 j", duree(["roche-sainte", "noir-marais", "blanchefleure"], "pied", true, [], true), true);
 
 document.querySelector("#sortie").innerHTML = Object.entries(lignes).map(([s, ls]) =>
   `<h2>${s}</h2><table><tr><th>Cas</th><th>Attendu</th><th>Moteur</th><th></th></tr>${ls.join("")}</table>`).join("");

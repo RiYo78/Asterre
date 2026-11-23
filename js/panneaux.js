@@ -1,11 +1,11 @@
 /* ASTERRE — panneaux.js · Panneau latéral : fiches de lieu, lieu notable, personnage, famille. */
-import { zoomVers } from "./carte/vue.js?v=15";
-import { S } from "./etat.js?v=15";
-import { ouvrirGroupe, renderLignees } from "./lignees.js?v=15";
-import { imagesDe } from "./seance.js?v=15";
-import { montrerVue } from "./ui.js?v=15";
-import { $, esc, imgHTML } from "./utils.js?v=15";
-import { blocMJ, cocheMJ, detailsHTML, estRevele, secretsHTML, visib } from "./visibilite.js?v=15";
+import { zoomVers } from "./carte/vue.js?v=16";
+import { S } from "./etat.js?v=16";
+import { ouvrirGroupe, renderLignees } from "./lignees.js?v=16";
+import { imagesDe } from "./seance.js?v=16";
+import { montrerVue } from "./ui.js?v=16";
+import { $, esc, imgHTML } from "./utils.js?v=16";
+import { blocMJ, cocheMJ, detailsHTML, estRevele, secretsHTML, visib } from "./visibilite.js?v=16";
 
 /* ─────────────── Fiches de lieux (panneau) ─────────────── */
 export const NOMS_TYPES = { continent: "Continent", forteresse: "Forteresse", temple: "Lieu de prière", pouvoir: "Siège du pouvoir", residence: "Résidence", banque: "Banque", forge: "Forge", bibliotheque: "Bibliothèque", capitale: "Capitale", ville: "Ville", "ville-detruite": "Ville détruite", village: "Village", academie: "Académie", "lieu-dit": "Lieu-dit", danger: "Zone mortelle", "lieu-saint": "Lieu saint", prison: "Prison", palais: "Palais", port: "Port", caserne: "Caserne", auberge: "Auberge", taverne: "Taverne", commerce: "Commerce", illegal: "Activité illégale", mystere: "Mystère" };

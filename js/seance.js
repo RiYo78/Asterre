@@ -1,10 +1,10 @@
 /* ASTERRE — seance.js · Table de Séance : scène partageable, cartes personnage, dés. */
-import { S } from "./etat.js?v=15";
-import { majPistesUI } from "./musique.js?v=15";
-import { NOMS_TYPES, ouvrirLieu, ouvrirPnj, pnj } from "./panneaux.js?v=15";
-import { montrerVue } from "./ui.js?v=15";
-import { $, esc, imgHTML, toast } from "./utils.js?v=15";
-import { visib } from "./visibilite.js?v=15";
+import { S } from "./etat.js?v=16";
+import { majPistesUI } from "./musique.js?v=16";
+import { NOMS_TYPES, ouvrirLieu, ouvrirPnj, pnj } from "./panneaux.js?v=16";
+import { montrerVue } from "./ui.js?v=16";
+import { $, esc, imgHTML, toast } from "./utils.js?v=16";
+import { visib } from "./visibilite.js?v=16";
 
 /* ── Table de Séance ── */
 export function chargerSeanceHash() {

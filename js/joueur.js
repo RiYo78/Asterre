@@ -1,8 +1,8 @@
 /* ASTERRE — joueur.js · Espace Joueur : fiche, inventaire, quêtes, entraînement, journal, export/import. */
-import { S } from "./etat.js?v=15";
-import { pnj } from "./panneaux.js?v=15";
-import { $, esc, toast } from "./utils.js?v=15";
-import { visib } from "./visibilite.js?v=15";
+import { S } from "./etat.js?v=16";
+import { pnj } from "./panneaux.js?v=16";
+import { $, esc, toast } from "./utils.js?v=16";
+import { visib } from "./visibilite.js?v=16";
 
 export const STATS_DEF = [
   { id: "vitalite", nom: "Vitalité", max: 100, color: "#7e2a2a" },

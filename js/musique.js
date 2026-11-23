@@ -1,6 +1,6 @@
 /* ASTERRE — musique.js · Lecteur de musique d'ambiance. */
-import { S } from "./etat.js?v=15";
-import { $, esc, toast } from "./utils.js?v=15";
+import { S } from "./etat.js?v=16";
+import { $, esc, toast } from "./utils.js?v=16";
 
 /* ── Musique d'ambiance ── */
 export let AUDIO = null;

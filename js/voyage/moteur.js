@@ -1,6 +1,6 @@
 /* ASTERRE — voyage/moteur.js · Moteur de voyage : graphe des routes, plus court chemin, vitesses, arrondi du voyageur, trajets en ligne directe. */
-import { pointInPoly } from "../carte/geometrie.js?v=15";
-import { S } from "../etat.js?v=15";
+import { pointInPoly } from "../carte/geometrie.js?v=16";
+import { S } from "../etat.js?v=16";
 
 /* ─────────────── Graphe & voyage ─────────────── */
 export function construireGraphe(routes) {
