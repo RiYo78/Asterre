@@ -1,0 +1,2 @@
+Déposez ici vos fichiers audio (.mp3, .ogg) — gardez-les raisonnables (< 15 Mo par piste).
+Puis listez-les dans data/musiques.json, ou dites simplement à Claude : « ajoute la musique tension.mp3 » et il le fera.
